@@ -1,0 +1,6 @@
+IF
+  !Contains("%Item%","container2")
+  Global("flRobbedGolems2","ar1303",0)
+THEN RESPONSE #100
+  SetGlobal("flRobbedGolems2","ar1303",1)
+END

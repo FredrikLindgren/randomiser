@@ -1,0 +1,11 @@
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Pool","AR0801",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@998)
+		ReallyForceSpell(LastTrigger,TRAP_UNDERWATER_BITE)
+		SetGlobal("Pool","AR0801",2)
+END

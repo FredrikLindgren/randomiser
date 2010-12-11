@@ -1,0 +1,394 @@
+BACKUP "randomiser/backup"
+AUTHOR "Wisp, Gibberlings3 forum"
+VERSION "v6.2"
+README "randomiser/readme-randomiser.html"
+
+ALWAYS
+  INCLUDE "randomiser/lib/macros.tpa"
+  INCLUDE "randomiser/lib/comp_vars.tpa"
+  OUTER_SPRINT sslvar ""
+  OUTER_SPRINT ssl_file fltier
+  RANDOM_SEED go
+  
+  OUTER_PATCH ~12~ BEGIN                                                                                               //"Borrowed" from G3 BG2 Tweakpack
+    WRITE_BYTE 1 0x09
+    READ_ASCII 1 tab (1)  // 0x09, tab
+    WRITE_BYTE 1 0x0a
+    READ_ASCII 1 lnl (1)  // 0x0a, Linux
+    WRITE_BYTE 0 0x0d
+    READ_ASCII 0 mnl (1)  // 0x0d, Mac
+    READ_ASCII 0 wnl (2)  // 0x0d0a, Windows
+  END
+<<<<<<<< ...blank
+>>>>>>>>
+END
+
+AUTO_TRA ~randomiser/languages/%s~
+LANGUAGE English english "randomiser/languages/english/setup.tra" "randomiser/languages/english/in-game.tra"
+LANGUAGE "Polish (partial translation by Yarpen)" polish "randomiser/languages/english/setup.tra" "randomiser/languages/polish/setup.tra" "randomiser/languages/english/in-game.tra" "randomiser/languages/polish/in-game.tra"
+
+
+BEGIN @100500 GROUP @100499 DESIGNATED 500                                                                             //Randomise identity of the TotSC tome
+REQUIRE_PREDICATE GAME_IS "totsc tutu_totsc bgt" @100020 
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
+
+  COPY_EXISTING sw1h01.itm "override/flrc500.mrk"
+
+
+BEGIN @100510 GROUP @100499 DESIGNATED 510                                                                             //Randomly not randomise items
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
+
+  PRINT @100022
+  ACTION_READLN RandomNotRandom
+  OUTER_WHILE !IS_AN_INT RandomNotRandom OR RandomNotRandom > 100 OR RandomNotRandom < 0 BEGIN
+    PRINT @100022
+    ACTION_READLN RandomNotRandom
+  END
+
+  COPY "...blank" "override/flrc510.mrk"
+    INSERT_BYTES 0 1
+    WRITE_BYTE 0 RandomNotRandom
+
+
+BEGIN @100520 GROUP @100499 DESIGNATED 520
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023            //Kangaxx further sealed away
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+  
+  COPY_EXISTING sw1h01.itm "override/flrc520.mrk"
+  
+
+BEGIN @100530 GROUP @100499 DESIGNATED 530                                                                             //Randomise scrolls
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
+
+  COPY_EXISTING sw1h01.itm "override/flrc530.mrk"
+
+  
+BEGIN @100540 GROUP @100499 DESIGNATED 540                                                                             //Randomise the heads of the Flail of Ages
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  COPY_EXISTING sw1h01.itm "override/flrc540.mrk"
+
+/*
+BEGIN @100550 GROUP @100499 DESIGNATED 550
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023            //Randomise the component needed to forge the Improved Mace of Disruption
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  COPY_EXISTING sw1h01.itm "override/flrc550.mrk"
+*/
+
+BEGIN @100560 GROUP @100499 DESIGNATED 560                                                                             //More Spell Shield scrolls
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  COPY_EXISTING udduer01.sto override
+    READ_LONG 0x34 sale_off
+    READ_LONG 0x38 num_itm
+    SPRINT item blank
+    FOR (i=0;i<num_itm AND ! "%item%" STRING_EQUAL_CASE scrl8x;++i) BEGIN
+      READ_ASCII sale_off + 0x1c*i item ELSE blank
+      PATCH_IF "%item%" STRING_EQUAL_CASE scrl8x BEGIN
+        WRITE_LONG sale_off + 0x1c*i + 0x14 THIS < 3 ? 3 : THIS
+      END
+    END
+    PATCH_IF ! "%item%" STRING_EQUAL_CASE scrl8x BEGIN
+      ADD_STORE_ITEM scrl8x BEFORE ~scrlal scrl7q scrl7p~ #0 #0 #0 identified #3
+    END
+  BUT_ONLY
+
+
+BEGIN @101100 SUBCOMPONENT @101000 DESIGNATED 1100                                                                     //Randomise items: No items are lost
+                                                                                                                       //Marker file: flrandomiser1.mrk
+  ACTION_IF FILE_EXISTS_IN_GAME ar0125.are BEGIN
+    FAIL @100015
+  END
+
+  OUTER_SET lost = 0
+  OUTER_SET weidu_action = 0
+
+  INCLUDE "randomiser/lib/random_seed.tpa"                                                                             //Asks the user if saved game compatibility should be preserved, provided the mod's been installed before
+
+  INCLUDE "randomiser/lib/missing_items.tpa"                                                                           //Adds certain items if they are missing
+
+  INCLUDE "randomiser/lib/arrays.tpa"                                                                                  //Creates arrays from the mod's 2da files
+
+  INCLUDE "randomiser/lib/copy.tpa"                                                                                    //Copies creatures, marker file
+
+  INCLUDE "randomiser/lib/numbercrunchers.tpa"                                                                         //Creates the script that makes the randomisation creatures spawn at the start of the game
+
+  INCLUDE "randomiser/lib/delete.tpa"                                                                                  //Deletes items found in itemlist.2da from their default location and gives the appropriate randomisation creature the token assocaited with the item
+
+  INCLUDE "randomiser/lib/fixes.tpa"                                                                                   //Makes some minor adjustsments
+
+  INCLUDE "randomiser/lib/delivery.tpa"                                                                                //Creates the scripts that places the randomised items at their new location. See locationlist.2da
+
+  INCLUDE "randomiser/lib/ssl.tpa"                                                                                     //Calls SSL to create the randomisation scripts
+
+
+BEGIN @101200 SUBCOMPONENT @101000 DESIGNATED 1200                                                                     //Randomise items: Some items are lost
+                                                                                                                       //Marker file: flrandomiser1.mrk
+  ACTION_IF FILE_EXISTS_IN_GAME ar0125.are BEGIN
+    FAIL @100015
+  END
+
+  OUTER_SET lost = 1
+  OUTER_SET weidu_action = 0
+  
+  INCLUDE "randomiser/lib/random_seed.tpa"
+
+  INCLUDE "randomiser/lib/missing_items.tpa"                                                                           
+
+  INCLUDE "randomiser/lib/arrays.tpa"
+  
+  INCLUDE "randomiser/lib/copy.tpa"
+
+  INCLUDE "randomiser/lib/numbercrunchers.tpa"
+
+  INCLUDE "randomiser/lib/delete.tpa"
+
+  INCLUDE "randomiser/lib/fixes.tpa"
+
+  INCLUDE "randomiser/lib/delivery.tpa"
+
+  INCLUDE "randomiser/lib/ssl.tpa"
+  
+
+BEGIN @101300 SUBCOMPONENT @101000 DESIGNATED 1300                                                                     //WeiDU randomisation: no items are lost
+                                                                                                                       //Marker file: flrandomiser2.mrk
+  OUTER_SET lost = 0
+  OUTER_SET weidu_action = 1
+
+  INCLUDE "randomiser/lib/random_seed.tpa"
+
+  INCLUDE "randomiser/lib/missing_items.tpa"
+
+  INCLUDE "randomiser/lib/arrays.tpa"
+
+  INCLUDE "randomiser/lib/delete.tpa"
+  
+  INCLUDE "randomiser/lib/fixes.tpa"
+
+  INCLUDE "randomiser/lib/weidu_action.tpa"                                                                            //Randomises and distributes items
+
+
+BEGIN @101400 SUBCOMPONENT @101000 DESIGNATED 1400                                                                     //WeiDU randomisation: some items are lost
+                                                                                                                       //Marker file: flrandomiser2.mrk
+  OUTER_SET lost = 1
+  OUTER_SET weidu_action = 1
+
+  INCLUDE "randomiser/lib/random_seed.tpa"
+
+  INCLUDE "randomiser/lib/missing_items.tpa"
+
+  INCLUDE "randomiser/lib/arrays.tpa"
+
+  INCLUDE "randomiser/lib/delete.tpa"
+  
+  INCLUDE "randomiser/lib/fixes.tpa"
+
+  INCLUDE "randomiser/lib/weidu_action.tpa"
+
+
+
+BEGIN @105005 GROUP @105000 DESIGNATED 5005                                                                            //Beholders have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN udelder BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+
+BEGIN @105015 GROUP @105000 DESIGNATED 5015                                                                            //Demi-liches have no items rquipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN demilich BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+
+BEGIN @105025 GROUP @105000 DESIGNATED 5025                                                                            //Dragons have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN udsilver shadra01 firkra02 dragblac gorsal fsdragon dragblue bazdra03 BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+
+BEGIN @105035 GROUP @105000 DESIGNATED 5035                                                                            //Elementals have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN elemimix BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+  
+BEGIN @105045 GROUP @105000 DESIGNATED 5045                                                                            //Fiends have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN pmaster obsdem01 gorchr BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+
+BEGIN @105055 GROUP @105000 DESIGNATED 5055                                                                            //Golems have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN gorgoli BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+/* //Vide infra
+BEGIN @105105 GROUP @105000 DESIGNATED 5105                                                                            //Illithids have no weapons equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN ppmind01 senill02 gormind BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items INT_VAR f_Lower = 9 f_Upper = 13 END
+      BUT_ONLY
+    END
+  END
+*/
+
+BEGIN @105065 GROUP @105000 DESIGNATED 5065                                                                            //Master Brains have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN udmaster BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+
+BEGIN @105075 GROUP @105000 DESIGNATED 5075                                                                            //Slimes have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "bg1 totsc tutu tutu_totsc bgt" @105003
+
+  ACTION_FOR_EACH cre IN schlum BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%TUTU%%cre%.cre" BEGIN
+      COPY_EXISTING "%TUTU%%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+
+BEGIN @105085 GROUP @105000 DESIGNATED 5085                                                                            //Trolls have no items equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN pptroll1 pptroll2 BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items END
+      BUT_ONLY
+    END
+  END
+
+/* //Item Randomiser doesn't cause problems like these, but people will think it does. Vaaaiiin.
+BEGIN @105095 GROUP @105000 DESIGNATED 5095                                                                            //Vampires have no weapons equipped
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  ACTION_FOR_EACH cre IN lassal02 bodvam01 bodvam02 bodtan BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+      COPY_EXISTING "%cre%.cre" override
+        LPF unequip_items INT_VAR f_Lower = 9 f_Upper = 13 END
+      BUT_ONLY
+    END
+  END
+*/
+
+BEGIN @109000 DESIGNATED 9000                                                                                          //Cespenar can forge SoA items
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre AND !FILE_EXISTS_IN_GAME _sw1h01.itm @109001
+
+  COMPILE "randomiser/d/botsmith.d"
+  EXTEND_BOTTOM botsmith.bcs "randomiser/baf/botsmith.baf"
+  
+
+BEGIN @109050 DESIGNATED 9050                                                                                          //Make Gromnir a proper Barbarian
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre AND !FILE_EXISTS_IN_GAME _sw1h01.itm @109001 
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME gromnir.itm @109002
+
+  INCLUDE "randomiser/lib/gromnir.tpa"
+
+
+BEGIN @110100 SUBCOMPONENT @110000 DESIGNATED 10100                                                                    //Remove all scrolls of Protection from Undead from stores
+
+  OUTER_SPRINT itm_to_del "%TUTU_VAR%scrl09"
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    LAUNCH_PATCH_MACRO del_sto_itm
+  BUT_ONLY
+
+
+BEGIN @110200 SUBCOMPONENT @110000 DESIGNATED 10200                                                                    //Remove Prot from Undead scrolls from 9 out of 10 stores
+
+  OUTER_SPRINT itm_to_del "%TUTU_VAR%scrl09"
+  COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
+    PATCH_IF RANDOM(1 100) < 90 BEGIN
+      LAUNCH_PATCH_MACRO del_sto_itm
+    END
+  BUT_ONLY
+  
+
+BEGIN @110210 DESIGNATED 10210                                                                                         //Duergar merchants
+REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
+
+  COMPILE "randomiser/d/udduer01.d"
+
+  
+BEGIN @110300 DESIGNATED 10300                                                                                         //Prevent Watcker's Keep statues from disappearing
+REQUIRE_PREDICATE !MOD_IS_INSTALLED scsii.tp2 7030
+              AND !MOD_IS_INSTALLED scsii.tp2 7031
+              AND !MOD_IS_INSTALLED scsii.tp2 7032
+              AND !MOD_IS_INSTALLED scsii.tp2 7033
+              AND !MOD_IS_INSTALLED tactics.tp2 16 @110301
+REQUIRE_PREDICATE GAME_IS tob @109001
+
+  COPY_EXISTING ar3001.bcs override
+    DECOMPILE_BCS_TO_BAF
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("SetDifficulty","AR3001",0)~ ~False()~
+    COMPILE_BAF_TO_BCS
+  BUT_ONLY
+
+
+
+
+
+
+
+

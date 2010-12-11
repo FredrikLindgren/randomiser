@@ -1,0 +1,12 @@
+
+IF
+	Clicked([ANYONE])
+	Global("toggle","AR1513",1)
+	Global("page","AR1513",5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,50658)
+		IncrementGlobal("page","AR1513",1)
+		GiveItemCreate("scrl8z",LastTrigger,0,0,0) // Simulacrum
+		GiveItemCreate("scrl9b",LastTrigger,0,0,0) // Summon Fiend
+END

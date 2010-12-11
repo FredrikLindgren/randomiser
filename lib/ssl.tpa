@@ -1,0 +1,112 @@
+
+ACTION_IF BG1 = 1 AND BGT = 0 BEGIN
+  OUTER_SPRINT $array(0) bg1_tiers
+  OUTER_SPRINT $area(0) "%BG1Area%"
+  OUTER_SET pass = 1
+END
+ACTION_IF BGT = 1 BEGIN
+  OUTER_SPRINT $array(0) bg1_tiers
+  OUTER_SPRINT $array(1) bg2_tiers
+  OUTER_SPRINT $area(0) "%BG1Area%"
+  OUTER_SPRINT $area(1) "%BG2Area%"
+  OUTER_SET pass = 2
+END
+ACTION_IF BG1 = 0 BEGIN
+  OUTER_SPRINT $array(0) tier_array
+  OUTER_SPRINT $area(0) "%BG2Area%"
+  OUTER_SET pass = 1
+END
+
+OUTER_FOR (sslpass=0;sslpass<pass;sslpass+=1) BEGIN
+  OUTER_SPRINT array $array("%sslpass%")
+  OUTER_SPRINT AreaCode $area("%sslpass%")
+
+  //OUTER_SPRINT $removed_tier_array(0) ""
+  ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN                                                       //SPRUNT in stuff_cre macro
+    //ACTION_IF ria_entry_0 > 0 BEGIN
+      OUTER_SET add_tier = 1
+      ACTION_PHP_EACH removed_tier_array AS rta_entry => blank BEGIN
+        ACTION_IF "%ria_entry_0%" STRING_EQUAL_CASE "%rta_entry_0%" BEGIN
+          OUTER_SET add_tier = 0
+        END
+      END
+      OUTER_SET disallow_tier = 1
+      ACTION_PHP_EACH "%array%" AS entry => blank BEGIN
+        ACTION_IF /*entry_0 > 0 AND*/ "%entry_0%" STRING_EQUAL_CASE "%ria_entry_0%" BEGIN
+          OUTER_SET disallow_tier = 0
+        END
+      END
+      ACTION_IF add_tier = 1 AND disallow_tier = 0 BEGIN
+        OUTER_SPRINT $removed_tier_array("%ria_entry_0%") ""
+      END
+    //END
+  END
+
+  OUTER_SPRINT TierList ""
+  ACTION_PHP_EACH removed_tier_array AS rta_entry => blank BEGIN
+    //ACTION_IF rta_entry_0 > 0 BEGIN
+      OUTER_SPRINT TierList "%TierList%"^"%rta_entry_0%;"
+    //END
+  END
+
+  OUTER_PATCH_SAVE TierList "%TierList%" BEGIN
+    REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ";$" ""
+  END
+  
+  ACTION_PHP_EACH "%array%" AS tier => blank BEGIN
+    //ACTION_IF tier > 0 BEGIN
+      ACTION_IF lost = 0 OR "%tier%" STRING_EQUAL_CASE fa OR "%tier%" STRING_EQUAL_CASE ka BEGIN
+        //OUTER_SET SChanceNotLost = 100
+        //OUTER_SET SLostChance = 0
+        OUTER_SPRINT sslvar "%sslvar%"^"AreLost=False"
+      END ELSE ACTION_IF lost = 1 BEGIN
+        OUTER_SET SChanceNotLost = 200 - 2*LostChance
+        OUTER_SET SLostChance = 2*LostChance
+        OUTER_SPRINT sslvar "%sslvar%"^"AreLost=True&LostChance=%SLostChance%&ChanceNotLost=%SChanceNotLost%"
+      END
+      ACTION_IF "%tier%" STRING_EQUAL_CASE 7 OR "%tier%" STRING_EQUAL_CASE 28 BEGIN
+        OUTER_SPRINT sslvar "%sslvar%"^"&IsTier5=True&TierList=%TierList%"
+      END ELSE BEGIN
+        OUTER_SPRINT sslvar "%sslvar%"^"&IsTier5=False"
+      END
+
+      OUTER_SPRINT TokenList ""
+      ACTION_PHP_EACH removed_item_array AS entry => blank BEGIN
+        ACTION_IF "%entry_0%" STRING_EQUAL_CASE "%tier%" BEGIN
+          OUTER_SPRINT TokenList "%TokenList%"^"%entry_1%;"
+        END
+      END
+      OUTER_PATCH_SAVE TokenList "%TokenList%" BEGIN
+        REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ";$" ""
+      END
+
+      OUTER_SPRINT LocationList ""
+      OUTER_SET MaxRandom = 0
+      OUTER_SET counter = 0
+      ACTION_PHP_EACH location_array AS entry => int BEGIN
+        OUTER_SPRINT location    "%entry_0%"
+        //OUTER_SET    tiercheck =   entry_1
+        OUTER_SPRINT tiercheck   "%entry_1%"
+        ACTION_IF "%tiercheck%" STRING_EQUAL_CASE "%tier%" BEGIN
+          OUTER_SET counter += 1
+          OUTER_SPRINT LocationList "%LocationList%"^"%counter%;"
+          OUTER_SET MaxRandom = MaxRandom < counter ? counter : MaxRandom
+        END
+      END
+      OUTER_PATCH_SAVE LocationList "%LocationList%" BEGIN
+        REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ";$" ""
+      END
+
+      OUTER_SPRINT sslvar "%sslvar%"^"&LocationList=%LocationList%&MaxRandom=%MaxRandom%&TierNumber=%tier%&TokenList=%TokenList%&AreaCode=%AreaCode%"
+      ACTION_IF "%WEIDU_OS%" STRING_EQUAL_CASE WIN32 BEGIN
+        AT_NOW ~randomiser\ssl\ssl.exe "randomiser\ssl\%ssl_file%.ssl %sslvar% -l randomiser\ssl\library"~
+      END ELSE BEGIN
+        AT_NOW ~chmod 755 randomiser/ssl/ssl.pl~
+        AT_NOW ~/usr/bin/perl randomiser/ssl/ssl.pl "randomiser/ssl/%ssl_file%.ssl %sslvar% -l randomiser/ssl/library"~ EXACT
+      END
+      COPY "randomiser/ssl/ssl_out/%ssl_file%.baf" "randomiser/ssl/compile/%ssl_file%%tier%.baf"
+    //END
+  END
+END
+
+COMPILE "randomiser/ssl/compile"

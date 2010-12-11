@@ -1,0 +1,8 @@
+COPY_EXISTING sw1h01.itm "override/flrandomiser1.mrk"
+
+ACTION_PHP_EACH tier_array AS ta_entry => blank BEGIN
+  ACTION_IF BG1 = 0 OR Tutu = 1 OR BGT = 1 BEGIN
+    COPY "randomiser/copy/flrandom.cre" "override/fltier%ta_entry_0%.cre"
+      WRITE_ASCIIE 0x248 "fltier%ta_entry_0%" #8
+  END 
+END

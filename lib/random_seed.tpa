@@ -1,0 +1,89 @@
+
+OUTER_SPRINT Preserve n
+OUTER_SET LostChance = 0
+OUTER_SET RandomNotRandom = 0
+
+ACTION_IF FILE_EXISTS_IN_GAME "fl#randomseed.2da" AND FILE_EXISTS_IN_GAME "fl#removeditems.2da" AND FILE_EXISTS_IN_GAME "fl#randoptions.2da" BEGIN
+  PRINT @100024
+  ACTION_READLN Preserve
+  OUTER_WHILE !"%Preserve%" STRING_EQUAL_CASE y AND !"%Preserve%" STRING_EQUAL_CASE n BEGIN
+    PRINT @100024
+    ACTION_READLN Preserve
+  END
+END
+
+ACTION_IF !INTERACTIVE BEGIN //During non-interactive manipulations of the mod we want to preserve saved-game compatibility
+  LOG "NON-INTERACTIVE"
+  OUTER_SPRINT Preserve y
+END
+
+ACTION_IF "%Preserve%" STRING_EQUAL_CASE n BEGIN
+  OUTER_SET Seed = RANDOM(1 0xffff)
+  RANDOM_SEED "%Seed%"
+  ACTION_IF lost BEGIN
+    PRINT @100021
+    ACTION_READLN LostChance
+    OUTER_WHILE !IS_AN_INT LostChance OR LostChance > 100 OR LostChance < 0 BEGIN
+      PRINT @100021
+      ACTION_READLN LostChance
+    END
+  END
+  ACTION_IF FILE_EXISTS_IN_GAME flrc510.mrk BEGIN
+    COPY_EXISTING flrc510.mrk override
+      READ_BYTE 0 RandomNotRandom ELSE 0
+    BUT_ONLY
+  END
+
+  COPY + "...blank" "override/fl#randomseed.2da"
+    INSERT_BYTES 0 4
+    WRITE_LONG 0 Seed
+    INSERT_BYTES 4 1
+    WRITE_BYTE 4 LostChance
+    INSERT_BYTES 5 1
+    WRITE_BYTE 5 RandomNotRandom
+    
+  OUTER_SPRINT string "Header"
+  OUTER_SET rc = 1
+  OUTER_PATCH_SAVE string "%string%" BEGIN
+    PATCH_FOR_EACH condition IN weidu_action BEGIN
+      PATCH_IF EVAL "%condition%" BEGIN
+        INSERT_2DA_ROW rc 1 "%condition%"
+        ++rc
+        SET $RandOptions("%condition%") = 1
+      END
+    END
+    PATCH_FOR_EACH condition IN flrc500 flrc520 flrc530 flrc540 flrc550 flrc560 BEGIN
+      TO_LOWER condition
+      PATCH_IF FILE_EXISTS_IN_GAME "%condition%.mrk" BEGIN
+        INSERT_2DA_ROW rc 1 "%condition%"
+        ++rc
+        SET $RandOptions("%condition%") = 1
+      END
+    END
+  END
+  COPY + "...blank" "override/fl#randoptions.2da"
+    INSERT_BYTES 0 STRING_LENGTH "%string%"
+    WRITE_ASCIIE 0 "%string%" (STRING_LENGTH "%string%")
+
+END
+ACTION_IF "%Preserve%" STRING_EQUAL_CASE y BEGIN
+  COPY_EXISTING "fl#randomseed.2da" override
+    READ_LONG 0 Seed
+    READ_BYTE 4 LostChance
+    READ_BYTE 5 RandomNotRandom
+  BUT_ONLY
+  COPY_EXISTING "fl#randoptions.2da" override
+    READ_2DA_ENTRIES_NOW r2en_randoptions 1
+    FOR (i=1;i<r2en_randoptions;++i) BEGIN
+      READ_2DA_ENTRY_FORMER r2en_randoptions i 0 option
+      SET $RandOptions("%option%") = 1
+    END
+  BUT_ONLY
+  ACTION_IF !weidu_action AND VARIABLE_IS_SET $RandOptions("weidu_action") BEGIN
+    FAIL @100025
+  END
+  ACTION_IF weidu_action AND !VARIABLE_IS_SET $RandOptions("weidu_action") BEGIN
+    FAIL @100026
+  END
+  RANDOM_SEED "%Seed%"
+END

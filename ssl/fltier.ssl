@@ -1,0 +1,85 @@
+//INCLUDE FILE(randomiser/ssl/include/shout.ssl)
+
+//INCLUDE FILE(randomiser/ssl/include/debug.ssl)
+
+BEGIN LOOP(Value||LocationList)
+BEGIN LOOP(Token1||TokenList)
+  IF
+      IgnoreBlock(AreLost)
+      HasItem("flTierNumbertToken1",Myself)
+      Global("flTierNumbertToken1","GLOBAL",0)
+      RandomNum(MaxRandom,Value)
+      BEGIN LOOP(Token2||TokenList)
+        !Global("flTierNumbertToken2","GLOBAL",Value)
+      END LOOP
+  THEN 
+    RESPONSE #100
+      SetGlobal("flTierNumbertToken1","GLOBAL",Value)
+  END
+
+  IF
+      RequireBlock(AreLost)
+      HasItem("flTierNumbertToken1",Myself)
+      Global("flTierNumbertToken1","GLOBAL",0)
+      RandomNum(MaxRandom,Value)
+      BEGIN LOOP(Token2||TokenList)
+        !Global("flTierNumbertToken2","GLOBAL",Value)
+      END LOOP
+  THEN 
+    RESPONSE #ChanceNotLost
+      SetGlobal("flTierNumbertToken1","GLOBAL",Value)
+    RESPONSE #LostChance
+      SetGlobal("flTierNumbertToken1","GLOBAL",-1)
+  END
+END LOOP
+END LOOP
+
+IF
+  IgnoreBlock(IsTier5)
+  BEGIN LOOP(Token||TokenList)
+    !Global("flTierNumbertToken","GLOBAL",0)
+  END LOOP
+  Global("flTierNumbertDone","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("flTierNumbertDone","GLOBAL",1)
+    DestroySelf()
+END
+
+IF
+  RequireBlock(IsTier5)
+  BEGIN LOOP(Token||TokenList)
+    !Global("flTierNumbertToken","GLOBAL",0)
+  END LOOP
+  Global("flTierNumbertDone","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("flTierNumbertDone","GLOBAL",1)
+END
+
+IF
+  IgnoreBlock(IsTier5)
+  Global("flTierNumbertDone","GLOBAL",1)
+THEN RESPONSE #100
+  DestroySelf()
+END
+
+IF
+  RequireBlock(IsTier5)
+  BEGIN LOOP(Number||TierList)
+    Global("flNumbertDone","GLOBAL",1)
+  END LOOP
+  Global("flSqueaked","GLOBAL",0)
+  !AreaCheck("ar3000")
+  !AreaCheck("ar4000")
+THEN RESPONSE #100
+  SetGlobal("flSqueaked","GLOBAL",1)
+  DisplayString(Myself,~Squeak!~)
+  DestroySelf()
+END
+
+IF
+  Global("flSqueaked","GLOBAL",1)
+THEN RESPONSE #100
+  DestroySelf()
+END

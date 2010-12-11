@@ -1,0 +1,216 @@
+
+<<<<<<<< ...randomiser/fl-inlined/creatureblock.baf
+
+IF
+  Exists("%Target%")
+  Global("%Variable%","GLOBAL",%Value%)
+THEN RESPONSE #100
+  GiveItemCreate("%Item%","%Target%",%Charge1%,%Charge2%,%Charge3%)
+  SetGlobal("%Variable%","GLOBAL",-1)
+  DestroySelf()
+END
+>>>>>>>>
+
+<<<<<<<< ...randomiser/fl-inlined/containerblock.baf
+
+IF
+  Exists("%Target%")
+  Global("%Variable%","GLOBAL",%Value%)
+THEN RESPONSE #100
+  ActionOverride("%Target%",CreateItem("%Item%",%Charge1%,%Charge2%,%Charge3%))
+  SetGlobal("%Variable%","GLOBAL",-1)
+  DestroySelf()
+END
+>>>>>>>>
+
+ACTION_PHP_EACH tier_array AS ta_tier => blank BEGIN
+  OUTER_SET counter = 0
+  ACTION_PHP_EACH location_array AS entry => int BEGIN
+    ACTION_IF "%ta_tier%" STRING_EQUAL_CASE "%entry_1%" BEGIN
+      OUTER_SET counter += 1
+      OUTER_SET    Value =   counter
+      //OUTER_SET    Tier  =   entry_1                                                                                       //Tier value
+      OUTER_SPRINT Tier    "%entry_1%"
+      OUTER_SPRINT res     "%entry_2%"                                                                                     //Container name, cre file, .bcs, special measures needed (.fake) or other
+      OUTER_SPRINT area    "%entry_3%"                                                                                     //Associated area
+
+      ACTION_IF (("%res%" STRING_MATCHES_REGEXP ".*\.cre$" = 0 AND FILE_EXISTS_IN_GAME "%res%") OR "%res%" STRING_MATCHES_REGEXP ".*\..*") AND FILE_EXISTS_IN_GAME "%area%.are" BEGIN
+        ACTION_IF "%res%" STRING_MATCHES_REGEXP ".*\.cre$" = 0 BEGIN
+          COPY_EXISTING "%res%" override
+            READ_ASCII 0x280 dv ELSE invalid (32) NULL
+          BUT_ONLY
+          OUTER_SPRINT Target "%dv%"
+          OUTER_SET creature = 1
+        END ELSE BEGIN
+          OUTER_SPRINT Target "%res%"
+          OUTER_SET creature = 0
+        END
+        OUTER_SPRINT script_string ""
+        ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN
+          ACTION_IF "%ria_entry_0%" STRING_EQUAL_CASE "%Tier%" BEGIN
+            OUTER_SPRINT ria_tier "%ria_entry_0%"
+            OUTER_SPRINT ria_token "%ria_entry_1%"
+            OUTER_SPRINT ria_ident "%ria_entry_2%"
+            OUTER_SPRINT ria_result ""
+            ACTION_IF VARIABLE_IS_SET $extra_tokens("%ria_tier%" "%ria_token%") BEGIN
+              OUTER_SPRINT ria_result $extra_tokens("%ria_tier%" "%ria_token%")
+            END
+            ACTION_PHP_EACH item_array AS ia_entry => blank BEGIN
+              ACTION_IF "%ria_tier%" STRING_EQUAL_CASE "%ia_entry_3%" AND ("%ria_token%" STRING_EQUAL_CASE "%ia_entry_4%" OR "%ria_result%" STRING_EQUAL_CASE "%ia_entry_4%") BEGIN
+                OUTER_SPRINT Item "%ia_entry_0%"
+                OUTER_SPRINT tiercheck   "%ia_entry_3%"
+                //OUTER_SPRINT ia_token    "%ia_entry_4%"
+                OUTER_SPRINT ia_ident    "%ia_entry_5%"
+              END
+            END
+            OUTER_SET Charge1 = 0
+            OUTER_SET Charge2 = 0
+            OUTER_SET Charge3 = 0
+            ACTION_PHP_EACH charge_array AS ca_entry => blank BEGIN                                                        //SPRUNT by read_charge_array macro
+              ACTION_IF "%ria_token%" STRING_MATCHES_REGEXP "x.*" = 0 AND "%ia_tier%" STRING_EQUAL_CASE "%ca_entry_1%" BEGIN
+                OUTER_SPRINT compare_token $extra_tokens("%ia_tier%" "%ria_token%")
+                ACTION_IF "%compare_token%" STRING_EQUAL_CASE "%ca_entry_0%" BEGIN
+                  OUTER_SET Charge1 = ca_entry_2
+                  OUTER_SET Charge2 = ca_entry_3
+                  OUTER_SET Charge3 = ca_entry_4
+                END
+              END ELSE ACTION_IF "%ca_entry_0%" STRING_EQUAL_CASE "%ria_token%" AND "%ca_entry_1%" STRING_EQUAL_CASE "%Tier%" BEGIN
+                OUTER_SET Charge1 = ca_entry_2
+                OUTER_SET Charge2 = ca_entry_3
+                OUTER_SET Charge3 = ca_entry_4
+              END
+            END
+            OUTER_SPRINT Variable "fl%Tier%t%ria_token%"
+            ACTION_IF VARIABLE_IS_SET $RandOptions(flrc500) AND "%ia_ident%" STRING_EQUAL_CASE b2c BEGIN //I'm full of good ideas today
+              OUTER_SET book_count = 0
+              ACTION_FOR_EACH book IN "%TUTU_VAR%book03" "%TUTU_VAR%book04" "%TUTU_VAR%book05" "%TUTU_VAR%book06" "%TUTU_VAR%book07" "%TUTU_VAR%book08" BEGIN
+                OUTER_SET ++book_count
+                OUTER_SPRINT Item "%book%"
+                OUTER_PATCH_SAVE script_string "%script_string%" BEGIN
+                  PATCH_IF creature = 1 BEGIN
+                    INNER_ACTION BEGIN
+                      COPY - "...randomiser/fl-inlined/creatureblock.baf" "...randomiser/fl-inlined/altcreblock.baf"
+                        REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "IF" "IF RandomNum(6,%book_count%)"
+                    END
+                    APPEND_FILE_EVALUATE "...randomiser/fl-inlined/altcreblock.baf"
+                  END ELSE BEGIN
+                    INNER_ACTION BEGIN
+                      COPY - "...randomiser/fl-inlined/containerblock.baf" "...randomiser/fl-inlined/altareblock.baf"
+                        REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "IF" "IF RandomNum(6,%book_count%)"
+                    END
+                    APPEND_FILE_EVALUATE "...randomiser/fl-inlined/altareblock.baf"
+                  END
+                END
+              END
+            END ELSE BEGIN
+              OUTER_PATCH_SAVE script_string "%script_string%" BEGIN
+                PATCH_IF creature = 1 BEGIN
+                  APPEND_FILE_EVALUATE "...randomiser/fl-inlined/creatureblock.baf"
+                END ELSE BEGIN
+                  APPEND_FILE_EVALUATE "...randomiser/fl-inlined/containerblock.baf"
+                END
+              END
+            END
+          END
+        END
+
+        COPY "...blank" "randomiser/baf/compile/fl%Tier%t%Value%.baf"
+          INSERT_BYTES 0 STRING_LENGTH "%script_string%"
+          WRITE_ASCIIE 0 "%script_string%"
+        ACTION_IF BG1 = 0 OR Tutu = 1 OR BGT = 1 BEGIN
+          COPY "randomiser/copy/flrandom.cre" "override/fl%Tier%t%Value%.cre"
+            WRITE_ASCIIE 0x248 "fl%Tier%t%Value%" #8
+        END
+        COPY_EXISTING "%area%.are" override
+          SPRINT ia_cre "fl%Tier%t%Value%"
+          LAUNCH_PATCH_FUNCTION insert_actor END
+        BUT_ONLY
+      END
+
+      ACTION_IF "%res%" STRING_MATCHES_REGEXP ".*\.flg$" = 0 AND FILE_EXISTS_IN_GAME "%area%.are" BEGIN
+
+        OUTER_SPRINT script_string ""
+        ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN
+          ACTION_IF "%ria_entry_0%" STRING_EQUAL_CASE "%Tier%" BEGIN
+            OUTER_SPRINT ria_tier "%ria_entry_0%"
+            OUTER_SPRINT ria_token "%ria_entry_1%"
+            OUTER_SPRINT ria_ident "%ria_entry_2%"
+            OUTER_SPRINT ria_result ""
+            ACTION_IF VARIABLE_IS_SET $extra_tokens("%ria_tier%" "%ria_token%") BEGIN
+              OUTER_SPRINT ria_result $extra_tokens("%ria_tier%" "%ria_token%")
+            END
+            ACTION_PHP_EACH item_array AS ia_entry => blank BEGIN
+              ACTION_IF "%ria_tier%" STRING_EQUAL_CASE "%ia_entry_3%" AND ("%ria_token%" STRING_EQUAL_CASE "%ia_entry_4%" OR "%ria_result%" STRING_EQUAL_CASE "%ia_entry_4%") BEGIN
+                OUTER_SPRINT Item "%ia_entry_0%"
+              END
+            END
+            //OUTER_SPRINT ia_token  "%ia_entry_4%"
+            //OUTER_SPRINT Item "%ia_entry_0%"
+            OUTER_SET Charge1 = 0
+            OUTER_SET Charge2 = 0
+            OUTER_SET Charge3 = 0
+            ACTION_PHP_EACH charge_array AS ca_entry => blank BEGIN
+              ACTION_IF "%ria_token%" STRING_MATCHES_REGEXP "x.*" = 0 AND "%ia_tier%" STRING_EQUAL_CASE "%ca_entry_1%" BEGIN
+                OUTER_SPRINT compare_token $extra_tokens("%ia_tier%" "%ria_token%")
+                ACTION_IF "%compare_token%" STRING_EQUAL_CASE "%ca_entry_0%" BEGIN
+                  OUTER_SET Charge1 = ca_entry_2
+                  OUTER_SET Charge2 = ca_entry_3
+                  OUTER_SET Charge3 = ca_entry_4
+                END
+              END ELSE ACTION_IF "%ca_entry_0%" STRING_EQUAL_CASE "%ria_token%" AND "%ca_entry_1%" STRING_EQUAL_CASE "%Tier%" BEGIN
+                OUTER_SET Charge1 = ca_entry_2
+                OUTER_SET Charge2 = ca_entry_3
+                OUTER_SET Charge3 = ca_entry_4
+              END
+            END
+            OUTER_SPRINT Variable "fl%Tier%t%ria_token%"
+            LAF select_group_cre STR_VAR f_Group = EVAL "%res%" f_Item = EVAL "%Item%" RET SelectedCre = f_Selected END
+            COPY_EXISTING "%SelectedCre%.cre" override
+              READ_ASCII 0x280 Target ELSE invalid (32) NULL
+            BUT_ONLY
+            OUTER_PATCH_SAVE script_string "%script_string%" BEGIN
+              APPEND_FILE_EVALUATE "...randomiser/fl-inlined/creatureblock.baf"
+            END
+          END
+        END
+        COPY "...blank" "randomiser/baf/compile/fl%Tier%t%Value%.baf"
+          INSERT_BYTES 0 STRING_LENGTH "%script_string%"
+          WRITE_ASCIIE 0 "%script_string%"
+        ACTION_IF BG1 = 0 OR Tutu = 1 OR BGT = 1 BEGIN
+          COPY "randomiser/copy/flrandom.cre" "override/fl%Tier%t%Value%.cre"
+            WRITE_ASCIIE 0x248 "fl%Tier%t%Value%" #8
+        END
+        COPY_EXISTING "%area%.are" override
+          SPRINT ia_cre "fl%Tier%t%Value%"
+          LAUNCH_PATCH_FUNCTION insert_actor END
+        BUT_ONLY
+      END
+
+      ACTION_IF "%res%" STRING_EQUAL_CASE blpool.bcs AND FILE_EXISTS_IN_GAME blpool.bcs AND (BG1 = 0 OR BGT = 1) BEGIN
+        OUTER_SPRINT target_bcs "%res%"
+        OUTER_SPRINT baf flpool
+        OUTER_SPRINT replace_trigger ~Global(\"Pool\",\"AR0801\",1)~
+        LAUNCH_ACTION_FUNCTION process_script_for_m1 INT_VAR Get_Tra = 1 STR_VAR tra_array = blpool_item_tra END
+        EXTEND_BOTTOM "%res%" "randomiser/baf/pool_out_of_items.baf"
+      END
+
+      ACTION_IF "%res%" STRING_EQUAL_CASE ppbook.bcs AND FILE_EXISTS_IN_GAME ppbook.bcs AND (BG1 = 0 OR BGT = 1) BEGIN
+        OUTER_SPRINT target_bcs "%res%"
+        OUTER_SPRINT baf flbook
+        OUTER_SPRINT replace_trigger ~Global(\"page\",\"AR1513\",5)~
+        LAUNCH_ACTION_FUNCTION process_script_for_m1 END
+        EXTEND_BOTTOM "%res%" "randomiser/baf/book_out_of_items.baf"
+      END
+
+      ACTION_IF "%res%" STRING_EQUAL_CASE troalt.bcs AND FILE_EXISTS_IN_GAME troalt.bcs AND (BG1 = 0 OR BGT = 1) BEGIN
+        OUTER_SPRINT target_bcs "%res%"
+        OUTER_SPRINT baf fltroalt
+        OUTER_SPRINT replace_trigger ~Contains(\"MISC9D\",Myself)~
+        LAUNCH_ACTION_FUNCTION process_script_for_m1 END
+        EXTEND_BOTTOM "%res%" "randomiser/baf/altar_out_of_items.baf"
+      END
+    END
+  END
+END
+
+COMPILE "randomiser/baf/compile"

@@ -1,0 +1,12 @@
+
+IF
+	Contains("MISC9D",Myself) // Giant Troll's Head
+THEN
+	RESPONSE #100
+		DestroyItem("MISC9D") // Giant Troll's Head
+		SetGlobal("SecretThree","GLOBAL",1)
+		PlaySound("EFF_P92")
+		ScreenShake([20.45],15)
+		Wait(2)
+		DisplayString(Myself,@997) 
+END

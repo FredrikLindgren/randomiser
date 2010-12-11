@@ -1,0 +1,14 @@
+//This file only contains strings relevant to the installation of the mod
+
+@100005="Nie rozpoznaje wersji gry. Instalacja zostaje wstrzymana."
+@100010="Zainstalowany zostal dodatek ktory wykorzystuje rozlosowane przez ten mod przedmioty."
+@100011="Czy chcesz by przedmioty te zostaly na swoim miejscu? Wpisz [y] jesli tak badz [n] jesli nie i zatwierdz. W celu uzyskania dalszych informacji zapoznaj sie z dokumentacja."
+@100015="Ten komponent dostepny jest tylko dla BG2, BGT i BG1TuTu. Zamiast niego wybierz komponent 3 lub 4."
+@101000="Rozlosowanie przedmiotow"
+@101100="Mode 1: Rozlosuj za pomoca skryptow. Wszystkie przedmioty sa dostepne."
+@101200="Mode 1: Rozlosuj za pomoca skryptow. Czesc przedmiotow ginie."
+@101300="Mode 2: Rozlosuj przez WeiDU. Wszystkie przedmioty sa dostepne."
+@101400="Mode 2: Rozlosuj przez WeiDU. Czesc przedmiotow ginie."
+@110000="Usun zwoje Ochrony przed Nieumarlymi ze sklepow."
+@110100="Wszystkie zwoje z wszystkich sklepow"
+@110200="Wszystkie zwoje z niemal wszystkich sklepow"

@@ -1,0 +1,140 @@
+
+ACTION_IF "%Preserve%" STRING_EQUAL_CASE y BEGIN
+  COPY_EXISTING "fl#removeditems.2da" override
+    READ_2DA_ENTRIES_NOW r2en_removeditems 3
+    FOR (i=1;i<r2en_removeditems;++i) BEGIN
+      READ_2DA_ENTRY_FORMER r2en_removeditems i 0 Tier
+      READ_2DA_ENTRY_FORMER r2en_removeditems i 1 Token
+      READ_2DA_ENTRY_FORMER r2en_removeditems i 2 Ident
+      TO_LOWER Tier
+      TO_LOWER Token
+      TO_LOWER Ident
+      SPRINT $removed_item_array("%Tier%" "%Token%" "%Ident%") ""
+    END
+  BUT_ONLY
+END
+
+ACTION_PHP_EACH item_array AS entry => int BEGIN
+  OUTER_SPRINT itm_to_del     "%entry_0%"
+  OUTER_SPRINT sourcefile     "%entry_2%"
+  OUTER_SPRINT cre            "fltier%entry_3%"
+  OUTER_SPRINT itm_to_stuff   "fl%entry_3%t%entry_4%"
+  OUTER_SPRINT removed_tier   "%entry_3%"
+  OUTER_SPRINT removed_token  "%entry_4%"
+  OUTER_SPRINT removed_ident  "%entry_5%"
+
+  ACTION_IF "%Preserve%" STRING_EQUAL_CASE n OR ("%Preserve%" STRING_EQUAL_CASE y AND VARIABLE_IS_SET $removed_item_array("%removed_tier%" "%removed_token%" "%removed_ident%")) BEGIN
+    ACTION_PHP_EACH duplicate_item_array AS dia_entry => blank BEGIN
+      OUTER_SPRINT duplicate_source "%dia_entry_1%"
+      ACTION_IF "%dia_entry_3%" STRING_EQUAL_CASE "%removed_ident%" AND FILE_EXISTS_IN_GAME "%duplicate_source%" AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+        ACTION_IF "%duplicate_source%" STRING_MATCHES_REGEXP ".*\.are$" = 0 BEGIN
+          COPY_EXISTING "%duplicate_source%" override
+            LAUNCH_PATCH_MACRO del_are_itm
+          BUT_ONLY
+        END
+        ACTION_IF "%duplicate_source%" STRING_MATCHES_REGEXP ".*\.cre$" = 0 BEGIN
+          COPY_EXISTING "%duplicate_source%" override
+            SPRINT replace_itm "%dia_entry_2%"
+            LAUNCH_PATCH_MACRO del_cre_itm
+          BUT_ONLY
+        END
+        ACTION_IF "%duplicate_source%" STRING_MATCHES_REGEXP ".*\.sto$" = 0 BEGIN
+          COPY_EXISTING "%duplicate_source%" override
+            LAUNCH_PATCH_MACRO del_sto_itm
+          BUT_ONLY
+        END
+      END
+    END
+  
+    ACTION_IF ("%entry_2%" STRING_MATCHES_REGEXP ".*\.are$" = 0) AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME "%sourcefile%" BEGIN
+        COPY_EXISTING "%sourcefile%" override
+          LAUNCH_PATCH_MACRO del_are_itm_stuff
+        BUT_ONLY
+      END
+    END
+    ACTION_IF ("%entry_2%" STRING_MATCHES_REGEXP ".*\.cre$" = 0) AND FILE_EXISTS_IN_GAME "%sourcefile%" AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+      COPY_EXISTING "%sourcefile%" override
+        SPRINT replace_itm "%entry_1%"
+        LAUNCH_PATCH_MACRO del_cre_itm_stuff
+      BUT_ONLY
+    END
+    ACTION_IF ("%entry_2%" STRING_MATCHES_REGEXP ".*\.sto$" = 0) AND FILE_EXISTS_IN_GAME "%sourcefile%" AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+      COPY_EXISTING "%sourcefile%" override
+        LAUNCH_PATCH_MACRO del_sto_itm_stuff
+      BUT_ONLY
+    END
+  
+    ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.bcs$" = 0 AND weidu_action = 0 AND FILE_EXISTS_IN_GAME "%entry_2%" AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+        LAUNCH_ACTION_MACRO stuff_cre
+        COPY_EXISTING "%itm_to_del%.itm" override
+          LAUNCH_PATCH_MACRO read_charge_array_on_itm
+        BUT_ONLY
+        OUTER_SPRINT $bcs_source_array("%entry_2%") ""
+    END
+    
+    ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.\(bcs\|dlg\|spl\)$" = 0 AND weidu_action = 1 AND FILE_EXISTS_IN_GAME "%entry_2%" AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+      OUTER_SPRINT $removed_item_array("%removed_tier%" "%removed_token%" "%removed_ident%") ""
+      COPY_EXISTING "%itm_to_del%.itm" override
+        LAUNCH_PATCH_MACRO read_charge_array_on_itm
+      BUT_ONLY
+    END
+  
+    ACTION_IF "%entry_2%" STRING_EQUAL_CASE unshey.fl AND FILE_EXISTS_IN_GAME "%TUTU_VAR%unshey.dlg" AND BG1 = 1 BEGIN
+      COPY "randomiser/copy/flrbelt1.itm" override
+        SAY 0x8 @114
+        SAY 0xc @114
+        SAY 0x50 @115
+      ACTION_FOR_EACH ogre IN ogreunsh.cre _greunsh.cre BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME "%ogre%" BEGIN
+          COPY_EXISTING "%ogre%" override
+            LAUNCH_PATCH_MACRO del_cre_itm_stuff
+            ADD_CRE_ITEM flrbelt1 #0 #0 #0 none inv1
+          BUT_ONLY
+        END
+      END
+      ACTION_IF Tutu = 1 OR BGT = 1 BEGIN
+        COMPILE EVALUATE_BUFFER "randomiser/d/unshey.d"
+      END ELSE BEGIN
+        COMPILE EVALUATE_BUFFER "randomiser/d/bg1unshey.d"
+      END
+      COPY_EXISTING "%TUTU_VAR%unshey.dlg" override
+        DECOMPILE_DLG_TO_D
+          REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "%TUTU_VAR%belt04" "flrbelt1"
+        COMPILE_D_TO_DLG
+      BUT_ONLY
+  
+    END ELSE ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.fl$" = 0 AND weidu_action = 1 AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+      OUTER_SPRINT $removed_item_array("%removed_tier%" "%removed_token%" "%removed_ident%") ""
+      COPY_EXISTING "%itm_to_del%.itm" override
+        LAUNCH_PATCH_MACRO read_charge_array_on_itm
+      BUT_ONLY
+    END
+  
+    ACTION_IF "%entry_2%" STRING_EQUAL_CASE blank AND weidu_action = 0 AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+      LAUNCH_ACTION_MACRO stuff_cre
+      COPY_EXISTING "%itm_to_del%.itm" override
+        LAUNCH_PATCH_MACRO read_charge_array_on_itm
+      BUT_ONLY
+    END ELSE ACTION_IF "%entry_2%" STRING_EQUAL_CASE blank AND weidu_action = 1 AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
+      OUTER_SPRINT $removed_item_array("%removed_tier%" "%removed_token%" "%removed_ident%") ""
+      COPY_EXISTING "%itm_to_del%.itm" override
+        LAUNCH_PATCH_MACRO read_charge_array_on_itm
+      BUT_ONLY
+    END
+  END
+END
+
+ACTION_IF "%Preserve%" STRING_EQUAL_CASE n BEGIN
+  OUTER_SPRINT string "Tier Token Ident"
+  OUTER_SET rowcount = 1
+  ACTION_PHP_EACH removed_item_array AS entry => blank BEGIN
+    OUTER_PATCH_SAVE string "%string%" BEGIN
+      INSERT_2DA_ROW rowcount 3 "%entry_0% %entry_1% %entry_2%"
+    END
+    OUTER_SET ++rowcount
+  END
+  COPY + "...blank" "override/fl#removeditems.2da"
+    INSERT_BYTES 0 STRING_LENGTH "%string%"
+    WRITE_ASCIIE 0 "%string%" (STRING_LENGTH "%string%")
+END

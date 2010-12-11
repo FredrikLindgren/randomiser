@@ -1,0 +1,41 @@
+@100="Proszê, przyjmij ten podarunek." //new line for cleric in Amkethran
+
+@112="S³ysza³eœ? Na po³udnie od Pomocnej D³oni na swoim obmierz³ym ty³ku siedzi przeklêty ogrzy ³otr, który jest dziwnie kusy na pasy. Musia³am siê wykupiæ, inaczej zosta³aby po mnie tylko czerwona plama. Nie chcia³ nawet mojej ksi¹¿ki. Z autografem! By³abym wdziêczna gdybyœ mog³... odzyskaæ... mój pas. Bohaterzy robi¹ takie rzeczy."
+@113="Ogrzy ³ajdak
+
+Wed³ug krasnoludzkiej kap³anki o dŸwiêcznym imieniu Unshey, na po³udnie od Pomocnej D³oni mieœci siê legowisko paskudnego ogrzego z³odzieja specjalizuj¹cego siê w... pasach. Jako¿e Unshey tytu³uje siê byæ kimœ pokroju pisarki, mo¿e w zamian za zwrocony pas dostanê od niej ksi¹¿kê. Z autografem."
+@114="Pas Unshey"
+@115="Ten elegancki pasek wykonany zosta³ z najwy¿sz¹ dba³oœci¹ o detale. Za sam¹, wykonan¹ ze srebra sprz¹czkê mo¿naby dostaæ mieszek pe³en z³otych monet. Misternie wygrawerowano na niej imiê prawowitej w³aœcicielki przedmiotu - Unshey.
+
+PARAMETRY:
+
+Waga: 2"
+
+
+@900=~Wchodzisz do sadzawki i na dnie znajdujesz pas. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@901=~Wchodzisz do sadzawki i na dnie znajdujesz pierœcieñ. Ale od tej ca³ej krwi robi ci siê niedobrze..~
+@902=~Wchodzisz do sadzawki i na dnie znajdujesz he³m. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@903=~Wchodzisz do sadzawki i na dnie znajdujesz kuszê. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@904=~Wchodzisz do sadzawki i na dnie znajdujesz p³aszcz. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@905=~Wchodzisz do sadzawki i na dnie znajdujesz ³uk. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@906=~Wchodzisz do sadzawki i na dnie znajdujesz skórzany pancerz. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@907=~Wchodzisz do sadzawki i na dnie znajdujesz ksiêgê. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@908=~Wchodzisz do sadzawki i na dnie znajdujesz procê. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@909=~Wchodzisz do sadzawki i na dnie znajdujesz miecz. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@910=~Wchodzisz do sadzawki i na dnie znajdujesz szatê. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@911=~Wchodzisz do sadzawki i na dnie znajdujesz drzewiec. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@912=~Wchodzisz do sadzawki i na dnie znajdujesz parê rêkawic. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@913=~Wchodzisz do sadzawki i na dnie znajdujesz sztylet. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@914=~Wchodzisz do sadzawki i na dnie znajdujesz bu³awê. Ale od tej ca³ej krwi robi ci siê niedobrze.~ //String #35877 in BG2
+@915=~Wchodzisz do sadzawki i na dnie znajdujesz naszyjnik. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@916=~Wchodzisz do sadzawki i na dnie znajdujesz p³ytowy pancerz. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@917=~Wchodzisz do sadzawki i na dnie znajdujesz maczugê. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@918="You enter the blood pool and find a shield at the bottom of the pool. The blood makes you feel sick, however."
+@919="You enter the blood pool and find a morning star at the bottom of the pool. The blood makes you feel sick, however."
+@920="You enter the blood pool and find a war hammer at the bottom of the pool. The blood makes you feel sick, however."
+@921="You enter the blood pool and find a suit of scale armor at the bottom of the pool. The blood makes you feel sick, however."
+@922="You enter the blood pool and find a pair of bracers at the bottom of the pool. The blood makes you feel sick, however."
+
+@999=~Wchodzisz do sadzawki i na dnie znajdujesz jakiœ przedmiot. Ale od tej ca³ej krwi robi ci siê niedobrze.~
+@998="Wchodzisz do sadzawki, jednak nie znajdujesz w niej niczego co mog³oby ciê zainteresowaæ. Do tego od tej ca³ej krwi robi ci siê niedobrze."
+@997="Gdy k³adziesz g³owê na oltarzu, komnata zaczyna siê trz¹œæ. Po chwili g³owa znika. S³yszysz bulgocz¹cy g³os przemawiaj¹cy w jêzyku którego nie znasz, jednak wyczuwasz w nim dezaprobatê za to, co w³aœnie zrobi³eœ." "Gdy k³adziesz g³owê na oltarzu, komnata zaczyna siê trz¹œæ. Po chwili g³owa znika. S³yszysz bulgocz¹cy g³os przemawiaj¹cy w jêzyku którego nie znasz, jednak wyczuwasz w nim dezaprobatê za to, co w³aœnie zrobi³aœ."

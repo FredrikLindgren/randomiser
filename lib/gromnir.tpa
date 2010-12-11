@@ -1,0 +1,66 @@
+//Give Gromnir 20% resistance to physical damage, +2 speed, replace his full plate +2 with chain +3, reduce his proficiencies to specialised, write Barbarian
+COPY_EXISTING gromnir.cre override
+  PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+    PATCH_FOR_EACH opcode IN 86 87 88 89 126 BEGIN
+      SET $gromnir("%opcode%") = 0
+    END
+    PATCH_FOR_EACH opcode IN 86 87 88 89 BEGIN         //write kit value
+      SET $g_param("%opcode%") = 20
+    END
+    SET $g_param(126) = 2
+    READ_LONG 0x244 kit
+    READ_LONG 0x2b8 slt_off
+    READ_LONG 0x2bc itm_off
+    READ_LONG 0x2c0 num_itm
+    READ_LONG 0x2c4 fx_off
+    READ_LONG 0x2c8 num_fx
+    FOR (off=0x6e;off<0x76;off+=1) BEGIN
+      WRITE_BYTE off 2
+    END
+    WRITE_LONG 0x244 0x4000
+    FOR (i=0;i<num_fx;i+=1) BEGIN
+      READ_LONG fx_off + 0x108*i + 0x8 type ELSE 999
+      READ_LONG fx_off + 0x108*i + 0x18 p2 ELSE 114
+      PATCH_IF VARIABLE_IS_SET $gromnir("%type%") BEGIN
+        SET $gromnir("%type%") = 1
+      END
+      PATCH_IF type = 233 AND p2 != 114 BEGIN
+        WRITE_LONG fx_off + 0x108*i + 0x14 2
+      END
+    END
+    READ_BYTE 0x60 slash
+    READ_BYTE 0x61 crush
+    READ_BYTE 0x62 pierce
+    READ_BYTE 0x63 missile
+    SET $gromnir(86) = slash >= 20 ? 1 : 0
+    SET $gromnir(87) = crush >= 20 ? 1 : 0
+    SET $gromnir(88) = pierce >= 20 ? 1 : 0
+    SET $gromnir(89) = missile >= 20 ? 1 : 0
+    READ_SSHORT slt_off + 0x2 armour ELSE "-1"
+    PATCH_IF armour >= 0 AND armour <= num_itm BEGIN
+      READ_ASCII itm_off + 0x14*armour item ELSE blank
+      PATCH_IF "%item%" STRING_EQUAL_CASE plat23 BEGIN
+        WRITE_ASCII itm_off + 0x14*armour chan07
+      END
+    END
+    delta = 0
+    PHP_EACH gromnir AS opcode => value BEGIN
+      PATCH_IF value = 0 BEGIN
+        INSERT_BYTES fx_off + 0x108*num_fx 0x108
+        WRITE_LONG fx_off + 0x108*num_fx + 0x8 opcode
+        WRITE_LONG fx_off + 0x108*num_fx + 0x14 $g_param("%opcode%")
+        WRITE_LONG fx_off + 0x108*num_fx + 0x1c 1
+        WRITE_LONG fx_off + 0x108*num_fx + 0x24 100
+        num_fx += 1
+        delta += 1
+      END
+    END
+    WRITE_LONG 0x2c8 num_fx
+    PATCH_FOR_EACH off IN 0x2a0 0x2a8 0x2b0 0x2b8 0x2bc BEGIN
+      READ_LONG off value
+      PATCH_IF value >= fx_off BEGIN
+        WRITE_LONG off value + delta*0x108
+      END
+    END
+  END
+BUT_ONLY

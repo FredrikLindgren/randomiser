@@ -1,0 +1,16 @@
+IF
+  Global("flTierNumberStarted","GLOBAL",0)
+THEN RESPONSE #100
+  SetGlobal("flTierNumberStarted","Global",1)
+  DisplayString(Myself,~Randomising tier TierNumber.~)
+END
+
+IF
+  BEGIN LOOP(Number2||TokenList)
+    !Global("flTierNumbertNumber2","GLOBAL",0)
+  END LOOP
+  Global("flTierNumberDone","Global",0)
+THEN RESPONSE #100
+  SetGlobal("flTierNumberDone","Global",1)
+  DisplayString(Myself,~Tier TierNumber is done.~)
+END

@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Item Randomiser</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="backup/g3readme.css" type="text/css" />
+<link href="backup/g3.ico" rel="icon" type="image/bmp" />
+</head>
+<body>
+
+<h1>Item Randomiser</h1>
+<div class="section">
+  <p><strong><a href="http://www.gibberlings3.net/">A Gibberlings Three Mod</a></strong><br />
+  <strong>Author:</strong> Fredrik Lindgren <acronym title="also known as">aka</acronym> <a href="http://forums.gibberlings3.net/index.php?showuser=2376">Wisp</a>   <acronym title="also known as">aka</acronym> Irrbloss.<br />
+  <strong>On the web: <a href="http://www.gibberlings3.net/item_rand/index.php">Home page</a></strong> and <strong><a href="http://forums.gibberlings3.net/index.php?showforum=170">Forum</a></strong>.</p>
+  <p><strong>Version 6.2 &ndash; <a href="http://www.gibberlings3.net/downloads/#item_rand">Check for the most recent version</a></strong>.<br />
+  <strong>Languages:</strong> English, Polish (partial translation).<br />
+  <strong>Platforms:</strong> Windows, Mac OS X, Linux.</p>
+</div>
+
+
+<h2>Overview</h2>
+<div class="section">
+  <p>Item Randomiser is a large-scale random treasure mod for Baldur's Gate and Baldur's Gate II. The mod can randomise up to several hundred items in Baldur's Gate (including <acronym title="Tales of the Sword Coast">TotSC</acronym>) and up to several hundred more in Baldur's Gate II (including <acronym title="Throne of Bhaal">ToB</acronym>). The randomised items can be found throughout the game world over the course of the game.</p>
+
+  <p>Item randomiser features two modes of randomisation:</p>
+  <ul>
+    <li>Mode 1 randomises the items at the start of a new game. The items are re-randomised every time a new game is started.</li>
+    <li>Mode 2 randomises the items when the mod is installed. The items are re-randomised every time the mod is reinstalled.</li>
+  </ul>
+</div>
+
+<h2>Compatibility</h2>
+<div class="section">
+  <p>Item Randomiser is available for EasyTutu, Baldur's Gate Trilogy and Baldur's Gate II with or without <acronym title="Tales of the Sword Coast">TotSC</acronym> or <acronym title="Throne of Bhaal">ToB</acronym>. Additionally, Item Randomiser is partially available for regular Baldur's Gate with or without <acronym title="Tales of the Sword Coast">TotSC</acronym>. Due to what would appear to be technical limitations, Mode 1 is not available. However, Mode 2 is available in full.</p>
+
+  <p>Item Randomiser should generally be compatible with other mods. Unless otherwise noted, Item Randomiser is not compatible with conversion mods. Item Randomiser can be installed together with such mods, but it will only affect the original content. New items or areas added by the conversion mod will not be affected.</p>
+
+  <p>In terms of installation order, Item Randomiser should be installed last or close to last. <strong>Specifically, it should be installed after any mods which move or remove items.</strong> Doing otherwise can potentially result in two or more copies of the same item being found in the game world.</p>
+
+  <p>Detailed below are the currently known compatibility issues between Item Randomiser and other mods.</p>
+
+  <!--<p><strong>Ascension: Tougher Gromnir</strong><br />
+  Item Randomiser's "Make Gromnir a proper barbarian" component is redundant if Ascension's Tougher Gromnir is installed and will automatically be skipped.</p>-->
+
+  <p><strong>Cursed Item Revisions</strong><br />
+  If Cursed Item Revisions is installed the spear Backbiter (renamed Revenger by Cursed Item Revisions) will be randomised as a tier 26 item in BG1 and as a tier 2 item in BG2.</p>
+
+  <p><strong>Dungeon-Be-Gone</strong><br />
+  Dungeon-Be-Gone allows the player to skip the initial dungeon in Baldur's Gate II. It is in this dungeon that Mode 1 of Item Randomiser carries out the randomisation process. Leaving the first area before the randomisation is completed will abort the randomisation process and prevent items from appearing in the game world. This problem can be avoided entirely by waiting until the randomisation process is completed before speaking to Jasper. Mode 2 of Item Randomiser is unaffected by this issue. There are no random items to be found in Irenicus' Dungeon.</p>
+
+  <p><strong>Item Revisions</strong><br />
+  If the main component of Item Revisions is installed the Ring of Djinni Summoning will be randomised as a tier 4 item.</p>
+
+  <p><strong>Neh'taniel NPC</strong><br />
+  One of Neh'taniel's banters is triggered by the shield Saving Grace +3. To avoid problems, this shield is not randomised if Neh'taniel is installed.</p>
+
+  <p><strong>Spellhold Gauntlet</strong><br />
+  Spellhold Gauntlet offers the player an alternate way out of the maze beneath Spellhold. In taking this alternate route, it is possibly to acquire the items you would normally find on your way through the maze. In order to avoid possible issues with item duplication and the like, no items normally found in Spellhold will be randomised if Spellhold Gauntlet is installed.</p>
+  
+  <p><strong>SpellPack</strong><br />
+  If SpellPack is installed Mode 2 of Item Randomiser will randomise a number of SpellPack scrolls along with the regular scrolls (added to the game without having been removed from anywhere), provided the option to randomise scrolls is enabled.</p>
+
+  <!--<p><strong>Sword Coast Stratagems II: Increase difficulty of level-dependent monster groupings</strong><br />
+  Item Randomiser's "Prevent Watcker's Keep statues from disappearing" will automatically be skipped if this SCSII component is installed.</p>-->
+
+  <p><strong>Sword Coast Stratagems: Skip Candlekeep</strong><br />
+  The Sword Coast Stratagems component 'Skip Candlekeep' potentially allows the player to leave Candlekeep earlier than what would otherwise be possible. Leaving Candlekeep before the randomisation process is completed will result in the randomisation process being aborted. Any problems along these lines can be avoided by waiting until the randomisation process is completed before talking to Gorion and choosing to leave Candlekeep. Please note that the game tends to be paused while you are in dialogue and any time spent as such will not count towards the time needed for the randomisation to be completed. Mode 2 of Item Randomiser is unaffected by this issue. There are no random items to be found in Candlekeep.</p>
+  
+  <!--<p><strong>Tactics: Always Toughest Random Spawns in Dungeons</strong><br />
+  Item Randomiser's "Prevent Watcker's Keep statues from disappearing" will automatically be skipped if this Tactics component is installed.</p>-->
+
+  <p><strong>Tactics: Improved Sahuagin City</strong><br />
+  The Sahuagin Priestess wearing the Cloak of Mirroring only performs certain scripted actions if the cloak is in her possession. To avoid causing problems, Item Randomiser will not randomise the Cloak of Mirroring if this component is installed.</p>
+
+  <h3>NPC mods and other mods</h3>
+
+  <p>The mods listed below make certain assumptions about the locations of certain items. <i>E.g.</i> Kivan NPC assumes that the Elven Court Bow will be found in the de'Arnise keep and Tactics assumes that Layene is in possession of the Staff of the Magi. If these items are removed, it may be possible for the NPCs involved to behave oddly or unrealistically. If one or more of these mods are installed, Item Randomiser will ask you if you would like to skip randomising these items. If you answer y (for yes), Item Randomiser will leave the items at their regular locations. If you answer n (for no), the items will be randomised and you will most likely find them somewhere else.</p>
+
+  <p><strong>Beyond the Law</strong><br />
+  Kova comments on the armour Skin of the Ghoul when it is found in the undead village beneath Athkatla. If the armour is found somewhere else, Kova will not comment on it unless you enter the undead village after finding the armour.</p>
+
+  <p><strong>BG1 NPC Project</strong><br />
+  Imoen comments on the diamond found in the hollow tree in the area Lion's Way. If the diamond is found somewhere else, Imoen will not comment on it unless you return to the area Lion's Way after finding a diamond.</p>
+
+  <p><strong>Kivan and Deheriana Companions for BG2</strong><br />
+  Kivan comments on the Elven Court Bow when it is found in the de'Arnise Keep. If the bow is found somewhere else, Kivan will not comment on it unless you enter the right area of the de'Arnise Keep after finding the bow.</p>
+  
+  <p><strong>Rogue Rebalancing: Shadow Thief Improvements</strong><br />
+  Among other things, the Rogue Rebalancing component 'Shadow Thief Improvements' enhances the combat AI of Aran Linvail. This improved AI assumes that Aran is wearing the Amulet of Power and the Ring of Protection +2. For optimal performance, it is recommended that these items are not randomised if you intend to fight Aran Linvail.</p>
+
+  <p><strong>Tactics: Improved Twisted Rune</strong><br />
+  Layene's combat AI is written under the assumption that Layene is in possession of the Staff of the Magi. Among other things, she will go invisible after each spell she casts. Layene will still do all these things even if she no longer has the staff in her possession.</p>
+
+  <p><strong>Xan BG2 NPC</strong><br />
+  Xan comments on the Ring of Protection +2 if it is obtained from Aran Linvail in chapter 3. If the ring is found elsewhere, Xan will most likely not comment on it at all.</p>
+</div>
+
+<h2>Installation</h2>
+<div class="section">
+  <strong>Windows</strong>
+  <p>The Item Randomiser mod is packaged and installed with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym> and is distributed as a self-extracting archive. To install, simply double-click the archive and follow the instructions on screen.</p>
+
+  <p>Alternatively the files can be extracted from the archive using <a href="http://www.rarlab.com/">WinRAR</a>. If properly extracted, you should have a randomiser folder and setup-randomiser.exe in your game folder. To install, simply double-click setup-randomiser.exe and follow the instructions on screen.</p>
+  
+  <p>Please run setup-randomiser.exe in your game folder to reinstall, uninstall or otherwise change components.</p>
+  
+  <strong>Mac OS X</strong>
+  <p><em>If the mod was previously installed, uninstall it before extracting the new version.</em> The Item Randomiser mod is packaged and installed with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym>. To install, simply extract the contents of the mod into your game folder. If properly extracted, you should have a randomiser folder, setup-randomiser, and setup-randomiser.command in your game folder. To install, simply double-click setup-randomiser.command and follow the instructions on screen.</p>
+
+  <strong>Linux</strong>
+  <p>Extract the contents of the mod to the folder of the game you wish to modify. Download the latest version of <acronym title="Weimer Dialogue Utilities">WeiDU</acronym> for Linux from <a href="http://www.weidu.org/users/thebigg/">WeiDU.org</a> and copy WeiDU, WeInstall and tolower to somewhere in your path (/usr/local/bin/ or /usr/bin/ , for example). Following that, open a terminal, cd to your game installation directory, run 'tolower' and answer Y to both queries.</p>
+
+  <p>You can avoid running the second option (linux.ini) if you've already run it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either if you've extracted only this mod since the last time you lowercased filenames. If you're unsure, running tolower and choosing both options is the safe bet.</p>
+  
+  <p>Run <strong>WeInstall randomiser</strong> in your game folder to install the mod. Then run <strong>wine bgmain.exe</strong> and start playing.</p>
+
+</div>
+
+
+<h2>Content</h2>
+<div class="section">
+
+  <h3>Randomisation options</h3>
+  <p>All the components listed under "randomisation options" need to be installed before the main component. They can not be installed after it.</p>
+
+  <p><strong>Randomly replace the WIS tome normally found in TotSC with one of the 6 available types</strong><br />
+  <i><acronym title="Baldur's Gate: Tales of the Sword Coast">TotSC</acronym> only</i><br />
+  If this component is installed, it will make the main component randomly change the Tome of Understanding normally found in Durlag's Tower into any one of the 6 types of Tomes found in the game. This means you have an equal chance of finding <i>e.g.</i> a second STR or INT Tome as you do of finding a third WIS Tome. For Mode 1, the type of Tome is determined when you first enter the area where you will find the Tome in your current game. For Mode 2, the type of Tome is determined when the main component is installed.</p>
+  
+  <p><strong>Randomly not randomise items</strong><br />
+  If this component is installed, it will make the main component randomly skip randomising items. These skipped items will be found at their regular locations. When you install this component you will be asked to input the chance for having items randomly not be randomised. Items are randomly not randomised before they are randomly lost.</p>
+  
+  <p><strong>Kangaxx further sealed away</strong><br />
+  <i>BG2 only</i><br />
+  If this component is installed, the lich-guarded sarcophaguses that hold Kangaxx' body parts are altered to require ward stones to be opened. Each sarcophagus requires a ward stone, which is consumbed upon being used, and the two ward stones are randomised across the game world. Unlike other items the two ward stones will never be lost. To be able to open the sarcophaguses, you need to have spoken with Kangaxx and received his quest. Once you have spoken with Kangaxx and are in possession of a ward stone you can open a sarcophagus and fight the guardian lich as usual.</p>
+  
+  <p><strong>Randomise scrolls</strong><br />
+  If this component is installed, a number of additional tiers of items will be randomised by the main component. These additional tiers consist entirely of mage scrolls.</p>
+
+  <p><strong>Randomise the heads of the Flail of Ages</strong><br />
+  <i>BG2 only</i><br />
+  If this component is installed, the main component will randomly distribute the three heads of the Flail of Ages across locations in the de'Arnise Keep. Unlike other items the three heads of the Flail of Ages will never be lost.</p>
+
+  <p><strong>More Spell Shield scrolls</strong><br />
+  <i>BG2 only</i><br />
+  If this component is installed it will increase the number of Spell Shield scrolls carried by the duergar merchant by 2 (for a total of 3). If the duergar merchant does not carry Spell Shield 3 scrolls will be added. There is normally only one scroll of Spell Shield available in <acronym title="Baldur's Gate II: Shadows of Amn">SoA</acronym>. This component does not need to be installed before the "Randomise scrolls" component.</p>
+
+  <h3>Main Component</h3>
+  
+  <p>Starting with version 6, the mod can be reinstalled with the option of preserving saved game compatibility. Choosing to preserve saved game compatibility allows you to reinstall the mod without having to start a new game. However, it also imposes the following limitations:</p>
+  <ul>
+    <li>Randomisation options are locked. The options that were enabled remain enabled and new options are ignored.</li>
+    <li>No new items are randomised. If the item was not randomised before it will not be randomised now.</li>
+    <li>Making changes to your underlying mod stack and then installing Item Randomiser with preserved saved game compatibility may result in duplicated items and possibly other problems.</li>
+    <li>The probabilities for items to be lost or not randomised are locked. You will not be given the option of altering them.</li>
+    <li>You can not migrate from Mode 1 to Mode 2 or vice versa.</li>
+  </ul> 
+
+  <p><strong>Randomise items: Mode 1: Randomise with in-game scripts. No items are lost</strong><br />
+  This subcomponent uses Mode 1 to randomise the items. Mode 1 can randomise up to 126 items in <acronym title="Baldur's Gate">BG1</acronym> and up to 178 items in <acronym title="Baldur's Gate II">BG2</acronym>.<br />All items that are to be randomised are removed from their regular locations when the mod is installed. All items that were successfully removed are randomly assigned a new location during the randomisation process at the start of a new game. <strong>To function properly, Mode 1 requires you to start a new game after you install the mod.</strong> The randomisation takes place in the starting area upon the start of a new game and <strong>requires approximately 2&ndash;3 minutes to be completed</strong>. Please note that the exact time may vary and may be dependent on the specifications of your computer. In BG1, randomisation takes place in the main area of Candlekeep. In BG2, randomisation takes place in Irenicus' Dungeon, after the initial cutscene and auto-save. If the new game is started in ToB the randomisation will be carried out in the initial area; either the Grove of the Spirit Heads or Watcher's Keep. Leaving the starting area before the randomisation is completed will prevent some items from appearing in the game world. A rat or squirrel (depending on the setting) will squeak to let you know when the randomisation is complete. The items are re-randomised if you start a new game.</p>
+
+  <p><strong>Randomise items: Mode 1: Randomise with in-game scripts. Some items are lost</strong><br />
+  This subcomponent works like the other subcomponent using Mode 1, except there is a chance per item that some items are lost during the randomisation. Lost items will not appear in the game world until the items are re-randomised. When you install this component you will be asked to input the chance for having items randomly be lost. Prior to version 4 of Item Randomiser, the chance was pre-set to 10%.</p>
+
+  <p><strong>Randomise items: Mode 2: Randomise with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym>. No items are lost</strong><br />
+  This subcomponent uses Mode 2 to randomise the items. Mode 2 can randomise up to 142 items in <acronym title="Baldur's Gate">BG1</acronym> and up to 239 items in <acronym title="Baldur's Gate II">BG2</acronym>.<br />All affected items are randomised when the mod is installed, as opposed to Mode 1, which does it when you start a new game. This randomisation will be significantly faster than the one done by Mode 1. <strong>You need to start a new game after installing the mod.</strong> Items are re-randomised when the mod is re-installed. Starting a new game will not re-randomise the items. Additionally, the greater flexibility of this method allows more items to be randomised. Creatures who receive a random item are also equipped with it if the new equipment is better than the old equipment and their class/kit/alignment/race does not prevent them from using the item.</p>
+
+  <p><strong>Randomise items: Mode 2: Randomise with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym>. Some items are lost</strong><br />
+  This subcomponent works like the other subcomponent using Mode 2, except there is a chance per item that some items are lost during the randomisation. Lost items will not appear in the game world until the items are re-randomised. When you install this component you will be asked to input the chance for having items randomly be lost. Prior to version 4 of Item Randomiser, the chance was pre-set to 10%.</p>
+  
+  <h3>Components for unequipping items from creature groups</h3>
+
+  <p>These components are only available for Mode 2 and only if installed after the main component. Mode 2 does its best to equip creatures who recieve random items with said item. This can result in beholders wearing armour or dragons wearing helms, or other strange things. The components listed below offer the player the choice of having all items unequipped from a specific group of creatures. Only creatures who are eligible for receiving random items are affected by these components. But they will unequip all droppable equipment from the creatures and not just items Item Randomiser has equipped them with.</p>
+  <p><strong>Beholders have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  Beholders are defined as any member of beholder-kin.<br />
+  This component currently affects 1 creature in BG2.</p>
+  
+  <p><strong>Demi-liches have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  This component currently affects 1 creature in BG2.</p>
+
+  <p><strong>Dragons have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  This component currently affects 8 creatures in BG2.</p>
+  
+  <p><strong>Elementals have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  Elementals are defined as any elemental or elemental prince.<br />
+  This component currently affects 1 creature in BG2.</p>
+
+  <p><strong>Fiends have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  Fiends are defined as any demon or devil but not cambions or alu-fiends.<br />
+  This component currently affects 3 creatures in BG2.</p>
+  
+  <p><strong>Golems have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  This component currently affects 1 creature in BG2.</p>
+  
+ <!-- <p><strong>Illithids have no weapons equipped</strong><br />
+  <i>BG2 only</i><br />
+  This component currently affects 3 creatures in BG2.</p> -->
+  
+  <p><strong>Master Brains have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  This component currently affects 1 creature in BG2.</p>
+  
+  <p><strong>Slimes have no items equipped</strong><br />
+  <i>BG1 only</i><br />
+  This component currently affects 1 creature in BG1.</p>
+  
+  <p><strong>Trolls have no items equipped</strong><br />
+  <i>BG2 only</i><br />
+  This component currently affects 1 creature in BG2.</p>
+
+ <!-- <p><strong>Vampires have no weapons equipped</strong><br />
+  <i>BG2 only</i><br />
+  This component currently affects 4 creatures in BG2.</p> -->
+
+  <h3>Miscellaneous components</h3>
+  <p><strong>Cespenar can forge <acronym title="Shadows of Amn">SoA</acronym> items</strong><br />
+  <i><acronym title="Baldur's Gate II: Throne of Bhaal">ToB</acronym> only</i><br />
+  This component makes it possible for Cespenar to forge all 9 items Cromwell can forge in <acronym title="Shadows of Amn">SoA</acronym>.
+  The full list of items is:</p>
+  <ul>
+   <li>Ankheg Plate Mail</li>
+   <li>Red Dragon Scale</li>
+   <li>Shadow Dragon Scale</li>
+   <li>Crom Faeyr</li>
+   <li>The Equalizer</li>
+   <li>Short Bow of Gesen</li>
+   <li>Halberd +4: Wave</li>
+   <li>Silver Sword</li>
+   <li>Mace of Disruption +2</li>
+  </ul>
+  
+  <p><strong>Make Gromnir a proper Barbarian</strong><br />
+  <i><acronym title="Baldur's Gate II: Throne of Bhaal">ToB</acronym> only</i><br />
+  In vanilla ToB Gromnir is a strange creature. He is kitted as Kensai but does not have any of the Kensai bonuses. Additionally, he's got two uses of Barbarian Rage and is wearing full plate. The main component of Item Randomiser changes his kit to Barbarian to relax his item restrictions a little but does not otherwise make any kit-related changes to him. This component goes all the way and makes Gromnir an actual Barbarian, complete with resistance to physical damage and a legal suit of armour.</p>
+
+  <p><strong>Remove Protection from Undead scrolls from stores</strong><br />
+  This component will remove Protection from Undead scrolls from stores in the game.<br />
+  The player can choose between two subcomponents. The first subcomponent removes all scrolls from all stores. The second subcomponent removes all scrolls from 9 out of 10 stores. This selection is made randomly. By necessity, randomisation occurs when the subcomponent is installed. Re-randomisation will not occur until the subcomponent is reinstalled.</p>
+
+  <p><strong>Duergar merchants</strong><br />
+  <i>BG2 only</i><br />
+  One of the duergar merchants in the Underdark has two sets of wares. There are the regular wares normally offered to the player and the special wares offered to the player under certain circumstances. Normally you can only access one of these sets of wares and when you gain access to the special wares, you lose access to the regular wares. This component will make it so once you can access the special wares you retain the option of accessing the regular wares.</p>
+  
+  <p><strong>Prevent Watcker's Keep statues from disappearing</strong><br />
+  <i><acronym title="Baldur's Gate II: Throne of Bhaal">ToB</acronym> only</i><br />
+  The difficulty of the first level of Watcher's Keep is scaled. If you go there early in the game several of the statues that are present are removed. Item Randomiser has a chance of giving these staues items, which would be lost if the statue possessing the item is removed. This component disables this mechanism and allows you to go to Watcher's Keep at any point without any of the statues being removed.</p>
+
+</div>
+
+<h2>Spoilers</h2>
+<div class="section">
+  <p>Complete lists of which items are normally randomised by Item Randomiser and where you can normally find random items is available <a href="http://www.gibberlings3.net/readmes/spoilers-randomiser.html">here</a>.</p>
+</div>
+
+<h2>Known Issues</h2>
+<div class="section">
+  <p>Mode 1 of Item Randomiser requires approximately 2&ndash;3 minutes to complete the randomisation process. If the starting area is left before the randomisation is completed, it will keep items from appearing in the game world. If you use Mode 1, be sure to allow sufficient time to pass before you leave the starting area. A rat or squirrel (depending on the setting) will squeak to let you know when the randomisation is complete.</p>
+  
+  <p>Players using Mode 1 will experience a brief pause (or "lag") when they start a new game. This pause is caused by the fairly long scripts used to randomise the items and can be considered a game limitation.</p>
+
+  <p>Mode 1 of the Item Randomiser places the randomised items at their locations when you first enter the area where the item is supposed to show up. The placement of the item may be delayed by as much as a few seconds from the time when you first enter the area. This can cause problems if the item is supposed to be given to a creature and that creature is killed too soon. This should not normally be a problem, but it is an issue worth noting. This issue does not occur with area containers.
+  This can notably happen at the Twisted Rune lair. Mining the area with traps or delayed spells before the enemy appears can result in Twisted Rune members dying before they receive their randomised item.</p>
+</div>
+
+<h2>Acknowledgements</h2>
+<div class="section">
+  <p>I would like to thank Gibberlings Three for hosting this mod and cmorgan in particular.</p>
+  
+  <p>This mod was largely made possible by <acronym title="Stratagems Scripting Language">SSL</acronym> and I would like to thank DavidW for making <acronym title="Stratagems Scripting Language">SSL</acronym> available to others and for taking the time to explain some it its functions and capabilities.</p>
+  
+  <p>By the same token, I would like to thank Westley Weimer and Valerio Bigiani (<acronym title="also known as">aka</acronym> The Bigg) for their excellent work in creating and developing <acronym title="Weimer Dialogue Utilities">WeiDU</acronym>.</p>
+  
+  <p>Additional thanks goes to all the people involved in the Infinity Engine Structure Description Project, to Jon Olav Hauglid for developing Near Infinity and to Avenger for developing <acronym title="DragonLance Total Conversion Editor Pro">DLTCEP</acronym>.</p>
+  
+  <p>Thanks to Yarpen for providing a Polish translation.</p>
+
+  <p>Last but not least, I would like to thank Lantier, somefatguy and kthxbye for offering valuable opinions and suggestions, inspiration and for taking the time to beta test the mod. I would also like to thank temujin for his ability and willingness to find bugs in my mod.</p>
+
+  <p><strong>Tools used:</strong><br />
+  <a href="http://weidu.org/main.html#weidu"><acronym title="Weimer Dialogue Utilities">WeiDU</acronym></a> by Westley Weimer and Valerio Bigiani (<acronym title="also known as">aka</acronym> The Bigg).<br />
+  <a href="http://forums.gibberlings3.net/index.php?showtopic=13725"><acronym title="Stratagems Scripting Language">SSL</acronym></a> by DavidW.<br />
+  <a href="http://www.idi.ntnu.no/~joh/ni/">Near Infinity</a> by Jon Olav Hauglid and others.<br />
+  <a href="http://iesdp.gibberlings3.net/"><acronym title="Infinity Engine Structure Description Project">IESDP</acronym></a> maintained by igi.<br />
+  <a href="http://www.gibberlings3.net/tools/dltcep.php"><acronym title="DragonLance Total Conversion Editor Pro">DLTCEP</acronym></a> by Avenger.<br />
+  <a href="http://www.gimp.org/"><acronym title="GNU Image Manipulation Program">GIMP</acronym></a> by the <acronym title="GNU Image Manipulation Program">GIMP</acronym> team.<br />
+  <a href="http://www.shsforums.net/topic/42359-release-bam-batcher/">BAM Batcher</a> by Miloch.<br />
+  </p>
+</div>
+
+<h2>Version History</h2>
+<div class="section">
+  <p><strong>2010-11-26&mdash;version 6.2:</strong></p>
+  <ul>
+    <li>Glaicus will now correctly hand over any flail heads he may possess if you charm/dominate him.</li>
+    <li>Fixed a vanilla-game BG2 bug where creatures could stand around like idiots because they were trying to drink a non-potion item.</li>
+    <li>Some stores in BG1 now carry fewer Large Shields +1 (<i>i.e.</i>, you'll find fewer shields).</li>
+    <li>Planar Prison Warden now gets a different replacement weapon.</li>
+    <li>If a removed creature or area item is a stack of N scrolls or potions, they will be randomised as N items instead of as one item with N charges.</li>
+    <li>If the mod is reinstalled non-interactively, it will now always preserve saved-game compatibility, instead of re-using whatever was chosen when the mod was installed.</lI>
+    <li>Corrected an oversight in minister Lloyd's dialogue.</li>
+    <li>The true identity of the Book of Infinite Spells is now properly obscured until it has been identified.</li>
+    <li>Updated to WeiDU 224.</li>
+  </ul>
+
+
+  <br />
+  <p><strong>2010-10-31&mdash;version 6.1:</strong></p>
+    <ul>
+      <li>The Ring of Djinni Summoning and the Ring of Lock Picks should no longer be found in duplicate if RR's Shadow Thief Improvements is installed.</li>
+      <li>Spellhold Spirit Troll and TorGal should now drop their proper items even if the G3 BG2 Fixpack is installed.</li>
+      <li>Spellhold Spirit Troll, Malakar +2, TorGal and Drow by Underdark exit moved to Mode 2.</li>
+      <li>Addition to main BG2 location list: North Forest people as tier 3.</li>
+      <li>Revised the "Fixed a bug with insufficiently discriminating regexps causing problems on BGT" fix.</li>
+      <li>Updated to WeiDU 223.</li>
+    </ul>
+
+
+  <br />
+  <p><strong>2010-09-16&mdash;version 6:</strong></p>
+  <p><i>Bug and compatibility fixes</i></p>
+    <ul>
+      <li>Mode 2: Fixed a compatibility issue with the G3 BG2 Fixpack that could result in duplicated items from Tolgerias.</li>
+      <li>Mode 2: Taking Alternatives' good route should no longer yield duplicated items.</li>
+      <li>Fixed a bug where the player was unable to send the Solamnic Knights home if their class was mage (or part mage) and they were not in possession of the mage stronghold.</li>
+      <li>Mode 2: Fixed a bug where some items were duplicated and others were lost.</li>
+      <li>Planar Prison Warden gets a replacement weapon.</li>
+      <li>Fixed a bug that had Minister Lloyd saying he was giving armor, regardless of what kind of item he was actually giving.</li>
+      <li>Corrected typo in Corneil's dialogue.</li>
+    </ul>
+  
+  <p><i>Features and improvements</i></p>
+    <ul>
+      <li>Kangaxx component ward stone now has a custom inventory icon.</li>
+      <li>Added the option of reinstalling the mod without breaking saved game compatibility.</li>
+    </ul>
+
+
+  <br />
+  <p><strong>2010-09-05&mdash;version 5:</strong></p>
+  <p><i>Bug and compatibility fixes</i></p>
+    <ul>
+      <li>Fixed potential compatibility problem with mod-added items and the de'Arnise keep golem trap and Samia's trap.</li>
+      <li>Fixed bug in platform compatibility code that could result in a handful of incorrect file references on BGT.</li>
+      <li>Items that are added to the game without having been removed from anywhere are not not randomised if that option is enabled.</li>
+      <li>Fixed compatibility issue with the Quest Pack component "Additional Shadow Thief Content".</li>
+      <li>Fixed bug that had Unshey saying the wrong dialogue line when giving the player her quest.</li>
+      <li>Mode 2: Fixed bug that could keep the mod from installing if there were items in tier 3 or 6 that were not at their vanilla locations.</li>
+      <li>Corrected a typo pertaining to the descriptive text for the well in Firkraag's dungeon.</li>
+      <li>Corrected typo that kept the Heavy Crossbow of Accuracy from being randomised in BG1.</li>
+      <li>Mode 2: Fixed bug that could result in an insufficient amount of locations if there were more items than locations.</li>
+      <li>Fixed a bug with insufficiently discriminating regexps causing problems on BGT.</li>
+    </ul>
+    
+  <p><i>Features and improvements</i></p>
+    <ul>
+      <li>More comprehensive treatment of item prices.</li>
+      <li>Cleric Planar Prison bounty hunter has its class changed to cleric.</li>
+      <li>Revised mod compatibility code to require less maintainance.</li>
+      <li>Revised the mechanism for ensuring the item to be randomised hasn't been removed from the source script or dialogue.</li>
+      <li>Platform compatibility code now treats dialogues and scripts on Tutu.</li>
+      <li>Revised handling of duplicate lists to require less maintainance.</li>
+      <li>Jamis Tombelthen now uses his good weapon with his main hand instead of with his off hand.</li>
+      <li>Mode 1: Selection of which group member gets which item is now done automatically and randomly at install time.</li>
+      <li>Ist'tar Jae'llat is stripped of his silly script.</li>
+      <li>Added new component "Prevent Watcker's Keep statues from disappearing."</li>
+      <li>Tiers can be alphanumerical.</li>
+      <li>Added new component "Kangaxx further sealed away".</li>
+      <li>Added new component "Randomise scrolls".</li>
+      <li>Added new component "Randomise the heads of the Flail of Ages".</li>
+      <li>Added new component "Duergar merchants".</li>
+      <li>Some under-the-hood code changes.</li>
+      <li>If a removed store item is a stack of N items, N items will be randomised instead of one item.</li>
+      <li>Items are added to stores in a slightly more optimised manner.</li>
+      <li>Added new component "More Spell Shield scrolls".</li>
+      <li>Updated to WeiDU 220.</li>
+      <li>Implemented system for conditional rebalancing of items based on what other mods are installed.</li>
+      <li>Mode 2: SpellPack scrolls will be randomised provided SpellPack and "Randomise scrolls" are installed.</li>
+    </ul>
+    
+  <p><i>Changes and additions (spoilers)</i></p>
+    <ul>
+      <li>Old tier 2 is split into new tier 2 and new tier 3. Old tier 3 is split into new tier 4 and new tier 5. Old tier 4 is new tier 6. Old tier 5 is new tier 7.</li>
+      <li>ToB tiers now start at 10. Old tier 6 is new tier 10; old tier 7 is new tier 11; old tier 8 is new tier 12; old tier 9 is new tier 13.</li>
+      <li>Rebalanced the contents of the BG1 and BG2 item and location lists.</li>
+      <li>Changes to BG2 lists: Flame of the North +2, Sentinel +4, Stonefire +3, Malakar +2, Spellhold painting illithid, Spellhold painting troll and wyvern cultists moved to Mode 1; Hindra Jae'llat is now a group together with Ist'tar, Rilloa and Valas (provided SCSII's Improved Drow is installed); Entu and Necre are now a group together with their fellow halflings; Sorcerous Amon is now a group together with his friends; Drow priestess by Underdark exit is now a group together with the other drow there; Xei Win Toh and Y'tossi are now a group together with the other final seal guardians; Watcher's Keep statues are now a group together with the other statues; Karun the Black is now a group together with his fellow flunkies; the quest reward for the sculptor quest is now standardised.</li>
+      <li>Changes to BG1 lists: Desreta is now a group together with Vay-ya; mage scrolls are now only randomised if the "Randomise scrolls" component is installed; Crate by Clair removed from tier 31; Niemain is a group together with his fellow mages.</li>
+      <li>Additions to main BG2 item list: Ring of Lock Picks, Horn of Blasting, Horn of Silence, Silver Horn of Valhalla as tier 1; Shadow Armor, Helmet of Charm Protection, Cursed Berserking Sword +3 as tier 2; Harp of Discord, Methild's Harp, War Hammer +2: 'Ashideena', Cloak of Reflection, Duskmail +3, Halberd +2, Duskblade, Gnasher +2 as tier 3; Pixie Prick +3, Ripper +2, Boots of Avoidance, Scimitar +3: 'Water's Edge', Namarra +2 as tier 4; Lavender Ioun Stone, Wong Fei's Ioun Stone as tier 13.</li>
+      <li>Additions to main BG2 location list: house in bridge district, closet (Horn of Blasting) in Firkraag's dungeon; slavers as tier 1; Mae'Var, Harper compound painting container, Neb's painting, Seven Vales gang as tier 2; Mekrath's altar, Shadow Patrick, Spellhold three-riddles-and-long-table room, Seven Vales gang as tier 3; Bounty Hunters, Sea Zombie Lord, family Jae'llat, feral halflings, Valeria and goons, Crypt King as tier 4; drow group by Underdark exit as tier 5; family Jae'llat as tier 6; Gromnir's henchmen as tier 11; Iycanth as tier 13.</li>
+      <li>Mode 2: Additions to BG2 item list: Protector of the Second +2, Nymph Cloak as tier 1; Efreeti Bottle, Delver's Plate +2, Harbinger +3, Staff of Thunder and Lightning as tier 2; The Night's Gift +5, Periapt of Life Protection as tier 3; Necaradan's Crossbow +3 as tier 4; Rifthome Axe +3 as tier 5; Blackmist +4 as tier 6; The Answerer +4 as tier 10; Tzu-Zan's Bracers as tier 11.</li>
+      <li>Mode 2: Additions to BG2 location list: Gorch's wares, Bernard's special wares as tier 1; DigDag, Trademeet smithy; Ribald's wares, Trademmet merchant as tier 2; "a named vampire or a named shadow thief during chapter 3" as tier 3; reward from Imnesvale mayor as tier 4; "a named vampire or a named shadow thief during chapter 3" as tier 5; Adalon or Lesser Demon Lord as tier 6; Jamis Tombelthen as tier 10; Karthis al-Hezzar's wares as tier 11.</li>
+      <li>Additions to main BG1 location list: Mutamin as tier 27; Garan as tier 29.</li>
+      <li>Mode 2: Additions to BG1 item list: Battle Axe +2, Manual of Bodily Health as tier 27.</li>
+      <li>Mode 2: Additions to BG1 location list: Gretek, Pirate cave Safana special as tier 27.</li>
+    </ul>
+
+
+  <br />
+  <p><strong>2010-06-19&mdash;version 4:</strong></p>
+  <p><i>Bug and compatibility fixes</i></p>
+    <ul>
+      <li>Missile Attraction +2 can not be worn together with other magical protection items.</li>
+      <li>Balthazar replaced by Vongoethe in tier 6. Balthazar replaced by tethyrian general in tier 7.</li>
+      <li>Items lacking a price are now given one, so they can not be bought for 1 gp in the event they are randomised into a store.</li>
+      <li>The glasses of identification are no longer given a lore value, as they can be used to identify items even while unidentified themselves.</li>
+      <li>Marker files are no longer zero bytes.</li>
+      <li>Corrected typo that prevented Item Randomiser from removing the Helm of Balduran, the Pommel Gem of the Equalizer and the Amulet of Metaspell Influence from Dungeon-Be-Gone's Jasper.</li>
+      <li>Mode 2: Fixed another bug manifesting itself newer versions of WeiDU. The bug prevented items from being correctly swapped on creatures.</li>
+      <li>As new standard practise, everything that's read from the mod's 2da files is lower-cased.</li>
+      <li>Mode 2: Fixed bug in the "try to have the best gear equipped" routine (if the creature has an empty weapon slot selected, it will not prevent Item Randomiser from selecting the best weapon to use).</li>
+      <li>Mode 1: Starting a new game in ToB is now supported.</li>
+      <li>Mode 1: A few additional variables, that were area-limited before, are now set in the global scope.</li>
+      <li>Mode 1: Fixed a bug that prevented groups from being handled correctly on Tutu and BGT, resulting in loss of items.</li>
+    </ul>
+  <p><i>Features and improvements</i></p>
+    <ul>
+      <li>Revised traification for easier management.</li>
+      <li>Gromnir's kit is changed from Kensai to Barbarian unless he's actually got the Kensai bonuses.</li>
+      <li>Added new component "Make Gromnir a proper Barbarian".</li>
+      <li>Implemented system for making location lists and duplicates dependent on item lists.</li>
+      <li>Mode 2: Implemented system for making sure location x gets an item of a specified set of items.</li>
+      <li>Added new component "Randomise the identity of the WIS tome normally found in TotSC".</li>
+      <li>TRA files now only contain whole strings.</li>
+      <li>Improved Cespenar's forge SoA items dialogue very slightly.</li>
+      <li>Added group of components for unequipping items from specific groups of creatures for Mode 2.</li>
+      <li>The chance for items to be randomly lost is now specified at install time by the user.</li>
+      <li>Mode 2: Wands are now preferentially placed in the creature's quick slots, instead of in the general inventory.</li>
+      <li>Sendai in BG1 is now a group together with her two helpers.</li>
+      <li>The price of Rashad's Talon is increased to better correspond with the prices of +1 and +3 scimitars.</li>
+      <li>Added new component "Randomly not randomise items".</li>
+      <li>Draug Fea is given three pips in Spiked Weapons, as he previously had 0.</li>
+      <li>Mode 2: Slight optimisation of the "try to have the best gear equipped" feature (proficiency is taken into account when selecting which weapon to use).</li>
+      <li>Mode 2: Implemented system for removing replacement items if the creature receives a random item of the same type and suitability.</li>
+      <li>Mode 2: Dwarven Thrower is now only equipped on dwarves.</li>
+      <li>Updated to WeiDU 218.</li>
+    </ul>
+  <p><i>Changes and additions (spoliers)</i></p>
+    <ul>
+      <li>Changes to BG2 lists: Mauler's Arm +2 and sewer gang are now tier 2 instead of tier 1. Gromnir is now tier 9 instead of tier 6 and container in Demon Wraith's room is now tier 6 instead of tier 9.</li>
+      <li>Changes to BG1 lists: Chainmail +3 and Baresh moved to Mode 2.</li>
+      <li>Additions to main BG2 item list: Boots of Stealth as tier 1.</li>
+      <li>Additions to main BG2 location list: Mae'var's strongbox as tier 1.</li>
+      <li>Mode 2: Additions to BG2 item list: Wyvern's Tail +2 as tier 2; Ice Star, Gram and Storm Star as tier 6.</li>
+      <li>Mode 2: Additions to BG2 location list: Draug Fea as tier 2; Gromnir, Abazigal and Machine of Lum the Mad to tier 6.</li>
+    </ul>
+
+  <br />
+  <p><strong>2010-04-14&mdash;version 3.01:</strong></p>
+  <ul>
+    <li>Fixed bug that manifested itself with versions of WeiDU newer than 213. The bug kept Item Randomiser from installing properly on Tutu and BGT.</li>
+    <li>Updated to WeiDU 215.</li>
+  </ul>
+
+  <br />
+  <p><strong>2010-01-06&mdash;version 3:</strong></p>
+  <p><i>Bug and compatibility fixes</i></p>
+  <ul>
+    <li>Fixed issue whereby it was possible to get <i>e.g.</i> undroppable items as rewards.</li>
+    <li>Fixed a few bugs with the mod's macros that could lead to file corruption under certain circumstances.</li>
+    <li>Fixed bug involving the golems in the de'Arnise keep and the Elven Court Bow and Frostreaver.</li>
+    <li>Randomised items lacking a lore value are now not given one if the G3 BG2 Tweakpack component "Identify all items" is installed.</li>
+    <li>Corrected bug where having items not being randomised due to other installed mods could cause other items to never show up.</li>
+    <li>The Glasses of Identification are now correctly given a lore value.</li>
+    <li>Randomised scrolls are now not given a lore value.</li>
+    <li>Corrected typo that kept human fighter statue (formerly Foebane) in Watcher's Keep from receiving its random item.</li>
+    <li>Updated to WeiDU 213.</li>
+    <li>Mode 1: Fixed bug whereby discontinuous location lists could produce undesirable results.</li>
+    <li>Mode 1: Compatibility with case-sensitive operating systems has hopefully been improved.</li>
+    <li>Mode 1: Invisible creatures are now immune to Abazigal's shapechange knock-back as belt-and-suspenders protection.</li>
+    <li>Mode 2: Humanoid Abazigal now receives (and benefits from) all items dragon Abazigal does.</li>
+    <li>Mode 2: Fixed bug specific to the BG1 engine that could cause someone to have his non-magical launcher (<i>e.g.</i> bow) swapped out for a launcher of another type.</li>
+    <li>Elven Court Bow, Frostreaver, Golem statue locations, Shield of the Order, Yaga-Shura, Studded Leather of Thorns, Darkfire Bow and Sendai x2 moved to mode 2 lists.</li>
+  </ul>
+  <p><i>Features and improvements</i></p>
+  <ul>
+    <li>Added new component "Cespenar can forge SoA items".</li>
+    <li>Added partial Polish translation (complete as of v2) by Yarpen.</li>
+    <li>Cursed item surprise unless the mod "Cursed item revisions" is installed.</li>
+    <li>The quest to send the Solamnic Knights home is now made available to every class, unless the Questpack component to do so is already installed.</li>
+    <li>Mode 1: The time needed to place the item has been slightly reduced.</li>
+    <li>Mode 2: Cursed, or otherwise unpleasant, items will not be given as quest rewards.</li>
+    <li>Mode 2: Item swapping routine is now more comprehensive. Creatures will typically be equipped with the best items they possess.</li>
+    <li>Mode 2: Selection of a recipient creature from a group of creatures is now done a little better.</li>
+  </ul>
+  <p><i>Changes and additions (spoilers)</i></p>
+  <ul>
+    <li>T'rachie's Plate is regular plate armour (AC 3) instead of +5 plate.</li>
+    <li>Changes to BG2 lists: Spellhold painting illithid, Irenicus' closet in Spellhold are now tier 2 instead of tier 3; Aeger's Hide +3, Sling of Seeking +2, Spectator's chest are now tier 3 instead of tier 2; keep statue formerly holding the Elven Court Bow is now tier 3 instead of tier 1; Lea'liyl is tier 4 instead of tier 3; Chromatic Demon now tier 6 instead of tier 9; Golem manual, Captain Erelon are now tier 7 instead of tier 9; Wish scroll, Azamantes are now tier 9 instead of tier 7.</li>
+    <li>Additions to main BG2 item list: Girdle of Fortitude, Bracers of Archery, Gloves of Pick Pocketing, Pearly White Ioun Stone, Missile Attraction +2, Backbiter +3 as tier 1; Ashen Scales +2, Cloak of Non-Detection, Orc Leather +3, Armor of the Viper +5, Large Shield +1, +4 vs. Missiles, Sling +3: 'Arla's Dragonbane', Bracers of Binding as tier 2; Girdle of Stone Giant Strength, Heartseeker +3 (also removed from Ribald's special wares), Ring of Folly, Gauntlets of Fumbling as tier 3; Boneblade +4, Helmet of Defense, Cutthroat +4, T'rachie's Plate, Ring of Clumsiness as tier 4; Soul Reaver +4, Dragon's Breath +4, Celestial Fury as tier 5; Usuno's Blade +4 as tier 6; Bard's Gloves as tier 7; Helm of the Rock as tier 9.</li>
+    <li>Additions to main BG2 location list: Gaal, other pile in troll mound, table in back room of Copper Coronet, top rubble container in magma in Temple Ruins, temple sewer thugs, guarded compound gang as tier 1; Chest in second level of vampire nest in chapter 3, Sorcerous Amon, chest in basement in de'Arnise keep; container in fire room in Planar Sphere, closet in Deirex' quarters, planar prison bounty hunters as tier 2; Adsaan, golem stash in Firkraag's dungeon, statue with hands in ruined temple, surfacer adventurer party in underdark x2, pillar cache behind TorGal as tier 3; Qilue, container in Planar Sphere ice room, North Forest gang, guarded compound gang as tier 4; Underdark demon knight leader, boat in Bodhi's lair in chapter 6, Deirex as tier 5; Yakman's garbage as tier 7; Human thief statue on first level of Watcher's keep; Fire Giant on second level of Watcher's keep as tier 9.</li>
+    <li>Mode 2: Additions to BG2 item list: Added Girdle of Piercing, Dusty Rose Ioun Stone, Ring of Spell Turning, Rod of Lordly Might, Spear +1, Halcyon, Sword of Flame +1 (also removed from Bernard's), Helm of Glory as tier 1; Strong Arm +2, The Sleeper +2, Dwarven Thrower +3, Dragon Helm, Ring of Regeneration, Dragon Scale Shield +2, Shield of the Lost +2, Bastard Sword +1, +3 vs. Shapeshifters, Dragonslayer, Heavy Crossbow of Searing +1, Armor of Deep Night +4, Cloak of the Stars, Ilbratha +1, Rashad's Talon +2, Golden Girdle as tier 2; Skullcrusher +3, Boomerang Dagger +2, War Hammer +1, +4 vs. Giantkin, Ring of the Ram, Rod of Smiting, Sentinel +4, Shield of Harmony, Blade of Searing +3, Giant Hair Crossbow +3, Battle Axe +3: Stonefire, Flame Tongue +1 as tier 3; Gesen Bow String, Crimson Chain +5, Fortress Shield +3, Staff of Rynn +4, Jhor the Bleeder +2 as tier 4; Gorgon Plate +4 as tier 5; Rune Hammer +4, Spectral Brand +4 as tier 6; Darksteel Shield +4 as tier 9.</li>
+     <li>Mode 2: Additions to BG2 location list: Kalah, Asylum item riddle, Sahuagin treasury, skeleton with Halcyon, Ribald's regular wares, Ribald's regular wares, keep statue formerly holding Hammer vs. Giantkin, Telwyn's reward as tier 1; Ribald's regular wares, Trademeet merchant, well in Firkraag's dungeon, Asylum face riddles, one item of Samia's treasure, Madulf's reward, reward from Lehtinan or Hendak, Ribald's regular wares, Bernard's special wares, Dalok, Jermien's reward, Khan Zahraa's reward, reward for sending Solamnic knights home as tier 2; Goldander's reward, Captain Dennis' reward, Tolgerias' reward, drow equipment merchant, wyvern cultists, drow potion merchant, Guildmistress Busya's reward, Lasaonar's reward, Ribald's special wares, Merella, other item of Samia's treasure, Ribald's special wares as tier 3; chest in Asylum golem room, Ribald's special wares, drow equipment merchant x2, Ardulace as tier 4; Ardulace as tier 5; Yaga-Shura, item from gambling cambion as tier 6; Diaytha as tier 9.</li>
+     <li>Changes to BG1 lists: Ardenor is now tier 26 instead of tier 25.</li>
+     <li>Additions to main BG1 item list: Added Ring of Energy(Denak), Studded leather of missile attraction as tier 24; War Hammer +1(Raiken), Quarterstaff +1(Silke), Heavy Crossbow of Accuracy, Backbiter +3 as tier 25; Girdle of Bluntness, Boots of Grounding, Bracers of Archery, Cloak of Protection +1(farmhouse), Studded Leather +2, Bracers of Defense AC 6(Davaeorn), Ring of Clumsiness(Niemain) as tier 26; Amulet of Metaspell Influence, Grave Binder, Ring of Fire Resistance, Ring of Holiness, Full Plate Armor(Taerom) as tier 27; Bala's Axe as tier 29; Staff Spear +2 as tier 30.</li>
+     <li>Additions to main BG1 location lists: Added Denak, Cloakwood spider's nest as tier 24; Silke, Drasus and gang, Mulahey, Teyngan of the lake, Undead Knight(Firewine) as tier 25: Mulahey, Taugosz Khosann, Zal, Sendai, Davaeorn, Niemain(Sorcerous S) as tier 26; Ramazith's desk, Slythe and Krystin, First grave in Candlekeep catacombs, Slythe and Krystin, Chest on second floor of Flaming Fist compound as tier 27; statue in maze as tier 29; Kirinhale as tier 30.</li>
+     <li>Mode 2: Additions to BG1 item list: Added Leather Armor +2 as tier 24; Morning Star +1(Drakar), Sling +1(Taerom), Quarterstaff +1(Taerom) as tier 25; Splint mail +1 x2, Cloak of Protection +1(Nemphre), Helm of Glory, Plate Armor +1(Genthore), Chain mail +2 as tier 26; Longbow of Marksmanship, Ashideena +2, Boots of Avoidance, Large Shield +1, +4 vs. Missiles as tier 27; Helmet of Defense as tier 28.</li>
+     <li>Mode 2: Additions to BG1 location list: Added Lamalha and gang as tier 24; Molkar and gang, Taerom's wares, Feldepost's inn store as tier 25; Raemon and gang, closet in Degrodel's house, shelf on first floor of Nemphre's house, Jardak, Drasus and gang, Molkar and gang as tier 26; Bassilus, Nimbul, Varci's reward, Raemon and gang as tier 27; Droth as tier 28.</li>
+  </ul>
+
+  <br />
+  <p><strong>2009-09-07&mdash;version 2:</strong></p>
+  <p><i>Bug and compatibility fixes</i></p>
+  <ul>
+    <li>Randomisation of items used by installed mods (<i>e.g.</i> Kivan NPC and the Elven Court Bow) is now optional.</li>
+    <li>In order to avoid possible item duplications, items normally found in Spellhold will not be randomised if Spellhold Gauntlet is installed.</li>
+    <li>In order to avoid breaking the Tactics component, the Cloak of Mirroring is not randomised if Tactic's Improved Sahuagin City is installed.</li>
+    <li>Mode 1: Special groups (<i>e.g.</i> Twisted Rune or the Guarded Compound lot) are now handled better. This also fixes a number of bugs where creatures in these groups would not get their random items.</li>
+    <li>Mode 2: There will no longer be two Helms of Balduran in the game world.</li>
+    <li>In the event Ketta is selected for receiving a random item, she should now actually receive it.</li>
+    <li>Mode 1: Invisible creatures now have a valid minhp1 item.</li>
+    <li>Mode 2: Corrected bug which kept creatures with no items from correctly receiving their random item.</li>
+    <li>Randomised magical items lacking a lore value should now receive one.</li>
+    <li>Corrected a bug where missing items could result in duplication of other items or missing feedback.</li>
+    <li>Mode 2: Corrected bug where empty tiers would keep the installation from ever finishing.</li>
+    <li>Mode 2: Random items that are not equipped should now always be stealable.</li>
+    <li>Corrected mistake that made one Wish scroll and a Ring of Fire Resistance not show up in ToB.</li>
+    <li>Removed Saerk's estate, Aran's safe and Ist'tar Jae'llat from BG2 location list.</li>
+    <li>Corrected compatibility issue resulting in duplication of K'logarath +4 if SCSII's item redistributor was also installed.</li>
+  </ul>
+  <p><i>Features and improvements</i></p>
+  <ul>
+    <li>Enabled randomisation via Mode 2 for regular Baldur's Gate. Mode 1 is still unavailable.</li>
+    <li>Mode 2: Under certain conditions, creatures now have items they have equipped swapped out for random items they receive.</li>
+    <li>Slythe and Krystin, gang in Iron Throne compound, Iron Throne gang in undercity and gang outside Cloakwood mines are now special groups.</li>
+    <li>Mode 2: Made randomisation code more efficient and hopefully more robust.</li>
+    <li>Many under-the-hood code changes.</li>
+  </ul>
+  <p><i>Changes and additions (spoilers)</i></p>
+  <ul>
+    <li>Changes to BG2 lists: Master of Thralls now receives a tier 3 item instead of a tier 2 item, Sahuagin rebel priestess now receives a tier 2 items instead of a tier 1 item; Gauntlets of Dexterity are now a tier 2 item rather than a tier 1 item; Robe of the Evil Archmagi is now taken from the drow merchant instead of being added; Stiletto of Demarchess +2, Frostreaver +3, Necre and Frostreaver's old location were moved to the main list; Errine Sling +4 is now a tier 7 item instead of a tier 6 item; Sendai now receives a second tier 6 items instead of Abazigal.</li>
+    <li>Additions to main BG2 item list: Staff of the Magi, Bladesinger Chain, Girdle of Frost Giant Strength, Armor or the Hart, Crom Faeyr Scroll, Spear of Withering, Fire Tooth, Blackblood, all three parts of the Equalizer, Adjatha, Cloak of Protection +2, Amulet of the Master Harper, Foebane +3, Angurvadal +4, Axe of the Unyielding +3, Periapt of Proof Against Poison, Bone Club, Boots of Speed and Ring of Human Influence; Rock receives a Axe +3 as replacement, Statue and gith captain receive a Bastard Sword +2 and a Long Sword +2, respectively.</li>
+    <li>Additions to main BG2 location list: Athkatla sewer thugs receive another tier 1 item, Planar Prison bounty hunters receive two tier 1 items; Mae'Var's strongbox and Spellhold troll altar receive tier 2 items; Planar Prison Warden, Underdark Deathknight leader and Imp riddle chest receive tier 3 items; Thaxll'ssillyia, Master Brain, drow priestess guarding the way out of the Underdark, Suneer and Firkraag receive tier 4 items; Nizidramanii'yt, Demonknight, Twisted Rune and Underdark Elder Orb receive tier 5 items; Rock and githyanki captain receive tier 6 items; First-floor statue in Watcher's Keep and Imix receive tier 7 items.</li>
+    <li>Mode 2: Additions to BG2 item list: Ring of Protection +2, Amulet of Power, Gauntlets of Crushing, Wave Blade, Impaler, Malakar, Flame of the North, Saving Grace, Doomplate, Oaken Ring, Thieves' Hood and Montolio's Cloak; King Ixilthetocal and Prince Villynaty receive Spears +1 to replace Impaler +3.</li>
+    <li>Mode 2: Additions to BG2 location list: Aran Linvail, troll behind Spellhold painting and genie summoned in Spellhold receive tier 2 items; Mind Flayer behind Spellhold painting and Amunator (Unseeing Eye quest) receive tier 3 items; Aran Linvail, King Ixilthetocal, Prince Villynaty and King Ixilthetocal or Prince Villynaty receive tier 4 items; Amkethran mayor and Amkethran cleric of Waukeen receive tier 8 items; Tahazzar and Ka'rashur receive a tier 9 item.</li>
+    <li>Mode 2: Change made to BG2: Siding with the Sahuagin king should no longer automatically give more loot than siding with the prince would.</li>
+    <li>Changes to BG1 lists: Scroll of Protection from Undead from Cloakwood mines is randomised instead of scroll of Detect Invisibility from the same area; removed lone body in Ulcaster ruins from location list.</li>
+    <li>Additions to main BG1 item list: Ring of Protection +1, Ring of Protection +2, Full Plate Mail +1, Gauntlets of Weapon Expertise, Gauntlets of Ogre Power, Golden Girdle, Boots of Speed and Bastard Sword +1; Ramazith receives a Ring of Protection +1 and Tamoko receives a Full Plate Mail as replacement.</li>
+    <li>Mode 2: Additions to BG2 item list: Bastard Sword +1, +3 vs. Shapeshifters.</li>
+    <li>Additions to main BG1 location list: Ioin Gallchobhair receives a tier 25 item; Silke, Kirian and Denak and Cloakwood mine bounty hunters receive tier 26 items; the Ogre Mage in Firewine Ruins and Desreta receive tier 27 items; Gretek and Aldeth's trading coster receive tier 28 items.</li>
+    <li>Mode 2: Additions to BG1 location list: Aldeth receives a tier 27 item.</li>
+    <li>Mode 2: Change made to BG1: Unshey now wants a quest-unique girdle back instead of the girdle of piercing. The girdle of piercing is randomised as a tier 26 item. Experience reward is lowered to 400 to reflect the lower value of the new girdle.</li>
+  </ul>
+
+  <br />
+  <p><strong>2009-07-29&mdash;version 1:</strong></p>
+  <ul>
+    <li>Public release.</li>
+    <li>Updated to <acronym title="Weimer Dialogue Utilities">WeiDU</acronym> 211.</li>
+    <li>Mode 2: Corrected a typo that kept Frostreaver from being randomised.</li>
+    <li>Corrected a typo which kept two items from showing up in <acronym title="Tales of the Sword Coast">TotSC</acronym>.</li>
+    <li>Moved a few BG1 locations around.</li>
+    <li>Corrected a typo which kept one item from showing up in <acronym title="Throne of Bhaal">ToB</acronym>.</li>
+    <li>Yaga-Shura now gets a Large Shield +2 to replace the one we steal.</li>
+  </ul>
+  
+  <br />
+  <p><strong>2009-06-29&mdash;beta 3:</strong></p>
+  <ul>
+    <li>Corrected a few mistakes in the BG1 location list which kept three items from showing up.</li>
+    <li>Moved two locations in BG1.</li>
+  </ul>
+  
+  <br />
+  <p><strong>2009-06-05&mdash;beta 2:</strong></p>
+  <ul>
+    <li>Mode 2: Shields and two-handed weapons are no longer equipped at the same time.</li>
+    <li>Mode 2: Cursed items are no longer equipped.</li>
+    <li>Mode 1: Missing tiers (such as <acronym title="Throne of Bhaal">ToB</acronym> not being installed) should no longer break the in-game notification (squeak).</li>
+  </ul>
+  
+  <br />
+  <p><strong>2009-06-01&mdash;beta 1:</strong></p>
+  <ul>
+    <li>Version history begun.</li>
+  </ul>
+</div>
+
+</body>
+</html>

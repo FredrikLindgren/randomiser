@@ -1,0 +1,88 @@
+ACTION_IF Tutu = 1 AND !FILE_EXISTS_IN_GAME _leat06.itm BEGIN
+  COPY_EXISTING leat06.itm "override/_leat06.itm"
+END
+ACTION_IF Tutu = 1 AND !FILE_EXISTS_IN_GAME _sper03.itm BEGIN
+  COPY_EXISTING sper03.itm "override/_sper03.itm"
+END
+
+COPY "randomiser/copy/flbhcryp.itm" override
+
+ACTION_IF (BG1 = 0 OR BGT = 1) AND VARIABLE_IS_SET $RandOptions(flrc520) BEGIN
+
+<<<<<<<< ...randomiser/fl-inlined/crypt.baf
+IF
+  Clicked([ANYONE])
+  Range(LastTrigger,12)
+  OR(2)
+  !PartyHasItem("%ward%")
+  !G("KangaxxQuest",1)
+  Global("UsedCrypt","%area%",0)
+THEN RESPONSE #100
+  DisplayStringHead(Myself,@1500)
+END
+>>>>>>>>
+
+  COPY_EXISTING crypt526.bcs override
+                crypt202.bcs override
+    DECOMPILE_BCS_TO_BAF
+      //REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\( +Global(\"UsedCrypt\",\"AR0202\",0)\)~ ~\1 PartyHasItem("flrward2")~
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~^\( +Global(\"UsedCrypt\",\"AR\(0526\|0202\)\",0)\)~ ~\1 PartyHasItem("flrward1") Global("KangaxxQuest","GLOBAL",1)~
+      REPLACE 35858 @1501
+      //REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\( +SetGlobal(\"UsedCrypt\",\"AR0202\",1)\)~ ~\1 TakePartyItem("flrward2")~
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(SetGlobal(\"UsedCrypt\",\"AR\(0526\|0202\)\",1)\)~ ~\1 TakePartyItem("flrward1")~
+    COMPILE_BAF_TO_BCS
+  //UNLESS "flrward[12]"
+  
+  OUTER_SPRINT ward flrward1
+  OUTER_SPRINT area ar0526
+  EXTEND_TOP crypt526.bcs ~...randomiser/fl-inlined/crypt.baf~ EVAL
+  //OUTER_SPRINT ward flrward2
+  OUTER_SPRINT area ar0202
+  EXTEND_TOP crypt202.bcs ~...randomiser/fl-inlined/crypt.baf~ EVAL
+  
+  COPY "randomiser/copy/ward.itm" "override/flrward1.itm"
+    SAY 0x8 @1503
+    SAY 0xc @1503
+    WRITE_ASCII 0x3a flrward1
+    SAY 0x54 @1502
+    SAY 0x50 @1504
+    
+  COPY "randomiser/copy/flrward1.bam" override
+  /*
+  COPY "randomiser/copy/ward.itm" "override/flrward2.itm"
+    SAY 0x8 @1503
+    SAY 0xc @1503
+    SAY 0x50 @1504
+    SAY 0x54 @1502*/
+END
+
+ACTION_IF (BG1 = 0 OR BGT = 1) AND VARIABLE_IS_SET $RandOptions(flrc550) BEGIN
+
+  COPY "randomiser/copy/flrbar.itm" override
+    SAY 0x8 @1510
+    SAY 0xc @1511
+    WRITE_ASCII 0x3a flribar #8
+    SAY 0x50 @1512
+    SAY 0x54 @1513
+    WRITE_ASCII 0x58 flrcbar #8
+    
+  COPY "randomiser/copy/flribar.bam" override
+       "randomiser/copy/flrcbar.bam" override
+END
+
+//Stores do not carry excessively large stacks of items, because I say so
+ACTION_IF BG1 BEGIN
+  COPY_EXISTING "%TUTU_VAR%sto4803.sto" override
+                "%TUTU_VAR%friend.sto"  override
+                "%TUTU_VAR%ulgoth.sto"  override
+    PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+      READ_LONG 0x34 io
+      FOR (i=0;i<LONG_AT 0x38;++i) BEGIN
+        READ_ASCII io + 0x1c*i item ELSE blank
+        PATCH_IF "%item%" STRING_EQUAL_CASE "%TUTU_VAR%shld06" BEGIN
+          WRITE_LONG io + 0x1c*i + 0x14 1 
+        END
+      END
+    END
+  BUT_ONLY
+END

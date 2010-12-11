@@ -1,0 +1,712 @@
+@100="Please, accept this gift." //new line for cleric in Amkethran
+@101="As you pick up the item, two of the golems come to life and attack."
+@102="Madulf and fellows owe you much...we can stay and be left alone, here.  Is good.  Here...have item to give you...is magic, from Sythsill army...we no use.  Maybe you like."
+@103="You win, fool.  But the Cowled Wizards shall remember this betrayal.  Here is a trinket in exchange for the body.  Now begone from my sight ere I change my mind."
+@104="I yield. You have proven the better combatant this day. I... I yield the victory."
+@110="Here, then, is an item that you may find useful.  It has been mine own for some time, but I shall be able to make do without it.  Use it well, wayfarer!"
+@111="You have earned more than mere gold as well. Helm is practical, and would have his payment be so as well. You shall have this item, to further yourself."
+@112="Have you heard? There's a rogue ogre with a belt fetish to the south of the Friendly Arm Inn. I had to bargain my girdle for my life, out there. Wasn't even interested in an autographed copy of my book. Hey, if you can get that belt back to me, I'd be mighty grateful."
+@113="A rogue ogre
+
+According to a dwarven cleric by the name of Unshey, a rogue ogre with a belt fetish is making a name for himself just south of the Friendly Arm Inn.  As Unshey claims to be an author, maybe she'd give me a copy of her book if I can get her girdle back..."
+@114="Unshey's girdle"
+@115="This elegant girdle was seemingly made with great care.  The silver buckle alone should make it quite valuable.  The name 'Unshey' is embroidered on it.
+
+STATISTICS:
+
+Weight:  2"
+@116=~I give you this blessed item, that you might prevail gainst what enemies you may have. You have served well under Lathander. Go in peace.~
+@117=~You have also earned a blessing in the form of this item. You will serve the Storm Lord all the better with it.~
+
+@200="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Ogre Power and mistook these gauntlets for a authentic pair.
+
+STATISTICS:
+
+*CURSED*
+THACO:  -10 penalty
+Dexterity:  -2 penalty
+Weight:  2
+Special:  Can only be removed by a 'remove curse' spell"
+
+@201="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Dexterity and mistook these gauntlets for a authentic pair.
+
+STATISTICS:
+
+*CURSED*
+THACO:  -10 penalty
+Dexterity:  -2 penalty
+Weight:  2
+Special:  Can only be removed by a 'remove curse' spell"
+
+@202="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Weapon Skill and mistook these gauntlets for a authentic pair.
+
+STATISTICS:
+
+*CURSED*
+THACO:  -10 penalty
+Dexterity:  -2 penalty
+Weight:  2
+Special:  Can only be removed by a 'remove curse' spell"
+
+@203="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Weapon Expertise and mistook these gauntlets for a authentic pair.
+
+STATISTICS:
+
+*CURSED*
+THACO:  -10 penalty
+Dexterity:  -2 penalty
+Weight:  2
+Special:  Can only be removed by a 'remove curse' spell"
+
+@205="These bracers appear to be a pair of Bracers of Defense but when donned, bind the wearers wrists together, making it quite difficult to wield a weapon or cast a spell. These bracers are sometimes offered as rewards for services rendered by the drow. The recipient, believing them to be very powerful, will often don them before examining them. At this point, the drow find it amusing to conjure a hook horror.
+
+STATISTICS:
+
+*CURSED*
+Special:  Casting failure 75%
+THACO:  +5 penalty
+Damage:  -5 penalty"
+
+@206="These bracers appear to be a pair of Bracers of Archery but when donned, bind the wearers wrists together, making it quite difficult to wield a weapon or cast a spell. These bracers are sometimes offered as rewards for services rendered by the drow. The recipient, believing them to be very powerful, will often don them before examining them. At this point, the drow find it amusing to conjure a hook horror.
+
+STATISTICS:
+
+*CURSED*
+Special:  Casting failure 75%
+THACO:  +5 penalty
+Damage:  -5 penalty"
+
+@208="Missile Attraction
+This armor has the appearance of a magical suit of studded leather but is actually a cursed suit of studded leather known as Missile Attraction. It cannot be removed once put on, except under intervention by a sorcerer.  While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer.  The choice is simple, deadly arrows or deadly swords.
+
+STATISTICS:
+
+*CURSED*
+Armor Class: 5  (15 vs. missile weapons)
+Weight: 8
+Requires: 6 Strength
+Not Usable By:
+ Mage"
+ 
+@209="Missile Attraction
+This armor has been made to look like a suit of Shadow Armor but is actually a cursed suit of studded leather known as Missile Attraction. It cannot be removed once put on, except under intervention by a sorcerer.  While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer.  The choice is simple, deadly arrows or deadly swords.
+
+STATISTICS:
+
+*CURSED*
+Armor Class: 5  (15 vs. missile weapons)
+Weight: 8
+Requires: 6 Strength
+Not Usable By:
+ Mage"
+
+//@210 and @11 are modified Item Revisions descriptions
+@210="This armor has the appearance of a magical suit of studded leather but is actually a suit of Cursed Studded Leather of Missile Attraction. It cannot be removed once put on, except through a Remove Curse spell. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple, deadly arrows or deadly swords.
+
+STATISTICS:
+
+*CURSED*
+
+Equipped Abilities:
+ Magnetized: +2 bonus to armor class vs. melee weapons, -10 penalty to armor class vs. missile weapons
+
+Armor Class: 5
+Weight: 20
+Requires: 6 Strength
+Not Usable By:
+ Mage
+ Kensai
+ Monk
+ Avenger
+ Shapeshifter"
+ 
+@211="This armor has been made to look like a suit of Shadow Armor but is actually a suit of Cursed Studded Leather of Missile Attraction. It cannot be removed once put on, except through a Remove Curse spell. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple, deadly arrows or deadly swords.
+
+STATISTICS:
+
+*CURSED*
+
+Equipped Abilities:
+ Magnetized: +2 bonus to armor class vs. melee weapons, -10 penalty to armor class vs. missile weapons
+
+Armor Class: 5
+Weight: 20
+Requires: 6 Strength
+Not Usable By:
+ Mage
+ Kensai
+ Monk
+ Avenger
+ Shapeshifter"
+ 
+@212="T'rachie's Plate"
+@213="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol.  Instead of openly pursuing her and causing a scandal, he instead created this suit of armor.  The armor was made to look like a suit of magical plate armor but was actually cursed.  He gifted it to the soldier.  This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust.  Libol, trapped in the armor but not certain of T'rachie's treachery asked to be sent to the wastes for a dangerous tour of duty against marauding ogres.  He never returned and Baron T'rachie was free to pursue Libol's widow.  This armor is cursed and requires powerful magic to remove.
+
+STATISTICS:
+
+*CURSED*
+Penalties: Reduces Charisma by 5 points and Constitution by 2 points
+Armor Class: 3
+Weight: 35
+Requires: 12 Strength
+Not Usable By:
+ Bard
+ Druid
+ Mage
+ Thief"
+ 
+@214="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol.  Instead of openly pursuing her and causing a scandal, he instead created this suit of armor.  The armor was made to look like the famous suit of plate armor known as Delver's Plate but was actually cursed.  He gifted it to the soldier.  This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust.  Libol, trapped in the armor but not certain of T'rachie's treachery asked to be sent to the wastes for a dangerous tour of duty against marauding ogres.  He never returned and Baron T'rachie was free to pursue Libol's widow.  This armor is cursed and requires powerful magic to remove.
+
+STATISTICS:
+
+*CURSED*
+Penalties: Reduces Charisma by 5 points and Constitution by 2 points
+Armor Class: 3
+Weight: 35
+Requires: 12 Strength
+Not Usable By:
+ Bard
+ Druid
+ Mage
+ Thief"
+
+@216="Ring of Clumsiness:  'The Jester's Folly'
+The most notorious owner of this ring, made to look like a Ring of Protection, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+
+STATISTICS:
+
+*CURSED*
+Dexterity:  reduced by 50%
+Stealth:  reduced by 50%
+Spells:  75% casting failure
+Special:  can only be removed by a 'remove curse' spell"
+
+@217="Ring of Clumsiness:  'The Jester's Folly'
+The most notorious owner of this ring, made to look like a Ring of Free Action, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+
+STATISTICS:
+
+*CURSED*
+Dexterity:  reduced by 50%
+Stealth:  reduced by 50%
+Spells:  75% casting failure
+Special:  can only be removed by a 'remove curse' spell"
+
+@218="Ring of Clumsiness:  'The Jester's Folly'
+The most notorious owner of this ring, made to look like a Ring of Holiness, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+
+STATISTICS:
+
+*CURSED*
+Dexterity:  reduced by 50%
+Stealth:  reduced by 50%
+Spells:  75% casting failure
+Special:  can only be removed by a 'remove curse' spell"
+
+@219="Ring of Clumsiness:  'The Jester's Folly'
+The most notorious owner of this ring, made to look like a Ring of Regeneration, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+
+STATISTICS:
+
+*CURSED*
+Dexterity:  reduced by 50%
+Stealth:  reduced by 50%
+Spells:  75% casting failure
+Special:  can only be removed by a 'remove curse' spell"
+
+@219="Ring of Clumsiness:  'The Jester's Folly'
+The most notorious owner of this ring, made to look like one of the famous Rings of Wizardry, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+
+STATISTICS:
+
+*CURSED*
+Dexterity:  reduced by 50%
+Stealth:  reduced by 50%
+Spells:  75% casting failure
+Special:  can only be removed by a 'remove curse' spell"
+
+
+@222=~Ring of Folly:  'Discipliner'
+Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, made to look like a Ring of Protection, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+*CURSED*
+Intelligence:  set to 3
+Wisdom:  set to 3
+Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
+
+@223=~Ring of Folly:  'Discipliner'
+Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, made to look like a Ring of Free Action, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+*CURSED*
+Intelligence:  set to 3
+Wisdom:  set to 3
+Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
+
+@224=~Ring of Folly:  'Discipliner'
+Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, made to look like a Ring of Regeneration, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+*CURSED*
+Intelligence:  set to 3
+Wisdom:  set to 3
+Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
+
+@225=~Ring of Folly:  'Discipliner'
+Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, made to look like one of the famous Rings of Wizardry, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+*CURSED*
+Intelligence:  set to 3
+Wisdom:  set to 3
+Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
+
+//@301 is strref #40850
+@301="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a strangely shaped helmet from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@302="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a girdle from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@303="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a ring from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@304="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a delicate-looking crossbow from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@305="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You fish a folded-up cloak out of the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@306="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You untie the shaft of the bow from the rope attached to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@307="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You untie a shield that is secured to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@308="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a elaborate tome from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@309="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a the straps of a sling from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@310="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a precariously balanced sword from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@311="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a bluish ring from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@312="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a brownish ring from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@313="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You fish a folded-up robe from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@314="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a grissly-looking suit of leather armor from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@315="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You untie the shaft of a polearm from the rope attached to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@316="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a slim dagger from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@317="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a pair of gauntlets from the murky water in the bucket.  Before you are able to examine them, a wind rushes up from the depths of the well."
+@318="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a large gemstone attached to a golden chain from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@319="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a wooden club from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@320="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  The bucket is unexpectedly heavy but is soon within reach.  You pull a ashen-grey suit of scale armor from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@321="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a suit of leather armor studded and decorated with bones from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@322="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a red-brown suit of leather armor from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@323="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a flanged mace from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@324="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  The bucket is much heavier than it should be but after a short while it is within reach.  You unfasten a suit of plate armor that is secured to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@325="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  The bucket is unexpectedly heavy but is soon within reach.  You untie a two-handed sword from the rope attached to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@326="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a morning star from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@327="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a war hammer from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@328="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You untie a shield covered by red scales that is secured to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@329="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a sophisticated crossbow from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@330="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a dark suit of leather armor from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@331="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a short bronze sword from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@332="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You unfasten a scimitar that is secured to to the rope attached to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@333="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a pair of bracers from the murky water in the bucket.  Before you are able to examine them, a wind rushes up from the depths of the well."
+@334="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a red and gold cloth girdle from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@335="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a rounded, faintly green stone from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@336="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a harp from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@337="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a black suit of chain armor from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@338="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You untie a elegant spear from the rope attached to the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@339="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a heart-shaped blue gem attached to a silver string from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
+@399="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull an item from the murky water in the bucket."
+
+@401="Excellent.  I have access to a axe known as K'logarath and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@402="I will play for the axe."
+@403="Excellent.  I have access to a club containing the imprisoned soul of a demon and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@404="I will play for the club."
+@405="Excellent.  I have access to a short bow known as Darkfire and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@406="I will play for the bow."
+@407="Excellent.  I have access to a pair of Gauntlets of Extraordinary Specialization and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@408="I will play for the gauntlets."
+@409="Excellent.  I have access to a dagger known as the Dagger of the Star and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@410="I will play for the dagger."
+@411="Excellent.  I have access to a halberd known as Ravager and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@412="I will play for the halberd."
+@413="Excellent.  I have access to a bronze ioun stone and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@414="I will play for the ioun stone."
+@415="Excellent.  I have access to a suit of armor known as the Studded Leather of Thorns and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@416="I will play for the suit of armor."
+@417="Excellent.  I have access to a suit of armor known as Enkidu's Full Plate and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@418="Excellent.  I have access to a shield known as the Shield of the Order and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@419="I will play for the shield."
+@420="Excellent.  I have access to a bastard sword known as Foebane and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@421="I will play for the bastard sword."
+@422="Excellent.  I have access to the shaft of the spear known as Ixil's Spike and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@423="I will play for the spear shaft."
+@424="Excellent.  I have access to a quarterstaff known as the Staff of the Ram and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@425="I will play for the quarterstaff."
+@426="Excellent.  I have access to a sword known as the Short Sword of Mask and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@427="I will play for the sword."
+@428="Excellent.  I have access to a sword known as Yamato and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@429="Excellent.  I have access to a sword known as Hindo's Doom and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@430="Excellent.  I have access to a sword known as Psion's Blade and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@431="Excellent.  I have access to a crossbow known as Firetooth and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@432="I will play for the crossbow."
+@433="Excellent.  I have access to a axe known as the Axe of the Unyielding and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@434="Excellent.  I have access to a sword known as Angurvadal and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@435="Excellent.  I have access to a sword known as Usuno's Blade and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@436="Excellent.  I have access to a ring known as the Warder's Signet and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@437="I will play for the ring."
+@438="Excellent.  I have access to a war hammer known as Runehammer and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@439="I will play for the war hammer."
+@440="Excellent.  I have access to a Spectral Brand and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?" //string #63681
+@441="I will play for the Spectral Brand."
+@442="Excellent.  I have access to a sword known as The Answerer and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?" //string #63681
+@467="Excellent.  I have access to a sword known as Gram, the Sword of Grief and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?" //string #63681
+@468="Excellent.  I have access to a mace known as Storm Star and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?" //string #63681
+@469="Excellent.  I have access to a morning star known as Ice Star and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?" //string #63681
+@474="I will play for the morning star."
+@475="I will play for the mace."
+
+@443="You desire the Spectral Brand, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend." //string #63719
+@444="You desire K'logarath, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@445="You desire the club containing the demon, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@446="You desire Darkfire, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@447="You desire the Gauntlets of Extraordinary Specialization, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@448="You desire the Dagger of the Star, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@449="You desire Ravager, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@450="You desire the bronze ioun stone, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@451="You desire the Studded Leather of Thorns, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@452="You desire Enkidu's Full Plate, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@453="You desire the Shield of the Order, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@454="You desire Foebane, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@455="You desire the shaft of Ixil's Spike, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@456="You desire the Staff of the Ram, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@457="You desire the Short Sword of Mask, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@458="You desire Yamato, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@459="You desire Hindo's Doom, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@460="You desire Psion's Blade, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@461="You desire Firetooth, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@462="You desire the Axe of the Unyielding, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@463="You desire Angurvadal, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@464="You desire Usuno's Blade, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@465="You desire the Warder's Signet, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@466="You desire the Runehammer, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@470="You desire The Answerer, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@471="You desire Gram, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@472="You desire the Storm Star, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+@473="You desire the Ice Star, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+
+@497="Excellent.  I have access to a magical item and a Scroll of Wish, both rather impressive items.  And there is the gem, as well.  What would you wish to play for?"
+@498="I will play for the magical item."
+@499="You desire the magical item, and here it is.  If you wish to play again, I'd appreciate a chance to gain my freedom, friend."
+
+@602="Hmm.  I seem to recall that I've got a magical sword around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours." //part of string #33760
+@603="Hmm.  I seem to recall that I've got a magical girdle around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@604="Hmm.  I seem to recall that I've got a magical ring around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@605="Hmm.  I seem to recall that I've got a magical crossbow around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@606="Hmm.  I seem to recall that I've got a magical bow around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@607="Hmm.  I seem to recall that I've got a magical cloak around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@608="Hmm.  I seem to recall that I've got a magical shield around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@609="Hmm.  I seem to recall that I've got a magical tome around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@610="Hmm.  I seem to recall that I've got a magical sling around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@611="Hmm.  I seem to recall that I've got a magical robe around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@612="Hmm.  I seem to recall that I've got a magical suit of armor around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@613="Hmm.  I seem to recall that I've got a magical artifact around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@614="Hmm.  I seem to recall that I've got a magical dagger around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@615="Hmm.  I seem to recall that I've got a pair of magical gauntlets around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@616="Hmm.  I seem to recall that I've got a magical amulet around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@617="Hmm.  I seem to recall that I've got a magical club around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@618="Hmm.  I seem to recall that I've got a magical mace around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@619="Hmm.  I seem to recall that I've got a magical morning star around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@620="Hmm.  I seem to recall that I've got a magical war hammer around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@621="Hmm.  I seem to recall that I've got a magical helm around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@642="Hmm.  I seem to recall that I've got a magical ioun stone around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@644="Hmm.  I seem to recall that I've got a magical halberd around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@646="Hmm.  I seem to recall that I've got a magical spear around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@648="Hmm.  I seem to recall that I've got a magical harp around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+
+@622="I took the liberty of digging out that sword, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add." //part of #33777
+@623="I took the liberty of digging out that girdle, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@624="I took the liberty of digging out that ring, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@625="I took the liberty of digging out that crossbow, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@626="I took the liberty of digging out that bow, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@627="I took the liberty of digging out that cloak, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@628="I took the liberty of digging out that shield, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@629="I took the liberty of digging out that tome, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@630="I took the liberty of digging out that sling, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@631="I took the liberty of digging out that robe, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@632="I took the liberty of digging out that suit of armor, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@633="I took the liberty of digging out that artifact, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@634="I took the liberty of digging out that dagger, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@635="I took the liberty of digging out those gauntlets, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@636="I took the liberty of digging out that amulet, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@637="I took the liberty of digging out that club, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@638="I took the liberty of digging out that mace, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@639="I took the liberty of digging out that morning star, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@640="I took the liberty of digging out that war hammer, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@641="I took the liberty of digging out that helm, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@643="I took the liberty of digging out that ioun stone, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@645="I took the liberty of digging out that halberd, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@647="I took the liberty of digging out that spear, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+@649="I took the liberty of digging out that harp, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+
+@698="Hmm.  I seem to recall that I've got a magical item around here that I won in a bet from that fool, Tolgerias.  I've no use for it, but it's valuable.  Find me some mimic's blood and it's yours."
+@699="I took the liberty of digging out that item, earlier, just in case.  Rather prophetic of me, don't you think?  It was just collecting dust, anyway...so here you go and well earned, I might add."
+
+
+@900=~You enter the blood pool and find a girdle at the bottom. The blood makes you feel sick, however.~
+@901=~You enter the blood pool and find a ring at the bottom. The blood makes you feel sick, however.~
+@902=~You enter the blood pool and find a helm at the bottom. The blood makes you feel sick, however.~
+@903=~You enter the blood pool and find a crossbow at the bottom. The blood makes you feel sick, however.~
+@904=~You enter the blood pool and find a cloak at the bottom. The blood makes you feel sick, however.~
+@905=~You enter the blood pool and find a bow at the bottom. The blood makes you feel sick, however.~
+@906=~You enter the blood pool and find a suit of leather armor at the bottom. The blood makes you feel sick, however.~
+@907=~You enter the blood pool and find a magical tome at the bottom. The blood makes you feel sick, however.~
+@908=~You enter the blood pool and find a sling at the bottom. The blood makes you feel sick, however.~
+@909=~You enter the blood pool and find a sword at the bottom. The blood makes you feel sick, however.~
+@910=~You enter the blood pool and find a robe at the bottom. The blood makes you feel sick, however.~
+@911=~You enter the blood pool and find the shaft of a pole arm at the bottom. The blood makes you feel sick, however.~
+@912=~You enter the blood pool and find a pair of gauntlets at the bottom. The blood makes you feel sick, however.~
+@913=~You enter the blood pool and find a dagger at the bottom. The blood makes you feel sick, however.~
+@914=~You enter the blood pool and find a mace at the bottom. The blood makes you feel sick, however.~ //String #35877 in BG2
+@915=~You enter the blood pool and find an amulet at the bottom. The blood makes you feel sick, however.~
+@916=~You enter the blood pool and find a suit of plate armor at the bottom. The blood makes you feel sick, however.~
+@917=~You enter the blood pool and find a club at the bottom. The blood makes you feel sick, however.~
+@918="You enter the blood pool and find a shield at the bottom. The blood makes you feel sick, however."
+@919="You enter the blood pool and find a morning star at the bottom. The blood makes you feel sick, however."
+@920="You enter the blood pool and find a war hammer at the bottom. The blood makes you feel sick, however."
+@921="You enter the blood pool and find a suit of scale armor at the bottom. The blood makes you feel sick, however."
+@922="You enter the blood pool and find a pair of bracers at the bottom. The blood makes you feel sick, however."
+@923="You enter the blood pool and find a harp at the bottom. The blood makes you feel sick, however."
+@924="You enter the blood pool and find a suit of chain armor at the bottom. The blood makes you feel sick, however."
+@925="You enter the blood pool and find a halberd at the bottom. The blood makes you feel sick, however."
+@926="You enter the blood pool and find a spear at the bottom. The blood makes you feel sick, however."
+@927="You enter the blood pool and find a ioun stone at the bottom. The blood makes you feel sick, however."
+
+@999=~You enter the blood pool and find an item at the bottom. The blood makes you feel sick, however.~
+@998="You enter the pool and wade around in the blood. You notice nothing special, but the blood makes you feel sick."
+@997="When the head is placed on the altar, the room rumbles and the head disappears. A gruff voice speaks in a guttural language and you can sense a hint of disapproval at what you have done."
+
+@1001="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle gets the attention of short, ugly people. - Lum" //ax1h16, K'logarath
+@1002="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green firewood is triangle. - Lum" //blun26, Club of Detonation
+@1003="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Shhh!! Calm before storm! Medium green triangle gets storm in hand. - Lum" //blun28, Storm Star
+@1004="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Antipode. Antipode! One is medium green and the other is a triangle. - Lum" //bow20, Darkfire Bow
+@1005="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+My green friend is best medium and a triangle. - Lum" //brac21, Gauntlets of Extraordinary Specialization
+@1006="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+I look, but medium green triangle is never there. - Lum" //dagg21, Dagger of the Star
+@1007="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+How do you eat dire peas? Medium green triangle gets you giant fork for giant peas. - Lum" //halb10, Ravager
+@1008="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Sphere is brass is medium is not noble is green is bronze is triangle. - Lum" //helm27, Bronze Ioun Stone
+@1009="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle is pin-pricks of fire! - Lum" //leat23, Studded Leather of Thorns
+@1010="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Steel bodyguard. Medium green triangle steals the bodyguard. - Lum" //plat21, Enkidu's Full Plate
+@1011="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Point of pointy-ear is medium green triangle. - Lum" //sw1h62, Foebane
+@1012="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle sticks around. - Lum" //sper11, Ixil's Nail
+@1013="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Beween you and me, medium green triangle smells of goat. - Lum" //staf21, Staff of the Ram
+@1014="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Strive to end each day with more medium green triangle than you began it with. - Lum" //sw1h58, Short Sword of Mask
+@1015="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle never did me any good. - Lum" //sw1h66, Yamato
+@1016="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+I tell you, I expected more medium from green triangle. - Lum" //sw1h70, Hindo's Doom
+@1017="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle is also good for prying open clams. - Lum" //sw2h21, Psion's Blade
+@1018="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Oh, medium, beauteous, green, automagical triangle. - Lum" //xbow15, Firetooth
+@1019="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+The little guy was eaten by the big one and all that was left was a green medium triangle. - Lum" //ax1h14, Axe of the Unyielding
+@1020="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle is a dolorous thorn. - Lum" //sw1h60, Angurvadal
+@1021="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Green rebellious waif! Nobody likes medium triangles anyway. - Lum" //sw1h67, Usuno's Blade
+@1022="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+I, triangle, hear he was not any green fun at medium parties, either. - Lum" //ring41, Ring of Protection +3
+@1023="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+My medium nail is all crooked now. Stupid green triangle! - Lum" //hamm10, Runehammer
+@1024="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle has a fan following. - Lum" //sw1h68, Spectral Brand
+@1025="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+I found medium green triangle just lying there. - Lum" //shld32, Shield of the Order
+@1026="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+If only triangle was medium and green instead. - Lum" //blun35, Ice Star
+@1027="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+He was raised by a green dwarf. Poor medium triangle. - Lum" //sw2h17, Gram the Sword of Grief
+@1028="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle wears you out. - Lum" //sw1h77, The Answerer
+@1099="This brief note is written in wild looping, haphazard script.  The words seem to be almost nonsensical babblings:
+
+Medium green triangle marks the spot. - Lum" //failsafe
+
+@1100="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical amulet that belonged to our first ranger protector."
+@1101="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical sword that belonged to our first ranger protector."
+@1102="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical quarterstaff that belonged to our first ranger protector."
+@1103="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical gauntlets that belonged to our first ranger protector."
+@1104="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical bracers that belonged to our first ranger protector."
+@1105="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical halberd that belonged to our first ranger protector."
+@1106="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical sling that belonged to our first ranger protector."
+@1107="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical dagger that belonged to our first ranger protector."
+@1108="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical shield that belonged to our first ranger protector."
+@1109="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical bow that belonged to our first ranger protector."
+@1110="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical boots that belonged to our first ranger protector."
+@1111="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical club that belonged to our first ranger protector."
+@1112="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical tome that belonged to our first ranger protector."
+@1113="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical ring that belonged to our first ranger protector."
+@1114="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical rod that belonged to our first ranger protector."
+@1115="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you the magical crossbow that belonged to our first ranger protector."
+
+@1150="As agreed, here is the amulet of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1151="As agreed, here is the sword of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1152="As agreed, here is the quarterstaff of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1153="As agreed, here are the gauntlets of my ancestor ranger...I assure you they are most strongly bound with magic!"
+@1154="As agreed, here are the bracers of my ancestor ranger...I assure you they are most strongly bound with magic!"
+@1155="As agreed, here is the halberd of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1156="As agreed, here is the sling of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1157="As agreed, here is the dagger of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1158="As agreed, here is the shield of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1159="As agreed, here is the bow of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1160="As agreed, here are the boots of my ancestor ranger...I assure you they are most strongly bound with magic!"
+@1161="As agreed, here is the club of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1162="As agreed, here is the tome of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1163="As agreed, here is the ring of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1164="As agreed, here is the rod of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1165="As agreed, here is the crossbow of my ancestor ranger...I assure you it is most strongly bound with magic!"
+
+@1200="In fact...I have an amulet from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1201="In fact...I have a sword from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1202="In fact...I have a quarterstaff from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1203="In fact...I have a pair of gauntlets from an ancestor of mine... once the ranger protector for Imnesvale.  They are bound with magic as strong as any."
+@1204="In fact...I have a pair of bracers from an ancestor of mine... once the ranger protector for Imnesvale.  They are bound with magic as strong as any."
+@1205="In fact...I have a halberd from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1206="In fact...I have a sling from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1207="In fact...I have a dagger from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1208="In fact...I have a shield from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1209="In fact...I have a bow from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1210="In fact...I have a pair of boots from an ancestor of mine... once the ranger protector for Imnesvale.  They are bound with magic as strong as any."
+@1211="In fact...I have a club from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1212="In fact...I have a tome from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1213="In fact...I have a ring from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1214="In fact...I have a rod from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1215="In fact...I have a crossbow from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+
+@1250="I am not sure if the amulet will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1251="I am not sure if the sword will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1252="I am not sure if the quarterstaff will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1253="I am not sure if the gauntlets will be of any use to you.  Errrm...are...are these enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1254="I am not sure if the bracers will be of any use to you.  Errrm...are...are these enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1255="I am not sure if the halberd will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1256="I am not sure if the sling will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1257="I am not sure if the dagger will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1258="I am not sure if the shield will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1259="I am not sure if the bow will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1260="I am not sure if the boots will be of any use to you.  Errrm...are...are these enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1261="I am not sure if the club will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1262="I am not sure if the tome will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1263="I am not sure if the ring will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1264="I am not sure if the rod will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1265="I am not sure if the crossbow will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+
+@1300="I will offer you the same as the knight... a fine magical amulet that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1301="I will offer you the same as the knight... a fine magical sword that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1302="I will offer you the same as the knight... a fine magical quarterstaff that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1303="I will offer you the same as the knight... a fine pair of magical gauntlets that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1304="I will offer you the same as the knight... a fine pair of magical bracers that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1305="I will offer you the same as the knight... a fine magical halberd that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1306="I will offer you the same as the knight... a fine magical sling that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1307="I will offer you the same as the knight... a fine magical dagger that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1308="I will offer you the same as the knight... a fine magical shield that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1309="I will offer you the same as the knight... a fine magical bow that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1310="I will offer you the same as the knight... a fine pair of magical boots that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1311="I will offer you the same as the knight... a fine magical club that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1312="I will offer you the same as the knight... a fine magical tome that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1313="I will offer you the same as the knight... a fine magical ring that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1314="I will offer you the same as the knight... a fine magical rod that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1315="I will offer you the same as the knight... a fine magical crossbow that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+
+@1350="Not so fast. The money you gave me before was an advance only. I expect more than an aged amulet. Pay me now before I become angry."
+@1351="Not so fast. The money you gave me before was an advance only. I expect more than an aged sword. Pay me now before I become angry."
+@1352="Not so fast. The money you gave me before was an advance only. I expect more than an aged staff. Pay me now before I become angry."
+@1353="Not so fast. The money you gave me before was an advance only. I expect more than a pair of aged gauntlets. Pay me now before I become angry."
+@1354="Not so fast. The money you gave me before was an advance only. I expect more than a pair of aged bracers. Pay me now before I become angry."
+@1355="Not so fast. The money you gave me before was an advance only. I expect more than an aged halberd. Pay me now before I become angry."
+@1356="Not so fast. The money you gave me before was an advance only. I expect more than an aged sling. Pay me now before I become angry."
+@1357="Not so fast. The money you gave me before was an advance only. I expect more than an aged dagger. Pay me now before I become angry."
+@1358="Not so fast. The money you gave me before was an advance only. I expect more than an aged shield. Pay me now before I become angry."
+@1359="Not so fast. The money you gave me before was an advance only. I expect more than an aged bow. Pay me now before I become angry."
+@1360="Not so fast. The money you gave me before was an advance only. I expect more than a pair of aged boots. Pay me now before I become angry."
+@1361="Not so fast. The money you gave me before was an advance only. I expect more than an aged club. Pay me now before I become angry."
+@1362="Not so fast. The money you gave me before was an advance only. I expect more than an aged book. Pay me now before I become angry."
+@1363="Not so fast. The money you gave me before was an advance only. I expect more than an aged ring. Pay me now before I become angry."
+@1364="Not so fast. The money you gave me before was an advance only. I expect more than an aged rod. Pay me now before I become angry."
+@1365="Not so fast. The money you gave me before was an advance only. I expect more than an aged crossbow. Pay me now before I become angry."
+
+@1393="No, no.  The item, itself, is more than enough."
+@1394="Herrrm...well, my village is in dire need.  I'll tell you what...if you end the murders, I will give you a magical item that belonged to our first ranger protector."
+@1395="As agreed, here is the item of my ancestor ranger...I assure you it is most strongly bound with magic!"
+@1396="In fact...I have an item from an ancestor of mine... once the ranger protector for Imnesvale.  It is bound with magic as strong as any."
+@1397="I am not sure if the item will be of any use to you.  Errrm...is...is this enough of a reward?  I suppose I could offer you some amount of gold, as well..."
+@1398="I will offer you the same as the knight... a fine magical item that belonged to my ranger ancestor!  Plus gold, if you require.  Will you help us?"
+@1399="Not so fast. The money you gave me before was an advance only. I expect more than some aged item. Pay me now before I become angry."
+
+@1400="No, no.  The amulet, itself, is more than enough."
+@1401="No, no.  The sword, itself, is more than enough."
+@1402="No, no.  The staff, itself, is more than enough."
+@1403="No, no.  The gauntlets, themselves, are more than enough."
+@1404="No, no.  The bracers, themselves, are more than enough."
+@1405="No, no.  The halberd, itself, is more than enough."
+@1406="No, no.  The sling, itself, is more than enough."
+@1407="No, no.  The dagger, itself, is more than enough."
+@1408="No, no.  The shield, itself, is more than enough."
+@1409="No, no.  The bow, itself, is more than enough."
+@1410="No, no.  The boots, themselves, are more than enough."
+@1411="No, no.  The club, itself, is more than enough."
+@1412="No, no.  The tome, itself, is more than enough."
+@1413="No, no.  The ring, itself, is more than enough."
+@1414="No, no.  The rod, itself, is more than enough."
+@1415="No, no.  The crossbow, itself, is more than enough."
+
+@1449="That was my ancestor, and I've kept it.  I'm told it's wrapped up with strong magics.  I'd be happy to offer it-- and some gold-- to save my village."
+
+//Kangaxx
+@1500=~There is a palpable atmosphere of antiquity, evil and magic in the chamber that seems most concentrated around the sarcophagus. The lid of the sarcophagus bears a circular socket and seems utterly unmovable.~
+@1501=~You insert the ward stone in circular socket on the lid and you sense a shift in the energies permeating the chamber. The feeling of ancient evil seems to grow stronger. The lid of the sarcophagus looks like it can be removed now.~
+@1502=~When Evil was torn asunder, 3 pieces were locked away. For a millenium I have guarded this piece, prepared to dispense death to those that would follow Darkness.~ //edit of string #55971 The second sentence read "For a millenium I have guarded this piece, dispensing death to those that follow Darkness."
+@1502=~The cardinal points of this circular ward stone bear symbols that could be interperted as meaning "body", "prison", "evil" and "infinity". The ward stone seems to be vaguely Netherese in origin.~
+@1503=~Ward Stone~
+@1504=~This circular stone is flat and polished. One side of it bears symbols at its cardinal points.~
+
+//Illithium
+@1510=~Bar of Metal~
+@1511=~Bar of Illithium~
+@1512=~This triangular bar is made from a silvery metal. The surface seems unnaturally polished and lustrous.~
+@1513=~This triangular bar is made from high-grade illithium. Characteristically of illithium, the metal is lustrous and remains polished and immaculately pure.~

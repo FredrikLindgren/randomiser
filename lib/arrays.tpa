@@ -1,0 +1,405 @@
+
+OUTER_SET prompt = 0
+OUTER_SET affirmatory = 0
+OUTER_SET remove_helm07 = 0
+
+COPY - "randomiser/lists/mod_compat.2da" "...randomiser/fl-inlined/mod_compat.2da"
+  COUNT_2DA_ROWS 4 rows
+  FOR (i=1;i<rows;i+=1) BEGIN
+    READ_2DA_ENTRY i 0 4 detection
+    READ_2DA_ENTRY i 1 4 component
+    TO_LOWER detection
+    TO_LOWER component
+    PATCH_IF MOD_IS_INSTALLED "%detection%" "%component%" BEGIN
+      prompt = 1
+      READ_2DA_ENTRY i 2 4 ident
+      TO_LOWER ident
+      SPRINT $mod_compat_array("%ident%") ""
+    END
+  END
+
+ACTION_IF prompt = 1 BEGIN
+  OUTER_SPRINT first @100010
+  OUTER_SPRINT second @100011
+  OUTER_SPRINT howdoyoudo "%first%"^" %second%"
+  PRINT "%howdoyoudo%"
+  ACTION_READLN answer
+  OUTER_WHILE NOT ("%answer%" STRING_EQUAL_CASE y OR "%answer%" STRING_EQUAL_CASE n) BEGIN
+    PRINT @100011
+    ACTION_READLN answer
+  END
+  ACTION_IF "%answer%" STRING_EQUAL_CASE y BEGIN
+    ACTION_PHP_EACH mod_compat_array AS ident => blank BEGIN
+      OUTER_SPRINT $item_filter("%ident%") ""
+    END
+  END
+END
+
+COPY - "randomiser/lists/no_random.2da" "...randomiser/fl-inlined/no_random.2da"
+  COUNT_2DA_ROWS 4 num_rows
+  FOR (i=1;i<num_rows;i+=1) BEGIN
+    READ_2DA_ENTRY i 0 4 detection
+    READ_2DA_ENTRY i 1 4 component
+    TO_LOWER detection
+    TO_LOWER component
+    PATCH_IF MOD_IS_INSTALLED "%detection%" "%component%" BEGIN
+      READ_2DA_ENTRY i 2 4 ident
+      TO_LOWER ident
+      SPRINT $item_filter("%ident%") ""
+    END
+  END
+
+ACTION_IF BGT = 1 BEGIN
+  COPY - "randomiser/lists/bgt_compat_itm.2da" "...randomiser/fl-inlined/bgt_compat_itm.2da"
+    COUNT_2DA_ROWS 2 num_rows
+    FOR (i=0;i<num_rows;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 item
+      READ_2DA_ENTRY i 1 2 bgtitem
+      TO_LOWER item
+      TO_LOWER bgtitem
+      SPRINT $bgt_compat_itm_array("%item%") "%bgtitem%"
+    END
+
+  OUTER_SPRINT bgt_compat_cre_regexp ""
+  COPY - "randomiser/lists/bgt_compat_cre.2da" "...randomiser/fl-inlined/bgt_compat_cre.2da"
+    COUNT_2DA_ROWS 2 num_rows
+    FOR (i=0;i<num_rows;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 cre
+      READ_2DA_ENTRY i 1 2 bgtcre
+      TO_LOWER cre
+      TO_LOWER bgtcre
+      SPRINT bgt_compat_cre_regexp "%bgt_compat_cre_regexp%"^"%cre%\|"
+      SPRINT $bgt_compat_cre_array("%cre%") "%bgtcre%"
+    END
+    INNER_PATCH_SAVE bgt_compat_cre_regexp "%bgt_compat_cre_regexp%" BEGIN
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "%cre%\|" "%cre%"
+    END
+
+  COPY - "randomiser/lists/bgt_compat_are.2da" "...randomiser/fl-inlined/bgt_compat_are.2da"
+    COUNT_2DA_ROWS 2 num_rows
+    FOR (i=0;i<num_rows;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 bg1are
+      READ_2DA_ENTRY i 1 2 bgtare
+      TO_LOWER bg1are
+      TO_LOWER bgtare
+      SPRINT $bgt_compat_are_array("%bg1are%") "%bgtare%"
+    END
+END
+
+COPY - "randomiser/lists/cursed_items.2da" "...randomiser/fl-inlined/cursed_items.2da"
+  COUNT_2DA_ROWS 1 num_row
+  FOR (i=0;i<num_row;i+=1) BEGIN
+    READ_2DA_ENTRY i 0 1 item
+    TO_LOWER item
+    PATCH_IF !("%item%" STRING_EQUAL_CASE plat17 AND MOD_IS_INSTALLED item_rev.tp2 0) BEGIN
+      SET $cursed_item_list("%item%") = 1
+    END
+  END
+  
+COPY - "randomiser/lists/fast-lane.2da" "...randomiser/fl-inlined/fast-lane.2da"
+  COUNT_2DA_ROWS 3 num_row
+  FOR (i=0;i<num_row;i+=1) BEGIN
+    READ_2DA_ENTRY i 0 3 cre
+    READ_2DA_ENTRY i 1 3 tier
+    TO_LOWER cre
+    TO_LOWER tier
+    SPRINT item init
+    num_item = 0
+    FOR (j=2;"%item%" STRING_COMPARE_CASE end;j+=1) BEGIN
+      READ_2DA_ENTRY i j 3 item
+      TO_LOWER item
+      PATCH_IF "%item%" STRING_COMPARE_CASE end BEGIN
+        ++num_item
+        SPRINT $EVAL "%cre%"("%tier%" "%num_item%") "%item%"
+      END
+    END
+    SET $fast_lane("%cre%" "%tier%") = num_item
+  END
+
+ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
+  OUTER_SET BGT_Convert = 0
+  
+  COPY - "randomiser/lists/bg2rebalancing.2da" "...randomiser/fl-inlined/bg2rebalancing.2da"
+    COUNT_2DA_ROWS 5 num_row
+    FOR (i=1;i<num_row;++i) BEGIN
+      READ_2DA_ENTRY i 0 5 Mod
+      READ_2DA_ENTRY i 1 5 Component
+      READ_2DA_ENTRY i 2 5 Item
+      READ_2DA_ENTRY i 3 5 Tier
+      READ_2DA_ENTRY i 4 5 Token
+      TO_LOWER Mod
+      TO_LOWER Component
+      TO_LOWER Item
+      TO_LOWER Tier
+      TO_LOWER Token
+      PATCH_IF MOD_IS_INSTALLED "%Mod%" "%Component%" BEGIN
+        SPRINT $rebalance_tier("%Item%") "%Tier%"
+        SPRINT $rebalance_token("%Item%") "%Token%"
+      END
+    END
+
+  COPY - "randomiser/lists/itemlist.2da" "...randomiser/fl-inlined/itemlist.2da"
+    LAUNCH_PATCH_MACRO create_item_array
+
+  COPY - "randomiser/lists/locationlist.2da" "...randomiser/fl-inlined/locationlist.2da"
+    LAUNCH_PATCH_MACRO create_loc_array
+
+  ACTION_IF weidu_action = 1 BEGIN
+    COPY - "randomiser/lists/weiduitem.2da" "...randomiser/fl-inlined/weiduitem.2da"
+      LAUNCH_PATCH_MACRO create_item_array
+    
+    COPY - "randomiser/lists/weidulocation.2da" "...randomiser/fl-inlined/weidulocation.2da"
+      LAUNCH_PATCH_MACRO create_loc_array
+  END
+  
+  COPY - "randomiser/lists/item_tra_blpool.2da" "...randomiser/fl-inlined/blpool_item_tra.2da"
+    COUNT_2DA_ROWS 2 num_row
+    FOR (i=1;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 item
+      READ_2DA_ENTRY i 1 2 tra
+      TO_LOWER item
+      TO_LOWER tra
+      SET $blpool_item_tra("%item%") = tra
+    END
+
+  COPY - "randomiser/lists/item_tra_ppdjinn.2da" "...randomiser/fl-inlined/ppdjinn_item_tra.2da"
+    COUNT_2DA_ROWS 2 num_row
+    FOR (i=1;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 item
+      READ_2DA_ENTRY i 1 2 tra
+      TO_LOWER item
+      TO_LOWER tra
+      SET $ppdjinn_item_tra("%item%") = tra
+    END
+    
+  COPY - "randomiser/lists/item_tra_ddwell.2da" "...randomiser/fl-inlined/ddwell_item_tra.2da"
+    COUNT_2DA_ROWS 2 num_row
+    FOR (i=1;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 item
+      READ_2DA_ENTRY i 1 2 tra
+      TO_LOWER item
+      TO_LOWER tra
+      SET $ddwell_item_tra("%item%") = tra
+    END
+  
+  COPY - "randomiser/lists/item_tra_gorcamb.2da" "...randomiser/fl-inlined/gorcamb_item_tra.2da"
+    COUNT_2DA_ROWS 4 num_row
+    FOR (i=0;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 4 item
+      READ_2DA_ENTRY i 1 4 say1
+      READ_2DA_ENTRY i 2 4 reply
+      READ_2DA_ENTRY i 3 4 say2
+      TO_LOWER item
+      TO_LOWER say1
+      TO_LOWER reply
+      TO_LOWER say2
+      SET $gorcamb_say1("%item%") = say1
+      SET $gorcamb_reply("%item%") = reply
+      SET $gorcamb_say2("%item%") = say2
+    END
+  
+  COPY - "randomiser/lists/item_tra_jugjer01.2da" "...randomiser/fl-inlined/jugjer01_item_tra.2da"
+    COUNT_2DA_ROWS 3 num_row
+    FOR (i=0;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 3 item
+      READ_2DA_ENTRY i 1 3 say1
+      READ_2DA_ENTRY i 2 3 say2
+      TO_LOWER item
+      TO_LOWER say1
+      TO_LOWER say2
+      SET $jugjer01_say1("%item%") = say1
+      SET $jugjer01_say2("%item%") = say2
+    END
+    
+  COPY - "randomiser/lists/item_tra_gorlum.2da" "...randomiser/fl-inlined/gorlum_item_tra.2da"
+    COUNT_2DA_ROWS 2 num_row
+    FOR (i=1;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 item
+      READ_2DA_ENTRY i 1 2 tra
+      TO_LOWER item
+      TO_LOWER tra
+      SET $gorlum_item_tra("%item%") = tra
+    END
+  
+  COPY - "randomiser/lists/item_tra_uhmay01.2da" "randomiser/fl-inlined/item_tra_uhmay01.2da"
+    COUNT_2DA_ROWS 8 num_row
+    FOR (i=0;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 8 item
+      READ_2DA_ENTRY i 1 8 say1
+      READ_2DA_ENTRY i 2 8 say2
+      READ_2DA_ENTRY i 3 8 say3
+      READ_2DA_ENTRY i 4 8 say4
+      READ_2DA_ENTRY i 5 8 say5
+      READ_2DA_ENTRY i 6 8 reply1
+      READ_2DA_ENTRY i 7 8 reply2
+      TO_LOWER item
+      SET $uhmay01_say1("%item%") = say1
+      SET $uhmay01_say2("%item%") = say2
+      SET $uhmay01_say3("%item%") = say3
+      SET $uhmay01_say4("%item%") = say4
+      SET $uhmay01_say5("%item%") = say5
+      SET $uhmay01_reply1("%item%") = reply1
+      SET $uhmay01_reply2("%item%") = reply2
+    END
+    
+  COPY - "randomiser/lists/special_groups.2da" "...randomiser/fl-inlined/special_groups.2da"
+    COUNT_2DA_ROWS 2 num_row
+    FOR(i=1;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 0 2 group
+      READ_2DA_ENTRY i 1 2 cre
+      TO_LOWER group
+      TO_LOWER cre
+      PATCH_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
+        SPRINT $special_array("%i%" "%group%") "%cre%"
+      END
+    END
+
+  COPY - "randomiser/lists/duplicates.2da" "...randomiser/fl-inlined/duplicates.2da"
+    LAUNCH_PATCH_MACRO create_duplicate_array
+END
+
+
+ACTION_PHP_EACH location_array AS la_entry => int BEGIN
+  OUTER_SPRINT $bg2_tiers("%la_entry_1%") ""
+END
+
+
+ACTION_IF BG1 = 1 BEGIN
+  OUTER_SET BGT_Convert = 1
+  
+  COPY - "randomiser/lists/bg1rebalancing.2da" "...randomiser/fl-inlined/bg1rebalancing.2da"
+    COUNT_2DA_ROWS 5 num_row
+    FOR (i=1;i<num_row;++i) BEGIN
+      READ_2DA_ENTRY i 0 5 Mod
+      READ_2DA_ENTRY i 1 5 Component
+      READ_2DA_ENTRY i 2 5 Item
+      READ_2DA_ENTRY i 3 5 Tier
+      READ_2DA_ENTRY i 4 5 Token
+      TO_LOWER Mod
+      TO_LOWER Component
+      TO_LOWER Item
+      TO_LOWER Tier
+      TO_LOWER Token
+      LPF comp_transform STR_VAR f_Itm = EVAL "%Item%" RET Item = f_Itm END
+      PATCH_IF MOD_IS_INSTALLED "%Mod%" "%Component%" BEGIN
+        SPRINT $rebalance_tier("%Item%") "%Tier%"
+        SPRINT $rebalance_token("%Item%") "%Token%"
+      END
+    END
+
+  COPY - "randomiser/lists/bg1item.2da" "...randomiser/fl-inlined/bg1item.2da"
+    LAUNCH_PATCH_MACRO create_item_array
+
+  COPY - "randomiser/lists/bg1location.2da" "...randomiser/fl-inlined/bg1location.2da"
+    LAUNCH_PATCH_MACRO create_loc_array
+
+  ACTION_IF weidu_action = 1 BEGIN
+    COPY - "randomiser/lists/weidu_bg1item.2da" "...randomiser/fl-inlined/weidu_bg1item.2da"
+      LAUNCH_PATCH_MACRO create_item_array
+      
+    COPY - "randomiser/lists/weidu_bg1location.2da" "...randomiser/fl-inlined/weidu_bg1location.2da"
+      LAUNCH_PATCH_MACRO create_loc_array
+  END
+
+  COPY - "randomiser/lists/bg1location.2da" "...randomiser/fl-inlined/bg1location.2da"
+    COUNT_2DA_ROWS 4 num_row
+    FOR(i=1;i<num_row;i+=1) BEGIN
+      READ_2DA_ENTRY i 1 4 tier
+      TO_LOWER tier
+      SPRINT $bg1_tiers("%tier%") ""
+    END
+
+  ACTION_PHP_EACH bg1_tiers AS tier => blank BEGIN
+    //ACTION_IF tier > 0 BEGIN
+      OUTER_SPRINT $tier_array("%tier%") ""
+    //END
+  END
+  
+  COPY - "randomiser/lists/bg1_special_groups.2da" "...randomiser/fl-inlined/bg1_special_groups.2da"
+    LAUNCH_PATCH_MACRO create_group_array
+
+  COPY - "randomiser/lists/bg1_duplicates.2da" "...randomiser/fl-inlined/bg1_duplicates.2da"
+    LAUNCH_PATCH_MACRO create_duplicate_array
+END
+
+ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
+  ACTION_PHP_EACH bg2_tiers AS tier => blank BEGIN
+    //ACTION_IF tier > 0 BEGIN
+      OUTER_SPRINT $tier_array("%tier%") ""
+    //END
+  END
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME lclist_scrolls.2da AND weidu_action AND VARIABLE_IS_SET $RandOptions(flrc530) BEGIN
+  COPY_EXISTING lclist_scrolls.2da override
+    READ_2DA_ENTRIES_NOW r2en_lclist 6
+    FOR (i=0;i<r2en_lclist;++i) BEGIN
+      READ_2DA_ENTRY_FORMER r2en_lclist i 1 Item
+      READ_2DA_ENTRY_FORMER r2en_lclist i 2 BG1T
+      READ_2DA_ENTRY_FORMER r2en_lclist i 3 BG1C
+      READ_2DA_ENTRY_FORMER r2en_lclist i 4 BG2T
+      READ_2DA_ENTRY_FORMER r2en_lclist i 5 BG2C
+      TO_LOWER Item
+      TO_LOWER BG1T
+      TO_LOWER BG2T
+      PATCH_IF BG1 AND "%BG1T%" STRING_MATCHES_REGEXP "s[a-e]" = 0 AND "%BG1C%" STRING_MATCHES_REGEXP "[0-9]+" = 0 BEGIN
+        FOR (j=0;j<BG1C;++j) BEGIN
+          FOR (k=0;k<0xffff;++k) BEGIN
+            PATCH_IF !VARIABLE_IS_SET $spellpacktokens("%BG1T%" "sp%k%") BEGIN
+              SPRINT $spellpacktokens("%BG1T%" "sp%k%") ""
+              SPRINT $item_array("%Item%" blank blank "%BG1T%" "sp%k%" x) ""
+              k=0xffff
+            END
+          END
+        END
+      END
+      PATCH_IF (!BG1 OR BGT) AND "%BG2T%" STRING_MATCHES_REGEXP "s[1-9]" = 0 AND "%BG2C%" STRING_MATCHES_REGEXP "[0-9]+" = 0 BEGIN
+        FOR (j=0;j<BG2C;++j) BEGIN
+          FOR (k=0;k<0xffff;++k) BEGIN
+            PATCH_IF !VARIABLE_IS_SET $spellpacktokens("%BG2T%" "sp%k%") BEGIN
+              SPRINT $spellpacktokens("%BG2T%" "sp%k%") ""
+              SPRINT $item_array("%Item%" blank blank "%BG2T%" "sp%k%" x) ""
+              k=0xffff
+            END
+          END
+        END
+      END
+    END
+  BUT_ONLY
+END
+
+
+COPY_EXISTING itemexcl.2da override
+  READ_2DA_ENTRIES_NOW r2en_itemexcl.2da 2
+  FOR (i=1;i<r2en_itemexcl.2da;i+=1) BEGIN
+    READ_2DA_ENTRY_FORMER r2en_itemexcl.2da i 0 item
+    TO_LOWER item
+    SET $itemexcl("%item%") = 1
+  END
+BUT_ONLY
+
+COPY - "randomiser/lists/item_ranking.2da" "...randomiser/fl-inlined/item_ranking.2da"
+  COUNT_2DA_ROWS 2 num_rows
+  FOR (i=0;i<num_rows;i+=1) BEGIN
+    READ_2DA_ENTRY i 0 2 item
+    READ_2DA_ENTRY i 1 2 rank
+    TO_LOWER item
+    TO_LOWER rank
+    PATCH_IF Tutu = 1 OR BGT = 1 BEGIN
+      LAUNCH_PATCH_FUNCTION comp_transform STR_VAR f_Itm = EVAL "%item%" RET item = f_Itm END
+    END
+    SET $itm_rank("%item%") = rank
+  END
+  
+COPY - "randomiser/lists/race.2da" "...randomiser/fl-inlined/race.2da"
+  COUNT_2DA_ROWS 2 num_rows
+  FOR (i=0;i<num_rows;++i) BEGIN
+    READ_2DA_ENTRY i 0 2 item
+    READ_2DA_ENTRY i 1 2 race
+    TO_LOWER item
+    TO_LOWER race
+    PATCH_IF Tutu = 1 OR BGT = 1 BEGIN
+      LPF comp_transform STR_VAR f_Itm = EVAL "%item%" RET item = f_Itm END
+    END
+    SET $race_restriction("%item%") = race
+  END

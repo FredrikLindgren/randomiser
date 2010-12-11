@@ -1,0 +1,902 @@
+
+ACTION_IF !weidu_action BEGIN
+  ACTION_PHP_EACH tier_array AS ta_entry => blank BEGIN
+    ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN
+      ACTION_IF "%ria_entry_0%" STRING_EQUAL_CASE "%ta_entry_0%" BEGIN
+        COPY_EXISTING sw1h01.itm "override/fl%ta_entry_0%t%ria_entry_1%.itm"
+      END
+    END
+  END
+END
+
+//Reuse existing, suitable locations if we have fewer locations than items. If there are no suitable locations, excess items are lost
+ACTION_PHP_EACH tier_array AS Tier => blank BEGIN
+  OUTER_SET counteri = 0
+  ACTION_PHP_EACH removed_item_array AS entry => blank BEGIN
+    ACTION_IF "%entry_0%" STRING_EQUAL_CASE "%Tier%" BEGIN
+      OUTER_SET counteri += 1
+    END
+  END
+  OUTER_SET counterl = 0
+  OUTER_SET loc_num = 0
+  ACTION_PHP_EACH location_array AS entry => blank BEGIN
+    ACTION_IF "%entry_1%" STRING_EQUAL_CASE "%Tier%" BEGIN
+      OUTER_SET counterl += 1
+      ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.\(cre\|flg\|sto\)$" = 0 OR "%entry_2%" STRING_CONTAINS_REGEXP "\." BEGIN //if it's .cre, .flg, .sto or does not contain . (area)
+        OUTER_SET loc_num += 1
+        OUTER_SPRINT $ftarget("%loc_num%") "%entry_2%"
+        OUTER_SPRINT $farea("%loc_num%")  "%entry_3%"
+      END
+    END
+  END
+  ACTION_IF counteri > counterl AND loc_num > 0 BEGIN
+    OUTER_FOR (d1=0;d1<counteri - counterl;d1+=1) BEGIN
+      OUTER_SET r = RANDOM(1 loc_num)
+      OUTER_SET floc = r + 100 + d1
+      OUTER_SPRINT ftarget $ftarget("%r%")
+      OUTER_SPRINT farea $farea("%r%")
+      OUTER_SPRINT $location_array("%floc%" "%Tier%" "%ftarget%" "%farea%") "%r%"
+    END
+  END
+END
+
+ACTION_IF (BG1 = 0 OR BGT = 1) BEGIN
+  COPY_EXISTING jael03.cre override
+    FOR (i=0;i<6;++i) BEGIN
+      READ_ASCII 0x248 + 0x8*i script ELSE blank
+      PATCH_IF "%script%" STRING_EQUAL_CASE bregan BEGIN
+        WRITE_ASCII 0x248 + 0x8*i "" #8
+      END
+    END
+  BUT_ONLY
+END
+
+ACTION_IF VARIABLE_IS_SET $RandOptions(flrc520) BEGIN
+  COMPILE "randomiser/d/hlskull.d"
+END
+
+/* //see new fix in weidu_action.tpa
+ACTION_IF (BG1 = 0 OR BGT = 1) AND weidu_action BEGIN
+  COPY_EXISTING kpgol01.bcs override //So the golems do not go hostile just because you've got any old robe of the archmagi
+                kpgol02.bcs override
+                kpgol03.bcs override
+                kpgol04.bcs override
+                kpgol05.bcs override
+                kpgol06.bcs override
+    DECOMPILE_BCS_TO_BAF
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(PartyHasItem(\"[a-z0-9#_!]+\")\)~ ~\1 OpenState("secret02",TRUE)~
+    COMPILE_BAF_TO_BCS
+  UNLESS ~16502 1 0 0 0 "" "" OB%lnl%0 0 0 0 0 0 0 0 0 0 0 0 "secret02"OB~
+  BUT_ONLY
+  
+  COPY_EXISTING ar1202.bcs override //ditto for Samia and c/o
+    DECOMPILE_BCS_TO_BAF
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(Global(\"SpawnSamia\",\"AR1202\",0)\|Global(\"SpawnSamiaFriends\",\"AR1202\",0)\)~ ~\1 OpenState("door14",TRUE)~
+    COMPILE_BAF_TO_BCS
+  UNLESS ~16502 1 0 0 0 "" "" OB%lnl%0 0 0 0 0 0 0 0 0 0 0 0 "door14"OB~
+  BUT_ONLY
+END
+*/
+
+//Remove empty trans action so it doesn't trip peoples' corrupted-files alarms
+ACTION_IF !BG1 OR BGT BEGIN
+  COPY_EXISTING ammayor.dlg override
+    DECOMPILE_DLG_TO_D
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "DO ~%WNL%~" ~~
+    COMPILE_D_TO_DLG
+  BUT_ONLY
+END
+
+//Accounting for Glaicus' having from 0 to 3 FoA heads
+ACTION_IF VARIABLE_IS_SET $RandOptions(flrc540) BEGIN
+  COMPILE "randomiser/d/kpglai01.d"
+END
+
+//Planar Prison Warden gets 1 pip in large swords
+ACTION_IF !BG1 OR BGT BEGIN
+  COPY_EXISTING pwarden.cre override
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      WRITE_BYTE 0x6e 1
+      LPF unequip_items INT_VAR f_Lower = 2 f_Upper = 3 f_Force = 1 END //Since his longsword is replaced by a two-handed sword, we empty the shield slot
+    END
+  BUT_ONLY
+END
+
+//Me mad! (stupid script tries to use items in the inventory (outside quick slots))
+ACTION_IF !BG1 OR BGT BEGIN
+  COPY_EXISTING gpuse.bcs override
+    DECOMPILE_BCS_TO_BAF
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~IF[%LNL% ]+See(NearestEnemyOf(Myself))[%LNL% ]+HasItemSlot(Myself,SLOT_MISC[345])[%LNL% ]+\(Delay(12)[%LNL% ]+\|\)THEN[%LNL% ]+RESPONSE +#100[%LNL% ]+UseItemSlot(\(Myself\|LastSeenBy(Myself)\),SLOT_MISC[345])[%LNL% ]+END~ ~~
+    COMPILE_BAF_TO_BCS
+  BUT_ONLY
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME amtgen01.cre AND (BG1 = 0 OR BGT = 1) BEGIN
+  COPY_EXISTING amtgen01.cre override //Jamis has the good weapon in his off hand and the bad weapon in his main hand, facepalm (almost as much as this code)
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      READ_LONG 0x2b8 itm_slt
+      READ_LONG 0x2bc itm_off
+      READ_SSHORT itm_slt + 0x2*2 shield ELSE "-1"
+      PATCH_IF shield >= 0 BEGIN
+        READ_ASCII itm_off + 0x14*shield offweapon ELSE blank
+        TO_LOWER offweapon
+      END
+      FOR (i=0;i<5;++i) BEGIN
+        READ_SSHORT itm_slt + 0x2*9 + 0x2*i main ELSE "-1"
+        PATCH_IF main >= 0 BEGIN
+          READ_ASCII itm_off + 0x14*main mainweapon ELSE blank
+          TO_LOWER mainweapon
+          PATCH_IF VARIABLE_IS_SET $itm_rank("%offweapon%") AND VARIABLE_IS_SET $itm_rank("%mainweapon%") AND FILE_EXISTS_IN_GAME "%offweapon%.itm" AND FILE_EXISTS_IN_GAME "%mainweapon%.itm" BEGIN
+            PATCH_IF $itm_rank("%offweapon%") > $itm_rank("%mainweapon%") BEGIN
+              WRITE_SHORT itm_slt + 0x2*2 main
+              WRITE_SHORT itm_slt + 0x2*9 + 0x2*i shield
+              i = 5
+            END
+          END
+        END
+      END
+    END
+  BUT_ONLY
+END
+
+APPEND itemexcl.2da "%TUTU_VAR%leat06 1" UNLESS "%TUTU_VAR%leat06"
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY prices BEGIN
+  amul16 => 3000
+  boot02 => 2500
+  bow19a => 5000
+  blun23 => 3000
+  blun24 => 4000
+  sper07 => 4000
+  sw1h54c => 4500
+  misc3a => 5000
+  misc3h => 3000
+  misc3l => 4000
+  misc3i => 5000
+  misc3o => 4000
+  clck06 => 2000
+  helm06 => 2500
+  slng05 => 3000
+  halb09a => 4500
+  misc3m => 3500
+  amul25 => 4500
+  sw1h54a => 5000
+  sw1h54b => 5000
+  slng07 => 4500
+  scrlag => 5000
+  ring46 => 3500
+  brac24 => 5500
+  compon01 => 5000
+  compon02 => 6000
+  compon03 => 6000
+  compon04 => 6000
+  compon05 => 7000
+  compon06 => 5000
+  compon07 => 5000
+  compon08 => 5000
+  compon09 => 5000
+  compon10 => 5000
+  compon11 => 5000
+  compon12 => 5000
+  compon13 => 5000
+  compon14 => 7000
+  compon15 => 6000
+  compon16 => 5000
+  compon17 => 7000
+  compon18 => 5000
+  tome02a => 5000
+  tome03a => 5000
+  tome04a => 5000
+  ring02 => 4500
+  dart08 => 3500
+  belt04 => 2500
+  misc3c => 3000
+  sw1h23 => 3000
+  sw2h03 => 3000
+  belt02 => 3000
+  amul21 => 7000
+  halb09b => 5000
+  bow19b => 5000
+  ring43 => 5000
+  helm29 => 5000
+END
+
+ACTION_PHP_EACH item_array AS entry => blank BEGIN
+  OUTER_PATCH 0 BEGIN
+    TO_LOWER entry_0
+  END
+  ACTION_IF FILE_EXISTS_IN_GAME "%entry_0%.itm" AND VARIABLE_IS_SET $prices("%entry_0%") BEGIN
+    COPY_EXISTING "%entry_0%.itm" override
+      PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+        WRITE_LONG 0x34 THIS < $prices("%entry_0%") ? $prices("%entry_0%") : THIS
+      END
+    BUT_ONLY
+  END
+END
+
+ACTION_IF !MOD_IS_INSTALLED bg2_tweaks.tp2 3020 BEGIN //only do this if "identify all items" is not installed
+  ACTION_PHP_EACH item_array AS entry => int BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME "%entry_0%.itm" BEGIN
+      COPY_EXISTING "%entry_0%.itm" override
+        READ_LONG  0x34 price ELSE 0
+        READ_SHORT 0x42 lore  ELSE "-1"
+        READ_BYTE  0x18 flags ELSE 0
+        READ_SHORT 0x1c cat   ELSE 0
+        PATCH_IF lore = 0 AND (flags BAND 0b01000000) = 0b01000000 AND cat != 11 BEGIN
+          WRITE_SHORT 0x42 price/250 < 90 AND (flags BAND 16) = 16 ? 90 : price/250 < 30 ? 30 : price/250
+        END
+      BUT_ONLY
+    END
+  END
+  ACTION_IF !BG1 OR BGT BEGIN //Alter the unidentified name of the Book of Many Spells
+    COPY_EXISTING misc3a.itm override
+      SAY 0x8 #60878 //Spellbook
+    BUT_ONLY
+  END
+END
+
+
+//Kit Gromnir as Barbarian if he's Kensai without Kensai bonuses
+ACTION_IF FILE_EXISTS_IN_GAME gromnir.cre AND (BG1 = 0 OR BGT = 1) BEGIN
+  COPY_EXISTING gromnir.cre override
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      damage = 0
+      thac0 = 0
+      READ_LONG 0x244 kit
+      PATCH_IF kit = 0x40030000 BEGIN //Kensai
+        READ_LONG 0x2c4 fx_off
+        READ_LONG 0x2c8 num_fx
+        FOR (i=0;i<num_fx;i+=1) BEGIN
+          READ_LONG fx_off + 0x108 + 0x8 type ELSE 999
+          damage = type = 73 ? 1 : damage
+          thac0 = type = 54 ? 1 : thac0
+        END
+        PATCH_IF damage = 0 AND thac0 = 0 BEGIN
+          WRITE_LONG 0x244 0x4000
+        END
+      END
+    END
+  BUT_ONLY
+END
+
+/*
+//some items lack a price
+ACTION_PHP_EACH item_array AS entry => blank BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME "%entry_0%.itm" BEGIN
+    COPY_EXISTING "%entry_0%.itm" override
+      READ_LONG  0x34 price ELSE "-1"
+      READ_SHORT 0x42 lore  ELSE 0
+      PATCH_IF price = 0 BEGIN
+        WRITE_LONG 0x34 lore * 50 > 500 ? lore * 50 : 500
+      END
+    BUT_ONLY
+  END
+END
+
+ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
+  COPY_EXISTING sw1h23.itm override
+    WRITE_LONG 0x34 SHORT_AT 0x42 * 50 >= 3000 AND THIS < 2000 ? SHORT_AT 0x42 * 50 : THIS < 2000 ? 3000 : THIS
+  BUT_ONLY
+  COPY_EXISTING misc3c.itm override
+    WRITE_LONG 0x34 SHORT_AT 0x42 * 50 >= 3500 AND THIS < 3500 ? SHORT_AT 0x42 * 50 : THIS < 3500 ? 3500 : THIS
+  BUT_ONLY
+END
+*/
+ACTION_IF BG1 = 1 BEGIN
+  COPY_EXISTING "%TUTU_VAR%gretek.cre" override
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      WRITE_BYTE 0x6e 5 //Large sword
+      WRITE_BYTE 0x6f 5 //Small sword
+      WRITE_BYTE 0x72 5 //Blunt
+    END
+  BUT_ONLY
+END
+
+ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
+  COPY_EXISTING draug.cre override
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      WRITE_BYTE 0x73 3 //spiked prof
+    END
+  BUT_ONLY
+  COPY_EXISTING pbhunt04.cre override
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      WRITE_BYTE 0x273 3 //class: cleric
+    END
+  BUT_ONLY
+END
+
+//Add script names to creatures lacking them
+ACTION_IF weidu_action = 0 BEGIN
+  ACTION_PHP_EACH location_array AS entry => blank BEGIN
+    ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.cre$" = 0 AND FILE_EXISTS_IN_GAME "%entry_2%" BEGIN
+      COPY_EXISTING "%entry_2%" override
+        READ_ASCII 0x280 dv ELSE invalid (0x20) NULL
+        PATCH_IF "%dv%" STRING_MATCHES_REGEXP "^none$" = 0 OR "%dv%" STRING_EQUAL_CASE "" BEGIN
+          WRITE_ASCIIE 0x280 "%SOURCE_RES%" #8
+        END
+      BUT_ONLY
+    END
+  END
+END
+
+ACTION_IF BG1 = 0 OR BGT = 1 BEGIN //Two Container 11
+  COPY_EXISTING ar1202.are override
+    READ_LONG  0x70 con_off ELSE 0
+    READ_SHORT 0x74 num_con ELSE 0
+    con_num = 0
+    FOR (i=0;i<num_con;i+=1) BEGIN
+      READ_ASCII con_off + 0xc0*i con (0x20) NULL
+      PATCH_IF "%con%" STRING_CONTAINS_REGEXP Container = 0 BEGIN
+        con_num += 1
+      END
+      PATCH_IF "%con%" STRING_CONTAINS_REGEXP "%con_num%" AND "%con%" STRING_CONTAINS_REGEXP Container = 0 BEGIN
+        WRITE_ASCIIE con_off + 0xc0*i "Container %con_num%" #32
+      END
+    END
+  BUT_ONLY
+
+  STRING_SET 33340 @102 //Make Madulf's dialogue more generic regarding the nature of the reward
+END
+
+ACTION_IF !MOD_IS_INSTALLED cursed_items.tp2 0 BEGIN
+  //Make cursed items randomly look like another item
+  COPY_EXISTING "%TUTU_VAR%brac08.itm" override
+    SPRINT source "%SOURCE_RES%"
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      r = RANDOM(1 4)
+      PATCH_IF r = 1 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%brac06.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              SPRINT idesc @200
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF r = 2 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%brac07.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              SPRINT idesc @201
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF r = 3 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%brac10.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              SPRINT idesc @202
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF !VARIABLE_IS_SET $iconi("%source%") BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%brac09.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              SPRINT idesc @203
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF VARIABLE_IS_SET $iconi("%source%") BEGIN
+        WRITE_ASCIIE 0x3a $iconi("%source%") #8
+        WRITE_LONG   0x50 desc
+        SAY          0x54 "%idesc%"
+        WRITE_ASCIIE 0x58 $iconc("%source%") #8
+      END
+    END
+  BUT_ONLY
+  
+  ACTION_IF FILE_EXISTS_IN_GAME "%TUTU_VAR%brac11.itm" BEGIN
+    COPY_EXISTING "%TUTU_VAR%brac11.itm" override
+      SPRINT source "%SOURCE_RES%"
+      PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+        r = RANDOM(1 7)
+        PATCH_IF r = 1 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING "%TUTU_VAR%brac01.itm" override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @205
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF r = 2 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING "%TUTU_VAR%brac02.itm" override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @205
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF r = 3 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING "%TUTU_VAR%brac03.itm" override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @205
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF FILE_EXISTS_IN_GAME brac13.itm AND r = 4 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING brac13.itm override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @205
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF FILE_EXISTS_IN_GAME brac14.itm AND r = 5 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING brac14.itm override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @205
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF FILE_EXISTS_IN_GAME brac15.itm AND r = 6 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING brac15.itm override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @205
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF !VARIABLE_IS_SET $iconi("%source%") BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING "%TUTU_VAR%brac04.itm" override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @206
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF VARIABLE_IS_SET $iconi("%source%") BEGIN
+          WRITE_ASCIIE 0x3a $iconi("%source%") #8
+          WRITE_LONG   0x50 desc
+          SAY          0x54 "%idesc%"
+          WRITE_ASCIIE 0x58 $iconc("%source%") #8
+        END
+      END
+    BUT_ONLY
+  END
+  
+  COPY_EXISTING "%TUTU_VAR%leat06.itm" override
+    SPRINT source "%SOURCE_RES%"
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      r = RANDOM(1 3)
+      PATCH_IF r = 1 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%leat05.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF !MOD_IS_INSTALLED item_rev.tp2 0 BEGIN
+                SPRINT idesc @208
+              END ELSE BEGIN
+                SPRINT idesc @210
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF r = 2 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%leat07.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF !MOD_IS_INSTALLED item_rev.tp2 0 BEGIN
+                SPRINT idesc @208
+              END ELSE BEGIN
+                SPRINT idesc @210
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF !VARIABLE_IS_SET $iconi("%source%") BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%leat08.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF !MOD_IS_INSTALLED item_rev.tp2 0 BEGIN
+                SPRINT idesc @209
+              END ELSE BEGIN
+                SPRINT idesc @211
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF VARIABLE_IS_SET $iconi("%source%") BEGIN
+        WRITE_ASCIIE 0x3a $iconi("%source%") #8
+        WRITE_LONG   0x50 desc
+        SAY          0x54 "%idesc%"
+        WRITE_ASCIIE 0x58 $iconc("%source%") #8
+      END
+    END
+  BUT_ONLY
+  
+  ACTION_IF FILE_EXISTS_IN_GAME plat17.itm AND !MOD_IS_INSTALLED item_rev.tp2 0 BEGIN //Also nerf T'rahcie's Plate
+    COPY_EXISTING plat17.itm override
+      SPRINT source "%SOURCE_RES%"
+      PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+        WRITE_LONG 0x60 0
+        READ_LONG  0x6a fx_off
+        READ_SHORT 0x70 num_fx
+        FOR (i=0;i<num_fx;i+=1) BEGIN
+          READ_SHORT fx_off + 0x30*i fx_type ELSE 999
+          READ_LONG  fx_off + 0x30*i + 0x8 param2 ELSE 999
+          PATCH_IF fx_type = 0 AND param2 = 16 BEGIN
+            WRITE_LONG fx_off + 0x30*i + 0x4 3 //Base AC 3
+          END
+        END
+        SAY 0xc @212
+        r = RANDOM(1 3)
+        PATCH_IF r = 1 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING plat02.itm override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @213
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF r = 2 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING plat11.itm override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @213
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF !VARIABLE_IS_SET $iconi("%source%") BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING plat10.itm override
+              PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+                READ_ASCII 0x3a iconi
+                SPRINT  $iconi("%source%") "%iconi%"
+                READ_LONG 0x50 desc
+                READ_ASCII 0x58 iconc
+                SPRINT $iconc("%source%") "%iconc%"
+                SPRINT idesc @214
+              END
+            BUT_ONLY
+          END
+        END
+        PATCH_IF VARIABLE_IS_SET $iconi("%source%") BEGIN
+          WRITE_ASCIIE 0x3a $iconi("%source%") #8
+          WRITE_LONG   0x50 desc
+          SAY          0x54 "%idesc%"
+          WRITE_ASCIIE 0x58 $iconc("%source%") #8
+        END
+      END
+    BUT_ONLY
+  END
+  
+  COPY_EXISTING "%TUTU_VAR%ring04.itm" override
+                "%TUTU_VAR%ring23.itm" override
+    SPRINT source "%SOURCE_RES%"
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      r = RANDOM(1 6)
+      PATCH_IF r = 1 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%ring06.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF "%source%" STRING_EQUAL_CASE "%TUTU_VAR%ring04" BEGIN
+                SPRINT idesc @216
+              END ELSE BEGIN
+                SPRINT idesc @222
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF r = 2 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%ring07.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF "%source%" STRING_EQUAL_CASE "%TUTU_VAR%ring04" BEGIN
+                SPRINT idesc @216
+              END ELSE BEGIN
+                SPRINT idesc @222
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF r = 3 AND "%source%" STRING_EQUAL_CASE "%TUTU_VAR%ring04" BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%ring22.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              SPRINT idesc @218
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF r = 4 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%ring09.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF "%source%" STRING_EQUAL_CASE "%TUTU_VAR%ring04" BEGIN
+                SPRINT idesc @217
+              END ELSE BEGIN
+                SPRINT idesc @223
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF FILE_EXISTS_IN_GAME ring31.itm AND r = 5 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING ring31.itm override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF "%source%" STRING_EQUAL_CASE "%TUTU_VAR%ring04" BEGIN
+                SPRINT idesc @219
+              END ELSE BEGIN
+                SPRINT idesc @224
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF !VARIABLE_IS_SET $iconi("%source%") BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%ring08.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+              PATCH_IF "%source%" STRING_EQUAL_CASE "%TUTU_VAR%ring04" BEGIN
+                SPRINT idesc @219
+              END ELSE BEGIN
+                SPRINT idesc @225
+              END
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF VARIABLE_IS_SET $iconi("%source%") BEGIN
+        WRITE_ASCIIE 0x3a $iconi("%source%") #8
+        WRITE_LONG   0x50 desc
+        SAY          0x54 "%idesc%"
+        WRITE_ASCIIE 0x58 $iconc("%source%") #8
+      END
+    END
+  BUT_ONLY
+  
+  COPY_EXISTING "%TUTU_VAR%sper03.itm" override
+    SPRINT source "%SOURCE_RES%"
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      r = RANDOM(1 2)
+      PATCH_IF FILE_EXISTS_IN_GAME sper05.itm AND r = 1 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING sper05.itm override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF !VARIABLE_IS_SET $iconi("%source%") BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%sper02.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF VARIABLE_IS_SET $iconi("%source%") BEGIN
+        WRITE_ASCIIE 0x3a $iconi("%source%") #8
+        WRITE_LONG   0x50 desc
+        WRITE_ASCIIE 0x58 $iconc("%source%") #8
+      END
+    END
+  BUT_ONLY
+  
+  COPY_EXISTING "%TUTU_VAR%sw2h03.itm" override
+    SPRINT source "%SOURCE_RES%"
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      r = RANDOM(1 2)
+      PATCH_IF FILE_EXISTS_IN_GAME sw2h11.itm AND r = 1 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING sw2h11.itm override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF !VARIABLE_IS_SET $iconi("%source%") BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%TUTU_VAR%sw2h02.itm" override
+            PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+              READ_ASCII 0x3a iconi
+              SPRINT  $iconi("%source%") "%iconi%"
+              READ_LONG 0x50 desc
+              READ_ASCII 0x58 iconc
+              SPRINT $iconc("%source%") "%iconc%"
+            END
+          BUT_ONLY
+        END
+      END
+      PATCH_IF VARIABLE_IS_SET $iconi("%source%") BEGIN
+        WRITE_ASCIIE 0x3a $iconi("%source%") #8
+        WRITE_LONG   0x50 desc
+        WRITE_ASCIIE 0x58 $iconc("%source%") #8
+      END
+    END
+  BUT_ONLY
+END
+
+ACTION_IF !MOD_IS_INSTALLED questpack.tp2 16 AND (BG1 = 0 OR BGT = 1) BEGIN
+  COPY_EXISTING hprelate.dlg override
+    DECOMPILE_DLG_TO_D
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("PCSphere","GLOBAL",1)~ ~OR(2) Global("PCSphere","GLOBAL",1) G("flrsolamnic",1)~
+    COMPILE_D_TO_DLG
+  BUT_ONLY
+  UNLESS flrsolamnic
+  
+  COPY_EXISTING obssol01.dlg override
+    DECOMPILE_DLG_TO_D
+      REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~!Class(Player,MAGE_ALL)~ ~!Class(Player1,MAGE_ALL)~
+      REPLACE_TEXTUALLY CASE_SENSITIVE EVALUATE_REGEXP ~Global("PCSphere","GLOBAL",1)[ %lnl%]Global("TalkedPCSphere","LOCALS",1)~ ~Global("TalkedPCSphere","LOCALS",1)~
+    COMPILE_D_TO_DLG
+  BUT_ONLY
+
+  COMPILE "randomiser/d/solkni.d"
+END
+
+//Replace book08 with random book if component 500 is installed and it's mode 2
+ACTION_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
+  ACTION_IF GAME_IS bgt BEGIN
+    OUTER_SPRINT area ard004
+  END ELSE ACTION_IF GAME_IS tutu_totsc BEGIN
+    OUTER_SPRINT area fw0504
+  END ELSE ACTION_IF GAME_IS totsc BEGIN
+    OUTER_SPRINT area ar0504
+  END
+  
+  ACTION_IF FILE_EXISTS_IN_GAME "%area%.are" BEGIN
+    COPY_EXISTING "%area%.are" override
+      PATCH_IF SOURCE_SIZE > 0x11b BEGIN
+        READ_SHORT 0x76 num_itm 
+        READ_LONG  0x78 itm_off
+        FOR (i=0;i<num_itm;++i) BEGIN
+          READ_ASCII itm_off + 0x14*i item ELSE blank
+          PATCH_IF "%item%" STRING_EQUAL_CASE book08 BEGIN
+            WRITE_ASCIIE itm_off + 0x14*i "%replacement_b2c%"
+          END
+        END
+      END
+    BUT_ONLY
+  END
+END
+
+
+      
+      
+      

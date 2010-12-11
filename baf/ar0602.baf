@@ -1,0 +1,8 @@
+IF
+  HasItem("helm07","Shelf1")
+  Global("flMeanieHasBeenHere","ar0602",0)
+THEN
+  RESPONSE #100
+    ActionOverride("Shelf1",DestroyItem("helm07"))
+    SetGlobal("flMeanieHasBeenHere","ar0602",1)
+END

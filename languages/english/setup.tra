@@ -1,0 +1,54 @@
+//This file only contains strings relevant to the installation of the mod
+
+@100005="Game version not recognised. Halting installation."
+@100010="One or more mods are installed which uses items that are randomised by this mod."
+@100011="Do you wish to leave these items where they are? Please answer [y]es or [n]o. Please see the readme for additional details."
+@100015="This subcomponent is only available for Baldur's Gate II, Baldur's Gate Trilogy and Baldur's Gate Tutu. Please select subcomponent 3 or 4 instead."
+@100020="This component is only available for TotSC"
+@100021="Please enter the chance for items to be randomly lost as a integer number (e.g. 10 for 10%)"
+@100022="Please enter the chance for items to randomly not be randomised as a integet number (e.g. 10 for 10%)"
+@100023="This component is only meaningful if it is installed before the main component"
+@100024=~Do you wish to preserve compatibility with your current saved games? Please answer [y]es or [n]o. Please refer to the readme for additional details.~
+@100025=~Migrating from Mode 2 to Mode 1 is not supported. Please reinstall using Mode 2 or answer [n]o when asked if you wish to preserve compatibility with your current saved games.~
+@100026=~Migrating from Mode 1 ro Mode 2 is not supported. Please reinstall using Mode 1 or answer [n]o when asked if you wish to preserve compatibility with your current saved games.~
+
+@100499=~Randomisation options~
+@100500="Randomly replace the WIS tome normally found in TotSC with one of the 6 available types"
+@100510="Randomly not randomise items"
+@100520=~Kangaxx further sealed away~
+@100530=~Randomise scrolls~
+@100540=~Randomise the heads of the Flail of Ages~
+@100550=~Randomise the component needed to forge the Improved Mace of Disruption~
+@100560=~More Spell Shield scrolls~
+@101000="Randomise items"
+@101100="Mode 1: Randomise with in-game scripts. No items are lost"
+@101200="Mode 1: Randomise with in-game scripts. Some items are lost"
+@101300="Mode 2: Randomise with WeiDU. No items are lost"
+@101400="Mode 2: Randomise with WeiDU. Some items are lost"
+
+@105000="Components for unequipping items from creature groups"
+@105001="This component is only available for Mode 2"
+@105002="This component is only available for BG2"
+@105003="This component is only available for BG1, Tutu or BGT"
+@105005="Beholders have no items equipped"
+@105015="Demi-liches have no items equipped"
+@105025="Dragons have no items equipped"
+@105035="Elementals have no items equipped"
+@105045="Fiends have no items equipped"
+@105055="Golems have no items equipped"
+@105065="Master Brains have no items equipped"
+@105075="Slimes have no items equipped"
+@105085="Trolls have no items equipped"
+//@105095="Vampires have no weapons equipped"
+//@105105="Illithids have no weapons equipped"
+
+@109000="Cespenar can forge SoA items"
+@109001="This component is only available for BG2: ToB"
+@109002="This component is redundant if Ascension installed"
+@109050="Make Gromnir a proper Barbarian"
+@110000="Remove Protection from Undead scrolls from stores"
+@110100="All scrolls from all stores"
+@110200="All scrolls from 9 out of 10 stores"
+@110210="Duergar merchants"
+@110300=~Prevent Watcker's Keep statues from disappearing~
+@110301=~This component is made redundant by another mod you have installed~

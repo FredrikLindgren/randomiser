@@ -1,0 +1,94 @@
+<<<<<<<< ...randomiser/fl-inlined/startblock.baf
+
+IF
+  Global("flRandomiserStart","%StartingArea%",0)
+THEN RESPONSE #100
+  SetGlobal("flRandomiserStart","%StartingArea%",1)
+>>>>>>>>
+
+<<<<<<<< ...randomiser/fl-inlined/numbercrunchers.baf
+  CreateCreatureImpassable("fltier%Tier%",[1.1],0)
+>>>>>>>>
+
+<<<<<<<< ...randomiser/fl-inlined/end.baf
+END
+>>>>>>>>
+
+ACTION_IF BG1 = 1 AND BGT = 0 BEGIN
+  OUTER_SPRINT $array(0) bg1_tiers
+  OUTER_SPRINT $script(0) "%BG1_BCS%"
+  OUTER_SPRINT $area(0) "%BG1Area%"
+  OUTER_SET pass = 1
+END
+ACTION_IF BGT = 1 BEGIN
+  OUTER_SPRINT $array(0) bg1_tiers
+  OUTER_SPRINT $array(1) bg2_tiers
+  OUTER_SPRINT $script(0) "%BG1_BCS%"
+  OUTER_SPRINT $script(1) "%BG2_BCS%"
+  OUTER_SPRINT $area(0) "%BG1Area%"
+  OUTER_SPRINT $area(1) "%BG2Area%"
+  OUTER_SET pass = 2
+END
+ACTION_IF BG1 = 0 BEGIN
+  OUTER_SPRINT $array(0) tier_array
+  OUTER_SPRINT $script(0) "%BG2_BCS%"
+  OUTER_SPRINT $area(0) "%BG2Area%"
+  OUTER_SET pass = 1
+END
+
+OUTER_FOR (i=0;i<pass;i+=1) BEGIN
+  OUTER_SPRINT array $array("%i%")
+  OUTER_SPRINT AreaScript $script("%i%")
+  OUTER_SPRINT StartingArea $area("%i%")
+  OUTER_SPRINT script_string ""
+  OUTER_PATCH_SAVE script_string "%script_string%" BEGIN                                                                 //Boo!
+    APPEND_FILE_EVALUATE "...randomiser/fl-inlined/startblock.baf"
+  END
+  ACTION_PHP_EACH "%array%" AS Tier => blank BEGIN
+    //ACTION_IF Tier > 0 BEGIN
+      OUTER_SET location_max = 0
+      ACTION_PHP_EACH location_array AS entry => int BEGIN
+        OUTER_SET location_max = (entry_0 > location_max AND "%entry_1%" STRING_EQUAL_CASE "%Tier%") ? entry_0 : location_max
+      END
+      OUTER_SET num_cre = location_max/(location_max > 15 ? 5 : 3)
+      OUTER_SET num_cre = num_cre = 0 ? 1 : num_cre
+      OUTER_PATCH_SAVE script_string "%script_string%" BEGIN
+        FOR (nc=0;nc<num_cre;nc+=1) BEGIN
+          PATCH_IF BG1 = 0 OR Tutu = 1 OR BGT = 1 BEGIN
+            APPEND_FILE_EVALUATE "...randomiser/fl-inlined/numbercrunchers.baf"
+          END
+        END
+      END
+    //END
+  END
+  OUTER_PATCH_SAVE script_string "%script_string%" BEGIN
+    APPEND_FILE "...randomiser/fl-inlined/end.baf"
+  END
+  ACTION_IF !FILE_EXISTS "randomiser/baf/%AreaScript%.baf" OR remove_helm07 = 0 BEGIN
+    COPY - "...blank" "...randomiser/fl-inlined/%AreaScript%.baf"
+      SET old_bl = BUFFER_LENGTH
+      INSERT_BYTES old_bl STRING_LENGTH "%script_string%"
+      WRITE_ASCIIE old_bl "%script_string%"
+    EXTEND_BOTTOM "%AreaScript%.bcs" "...randomiser/fl-inlined/%AreaScript%.baf"
+  END ELSE BEGIN
+    COPY - "randomiser/baf/%AreaScript%.baf" "...randomiser/fl-inlined/%AreaScript%.baf"
+      SET old_bl = BUFFER_LENGTH
+      INSERT_BYTES old_bl STRING_LENGTH "%script_string%"
+      WRITE_ASCIIE old_bl "%script_string%"
+    EXTEND_BOTTOM "%AreaScript%.bcs" "...randomiser/fl-inlined/%AreaScript%.baf"
+  END
+END
+
+ACTION_IF BG1 = 0 OR BGT = 1 BEGIN //Provide for starting a ToB game with Mode 1 without having been through SoA
+  COPY "randomiser/copy/flrandom.cre" "override/flrtobc.cre"
+    WRITE_LONG  0x8 12796 //Squirrel
+    WRITE_LONG  0xc 12790 //Squirrel
+    WRITE_ASCII 0x248 flrtobc #8
+  
+  COPY_EXISTING ar3000.are override
+                ar4000.are override
+    LAUNCH_PATCH_FUNCTION insert_actor STR_VAR ia_cre = flrtobc END
+  BUT_ONLY
+  
+  COMPILE "randomiser/baf/flrtobc.baf"
+END

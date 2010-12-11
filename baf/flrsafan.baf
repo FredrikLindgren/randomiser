@@ -1,0 +1,7 @@
+IF
+  !Contains("%Item%","container1")
+  Global("flSafanaTreasure","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("flSafanaTreasure","GLOBAL",1)
+END
