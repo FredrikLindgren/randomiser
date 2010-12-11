@@ -1,6 +1,6 @@
 BACKUP "randomiser/backup"
 AUTHOR "Wisp, Gibberlings3 forum"
-VERSION "v6.2"
+VERSION "v6.2: hotfix 101211"
 README "randomiser/readme-randomiser.html"
 
 ALWAYS
@@ -267,19 +267,6 @@ REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
     END
   END
 
-/* //Vide infra
-BEGIN @105105 GROUP @105000 DESIGNATED 5105                                                                            //Illithids have no weapons equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
-REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
-
-  ACTION_FOR_EACH cre IN ppmind01 senill02 gormind BEGIN
-    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
-      COPY_EXISTING "%cre%.cre" override
-        LPF unequip_items INT_VAR f_Lower = 9 f_Upper = 13 END
-      BUT_ONLY
-    END
-  END
-*/
 
 BEGIN @105065 GROUP @105000 DESIGNATED 5065                                                                            //Master Brains have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
@@ -318,20 +305,6 @@ REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
       BUT_ONLY
     END
   END
-
-/* //Item Randomiser doesn't cause problems like these, but people will think it does. Vaaaiiin.
-BEGIN @105095 GROUP @105000 DESIGNATED 5095                                                                            //Vampires have no weapons equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
-REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
-
-  ACTION_FOR_EACH cre IN lassal02 bodvam01 bodvam02 bodtan BEGIN
-    ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
-      COPY_EXISTING "%cre%.cre" override
-        LPF unequip_items INT_VAR f_Lower = 9 f_Upper = 13 END
-      BUT_ONLY
-    END
-  END
-*/
 
 BEGIN @109000 DESIGNATED 9000                                                                                          //Cespenar can forge SoA items
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre AND !FILE_EXISTS_IN_GAME _sw1h01.itm @109001

@@ -594,10 +594,13 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE trgeni01.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM sw1h23
+      COPY_EXISTING trgeni01.cre override
+        LPF give_itm_to_cre STR_VAR itm_to_give = EVAL "%Item%" END
+      BUT_ONLY
       COPY_EXISTING trgeni01.dlg override
         DECOMPILE_DLG_TO_D
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
-          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~GiveItem("%FLITEM%",\(.+\))~ ~GiveItemCreate("%Item%",\1,%Charge1%,%Charge2%,%Charge3%)~
+          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~GiveItem("%FLITEM%",\(.+\))~ ~GiveItem("%Item%",\1)~
         COMPILE_D_TO_DLG
       BUT_ONLY
       STRING_SET 43514 @110 //Khan Zahraa's dialogue
@@ -657,6 +660,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE tolger.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING tolger2.cre override
+                    tolger.cre  override
         SPRINT itm_to_give "%Item%"
         LAUNCH_PATCH_FUNCTION give_itm_to_cre END
       BUT_ONLY
@@ -664,7 +668,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       COPY_EXISTING tolger.dlg override
         DECOMPILE_DLG_TO_D
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
-          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~GiveItem("%FLITEM%",\(.+\))~ ~GiveItemCreate("%Item%",\1,%Charge1%,%Charge2%,%Charge3%)~
+          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~GiveItem("%FLITEM%",\(.+\))~ ~GiveItem("%Item%",\1)~
         COMPILE_D_TO_DLG
       BUT_ONLY
       STRING_SET 18409 @103 //Tolgerias' mentioning the nature of his reward
@@ -674,7 +678,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         COMPILE_BAF_TO_BCS
       BUT_ONLY
     
-    END 
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE loutcapt.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM dagg11
       COPY_EXISTING loutcapt.cre override

@@ -18,7 +18,7 @@ COPY - "randomiser/lists/mod_compat.2da" "...randomiser/fl-inlined/mod_compat.2d
     END
   END
 
-ACTION_IF prompt = 1 BEGIN
+ACTION_IF prompt = 1 AND "%Preserve%" STRING_EQUAL_CASE n BEGIN
   OUTER_SPRINT first @100010
   OUTER_SPRINT second @100011
   OUTER_SPRINT howdoyoudo "%first%"^" %second%"
@@ -32,6 +32,16 @@ ACTION_IF prompt = 1 BEGIN
     ACTION_PHP_EACH mod_compat_array AS ident => blank BEGIN
       OUTER_SPRINT $item_filter("%ident%") ""
     END
+    COPY_EXISTING + "fl#randoptions.2da" override
+      COUNT_2DA_ROWS 1 rc
+      INSERT_2DA_ROW rc 1 ModCompatYes
+      SET $RandOptions(ModCompatYes) = 1
+  END
+END
+
+ACTION_IF "%Preserve%" STRING_EQUAL_CASE y AND VARIABLE_IS_SET $RandOptions(ModCompatYes) BEGIN
+  ACTION_PHP_EACH mod_compat_array AS ident => blank BEGIN
+    OUTER_SPRINT $item_filter("%ident%") ""
   END
 END
 

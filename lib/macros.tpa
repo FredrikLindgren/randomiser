@@ -363,7 +363,7 @@ DEFINE_PATCH_MACRO del_cre_itm_stuff BEGIN //Requires %itm_to_del%, %replace_itm
 END
 
 DEFINE_PATCH_MACRO del_cre_itm BEGIN //Requires %itm_to_del%, %replace_itm%. Takes regexps
-  SPRINT Source_Cre "%Source_Cre%"
+  SPRINT Source_Cre "%SOURCE_RES%"
   TO_LOWER Source_Cre
   READ_LONG 0x2b8 dci_itm_slt ELSE 0
   READ_LONG 0x2bc dci_itm_off ELSE 0
@@ -566,6 +566,7 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
     PATCH_IF VARIABLE_IS_SET $race_restriction("%itm_to_give%") BEGIN
       add_itm = dcu_race = $race_restriction("%itm_to_give%") ? add_itm : 0
     END
+    add_itm = (dcu_race = 124 OR dcu_race = 125) AND lower_bound = 9 ? 0 : add_itm //Do not equip weapons on vampires or mind flayers
     //Only proceed if the cre is not disallowed from using the item and if there is no other reason for not equipping it
     PATCH_IF (riu_itm_unuse1 BAND dcu_cre_unuse1) = 0 AND (riu_itm_unuse2 BAND dcu_cre_unuse2) = 0 AND (riu_itm_unuse3 BAND dcu_cre_unuse3) = 0 AND (riu_itm_unuse4 BAND dcu_cre_unuse4) = 0 AND (riu_itm_kit_unuse1 BAND dcu_cre_kit_unuse1) = 0 AND (riu_itm_kit_unuse2 BAND dcu_cre_kit_unuse2) = 0 AND (riu_itm_kit_unuse3 BAND dcu_cre_kit_unuse3) = 0 AND (riu_itm_kit_unuse4 BAND dcu_cre_kit_unuse4) = 0 AND add_itm = 1 BEGIN
       no_add = 0
@@ -606,13 +607,14 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
             i = upper_bound
             f_Flags = lower_bound > 20 ? 0 : f_Flags | 2
             FOR (j=lower_bound;j<upper_bound;++j) BEGIN //remove replacement items
-              PATCH_IF $ref("%j%") > 0 AND VARIABLE_IS_SET $EVAL "%Source_Cre%_replace"($items("%j%")) BEGIN
+              PATCH_IF $ref("%j%") >= 0 AND VARIABLE_IS_SET $EVAL "%Source_Cre%_replace"($items("%j%")) BEGIN
                 SPRINT item $items("%j%")
                 no_delete = 0
                 PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
                   INNER_ACTION BEGIN
                     COPY_EXISTING "%item%.itm" override
-                      READ_BYTE 0x18 dflags ELSE 4
+                      READ_BYTE  0x18 dflags ELSE 4
+                      READ_SHORT 0x1c old_cat ELSE 0
                       PATCH_IF BG1 = 1 AND Tutu = 0 AND BGT = 0 BEGIN
                         READ_SHORT 0x1c old_prof ELSE 20
                       END ELSE BEGIN

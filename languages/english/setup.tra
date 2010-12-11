@@ -39,8 +39,6 @@
 @105065="Master Brains have no items equipped"
 @105075="Slimes have no items equipped"
 @105085="Trolls have no items equipped"
-//@105095="Vampires have no weapons equipped"
-//@105105="Illithids have no weapons equipped"
 
 @109000="Cespenar can forge SoA items"
 @109001="This component is only available for BG2: ToB"

@@ -41,7 +41,8 @@ ACTION_IF "%Preserve%" STRING_EQUAL_CASE n BEGIN
     WRITE_BYTE 4 LostChance
     INSERT_BYTES 5 1
     WRITE_BYTE 5 RandomNotRandom
-    
+  
+  /*
   OUTER_SPRINT string "Header"
   OUTER_SET rc = 1
   OUTER_PATCH_SAVE string "%string%" BEGIN
@@ -61,9 +62,27 @@ ACTION_IF "%Preserve%" STRING_EQUAL_CASE n BEGIN
       END
     END
   END
+  */
   COPY + "...blank" "override/fl#randoptions.2da"
-    INSERT_BYTES 0 STRING_LENGTH "%string%"
-    WRITE_ASCIIE 0 "%string%" (STRING_LENGTH "%string%")
+    //INSERT_BYTES 0 STRING_LENGTH "%string%"
+    //WRITE_ASCIIE 0 "%string%" (STRING_LENGTH "%string%")
+    INSERT_2DA_ROW 0 1 Header
+    rc = 1
+    PATCH_FOR_EACH condition IN weidu_action BEGIN
+      PATCH_IF EVAL "%condition%" BEGIN
+        INSERT_2DA_ROW rc 1 "%condition%"
+        ++rc
+        SET $RandOptions("%condition%") = 1
+      END
+    END
+    PATCH_FOR_EACH condition IN flrc500 flrc520 flrc530 flrc540 flrc550 flrc560 BEGIN
+      TO_LOWER condition
+      PATCH_IF FILE_EXISTS_IN_GAME "%condition%.mrk" BEGIN
+        INSERT_2DA_ROW rc 1 "%condition%"
+        ++rc
+        SET $RandOptions("%condition%") = 1
+      END
+    END
 
 END
 ACTION_IF "%Preserve%" STRING_EQUAL_CASE y BEGIN
