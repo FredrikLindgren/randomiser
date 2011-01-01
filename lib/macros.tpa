@@ -757,7 +757,7 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
                 write_ref = weapon_ref
               END ELSE PATCH_IF VARIABLE_IS_SET $itm_rank("%item%") BEGIN
                 write_ref = highest < $itm_rank("%item%")*(3/2)*$rcp_prof("%prof%")
-                AND (prof != 103 AND prof != 27 AND !(prof = 95 AND BG1_STYLE_PROFS) OR ((prof = 103 OR prof = 27 OR (prof = 95 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
+                AND (prof != 103 AND prof != 27 AND !(prof = 95 AND BG1_STYLE_PROFS) OR ((prof = 103 OR prof = 27 OR (prof = 95 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2)) //Only select a ranged weapon if it's the best weapon you have and if your prof is >2
                 AND (prof != 104 AND prof != 15 AND !(prof = 89 AND BG1_STYLE_PROFS) OR ((prof = 104 OR prof = 15 OR (prof = 89 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
                 AND (prof != 105 AND prof != 15 AND !(prof = 89 AND BG1_STYLE_PROFS) OR ((prof = 105 OR prof = 15 OR (prof = 89 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
                 AND (prof != 107 AND prof != 18 AND !(prof = 95 AND BG1_STYLE_PROFS) OR ((prof = 107 OR prof = 18 OR (prof = 95 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))

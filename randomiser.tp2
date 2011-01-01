@@ -1,6 +1,6 @@
 BACKUP "randomiser/backup"
-AUTHOR "Wisp, Gibberlings3 forum"
-VERSION "v6.2: hotfix 101211"
+AUTHOR "Wisp, www.forums.gibberlings3.net"
+VERSION "v6.3"
 README "randomiser/readme-randomiser.html"
 
 ALWAYS
@@ -95,6 +95,12 @@ REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
       ADD_STORE_ITEM scrl8x BEFORE ~scrlal scrl7q scrl7p~ #0 #0 #0 identified #3
     END
   BUT_ONLY
+  
+BEGIN @100570 GROUP @100499 DESIGNATED 570
+REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
+REQUIRE_PREDICATE !MOD_IS_INSTALLED cursed_items.tp2 0 @100027
+
+  COPY_EXISTING sw1h01.itm "override/flrc570.mrk"
 
 
 BEGIN @101100 SUBCOMPONENT @101000 DESIGNATED 1100                                                                     //Randomise items: No items are lost

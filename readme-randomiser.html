@@ -3,8 +3,8 @@
 <head>
 <title>Item Randomiser</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="backup/g3readme.css" type="text/css" />
-<link href="backup/g3.ico" rel="icon" type="image/bmp" />
+<link href="style/g3readme.css" rel="stylesheet" type="text/css" />
+<link href="style/g3web.ico" rel="icon" type="image/bmp" />
 </head>
 <body>
 
@@ -13,7 +13,7 @@
   <p><strong><a href="http://www.gibberlings3.net/">A Gibberlings Three Mod</a></strong><br />
   <strong>Author:</strong> Fredrik Lindgren <acronym title="also known as">aka</acronym> <a href="http://forums.gibberlings3.net/index.php?showuser=2376">Wisp</a>   <acronym title="also known as">aka</acronym> Irrbloss.<br />
   <strong>On the web: <a href="http://www.gibberlings3.net/item_rand/index.php">Home page</a></strong> and <strong><a href="http://forums.gibberlings3.net/index.php?showforum=170">Forum</a></strong>.</p>
-  <p><strong>Version 6.2 &ndash; <a href="http://www.gibberlings3.net/downloads/#item_rand">Check for the most recent version</a></strong>.<br />
+  <p><strong>Version 6.3 &ndash; <a href="http://www.gibberlings3.net/downloads/#item_rand">Check for the most recent version</a></strong>.<br />
   <strong>Languages:</strong> English, Polish (partial translation).<br />
   <strong>Platforms:</strong> Windows, Mac OS X, Linux.</p>
 </div>
@@ -44,7 +44,8 @@
   Item Randomiser's "Make Gromnir a proper barbarian" component is redundant if Ascension's Tougher Gromnir is installed and will automatically be skipped.</p>-->
 
   <p><strong>Cursed Item Revisions</strong><br />
-  If Cursed Item Revisions is installed the spear Backbiter (renamed Revenger by Cursed Item Revisions) will be randomised as a tier 26 item in BG1 and as a tier 2 item in BG2.</p>
+  If Cursed Item Revisions is installed the spear Backbiter (renamed Revenger by Cursed Item Revisions) will be randomised as a tier 26 item in BG1 and as a tier 2 item in BG2.<br />
+  The randomisation option "Randomise the appearance of cursed items" is conceptually incompatible with Cursed Item Revisions.</p>
 
   <p><strong>Dungeon-Be-Gone</strong><br />
   Dungeon-Be-Gone allows the player to skip the initial dungeon in Baldur's Gate II. It is in this dungeon that Mode 1 of Item Randomiser carries out the randomisation process. Leaving the first area before the randomisation is completed will abort the randomisation process and prevent items from appearing in the game world. This problem can be avoided entirely by waiting until the randomisation process is completed before speaking to Jasper. Mode 2 of Item Randomiser is unaffected by this issue. There are no random items to be found in Irenicus' Dungeon.</p>
@@ -59,7 +60,7 @@
   Spellhold Gauntlet offers the player an alternate way out of the maze beneath Spellhold. In taking this alternate route, it is possibly to acquire the items you would normally find on your way through the maze. In order to avoid possible issues with item duplication and the like, no items normally found in Spellhold will be randomised if Spellhold Gauntlet is installed.</p>
   
   <p><strong>SpellPack</strong><br />
-  If SpellPack is installed Mode 2 of Item Randomiser will randomise a number of SpellPack scrolls along with the regular scrolls (added to the game without having been removed from anywhere), provided the option to randomise scrolls is enabled.</p>
+  If SpellPack (beta 6 or later) is installed Mode 2 of Item Randomiser will randomise a number of SpellPack scrolls along with the regular scrolls (added to the game without having been removed from anywhere), provided the option to randomise scrolls is enabled.</p>
 
   <!--<p><strong>Sword Coast Stratagems II: Increase difficulty of level-dependent monster groupings</strong><br />
   Item Randomiser's "Prevent Watcker's Keep statues from disappearing" will automatically be skipped if this SCSII component is installed.</p>-->
@@ -129,7 +130,7 @@
   If this component is installed, it will make the main component randomly change the Tome of Understanding normally found in Durlag's Tower into any one of the 6 types of Tomes found in the game. This means you have an equal chance of finding <i>e.g.</i> a second STR or INT Tome as you do of finding a third WIS Tome. For Mode 1, the type of Tome is determined when you first enter the area where you will find the Tome in your current game. For Mode 2, the type of Tome is determined when the main component is installed.</p>
   
   <p><strong>Randomly not randomise items</strong><br />
-  If this component is installed, it will make the main component randomly skip randomising items. These skipped items will be found at their regular locations. When you install this component you will be asked to input the chance for having items randomly not be randomised. Items are randomly not randomised before they are randomly lost.</p>
+  If this component is installed, it will make the main component randomly skip randomising items. These skipped items will be found at their regular locations. When you install this component you will be asked to input the chance for having items randomly not be randomised. Items are randomly not randomised before they are randomly lost. Please note that this randomisation is done when the mod is installed, even if you use Mode 1.</p>
   
   <p><strong>Kangaxx further sealed away</strong><br />
   <i>BG2 only</i><br />
@@ -145,6 +146,9 @@
   <p><strong>More Spell Shield scrolls</strong><br />
   <i>BG2 only</i><br />
   If this component is installed it will increase the number of Spell Shield scrolls carried by the duergar merchant by 2 (for a total of 3). If the duergar merchant does not carry Spell Shield 3 scrolls will be added. There is normally only one scroll of Spell Shield available in <acronym title="Baldur's Gate II: Shadows of Amn">SoA</acronym>. This component does not need to be installed before the "Randomise scrolls" component.</p>
+
+  <p><strong>Randomise the appearance of cursed items</strong><br />
+  If this component is installed it will result in the appearance of cursed items being randomised by the main component. The cursed nature of the items will not be apparent until they have been identified. Please note that this randomisation is done when the mod is installed, even if you use Mode 1.</p>
 
   <!--
   <p><strong>Strict</strong><br />
@@ -171,13 +175,13 @@
   This subcomponent uses Mode 1 to randomise the items. Mode 1 can randomise up to 126 items in <acronym title="Baldur's Gate">BG1</acronym> and up to 178 items in <acronym title="Baldur's Gate II">BG2</acronym>.<br />All items that are to be randomised are removed from their regular locations when the mod is installed. All items that were successfully removed are randomly assigned a new location during the randomisation process at the start of a new game. <strong>To function properly, Mode 1 requires you to start a new game after you install the mod.</strong> The randomisation takes place in the starting area upon the start of a new game and <strong>requires approximately 2&ndash;3 minutes to be completed</strong>. Please note that the exact time may vary and may be dependent on the specifications of your computer. In BG1, randomisation takes place in the main area of Candlekeep. In BG2, randomisation takes place in Irenicus' Dungeon, after the initial cutscene and auto-save. If the new game is started in ToB the randomisation will be carried out in the initial area; either the Grove of the Spirit Heads or Watcher's Keep. Leaving the starting area before the randomisation is completed will prevent some items from appearing in the game world. A rat or squirrel (depending on the setting) will squeak to let you know when the randomisation is complete. The items are re-randomised if you start a new game.</p>
 
   <p><strong>Randomise items: Mode 1: Randomise with in-game scripts. Some items are lost</strong><br />
-  This subcomponent works like the other subcomponent using Mode 1, except there is a chance per item that some items are lost during the randomisation. Lost items will not appear in the game world until the items are re-randomised. When you install this component you will be asked to input the chance for having items randomly be lost. Prior to version 4 of Item Randomiser, the chance was pre-set to 10%.</p>
+  This subcomponent works like the other subcomponent using Mode 1, except there is a chance per item that some items are lost during the randomisation. Lost items will not appear in the game world until the items are re-randomised. When you install this component you will be asked to input the chance for having items randomly be lost. Prior to version 4 of Item Randomiser, the chance was pre-set to 10&nbsp;%.</p>
 
   <p><strong>Randomise items: Mode 2: Randomise with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym>. No items are lost</strong><br />
   This subcomponent uses Mode 2 to randomise the items. Mode 2 can randomise up to 142 items in <acronym title="Baldur's Gate">BG1</acronym> and up to 239 items in <acronym title="Baldur's Gate II">BG2</acronym>.<br />All affected items are randomised when the mod is installed, as opposed to Mode 1, which does it when you start a new game. This randomisation will be significantly faster than the one done by Mode 1. <strong>You need to start a new game after installing the mod.</strong> Items are re-randomised when the mod is re-installed. Starting a new game will not re-randomise the items. Additionally, the greater flexibility of this method allows more items to be randomised. Creatures who receive a random item are also equipped with it if the new equipment is better than the old equipment and their class/kit/alignment/race does not prevent them from using the item.</p>
 
   <p><strong>Randomise items: Mode 2: Randomise with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym>. Some items are lost</strong><br />
-  This subcomponent works like the other subcomponent using Mode 2, except there is a chance per item that some items are lost during the randomisation. Lost items will not appear in the game world until the items are re-randomised. When you install this component you will be asked to input the chance for having items randomly be lost. Prior to version 4 of Item Randomiser, the chance was pre-set to 10%.</p>
+  This subcomponent works like the other subcomponent using Mode 2, except there is a chance per item that some items are lost during the randomisation. Lost items will not appear in the game world until the items are re-randomised. When you install this component you will be asked to input the chance for having items randomly be lost. Prior to version 4 of Item Randomiser, the chance was pre-set to 10&nbsp;%.</p>
   
   <h3>Components for unequipping items from creature groups</h3>
 
@@ -306,7 +310,7 @@
 
 <h2>Version History</h2>
 <div class="section">
-  <p><strong>x-x-x&mdash;version 6.3:</strong></p>
+  <p><strong>2011-01-01&mdash;version 6.3:</strong></p>
     <ul>
       <li>Mode 2: Optimised item-equipping code slightly.</li>
       <li>Mode 2: Fixed a bug that could cause the installation to fail if BG2 Tweaks' BG1-style weapon proficiencies was installed.</li>
@@ -317,6 +321,10 @@
       <li>Mode 2: Tolgerias now properly drops his random item if killed inside the Sphere.</li>
       <li>The mod compatibility prompt is suppressed and uses what was used last time if the mod is installed while preserving compatibility with existing saved games.</li>
       <li>Mode 2: Creatures start out with ranged weapons selected a bit less often.</li>
+      <li>Made "Randomise the appearance of cursed items" an optional component instead.</li>
+      <li>Fixed an inconsistancy with the altered appearance of T'rachie's Plate.</li>
+      <li>Marginally tweaked some of the altered descriptions for the cursed items.</li>
+      <li>Updated to WeiDU 226.</li>
     </ul>
 
 
@@ -328,7 +336,7 @@
       <li>Some stores in BG1 now carry fewer Large Shields +1 (<i>i.e.</i>, you'll find fewer shields).</li>
       <li>Planar Prison Warden now gets a different replacement weapon.</li>
       <li>If a removed creature or area item is a stack of N scrolls or potions, they will be randomised as N items instead of as one item with N charges.</li>
-      <li>If the mod is reinstalled non-interactively, it will now always preserve saved-game compatibility, instead of re-using whatever was chosen when the mod was installed.</lI>
+      <li>If the mod is reinstalled non-interactively, it will now always preserve saved-game compatibility, instead of re-using whatever was chosen when the mod was installed.</li>
       <li>Corrected an oversight in minister Lloyd's dialogue.</li>
       <li>The true identity of the Book of Infinite Spells is now properly obscured until it has been identified.</li>
       <li>Updated to WeiDU 224.</li>

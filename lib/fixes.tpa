@@ -338,8 +338,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN //Two Container 11
   STRING_SET 33340 @102 //Make Madulf's dialogue more generic regarding the nature of the reward
 END
 
-ACTION_IF !MOD_IS_INSTALLED cursed_items.tp2 0 BEGIN
-  //Make cursed items randomly look like another item
+ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items randomly look like another item
+
   COPY_EXISTING "%TUTU_VAR%brac08.itm" override
     SPRINT source "%SOURCE_RES%"
     PATCH_IF SOURCE_SIZE > 0x71 BEGIN
@@ -628,7 +628,7 @@ ACTION_IF !MOD_IS_INSTALLED cursed_items.tp2 0 BEGIN
                 READ_LONG 0x50 desc
                 READ_ASCII 0x58 iconc
                 SPRINT $iconc("%source%") "%iconc%"
-                SPRINT idesc @213
+                SPRINT idesc @214
               END
             BUT_ONLY
           END
@@ -642,7 +642,7 @@ ACTION_IF !MOD_IS_INSTALLED cursed_items.tp2 0 BEGIN
                 READ_LONG 0x50 desc
                 READ_ASCII 0x58 iconc
                 SPRINT $iconc("%source%") "%iconc%"
-                SPRINT idesc @214
+                SPRINT idesc @213
               END
             BUT_ONLY
           END

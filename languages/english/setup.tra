@@ -1,5 +1,7 @@
 //This file only contains strings relevant to the installation of the mod
 
+@-1004="PLEASE report the error message in the file"
+
 @100005="Game version not recognised. Halting installation."
 @100010="One or more mods are installed which uses items that are randomised by this mod."
 @100011="Do you wish to leave these items where they are? Please answer [y]es or [n]o. Please see the readme for additional details."
@@ -11,6 +13,7 @@
 @100024=~Do you wish to preserve compatibility with your current saved games? Please answer [y]es or [n]o. Please refer to the readme for additional details.~
 @100025=~Migrating from Mode 2 to Mode 1 is not supported. Please reinstall using Mode 2 or answer [n]o when asked if you wish to preserve compatibility with your current saved games.~
 @100026=~Migrating from Mode 1 ro Mode 2 is not supported. Please reinstall using Mode 1 or answer [n]o when asked if you wish to preserve compatibility with your current saved games.~
+@100027=~This component is conceptually incompatible with Cursed Item Revisions.~
 
 @100499=~Randomisation options~
 @100500="Randomly replace the WIS tome normally found in TotSC with one of the 6 available types"
@@ -20,6 +23,7 @@
 @100540=~Randomise the heads of the Flail of Ages~
 @100550=~Randomise the component needed to forge the Improved Mace of Disruption~
 @100560=~More Spell Shield scrolls~
+@100570=~Randomise the appearance of cursed items~
 @101000="Randomise items"
 @101100="Mode 1: Randomise with in-game scripts. No items are lost"
 @101200="Mode 1: Randomise with in-game scripts. Some items are lost"
