@@ -3,8 +3,6 @@ AUTHOR "Wisp, www.forums.gibberlings3.net"
 VERSION "v6.3"
 README "randomiser/readme-randomiser.html"
 
-//test
-
 ALWAYS
   INCLUDE "randomiser/lib/macros.tpa"
   INCLUDE "randomiser/lib/comp_vars.tpa"
