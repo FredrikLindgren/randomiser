@@ -250,7 +250,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $uhmay01_say5("%item%") = say5
       SET $uhmay01_reply1("%item%") = reply1
       SET $uhmay01_reply2("%item%") = reply2
-    END
+    END  
     
   COPY - "randomiser/lists/special_groups.2da" "...randomiser/fl-inlined/special_groups.2da"
     COUNT_2DA_ROWS 2 num_row
@@ -330,6 +330,15 @@ ACTION_IF BG1 = 1 BEGIN
 
   COPY - "randomiser/lists/bg1_duplicates.2da" "...randomiser/fl-inlined/bg1_duplicates.2da"
     LAUNCH_PATCH_MACRO create_duplicate_array
+    
+  COPY - "randomiser/lists/item_tra_aldeth.2da" "...randomiser/fl-inlined/item_tra_aldeth.2da"
+    COUNT_2DA_ROWS 2 num_row
+    FOR (i=0;i<num_row;++i) BEGIN
+      READ_2DA_ENTRY i 0 2 item
+      READ_2DA_ENTRY i 1 2 tra
+      TO_LOWER item
+      SET $aldeth_item_tra("%item%") = tra
+    END
 END
 
 ACTION_IF BG1 = 0 OR BGT = 1 BEGIN

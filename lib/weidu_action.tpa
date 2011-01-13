@@ -826,6 +826,15 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE aldeth.fl AND FILE_EXISTS_IN_GAME "%TUTU_VAR%aldeth.cre" AND BG1 = 1 BEGIN
+      OUTER_SET TRA = 1699
+      ACTION_IF VARIABLE_IS_SET $aldeth_item_tra("%Item%") BEGIN
+	OUTER_SET TRA = $aldeth_item_tra("%Item%")
+      END
+      <<<<<<<< randomiser/fl-inlined/aldeth_I_dont_have_Tutu_or_BGT_installed_right_now.d
+REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
+      >>>>>>>>
+      COMPILE "randomiser/fl-inlined/aldeth_I_dont_have_Tutu_or_BGT_installed_right_now.d" EVAL	    	
+
       OUTER_SPRINT FLITEM "%TUTU_VAR%sw1h03"
       COPY_EXISTING "%TUTU_VAR%aldeth.cre" override
         SPRINT itm_to_del "%FLITEM%"
