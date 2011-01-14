@@ -503,6 +503,8 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
   PATCH_IF f_Equip BEGIN
     ranged = 0
     launcher = 0
+    no_thief = 0
+    no_mage = 0
     INNER_ACTION BEGIN
       COPY_EXISTING "%itm_to_give%.itm" override
         LAUNCH_PATCH_MACRO read_itm_unusabilities
@@ -511,6 +513,16 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
           READ_SHORT 0x1c new_prof ELSE 20
         END ELSE BEGIN
           READ_BYTE 0x31 new_prof ELSE 90
+        END
+        PATCH_IF new_cat = 2 OR new_cat = 12 BEGIN //Armor or shields
+          READ_LONG 0x6a fx_off
+          FOR (i=0;i<SHORT_AT 0x70;++i) BEGIN
+            READ_SHORT fx_off + 0x30*i       opcode
+            READ_SLONG fx_off + 0x30*i + 0x4 param1
+            READ_LONG  fx_off + 0x30*i + 0x8 param2
+            no_thief = (opcode = 144 AND param2 = 0) OR (opcode = 275 AND param1 <= "-50") OR (opcode = 59 AND param1 <= "-50") ? 1 : no_thief
+            no_mage = (opcode = 145 AND param2 = 0) OR (opcode = 60 AND param1 >= 40) ? 1 : no_mage
+          END
         END
         READ_LONG  0x64 ab_off ELSE 0x72
         READ_SHORT 0x68 num_ab ELSE 0
@@ -566,6 +578,8 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
     PATCH_IF VARIABLE_IS_SET $race_restriction("%itm_to_give%") BEGIN
       add_itm = dcu_race = $race_restriction("%itm_to_give%") ? add_itm : 0
     END
+    add_itm = no_thief AND (dcu_class = 4 OR dcu_class = 9 OR dcu_class = 10 OR dcu_class = 13 OR dcu_class = 15) ? 0 : add_itm //do not equip armor that disables thief skills on thieves
+    add_itm = no_mage AND (dcu_class = 1 OR dcu_class = 5 OR dcu_class = 7 OR dcu_class = 10 OR dcu_class = 13 OR dcu_class = 14 OR dcu_class = 17 OR dcu_class = 19) ? 0 : add_itm //do not equip armour that disables spellcasting on mages
     add_itm = (dcu_race = 124 OR dcu_race = 125) AND lower_bound = 9 ? 0 : add_itm //Do not equip weapons on vampires or mind flayers
     //Only proceed if the cre is not disallowed from using the item and if there is no other reason for not equipping it
     PATCH_IF (riu_itm_unuse1 BAND dcu_cre_unuse1) = 0 AND (riu_itm_unuse2 BAND dcu_cre_unuse2) = 0 AND (riu_itm_unuse3 BAND dcu_cre_unuse3) = 0 AND (riu_itm_unuse4 BAND dcu_cre_unuse4) = 0 AND (riu_itm_kit_unuse1 BAND dcu_cre_kit_unuse1) = 0 AND (riu_itm_kit_unuse2 BAND dcu_cre_kit_unuse2) = 0 AND (riu_itm_kit_unuse3 BAND dcu_cre_kit_unuse3) = 0 AND (riu_itm_kit_unuse4 BAND dcu_cre_kit_unuse4) = 0 AND add_itm = 1 BEGIN
