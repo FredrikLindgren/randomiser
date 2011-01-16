@@ -1,4 +1,7 @@
 
+MKDIR "randomiser/baf/compile"
+      "randomiser/ssl/compile"    
+
 ACTION_IF !weidu_action BEGIN
   ACTION_PHP_EACH tier_array AS ta_entry => blank BEGIN
     ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN
