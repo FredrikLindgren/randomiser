@@ -66,7 +66,7 @@ Location Tier Target           Area   Ident Comment
 6        27   container3       ar1111 x     Sunin's
 7        27   ragefa.cre       ar0126 x
 8        27   davaeo.cre       ar1803 b1e
-9        27   davaeo.cre       ar1803 x     Piling it on
+9        27   container10      ar1803 x     davaeron's chest
 10       27   ogrmba.cre       ar0226 x     Sewer ogre
 11       27   container3       ar0603 x     Seven Suns basement
 12       27   schlum.cre       ar0224 x     Schlumpsha
@@ -210,7 +210,7 @@ Location Tier Target           Area   Ident Comment
 14       sd   container3       ar2613 bs43
 15       sd   krysti.cre       ar0112 x
 16       sd   container1       ar5300 x     hollow in ground
-17       sd   davaeo.cre       ar1803 x
+17       sd   container11      ar1803 x     davaeron's chest
 18       sd   shaldr.cre       ar0123 x
 19       sd   cythan.cre       ar0615 x
 20       sd   resar.cre        ar0153 x
@@ -226,7 +226,7 @@ Location Tier Target           Area   Ident Comment
 9        se   cythan.cre       ar0615 x
 10       se   andris.cre       ar1009 x
 11       se   shaldr.cre       ar0123 x
-12       se   davaeo.cre       ar1803 x
+12       se   container11      ar1803 x     davaeorn's chest
 13       se   degrod.cre       ar0161 x
 14       se   queen.cre        ar0506 x
 15       se   droth.cre        ar3100 x
