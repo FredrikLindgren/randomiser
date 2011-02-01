@@ -1205,7 +1205,7 @@ ACTION_IF FILE_EXISTS_IN_GAME abazigal.cre BEGIN
         Charge2 = $ac2("%item%")
         Charge3 = $ac3("%item%")
         SPRINT itm_to_give "%item%"
-        LAUNCH_PATCH_FUNCTION give_itm_to_cre END
+        LAUNCH_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Flags = BIT3 END
       END
     END
   BUT_ONLY
