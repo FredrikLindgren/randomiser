@@ -619,7 +619,7 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
             WRITE_SHORT itm_slt + 0x2*i num_itm
             added = 1
             i = upper_bound
-            f_Flags = lower_bound > 20 ? 0 : f_Flags | 2
+            f_Flags = lower_bound > 20 ? f_Flags : f_Flags | 2
             FOR (j=lower_bound;j<upper_bound;++j) BEGIN //remove replacement items
               PATCH_IF $ref("%j%") >= 0 AND VARIABLE_IS_SET $EVAL "%Source_Cre%_replace"($items("%j%")) BEGIN
                 SPRINT item $items("%j%")

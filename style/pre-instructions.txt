@@ -1,0 +1,5 @@
+<p><strong style="color: #0000cd">Item Randomiser, v6.4</strong> should be installed to your BG, Tutu, or BGT game folder.</p>
+<p>To be sure everything will work well, please: </p>
+<ol><li>Uninstall any prior versions of Item Randomiser from your game,</li>
+<li>Delete the folder "randomiser" from your installation folder, </li>
+<li>Look up the Item Randomiser ReadMe online and familiarise yourself with that the mod does.</li></ol>
