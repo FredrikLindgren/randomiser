@@ -17,6 +17,8 @@ ACTION_IF BG1 = 0 BEGIN
   OUTER_SET pass = 1
 END
 
+MKDIR "randomiser/ssl/ssl_out"
+
 OUTER_FOR (sslpass=0;sslpass<pass;sslpass+=1) BEGIN
   OUTER_SPRINT array $array("%sslpass%")
   OUTER_SPRINT AreaCode $area("%sslpass%")
