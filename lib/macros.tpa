@@ -94,7 +94,7 @@ DEFINE_PATCH_MACRO del_sto_itm_stuff BEGIN //Requires %itm_to_del%, %cre% and %i
   FOR(dsis1=0;dsis1<3;dsis1+=1) BEGIN
     dsis_address = $dsis_offset("%dsis1%")
     READ_LONG dsis_address dsis_offset ELSE 0
-    PATCH_IF dsis_offset >= dsis_sal_off BEGIN
+    PATCH_IF dsis_offset > dsis_sal_off BEGIN
       dsis_offset += dsis_adjust
       WRITE_LONG dsis_address dsis_offset
     END
@@ -121,7 +121,7 @@ DEFINE_PATCH_MACRO del_sto_itm BEGIN //Requires %itm_to_del%, takes regexps
   FOR(dsi1=0;dsi1<3;dsi1+=1) BEGIN
     dsi_address = $dsi_offset("%dsi1%")
     READ_LONG dsi_address dsi_offset ELSE 0
-    PATCH_IF dsi_offset >= dsi_sal_off BEGIN
+    PATCH_IF dsi_offset > dsi_sal_off BEGIN
       dsi_offset += dsi_adjust
       WRITE_LONG dsi_address dsi_offset
     END
@@ -219,7 +219,7 @@ DEFINE_PATCH_MACRO del_are_itm_stuff BEGIN
   FOR (dais1=0;dais1<15;dais1+=1) BEGIN
     SET dais_address = $dais_offset("%dais1%")
     READ_LONG dais_address dais_offset
-    PATCH_IF dais_offset >= dais_itm_off BEGIN
+    PATCH_IF dais_offset > dais_itm_off BEGIN
       dais_offset += dais_adjust
       WRITE_LONG dais_address dais_offset
     END
@@ -269,7 +269,7 @@ DEFINE_PATCH_MACRO del_are_itm BEGIN
   FOR (dai1=0;dai1<15;dai1+=1) BEGIN
     SET dai_address = $dai_offset("%dai1%")
     READ_LONG dai_address dai_offset
-    PATCH_IF dai_offset >= dai_itm_off BEGIN
+    PATCH_IF dai_offset > dai_itm_off BEGIN
       dai_offset += dai_adjust
       WRITE_LONG dai_address dai_offset
     END
@@ -356,7 +356,7 @@ DEFINE_PATCH_MACRO del_cre_itm_stuff BEGIN //Requires %itm_to_del%, %replace_itm
   END
   PATCH_FOR_EACH dcis_off IN 0x2a0 0x2a8 0x2b0 0x2b8 0x2c4 BEGIN
     READ_LONG dcis_off dcis_value ELSE 0
-    PATCH_IF dcis_value >= dcis_itm_off BEGIN
+    PATCH_IF dcis_value > dcis_itm_off BEGIN
       WRITE_LONG dcis_off dcis_value + dcis_adjust
     END
   END
@@ -397,7 +397,7 @@ DEFINE_PATCH_MACRO del_cre_itm BEGIN //Requires %itm_to_del%, %replace_itm%. Tak
   END
   PATCH_FOR_EACH dci_off IN 0x2a0 0x2a8 0x2b0 0x2b8 0x2c4 BEGIN
     READ_LONG dci_off dci_value ELSE 0
-    PATCH_IF dci_value >= dci_itm_off BEGIN
+    PATCH_IF dci_value > dci_itm_off BEGIN
       WRITE_LONG dci_off dci_value + dci_adjust
     END
   END
@@ -1361,41 +1361,30 @@ DEFINE_ACTION_FUNCTION select_group_cre RET f_Selected BEGIN
   END
 END
 
-DEFINE_ACTION_MACRO RMap BEGIN
-  OUTER_SPRINT rerand y
-  ACTION_IF FILE_EXISTS_IN_GAME flrMap.2da AND FILE_EXISTS_IN_GAME flrDelete.2da BEGIN
-    PRINT @100024
-    ACTION_READLN rerand
-    OUTER_WHILE ! "%rerand%" STRING_EQUAL_CASE y AND ! "%rerand%" STRING_EQUAL_CASE n BEGIN
-      PRINT @100024
-      ACTION_READLN rerand
-    END
-  END
-END
 
-DEFINE_PATCH_FUNCTION add_trap_script BEGIN //needs f_ConName, f_ScriptName
-  READ_LONG  0x70 con_off
-  READ_SHORT 0x74 num_con
-  FOR (i=0;i<num_con;++i) BEGIN
-    READ_ASCII con_off + 0xc0*i name ELSE blank (32) NULL
-    INNER_PATCH_SAVE name "%name%" BEGIN
-      REPLACE_TEXTUALLY " " ""
-    END
-    PATCH_IF "%name%" STRING_EQUAL_CASE "%f_ConName%" BEGIN
-      READ_ASCII con_off + 0xc0*i + 0x48 Script ELSE blank
-      PATCH_IF FILE_EXISTS_IN_GAME "%Script%.bcs" BEGIN
-        INNER_ACTION BEGIN
-          //EXTEND_TOP "%Script%.bcs" "randomiser/baf/%f_ScriptName%.baf" EVAL
-        END
-      END ELSE BEGIN
-        WRITE_ASCIIE con_off + 0xc0*i + 0x48 "%f_ScriptName%" #8
-        INNER_ACTION BEGIN
-          COMPILE "randomiser/baf/%f_ScriptName%.baf" EVAL
-        END
-      END
-    END
-  END
-END
+//DEFINE_PATCH_FUNCTION add_trap_script BEGIN //needs f_ConName, f_ScriptName
+//  READ_LONG  0x70 con_off
+//  READ_SHORT 0x74 num_con
+//  FOR (i=0;i<num_con;++i) BEGIN
+//    READ_ASCII con_off + 0xc0*i name ELSE blank (32) NULL
+//    INNER_PATCH_SAVE name "%name%" BEGIN
+//      REPLACE_TEXTUALLY " " ""
+//    END
+//    PATCH_IF "%name%" STRING_EQUAL_CASE "%f_ConName%" BEGIN
+//      READ_ASCII con_off + 0xc0*i + 0x48 Script ELSE blank
+//      PATCH_IF FILE_EXISTS_IN_GAME "%Script%.bcs" BEGIN
+//        INNER_ACTION BEGIN
+//          //EXTEND_TOP "%Script%.bcs" "randomiser/baf/%f_ScriptName%.baf" EVAL
+//        END
+//      END ELSE BEGIN
+//        WRITE_ASCIIE con_off + 0xc0*i + 0x48 "%f_ScriptName%" #8
+//        INNER_ACTION BEGIN
+//          COMPILE "randomiser/baf/%f_ScriptName%.baf" EVAL
+//        END
+//      END
+//    END
+//  END
+//END
 
 
 
