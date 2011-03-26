@@ -866,7 +866,7 @@ ACTION_IF !MOD_IS_INSTALLED questpack.tp2 16 AND (BG1 = 0 OR BGT = 1) BEGIN
   COPY_EXISTING obssol01.dlg override
     DECOMPILE_DLG_TO_D
       REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~!Class(Player,MAGE_ALL)~ ~!Class(Player1,MAGE_ALL)~
-      REPLACE_TEXTUALLY CASE_SENSITIVE EVALUATE_REGEXP ~Global("PCSphere","GLOBAL",1)[ %lnl%]Global("TalkedPCSphere","LOCALS",1)~ ~Global("TalkedPCSphere","LOCALS",1)~
+      REPLACE_TEXTUALLY CASE_SENSITIVE EVALUATE_REGEXP ~Global("PCSphere","GLOBAL",1)[ %lnl%]+Global("TalkedPCSphere","LOCALS",1)~ ~Global("TalkedPCSphere","LOCALS",1)~
     COMPILE_D_TO_DLG
   BUT_ONLY
 

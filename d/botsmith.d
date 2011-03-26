@@ -72,6 +72,7 @@ APPEND botsmith
     IF ~PartyHasItem("scrlag") PartyHasItem("hamm07") PartyHasItem("belt08") PartyHasItem("brac06")~ THEN GOTO crom2
     IF ~PartyHasItem("scrlag") !PartyHasItem("hamm07")~ THEN GOTO crom3
     IF ~!PartyHasItem("scrlag") PartyHasItem("hamm07")~ THEN GOTO crom4
+    IF ~PartyHasItem("scrlag") PartyHasItem("hamm07") OR(2) !PartyHasItem("belt08") !PartyHasItem("brac06")~ GOTO crom5
   END
   
   IF ~~ crom2
@@ -89,6 +90,11 @@ APPEND botsmith
   IF ~~ crom4
     SAY @15
     IF ~~ THEN GOTO menu4
+  END
+  
+  IF ~~ crom5
+   SAY @47
+    IF ~~ GOTO menu4
   END
   
   IF ~~ menu4
