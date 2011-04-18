@@ -478,7 +478,7 @@ DEFINE_PATCH_MACRO insert_item_into_container BEGIN //Requires %target_container
   FOR (iiic1=0;iiic1<16;iiic1+=1) BEGIN
     SET iiic_address = $iiic_offset("%iiic1%")
     READ_LONG iiic_address iiic_offset
-    PATCH_IF (iiic_offset > iiic_itm_off) OR (iiic_offset = iiic_itm_off AND iiic_num_item = 0) BEGIN
+    PATCH_IF (iiic_offset > iiic_itm_off) OR (iiic_offset = iiic_itm_off AND iiic_num_itm = 0) BEGIN
       iiic_offset += iiic_adjust
       WRITE_LONG iiic_address iiic_offset
     END
