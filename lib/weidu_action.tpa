@@ -75,6 +75,7 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
   END
   OUTER_SET Num = $NumSpecial("%tier%")
   ACTION_IF num_uncursed < Num OR (num_uncursed = 0 AND Num > 0) AND (BG1 = 0 OR Tutu = 1 OR BGT = 1) BEGIN
+    LOG "Adding padding"
     OUTER_SET Padding = Num - num_uncursed
     COPY - "randomiser/lists/padding.2da" "...randomiser/fl-inlined/padding.2da"
       COUNT_2DA_ROWS 3 num_row
@@ -96,6 +97,7 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
     OUTER_SET $num_items("%tier%") = counter
   END
 
+  LOG "Doing privileged for tier %tier%"
   ACTION_PHP_EACH privileged AS priv_loc => blank BEGIN //Ensure that special cases get an item even if there are fewer items than locations, see also padding
     ACTION_IF "%priv_loc_0%" STRING_EQUAL_CASE "%tier%" BEGIN
       OUTER_SET NumItems = $num_items("%tier%")
@@ -126,20 +128,23 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
   END
 
   //Give fast_lane people one of the specified items
+  LOG "Doing fast-lane for tier %tier%"
   OUTER_SET counter = 0
   ACTION_PHP_EACH location_array AS la_entry => blank BEGIN
     ACTION_IF "%la_entry_1%" STRING_EQUAL_CASE "%tier%" BEGIN
       OUTER_SET ++counter
       ACTION_IF VARIABLE_IS_SET $fast_lane("%la_entry_2%" "%tier%") BEGIN
         ACTION_IF $fast_lane("%la_entry_2%" "%tier%") > 0 BEGIN
+	  LOG "Doing fast-lane for %la_entry_2%"
           OUTER_SET num_item = $fast_lane("%la_entry_2%" "%tier%")
           OUTER_SET done = 0
           OUTER_WHILE done = 0 BEGIN
             OUTER_SET r_f = RANDOM(1 num_item)
             OUTER_SPRINT Item $EVAL "%la_entry_2%"("%tier%" "%r_f%")
-            ACTION_PHP_EACH item_array AS ia_entry => blank BEGIN
-              ACTION_IF "%ia_entry_3%" STRING_EQUAL_CASE "%tier%" AND "%Item%" STRING_EQUAL_CASE "%ia_entry_0%" BEGIN
-                OUTER_SPRINT Token "%ia_entry_4%"
+            ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN
+	      OUTER_SPRINT item_resref $plugintierandtokenandgetitem("%ria_entry_0%" "%ria_entry_1%")
+              ACTION_IF "%ria_entry_0%" STRING_EQUAL_CASE "%tier%" AND "%Item%" STRING_EQUAL_CASE "%item_resref%" BEGIN
+                OUTER_SPRINT Token "%ria_entry_1%"
                 ACTION_IF $TokenAssigned("%Token%") = 0 BEGIN
                   OUTER_SPRINT $itm_loc_assoc_array("%tier%" "%Token%" "%counter%") ""
                   OUTER_SET $TokenAssigned("%Token%") = 1
@@ -154,11 +159,6 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
               ACTION_PHP_EACH "%la_entry_2%" AS number => item BEGIN
                 ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN
                   OUTER_SPRINT ia_item $plugintierandtokenandgetitem("%ria_entry_0%" "%ria_entry_1%")
-                  /*ACTION_PHP_EACH item_array AS ia_entry2 => blank BEGIN
-                    ACTION_IF "%ia_entry2_3%" STRING_EQUAL_CASE "%ria_entry_0%" AND "%ia_entry_4%" STRING_EQUAL_CASE "%ria_entry_1%" BEGIN
-                      OUTER_SPRINT ia_item "%ia_entry2_0%"
-                    END
-                  END*/
                   ACTION_IF "%ria_entry_0%" STRING_EQUAL_CASE "%tier%" AND "%item%" STRING_EQUAL_CASE "%ia_item%" AND $TokenAssigned("%ria_entry_1%") = 0 BEGIN
                     OUTER_SET tokdone = 0
                   END
@@ -174,6 +174,7 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
     END
   END
 
+  LOG "Starting main randomisation loop for tier %tier%"
   ACTION_PHP_EACH randomisation AS entry => blank BEGIN
     ACTION_IF "%entry_0%" STRING_EQUAL_CASE "%tier%" BEGIN
       ACTION_IF lost = 1 AND "%entry_0%" STRING_COMPARE_CASE fa AND "%entry_0%" STRING_COMPARE_CASE ka BEGIN
@@ -211,9 +212,8 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
   ACTION_CLEAR_ARRAY TokenAssigned
 END
 
-//COPY + "...blank" "override/flrMap.2da"
-//APPEND flrMap.2da "Item Target Area Tier Location Charge1 Charge2 Charge3"
 
+LOG "Distributing items"
 ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
   OUTER_SPRINT ilaa_tier   "%ilaa_entry_0%"
   OUTER_SPRINT ilaa_token  "%ilaa_entry_1%"
@@ -271,12 +271,12 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       END
     END
 
-    //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+    LOG "Giving item %Item% to target %Target% in area %Area%"
 
     ACTION_IF "%Target%" STRING_CONTAINS_REGEXP "\." AND FILE_EXISTS_IN_GAME "%Item%.itm" AND FILE_EXISTS_IN_GAME "%Area%.are" BEGIN //Container
       OUTER_SPRINT insert_item "%Item%"
       OUTER_SPRINT target_container "%Target%"
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%Area%.are" override
         LAUNCH_PATCH_MACRO insert_item_into_container
     END
@@ -288,7 +288,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       ACTION_IF VARIABLE_IS_SET $ddwell_item_tra("%Item%") BEGIN
         OUTER_SET TRA = $ddwell_item_tra("%Item%")
       END
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING ddwell.bcs override
         DECOMPILE_BCS_TO_BAF
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
@@ -305,7 +305,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           OUTER_SET TRA = ref
         END
       END
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING blpool.bcs override
         DECOMPILE_BCS_TO_BAF
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
@@ -316,7 +316,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     END ELSE ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.bcs$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Script
       OUTER_SET GetOne = 0
       OUTER_SPRINT FLITEM $identitem("%Loc_Ident%")
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%Target%" override
         DECOMPILE_BCS_TO_BAF
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.+\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
@@ -326,7 +326,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     END
     
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.cre$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Creature
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%Target%" override
         SPRINT itm_to_give "%Item%"
         LAUNCH_PATCH_FUNCTION give_itm_to_cre END
@@ -336,7 +336,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.dlg$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Dialogue
       OUTER_SET GetOne = 0
       OUTER_SPRINT FLITEM $identitem("%Loc_Ident%")
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%Target%" override
         DECOMPILE_DLG_TO_D
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
@@ -345,7 +345,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     END
     
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.spl$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Spell
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%Target%" override
         PATCH_IF SOURCE_SIZE > 0x71 BEGIN
           READ_LONG 0x64 ab_off
@@ -373,7 +373,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     END
     
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.sto$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%Target%" override
         SPRINT store_item "%Item%"
         LAUNCH_PATCH_FUNCTION add_store_item END
@@ -382,7 +382,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     
     ACTION_IF "%Target%" STRING_EQUAL_CASE varci.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND BG1 = 1 BEGIN
       OUTER_SPRINT FLITEM "%TUTU_VAR%shld07"
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%TUTU_VAR%varci.dlg" override
         DECOMPILE_DLG_TO_D
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
@@ -427,7 +427,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     
     ACTION_IF "%Target%" STRING_EQUAL_CASE nemphr.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND BG1 = 1 BEGIN
       OUTER_SPRINT FLITEM "%TUTU_VAR%scrl1q"
-      //APPEND flrMap.2da "%Item% %Target% %Area% %Tier% %Location% %Charge1% %Charge2% %Charge3%"
+
       COPY_EXISTING "%TUTU_VAR%nemphr.cre" override
         SPRINT itm_to_give "%Item%"
         LPF give_itm_to_cre END
