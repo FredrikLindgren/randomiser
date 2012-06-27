@@ -54,36 +54,3 @@ ALTER_TRANS hlskull BEGIN 10 END BEGIN 0 END BEGIN "UNSOLVED_JOURNAL" ~@20~ END
 
 //EXTEND_TOP hlskull 5 "++ #56183 + branch" END
 //EXTEND_TOP hlskull 6 "++ #56187 + branch" END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
