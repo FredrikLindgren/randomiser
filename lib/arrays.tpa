@@ -96,6 +96,16 @@ ACTION_IF BGT = 1 BEGIN
     END
 END
 
+ACTION_IF Tutu = 1 BEGIN
+  COPY - "randomiser/lists/tutu_compat_itm.2da" "...randomiser/fl-inlined/tutu_compat_itm.2da"
+    COUNT_2DA_ROWS 1 num_row
+    FOR (i = 0; i < num_row; ++i) BEGIN
+      READ_2DA_ENTRY i 0 1 entry
+      TO_LOWER entry
+      SET $tutu_compat_itm_array("%entry%") = 1
+    END
+END
+
 COPY - "randomiser/lists/cursed_items.2da" "...randomiser/fl-inlined/cursed_items.2da"
   COUNT_2DA_ROWS 1 num_row
   FOR (i=0;i<num_row;i+=1) BEGIN

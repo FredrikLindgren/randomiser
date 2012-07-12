@@ -997,10 +997,12 @@ DEFINE_PATCH_FUNCTION comp_transform STR_VAR f_Itm = blank f_Are = blank f_Var =
   END
   
   PATCH_IF Tutu = 1 BEGIN
-    PATCH_IF "%f_Itm%" STRING_COMPARE_CASE blank BEGIN
+    PATCH_IF "%f_Itm%" STRING_COMPARE_CASE blank AND !VARIABLE_IS_SET $tutu_compat_itm_array("%f_Itm%") BEGIN
       SPRINT f_Itm "_%f_Itm%"
     END
-    PATCH_IF "%f_Replace%" STRING_COMPARE_CASE blank AND "%f_Replace%" STRING_MATCHES_REGEXP "rndtre.*" BEGIN
+    PATCH_IF "%f_Replace%" STRING_COMPARE_CASE blank AND
+    "%f_Replace%" STRING_MATCHES_REGEXP "rndtre.*" AND
+    !VARIABLE_IS_SET $tutu_compat_itm_array("%f_Replace%") BEGIN
       SPRINT f_Replace "_%f_Replace%"
     END
     PATCH_IF "%f_Var%" STRING_MATCHES_REGEXP ".*\.\(cre\|sto\|dlg\|bcs\)$" = 0 BEGIN
