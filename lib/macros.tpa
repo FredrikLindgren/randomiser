@@ -806,9 +806,9 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
     //ad-hoc fix: select the first weapon if no weapon is selected
     READ_SHORT  itm_slt + 0x2*38 selected
     READ_SSHORT itm_slt + 0x2*(9 + selected) ref ELSE "-2"
-    PATCH_IF ref < 0 BEGIN
+    PATCH_IF ref = "-1" BEGIN
       FOR (q = 9; q < 13; ++q) BEGIN
-        READ_SSHORT itm_slt + 0x2*i ref ELSE "-2"
+        READ_SSHORT itm_slt + 0x2*q ref ELSE "-2"
         PATCH_IF ref >= 0 BEGIN
           WRITE_SHORT itm_slt + 0x2*38 q - 9
           q = 13
