@@ -9,16 +9,7 @@ ALWAYS
   OUTER_SPRINT sslvar ""
   OUTER_SPRINT ssl_file fltier
   RANDOM_SEED go
-  
-  OUTER_PATCH ~12~ BEGIN                                                                                               //"Borrowed" from G3 BG2 Tweakpack
-    WRITE_BYTE 1 0x09
-    READ_ASCII 1 tab (1)  // 0x09, tab
-    WRITE_BYTE 1 0x0a
-    READ_ASCII 1 lnl (1)  // 0x0a, Linux
-    WRITE_BYTE 0 0x0d
-    READ_ASCII 0 mnl (1)  // 0x0d, Mac
-    READ_ASCII 0 wnl (2)  // 0x0d0a, Windows
-  END
+
 <<<<<<<< ...blank
 >>>>>>>>
 END
@@ -29,7 +20,7 @@ LANGUAGE "Polish (partial translation by Yarpen)" polish "randomiser/languages/e
 
 
 BEGIN @100500 GROUP @100499 DESIGNATED 500                                                                             //Randomise identity of the TotSC tome
-REQUIRE_PREDICATE GAME_IS "totsc tutu_totsc bgt" @100020 
+REQUIRE_PREDICATE GAME_IS "totsc tutu_totsc bgt" OR FILE_EXISTS_IN_GAME oh1000.are @100020
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
 
   COPY_EXISTING sw1h01.itm "override/flrc500.mrk"
@@ -53,16 +44,16 @@ REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAM
 BEGIN @100520 GROUP @100499 DESIGNATED 520
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023            //Kangaxx further sealed away
 REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
-  
+
   COPY_EXISTING sw1h01.itm "override/flrc520.mrk"
-  
+
 
 BEGIN @100530 GROUP @100499 DESIGNATED 530                                                                             //Randomise scrolls
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
 
   COPY_EXISTING sw1h01.itm "override/flrc530.mrk"
 
-  
+
 BEGIN @100540 GROUP @100499 DESIGNATED 540                                                                             //Randomise the heads of the Flail of Ages
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
 REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
@@ -95,7 +86,7 @@ REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
       ADD_STORE_ITEM scrl8x BEFORE ~scrlal scrl7q scrl7p~ #0 #0 #0 identified #3
     END
   BUT_ONLY
-  
+
 BEGIN @100570 GROUP @100499 DESIGNATED 570
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
 REQUIRE_PREDICATE !MOD_IS_INSTALLED cursed_items.tp2 0 @100027
@@ -105,7 +96,7 @@ REQUIRE_PREDICATE !MOD_IS_INSTALLED cursed_items.tp2 0 @100027
 
 BEGIN @101100 SUBCOMPONENT @101000 DESIGNATED 1100                                                                     //Randomise items: No items are lost
                                                                                                                        //Marker file: flrandomiser1.mrk
-  ACTION_IF FILE_EXISTS_IN_GAME ar0125.are BEGIN
+  ACTION_IF GAME_IS ~bg1 totsc~ BEGIN
     FAIL @100015
   END
 
@@ -133,7 +124,7 @@ BEGIN @101100 SUBCOMPONENT @101000 DESIGNATED 1100                              
 
 BEGIN @101200 SUBCOMPONENT @101000 DESIGNATED 1200                                                                     //Randomise items: Some items are lost
                                                                                                                        //Marker file: flrandomiser1.mrk
-  ACTION_IF FILE_EXISTS_IN_GAME ar0125.are BEGIN
+  ACTION_IF GAME_IS ~bg1 totsc~ BEGIN
     FAIL @100015
   END
 
@@ -289,11 +280,11 @@ REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
 
 BEGIN @105075 GROUP @105000 DESIGNATED 5075                                                                            //Slimes have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
-REQUIRE_PREDICATE GAME_IS "bg1 totsc tutu tutu_totsc bgt" @105003
+REQUIRE_PREDICATE GAME_IS "bg1 totsc tutu tutu_totsc bgt" OR FILE_EXISTS_IN_GAME oh1000.are @105003
 
   ACTION_FOR_EACH cre IN schlum BEGIN
-    ACTION_IF FILE_EXISTS_IN_GAME "%TUTU%%cre%.cre" BEGIN
-      COPY_EXISTING "%TUTU%%cre%.cre" override
+    ACTION_IF FILE_EXISTS_IN_GAME "%TUTU_VAR%%cre%.cre" BEGIN
+      COPY_EXISTING "%TUTU_VAR%%cre%.cre" override
         LPF unequip_items END
       BUT_ONLY
     END
@@ -313,14 +304,14 @@ REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
   END
 
 BEGIN @109000 DESIGNATED 9000                                                                                          //Cespenar can forge SoA items
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre AND !FILE_EXISTS_IN_GAME _sw1h01.itm @109001
+REQUIRE_PREDICATE GAME_IS ~tob bgt~ @109001
 
   COMPILE "randomiser/d/botsmith.d"
   EXTEND_BOTTOM botsmith.bcs "randomiser/baf/botsmith.baf"
   
 
 BEGIN @109050 DESIGNATED 9050                                                                                          //Make Gromnir a proper Barbarian
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME mel01.cre AND !FILE_EXISTS_IN_GAME _sw1h01.itm @109001 
+REQUIRE_PREDICATE GAME_IS ~tob bgt~ @109001 
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME gromnir.itm @109002
 
   INCLUDE "randomiser/lib/gromnir.tpa"
@@ -355,7 +346,8 @@ REQUIRE_PREDICATE !MOD_IS_INSTALLED scsii.tp2 7030
               AND !MOD_IS_INSTALLED scsii.tp2 7031
               AND !MOD_IS_INSTALLED scsii.tp2 7032
               AND !MOD_IS_INSTALLED scsii.tp2 7033
-              AND !MOD_IS_INSTALLED tactics.tp2 16 @110301
+              AND !MOD_IS_INSTALLED tactics.tp2 16
+              AND !FILE_EXISTS_IN_GAME dw#spawns.mrk @110301
 REQUIRE_PREDICATE GAME_IS tob @109001
 
   COPY_EXISTING ar3001.bcs override
@@ -363,11 +355,3 @@ REQUIRE_PREDICATE GAME_IS tob @109001
       REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("SetDifficulty","AR3001",0)~ ~False()~
     COMPILE_BAF_TO_BCS
   BUT_ONLY
-
-
-
-
-
-
-
-

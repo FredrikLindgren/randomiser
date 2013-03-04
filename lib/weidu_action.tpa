@@ -74,7 +74,7 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
     END
   END
   OUTER_SET Num = $NumSpecial("%tier%")
-  ACTION_IF num_uncursed < Num OR (num_uncursed = 0 AND Num > 0) AND (BG1 = 0 OR Tutu = 1 OR BGT = 1) BEGIN
+  ACTION_IF num_uncursed < Num OR (num_uncursed = 0 AND Num > 0) BEGIN
     LOG "Adding padding"
     OUTER_SET Padding = Num - num_uncursed
     COPY - "randomiser/lists/padding.2da" "...randomiser/fl-inlined/padding.2da"
@@ -729,7 +729,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       COPY_EXISTING ar1202.bcs override
                     samia.bcs  override
         DECOMPILE_BCS_TO_BAF
-          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~OR(2)%lnl% +PartyHasItem("sw1h32")%lnl% +PartyHasItem("shld21")~ ~Global("flSamiaTreasure","ar1202",1)~
+          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~OR(2)%LNL% +PartyHasItem("sw1h32")%LNL% +PartyHasItem("shld21")~ ~Global("flSamiaTreasure","ar1202",1)~
         COMPILE_BAF_TO_BCS
       BUT_ONLY
       COPY_EXISTING flrsamia.bcs override
@@ -1210,6 +1210,3 @@ ACTION_IF FILE_EXISTS_IN_GAME abazigal.cre BEGIN
     END
   BUT_ONLY
 END
-
-
-

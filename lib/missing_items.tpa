@@ -15,7 +15,7 @@ IF
   Range(LastTrigger,12)
   OR(2)
   !PartyHasItem("%ward%")
-  !G("KangaxxQuest",1)
+  !Global("KangaxxQuest","GLOBAL",1)
   Global("UsedCrypt","%area%",0)
 THEN RESPONSE #100
   DisplayStringHead(Myself,@1500)

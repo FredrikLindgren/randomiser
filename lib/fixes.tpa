@@ -58,29 +58,6 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc520) BEGIN
   COMPILE "randomiser/d/hlskull.d"
 END
 
-/* //see new fix in weidu_action.tpa
-ACTION_IF (BG1 = 0 OR BGT = 1) AND weidu_action BEGIN
-  COPY_EXISTING kpgol01.bcs override //So the golems do not go hostile just because you've got any old robe of the archmagi
-                kpgol02.bcs override
-                kpgol03.bcs override
-                kpgol04.bcs override
-                kpgol05.bcs override
-                kpgol06.bcs override
-    DECOMPILE_BCS_TO_BAF
-      REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(PartyHasItem(\"[a-z0-9#_!]+\")\)~ ~\1 OpenState("secret02",TRUE)~
-    COMPILE_BAF_TO_BCS
-  UNLESS ~16502 1 0 0 0 "" "" OB%lnl%0 0 0 0 0 0 0 0 0 0 0 0 "secret02"OB~
-  BUT_ONLY
-  
-  COPY_EXISTING ar1202.bcs override //ditto for Samia and c/o
-    DECOMPILE_BCS_TO_BAF
-      REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(Global(\"SpawnSamia\",\"AR1202\",0)\|Global(\"SpawnSamiaFriends\",\"AR1202\",0)\)~ ~\1 OpenState("door14",TRUE)~
-    COMPILE_BAF_TO_BCS
-  UNLESS ~16502 1 0 0 0 "" "" OB%lnl%0 0 0 0 0 0 0 0 0 0 0 0 "door14"OB~
-  BUT_ONLY
-END
-*/
-
 //Remove empty trans action so it doesn't trip peoples' corrupted-files alarms
 ACTION_IF !BG1 OR BGT BEGIN
   COPY_EXISTING ammayor.dlg override
@@ -858,7 +835,7 @@ END
 ACTION_IF !MOD_IS_INSTALLED questpack.tp2 16 AND (BG1 = 0 OR BGT = 1) BEGIN
   COPY_EXISTING hprelate.dlg override
     DECOMPILE_DLG_TO_D
-      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("PCSphere","GLOBAL",1)~ ~OR(2) Global("PCSphere","GLOBAL",1) G("flrsolamnic",1)~
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("PCSphere","GLOBAL",1)~ ~OR(2) Global("PCSphere","GLOBAL",1) Global("flrsolamnic","GLOBAL",1)~
     COMPILE_D_TO_DLG
   BUT_ONLY
   UNLESS flrsolamnic
@@ -866,7 +843,7 @@ ACTION_IF !MOD_IS_INSTALLED questpack.tp2 16 AND (BG1 = 0 OR BGT = 1) BEGIN
   COPY_EXISTING obssol01.dlg override
     DECOMPILE_DLG_TO_D
       REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~!Class(Player,MAGE_ALL)~ ~!Class(Player1,MAGE_ALL)~
-      REPLACE_TEXTUALLY CASE_SENSITIVE EVALUATE_REGEXP ~Global("PCSphere","GLOBAL",1)[ %lnl%]+Global("TalkedPCSphere","LOCALS",1)~ ~Global("TalkedPCSphere","LOCALS",1)~
+      REPLACE_TEXTUALLY CASE_SENSITIVE EVALUATE_REGEXP ~Global("PCSphere","GLOBAL",1)[ %LNL%]+Global("TalkedPCSphere","LOCALS",1)~ ~Global("TalkedPCSphere","LOCALS",1)~
     COMPILE_D_TO_DLG
   BUT_ONLY
 
@@ -879,7 +856,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
     OUTER_SPRINT area ard004
   END ELSE ACTION_IF GAME_IS tutu_totsc BEGIN
     OUTER_SPRINT area fw0504
-  END ELSE ACTION_IF GAME_IS totsc BEGIN
+  END ELSE ACTION_IF GAME_IS totsc OR FILE_EXISTS_IN_GAME oh1000.are BEGIN
     OUTER_SPRINT area ar0504
   END
   
@@ -898,8 +875,3 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
     BUT_ONLY
   END
 END
-
-
-      
-      
-      
