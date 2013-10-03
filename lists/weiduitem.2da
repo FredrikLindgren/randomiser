@@ -31,7 +31,7 @@ sw1h03   blank       hendak.dlg    3    w07   wf    lehtin.dlg
 sw1h26   blank       jugjer01.dlg  3    w08   w12   jugjer01.cre
 sw1h23   blank       trgeni01.dlg  3    w09   w13   trgeni01.cre
 belt02   blank       mgkhol01.dlg  3    w10   w14
-blun17   blun03      draug.cre     3    w11   w32
+blun17   blun07      draug.cre     3    w11   w32
 xbow14   blank       ribald.sto    3    w12   x
 amul23   blank       scsain.dlg    3    w13   x
 
@@ -39,7 +39,7 @@ shld27   blank       riftg03.dlg   4    w01   w17
 dagg11   blank       loutcapt.dlg  4    w02   w1a   loutcapt.cre
 ring33   blank       tolger2.cre   4    w03   w1c   tolger.cre, tolger.dlg, #18409
 rods04   blank       uddrow24.sto  4    w04   x
-sw1h39   dwsw1h02    udlesa.cre    4    w05   w1e   udlesa.dlg #52664
+sw1h39   dwsw1h02    udlesa.cre    4    w05   w1e   udlesa.dlg #52664; is given ** in long sword, because there are no drow bastard swords
 xbow08   blank       ribald.sto    4    w06   x
 xbow10   blank       udsilver.dlg  4    w07   w33
 bow11    blank       ribald.sto    4    w08   x
@@ -61,7 +61,7 @@ bow19b   blank       ar1514.are    6    w05   w24   ppchest.bcs
 chan11   blank       ribald3.sto   6    w06   x
 shld23   blank       ribald.sto    6    w07   x
 staf20   blank       ribald.sto    6    w08   x
-sw1h38   sw1h01      udtrap01.cre  6    w09   x
+sw1h38   sw1h02      udtrap01.cre  6    w09   x
 halb06   blank       uddemon.dlg   6    w10   x
 
 plat13   dwplat01    udardul.cre   7    w01   w25

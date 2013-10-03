@@ -1,6 +1,6 @@
 Item        Replacement Source       Tier Token Ident Comment
 
-amul16      rndtre03    ar0602.are   1    01    ib
+amul16      amul10      ar0602.are   1    01    ib
 boot02      blank       ar0303.are   1    02    i73
 belt09      blank       gaal01.cre   1    03    i1
 misc3h      blank       ar1202.are   1    04    i88
@@ -54,14 +54,14 @@ clck15      blank       trmer04.sto  3    07    x
 clck16      blank       blank        3    08    x
 clck17      blank       uddrow23.sto 3    09    x
 halb09a     blank       pwarden.cre  3    10    i15
-blun24      sw1h20      cedruid2.cre 3    11    x
+blun24      blun01      cedruid2.cre 3    11    x
 brac11      blank       ar2200.are   3    12    x
 leat13      blank       theshal.cre  3    13    i14
 misc3m      blank       ar0705.are   3    14    i79
 misc3o      blank       ar2400.are   3    15    x
 hamm03      blank       ar0204.are   3    16    x
 clck24      blank       ar1511.are   3    17    i81
-chan09      chan04      rngsha02.cre 3    18    x
+chan09      chan01      rngsha02.cre 3    18    x
 halb08      halb02      rngsha02.cre 3    19    i80
 sper07      blank       ar1904.are   3    20    i3
 
@@ -72,7 +72,7 @@ staf17      blank       ar0412.are   4    04    i20
 brac06      blank       obshal01.cre 4    05    i21
 brac15      blank       ribald.sto   4    06    x
 halb04      blank       ar0205.are   4    07    i22
-sw1h35      sw2h02      pwarden.cre  4    08    i25
+sw1h35      sw2h02      pwarden.cre  4    08    i25  anything in the shield slot is unequipped; is given * in two-handed sword
 sw1h54a     blank       ar2400.are   4    09    x
 bow19a      blank       ar0503.are   4    10    i2
 slng07      blank       bernard2.sto 4    11    x
@@ -138,11 +138,11 @@ belt08      blank       uddeath2.cre 7    09    i37
 plat16      blank       uddeath2.cre 7    10    i38
 sw2h08      sw2h02      uddeath2.cre 7    11    i39
 halb05      halb01      gpfight1.cre 7    12    i3a
-sw1h51      sw1h44      hlkoshi.cre  7    13    i3b
+sw1h51      sw1h55      hlkoshi.cre  7    13    i3b
 
 ax1h16      blank       amsmug02.sto 10   01    i6d
 blun26      blank       gorgua01.cre 10   02    i71
-sw1h67      sw1h42      gorsta07.cre 10   03    i48
+sw1h67      sw1h49      gorsta07.cre 10   03    i48
 brac21      blank       gorwom03.cre 10   04    i72
 dagg21      blank       demilich.cre 10   05    i3e
 halb10      blank       elemimix.cre 10   06    i3f
