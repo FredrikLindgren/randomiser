@@ -72,12 +72,28 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc540) BEGIN
   COMPILE "randomiser/d/kpglai01.d"
 END
 
-//Planar Prison Warden gets 1 pip in large swords
+//Planar Prison Warden gets 1 pip in two-handed swords
 ACTION_IF !BG1 OR BGT BEGIN
   COPY_EXISTING pwarden.cre override
     PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
-      WRITE_BYTE 0x6e 1
-      LPF unequip_items INT_VAR f_Lower = 2 f_Upper = 3 f_Force = 1 END //Since his longsword is replaced by a two-handed sword, we empty the shield slot
+      LPF minimum_proficiency
+        INT_VAR
+          value = 1
+          proficiency = IDS_OF_SYMBOL (stats PROFICIENCYTWOHANDEDSWORD)
+      END
+       //Since his longsword is replaced by a two-handed sword, we empty the shield slot
+      LPF unequip_items INT_VAR f_Lower = 2 f_Upper = 3 f_Force = 1 END
+    END
+  BUT_ONLY
+END
+
+// Lasaonar gets 2 pips in long swords
+ACTION_IF !BG1 OR BGT BEGIN
+  COPY_EXISTING udlesa.cre override
+    LPF minimum_proficiency
+      INT_VAR
+        value = 2
+        proficiency = IDS_OF_SYMBOL (stats PROFICIENCYLONGSWORD)
     END
   BUT_ONLY
 END
