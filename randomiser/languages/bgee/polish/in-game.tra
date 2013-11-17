@@ -1,0 +1,43 @@
+// -*- coding: utf-8 -*-
+
+@100="Proszę, przyjmij ten podarunek." //new line for cleric in Amkethran
+
+@112="Słyszałeś? Na południe od Pomocnej Dłoni na swoim obmierzłym tyłku siedzi przeklęty ogrzy łotr, który jest dziwnie kusy na pasy. Musiałam się wykupić, inaczej zostałaby po mnie tylko czerwona plama. Nie chciał nawet mojej książki. Z autografem! Byłabym wdzięczna gdybyś mogł... odzyskać... mój pas. Bohaterzy robią takie rzeczy."
+@113="Ogrzy łajdak
+
+Według krasnoludzkiej kapłanki o dźwięcznym imieniu Unshey, na południe od Pomocnej Dłoni mieści się legowisko paskudnego ogrzego złodzieja specjalizującego się w... pasach. Jakoże Unshey tytułuje się być kimś pokroju pisarki, może w zamian za zwrocony pas dostanę od niej książkę. Z autografem."
+@114="Pas Unshey"
+@115="Ten elegancki pasek wykonany został z najwyższą dbałością o detale. Za samą, wykonaną ze srebra sprzączkę możnaby dostać mieszek pełen złotych monet. Misternie wygrawerowano na niej imię prawowitej właścicielki przedmiotu - Unshey.
+
+PARAMETRY:
+
+Waga: 2"
+
+
+@900=~Wchodzisz do sadzawki i na dnie znajdujesz pas. Ale od tej całej krwi robi ci się niedobrze.~
+@901=~Wchodzisz do sadzawki i na dnie znajdujesz pierścień. Ale od tej całej krwi robi ci się niedobrze..~
+@902=~Wchodzisz do sadzawki i na dnie znajdujesz hełm. Ale od tej całej krwi robi ci się niedobrze.~
+@903=~Wchodzisz do sadzawki i na dnie znajdujesz kuszę. Ale od tej całej krwi robi ci się niedobrze.~
+@904=~Wchodzisz do sadzawki i na dnie znajdujesz płaszcz. Ale od tej całej krwi robi ci się niedobrze.~
+@905=~Wchodzisz do sadzawki i na dnie znajdujesz łuk. Ale od tej całej krwi robi ci się niedobrze.~
+@906=~Wchodzisz do sadzawki i na dnie znajdujesz skórzany pancerz. Ale od tej całej krwi robi ci się niedobrze.~
+@907=~Wchodzisz do sadzawki i na dnie znajdujesz księgę. Ale od tej całej krwi robi ci się niedobrze.~
+@908=~Wchodzisz do sadzawki i na dnie znajdujesz procę. Ale od tej całej krwi robi ci się niedobrze.~
+@909=~Wchodzisz do sadzawki i na dnie znajdujesz miecz. Ale od tej całej krwi robi ci się niedobrze.~
+@910=~Wchodzisz do sadzawki i na dnie znajdujesz szatę. Ale od tej całej krwi robi ci się niedobrze.~
+@911=~Wchodzisz do sadzawki i na dnie znajdujesz drzewiec. Ale od tej całej krwi robi ci się niedobrze.~
+@912=~Wchodzisz do sadzawki i na dnie znajdujesz parę rękawic. Ale od tej całej krwi robi ci się niedobrze.~
+@913=~Wchodzisz do sadzawki i na dnie znajdujesz sztylet. Ale od tej całej krwi robi ci się niedobrze.~
+@914=~Wchodzisz do sadzawki i na dnie znajdujesz buławę. Ale od tej całej krwi robi ci się niedobrze.~ //String #35877 in BG2
+@915=~Wchodzisz do sadzawki i na dnie znajdujesz naszyjnik. Ale od tej całej krwi robi ci się niedobrze.~
+@916=~Wchodzisz do sadzawki i na dnie znajdujesz płytowy pancerz. Ale od tej całej krwi robi ci się niedobrze.~
+@917=~Wchodzisz do sadzawki i na dnie znajdujesz maczugę. Ale od tej całej krwi robi ci się niedobrze.~
+@918="You enter the blood pool and find a shield at the bottom of the pool. The blood makes you feel sick, however."
+@919="You enter the blood pool and find a morning star at the bottom of the pool. The blood makes you feel sick, however."
+@920="You enter the blood pool and find a war hammer at the bottom of the pool. The blood makes you feel sick, however."
+@921="You enter the blood pool and find a suit of scale armor at the bottom of the pool. The blood makes you feel sick, however."
+@922="You enter the blood pool and find a pair of bracers at the bottom of the pool. The blood makes you feel sick, however."
+
+@999=~Wchodzisz do sadzawki i na dnie znajdujesz jakiś przedmiot. Ale od tej całej krwi robi ci się niedobrze.~
+@998="Wchodzisz do sadzawki, jednak nie znajdujesz w niej niczego co mogłoby cię zainteresować. Do tego od tej całej krwi robi ci się niedobrze."
+@997="Gdy kładziesz głowę na oltarzu, komnata zaczyna się trząść. Po chwili głowa znika. Słyszysz bulgoczący głos przemawiający w języku którego nie znasz, jednak wyczuwasz w nim dezaprobatę za to, co właśnie zrobiłeś." "Gdy kładziesz głowę na oltarzu, komnata zaczyna się trząść. Po chwili głowa znika. Słyszysz bulgoczący głos przemawiający w języku którego nie znasz, jednak wyczuwasz w nim dezaprobatę za to, co właśnie zrobiłaś."
