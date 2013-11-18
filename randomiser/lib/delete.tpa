@@ -93,7 +93,8 @@ ACTION_PHP_EACH item_array AS entry => int BEGIN
           BUT_ONLY
         END
       END
-      ACTION_IF Tutu = 1 OR BGT = 1 OR FILE_EXISTS_IN_GAME oh1000.are BEGIN
+      ADD_JOURNAL EXISTING TITLE (#31285) @113
+      ACTION_IF Tutu = 1 OR BGT = 1 OR GAME_IS ~bgee~ BEGIN
         COMPILE EVALUATE_BUFFER "randomiser/d/unshey.d"
       END ELSE BEGIN
         COMPILE EVALUATE_BUFFER "randomiser/d/bg1unshey.d"

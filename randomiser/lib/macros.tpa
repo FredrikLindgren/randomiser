@@ -486,7 +486,7 @@ DEFINE_PATCH_MACRO insert_item_into_container BEGIN //Requires %target_container
 END
 
 DEFINE_PATCH_FUNCTION read_item_prof INT_VAR f_BG1_default = 20 f_BG2_default = 90 RET f_Prof BEGIN
-  PATCH_IF BG1 = 1 AND Tutu = 0 AND BGT = 0 AND !FILE_EXISTS_IN_GAME oh1000.are BEGIN
+  PATCH_IF BG1 = 1 AND Tutu = 0 AND BGT = 0 AND !GAME_IS ~bgee~ BEGIN
     READ_SHORT 0x1c f_Prof ELSE f_BG1_default
   END ELSE BEGIN
     READ_BYTE  0x31 f_Prof ELSE f_BG2_default
@@ -838,7 +838,7 @@ DEFINE_PATCH_MACRO read_cre_profs BEGIN
   READ_BYTE 0x74 rcp_axe   ELSE 0
   READ_BYTE 0x75 rcp_miss  ELSE 0
   SET BG1_STYLE_PROFS = 0
-  PATCH_IF (BG1 = 1 AND Tutu = 0 AND BGT = 0) AND !FILE_EXISTS_IN_GAME oh1000.are BEGIN //BG1
+  PATCH_IF (BG1 = 1 AND Tutu = 0 AND BGT = 0) AND !GAME_IS ~bgee~ BEGIN //BG1
     PATCH_FOR_EACH rcp_prof IN 22 23 BEGIN
       SET $rcp_prof("%rcp_prof%") = rcp_spike
     END

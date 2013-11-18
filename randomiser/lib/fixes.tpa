@@ -868,11 +868,11 @@ END
 
 //Replace book08 with random book if component 500 is installed and it's mode 2
 ACTION_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
-  ACTION_IF GAME_IS bgt BEGIN
+  ACTION_IF GAME_IS bgt BEGIN // This can be replaced by fl#bg1pal
     OUTER_SPRINT area ard004
   END ELSE ACTION_IF GAME_IS tutu_totsc BEGIN
     OUTER_SPRINT area fw0504
-  END ELSE ACTION_IF GAME_IS totsc OR FILE_EXISTS_IN_GAME oh1000.are BEGIN
+  END ELSE ACTION_IF GAME_IS totsc OR GAME_IS ~bgee~ BEGIN
     OUTER_SPRINT area ar0504
   END
   
