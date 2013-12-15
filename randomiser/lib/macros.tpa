@@ -699,9 +699,6 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
               END
             END
             PATCH_IF (flags5 BAND 4) = 4 AND (cre_itm_flags1 BAND 10) = 0 AND no_swap = 0 BEGIN //If the item is not undroppable and hasn't been disallowed for swapping
-              WRITE_SHORT itm_slt + 0x2*i num_itm
-              added = 1
-              f_Flags |= 2
               PATCH_IF VARIABLE_IS_SET $EVAL "%Source_Cre%_replace"("%item%") BEGIN
                 DELETE_BYTES itm_off + 0x14*$ref("%i%") 0x14
                 itm_slt = itm_slt > itm_off ? itm_slt - 0x14 : itm_slt
@@ -725,6 +722,9 @@ DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //re
                   END
                 END
               END
+              WRITE_SHORT itm_slt + 0x2*i num_itm
+              added = 1
+              f_Flags |= 2
               i = upper_bound
             END
           END
