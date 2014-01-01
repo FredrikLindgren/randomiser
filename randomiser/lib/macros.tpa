@@ -1430,3 +1430,18 @@ DEFINE_ACTION_MACRO bgee_language BEGIN
     LOAD_TRA ~%MOD_FOLDER%/languages/bgee/%LANGUAGE%/in-game.tra~
   END
 END
+
+DEFINE_PATCH_FUNCTION change_store_stock
+  INT_VAR
+    stock = 1
+  STR_VAR
+    item = ""
+BEGIN
+  READ_LONG 0x34 io
+  FOR (i = 0; i < LONG_AT 0x38; ++i) BEGIN
+    READ_ASCII io + 0x1c * i store_item ELSE fl#blank
+    PATCH_IF "%store_item%" STRING_MATCHES_REGEXP "%item%" = 0 BEGIN
+      WRITE_LONG io + 0x1c * i + 0x14 stock
+    END
+  END
+END
