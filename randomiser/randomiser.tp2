@@ -18,7 +18,12 @@ END
 
 AUTO_TRA ~randomiser/languages/%s~
 LANGUAGE English english "randomiser/languages/english/setup.tra" "randomiser/languages/english/in-game.tra"
-LANGUAGE "Polish (partial translation by Yarpen)" polish "randomiser/languages/english/setup.tra" "randomiser/languages/polish/setup.tra" "randomiser/languages/english/in-game.tra" "randomiser/languages/polish/in-game.tra"
+/*
+LANGUAGE "Polish (partial translation by Yarpen)" polish "randomiser/languages/english/setup.tra"
+                                                         "randomiser/languages/polish/setup.tra"
+                                                         "randomiser/languages/english/in-game.tra"
+                                                         "randomiser/languages/polish/in-game.tra"
+*/
 
 
 BEGIN @100500 GROUP @100499 DESIGNATED 500                                                                             //Randomise identity of the TotSC tome
