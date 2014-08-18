@@ -1,14 +1,56 @@
 //This file only contains strings relevant to the installation of the mod
 
-@100005="Nie rozpoznaje wersji gry. Instalacja zostaje wstrzymana."
-@100010="Zainstalowany zostal dodatek ktory wykorzystuje rozlosowane przez ten mod przedmioty."
-@100011="Czy chcesz by przedmioty te zostaly na swoim miejscu? Wpisz [y] jesli tak badz [n] jesli nie i zatwierdz. W celu uzyskania dalszych informacji zapoznaj sie z dokumentacja."
-@100015="Ten komponent dostepny jest tylko dla BG2, BGT i BG1TuTu. Zamiast niego wybierz komponent 3 lub 4."
-@101000="Rozlosowanie przedmiotow"
-@101100="Mode 1: Rozlosuj za pomoca skryptow. Wszystkie przedmioty sa dostepne."
-@101200="Mode 1: Rozlosuj za pomoca skryptow. Czesc przedmiotow ginie."
-@101300="Mode 2: Rozlosuj przez WeiDU. Wszystkie przedmioty sa dostepne."
-@101400="Mode 2: Rozlosuj przez WeiDU. Czesc przedmiotow ginie."
-@110000="Usun zwoje Ochrony przed Nieumarlymi ze sklepow."
-@110100="Wszystkie zwoje z wszystkich sklepow"
-@110200="Wszystkie zwoje z niemal wszystkich sklepow"
+@-1004=~PROSZE zglaszac komunikaty bledow w pliku~
+
+@100005=~Wersja gry nierozpoznana. Wstrzymywanie instalacji.~
+@100010=~Jeden lub kilka zainstalowanych modow wykorzystuje przedmioty rozmieszczane losowo przed ten mod.~
+@100011=~Czy chcesz zachowac te przedmioty w obecnych lokacjach? Odpowiedz: [y] - Tak lub [n] - Nie.~
+@100015=~Komponent ten jest dostepny tylko dla Baldur's Gate II, Baldur's Gate Trilogy i Baldur's Gate Tutu. Zamiast tego wybierz komponent 3 lub 4.~
+@100020=~Komponent ten jest dostepny tylko dla OzWM.~
+@100021=~Wpisz liczbe calkowita reprezentujaca szanse na losowa utrate przedmiotow (np. 10 dla 10%)~
+@100022=~Wpisz liczbe calkowita reprezentujaca losowa szanse na to, aby przedmioty nie byly losowo rozmieszczane (np. 10 dla 10%)~
+@100023=~Komponent ten ma znaczenie tylko, jesli zostanie zainstalowany przed glownym komponentem.~
+@100024=~Czy chcesz zachowac kompatybilnosc z biezacymi zapisami stanu gry? Odpowiedz: [y] - Tak lub [n] - Nie. W celu uzyskania dodatkowych informacji zapoznaj sie z plikiem Readme.~
+@100025=~Migracja z Trybu 2 do Trybu 1 nie jest wspierana. Przeinstaluj mod z uzyciem Trybu 2 lub odpowiedz [n] - nie, gdy zostaniesz zapytany o kompatybilnosc z biezacymi zapisami stanu gry.~
+@100026=~Migracja z Trybu 1 do Trybu 2 nie jest wspierana. Przeinstaluj mod z uzyciem Trybu 1 lub odpowiedz [n] - nie, gdy zostaniesz zapytany o kompatybilnosc z biezacymi zapisami stanu gry.~
+@100027=~Komponent ten jest koncepcyjnie niekompatybilny z modem Cursed Item Revisions.~
+
+@100499=~Opcje losowania.~
+@100500=~Zamien losowo tom Madrosci dostepny normalnie w dodatku OzWM na jeden z 6 dostepnych rodzajow.~
+@100510=~Losowo nie przemieszczaj przedmiotow.~
+@100520=~Kangaxx pilniej strzezony~
+@100530=~Losowo rozmieszczaj zwoje~
+@100540=~Losowo rozmieszczaj kule Cepu bojowego Wiekow~
+@100550=~Losowo rozmieszczaj komponent potrzebny do wykucia Ulepszonej Wekiery Zniszczen.~
+@100560=~Wiecej zwojow Tarczy przeciw czarom~
+@100570=~Losowe pojawianie sie przekletych przedmiotow~
+@101000=~Losowo rozmieszczaj przedmioty~
+@101100=~Tryb 1: Rozmieszczaj losowo przy pomocy skryptow wykorzystywanych przez gre. Brak utraty przedmiotow.~
+@101200=~Tryb 1: Rozmieszczaj losowo przy pomocy skryptow wykorzystywanych przez gre. Niektore przedmioty zostaja utracone.~
+@101300=~Tryb 2: Rozmieszczaj losowo przy pomocy WeiDU. Brak utraty przedmiotow.~
+@101400=~Tryb 2: Rozmieszczaj losowo przy pomocy WeiDU. Mode 2: Niektore przedmioty zostaja utracone.~
+
+@105000=~Komponenty zwiazane z brakiem przedmiotow przez poszczegolne grupy istot~
+@105001=~Komponent ten jest dostepny tylko dla Trybu 2~
+@105002=~Komponent ten jest dostepny tylko dla BG2~
+@105003=~Komponent ten jest dostepny tylko dla BG1, Tutu lub BGT~
+@105005=~Obserwatorzy nie posiadaja przedmiotow~
+@105015=~Demilisze nie posiadaja przedmiotow~
+@105025=~Smoki nie posiadaja przedmiotow~
+@105035=~Zywiolaki nie posiadaja przedmiotow~
+@105045=~Czarty nie posiadaja przedmiotow~
+@105055=~Golemy nie posiadaja przedmiotow~
+@105065=~Glowne Mozgi nie posiadaja przedmiotow~
+@105075=~Sluzy nie posiadaja przedmiotow~
+@105085=~Trolle nie posiadaja przedmiotow~
+
+@109000=~Cespenar moze wykuwac przedmioty z Cieni Amn.~
+@109001=~Komponent ten jest dostepny tylko dla BG2: ToB~
+@109002=~Komponent ten jest zbedny jesli zainstalowano mod Ascension.~
+@109050=~Zmienia Gromnira w prawdziwego Barbarzynce.~
+@110000=~Usuwa ze sklepow zwoje Ochrony przed Nieumarlymi.~
+@110100=~Usuwa wszystkie zwoje ze wszystkich sklepow~
+@110200=~Usuwa wszystkie zwoje z 9 na 10 sklepow~
+@110210=~Kupcy duergarow~
+@110300=~Zapobiega znikaniu posagow w Twierdzy Straznika.~
+@110301=~Komponenty ten stal sie zbedny po zainstalowaniu jednego z modow.~

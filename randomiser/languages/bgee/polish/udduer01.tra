@@ -1,0 +1,10 @@
+// -*- coding: utf-8 -*-
+
+@0    = ~Ach, wróciłeś.~ ~Ach, wróciłaś.~
+@1    = ~Dziwnych masz przyjaciół. Powiedziano mi, że jesteście tu gośćmi i mam was traktować należycie.~
+@2    = ~Oprócz naszego standardowego asortymentu mamy również wybór specjalnych towarów. Oferujemy je wam za niewygórowaną cenę.~
+@3    = ~Chcesz teraz spojrzeć na moje towary, czy też mogę zrobić dla ciebie coś innego?~
+@4    = ~Zerknę na standardowe towary.~
+@5    = ~Chciałbym obejrzeć specjalne towary.~ ~Chciałabym obejrzeć specjalne towary.~
+@6    = ~Wobec tego, to ja zerknę na wasze towary.~
+@7    = ~W takim razie, to ja obejrzę wasze specjalne towary.~

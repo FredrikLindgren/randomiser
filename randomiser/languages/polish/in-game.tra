@@ -1,43 +1,731 @@
 // -*- coding: cp1250 -*-
 
-@100="Proszę, przyjmij ten podarunek." //new line for cleric in Amkethran
+@100=~Przyjmij proszę ten podarunek.~ //nowa linia dialogowa dla kapłana z Amkethran
+@101=~Gdy tylko podniosłeś przedmiot, dwa golemy aktywowały się, przystępując natychmiast do ataku.~ ~Gdy tylko podniosłaś przedmiot, dwa golemy aktywowały się, przystępując natychmiast do ataku.~
+@102=~Madulf i kamraci ma dług u ciebie... myśmy możemy zostać i mieszkać w pokoju. Jest dobrze. Trzyma... trzyma przedmiot dla ciebie... magia, z armii Sythillisa... my niepotrzebna. Może ty się podoba.~
+@103=~Twoje na wierzchu, głupcze! Ale Zakapturzeni Czarodzieje będą pamiętać tę zdradę. Masz tu pierścień w zamian za ciało. A teraz idź precz z moich oczu, zanim się rozmyślę.~
+@104=~Poddaję się. Jesteś lepszym wojownikiem. Ja... uznaję twoje zwycięstwo.~
+@110=~Proszę, oto przedmiot, który może ci się przydać. Od jakiegoś już czasu należy do mnie, ale powinienem się obyć bez niego. Niech ci dobrze służy, wędrowcze!~
+@111=~Zasłużyłeś na coś więcej, niż tylko złoto. Helm jest praktyczny i taka też jest jego nagroda. Weź ten oto przedmiot, oby ci dobrze służył.~ ~Zasłużyłaś na coś więcej, niż tylko złoto. Helm jest praktyczny i taka też jest jego nagroda. Weź ten oto przedmiot, oby ci dobrze służył.~
+@112=~Słyszeliście? Na południe od gospody „Pod Pomocną Dłonią” grasuje samotny ogr, który kolekcjonuje pasy. Musiałam oddać swój w zamian za życie. Gadzina nie była nawet odrobinę zainteresowana podpisaną kopią mojej książki. Hej, jeśli uda wam się odzyskać dla mnie ten pas, będę nad wyraz wdzięczna.~
+@113=~Samotny ogr
 
-@112="Słyszałeś? Na południe od Pomocnej Dłoni na swoim obmierzłym tyłku siedzi przeklęty ogrzy łotr, który jest dziwnie kusy na pasy. Musiałam się wykupić, inaczej zostałaby po mnie tylko czerwona plama. Nie chciał nawet mojej książki. Z autografem! Byłabym wdzięczna gdybyś mogł... odzyskać... mój pas. Bohaterzy robią takie rzeczy."
-@113="Ogrzy łajdak
-
-Według krasnoludzkiej kapłanki o dźwięcznym imieniu Unshey, na południe od Pomocnej Dłoni mieści się legowisko paskudnego ogrzego złodzieja specjalizującego się w... pasach. Jakoże Unshey tytułuje się być kimś pokroju pisarki, może w zamian za zwrocony pas dostanę od niej książkę. Z autografem."
-@114="Pas Unshey"
-@115="Ten elegancki pasek wykonany został z najwyższą dbałością o detale. Za samą, wykonaną ze srebra sprzączkę możnaby dostać mieszek pełen złotych monet. Misternie wygrawerowano na niej imię prawowitej właścicielki przedmiotu - Unshey.
+Od krasnoludzkiej kapłanki o imieniu Unshey dowiedzieliśmy się, że ogr, który kolekcjonuje pasy, grasuje na południe od gospody „Pod Pomocną Dłonią”. Unshey okazała się być pisarką; być może nawet podaruje mi egzemplarz swojej książki, jeżeli uda nam się odzyskać jej Pas przebić...~
+@114=~Pas Unshey~
+@115=~Ten elegancki pas uszyto z najwyższą starannością. Sama srebrna sprzączka czyni go całkiem wartościowym. Wyhaftowano na nim imię 'Unshey'.
 
 PARAMETRY:
 
-Waga: 2"
+Waga: 2~
+@116=~Ofiaruję ci ten pobłogosławiony przedmiot, niech pomoże ci zwyciężyć napotkanych wrogów. Dobrze służyłeś Lathanderowi. Idź w pokoju.~ ~Ofiaruję ci ten pobłogosławiony przedmiot, niech pomoże ci zwyciężyć napotkanych wrogów. Dobrze służyłaś Lathanderowi. Idź w pokoju.~
+@117=~Zasłużyłeś również na błogosławieństwo w postaci tego oto przedmiotu. Mając go ze sobą, będziesz jeszcze lepiej służył Panu Burzy.~ ~Zasłużyłaś również na błogosławieństwo w postaci tego oto przedmiotu. Mając go ze sobą, będziesz jeszcze lepiej służyła Panu Burzy.~
+
+@200=~Rękawice niezdarności: 'Rękawice Przemieszczania Elandera'
+Porywczy Elander stworzył te przeklęte rękawice z myślą o pokonaniu swojego rywala. Wygląda na to, że jego wrodzona złośliwość obróciła się przeciw niemu, gdyż wykonał je tak, by wyglądały jak Rękawice siły ogra, po czym pomylił je chcąc założyć oryginalną parę.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+TraK0: -10
+Zręczność: -2
+Waga: 2
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@201=~Rękawice niezdarności: 'Rękawice Przemieszczania Elandera'
+Porywczy Elander stworzył te przeklęte rękawice z myślą o pokonaniu swojego rywala. Wygląda na to, że jego wrodzona złośliwość obróciła się przeciw niemu, gdyż wykonał je tak, by wyglądały jak Rękawice zręczności, po czym pomylił je chcąc założyć oryginalną parę.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+TraK0: -10
+Zręczność: -2
+Waga: 2
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@202=~Rękawice niezdarności: 'Rękawice Przemieszczania Elandera'
+Porywczy Elander stworzył te przeklęte rękawice z myślą o pokonaniu swojego rywala. Wygląda na to, że jego wrodzona złośliwość obróciła się przeciw niemu, gdyż wykonał je tak, by wyglądały jak Rękawice biegłości, po czym pomylił je chcąc założyć oryginalną parę.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+TraK0: -10
+Zręczność: -2
+Waga: 2
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@203=~Rękawice niezdarności: 'Rękawice Przemieszczania Elandera'
+Porywczy Elander stworzył te przeklęte rękawice z myślą o pokonaniu swojego rywala. Wygląda na to, że jego wrodzona złośliwość obróciła się przeciw niemu, gdyż wykonał je tak, by wyglądały jak Rękawice mistrzostwa, po czym pomylił je chcąc założyć oryginalną parę.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+TraK0: -10
+Zręczność: -2
+Waga: 2
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@205=~Bransolety te wyglądają jak Bransolety ochrony, lecz z chwilą ich założenia pętają ze sobą nadgarstki noszącej je osoby, czyniąc władanie bronią i rzucanie zaklęć niezwykle trudnymi. Oferuje się je czasem w społeczeństwie drowów jako nagrodę za wykonane usługi. Otrzymująca je osoba zakłada je najczęściej przed dokładnym ich zbadaniem, myśląc że są one niezwykle potężne. Tuż po tym drowy zabawiają się przyzywając hakową poczwarę.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Specjalne: 75% szans niepowodzenia rzucanego czaru
+Obrażenia: -5
+TraK0: -5~
+
+@206=~Bransolety te wyglądają jak Bransolety łucznictwa, lecz z chwilą ich założenia pętają ze sobą nadgarstki noszącej je osoby, czyniąc władanie bronią i rzucanie zaklęć niezwykle trudnymi. Oferuje się je czasem w społeczeństwie drowów jako nagrodę za wykonane usługi. Otrzymująca je osoba zakłada je najczęściej przed dokładnym ich zbadaniem, myśląc że są one niezwykle potężne. Tuż po tym drowy zabawiają się przyzywając hakową poczwarę.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Specjalne: 75% szans niepowodzenia rzucanego czaru
+Obrażenia: -5
+TraK0: -5~
+
+@208=~Przyciągacz pocisków
+Zbroję tę wykonano tak, aby przypominała z wyglądu magiczną ćwiekowaną zbroję skórzaną. W rzeczywistości jest to przeklęty przedmiot zwany Przyciągaczem pocisków. Raz założonej, zbroi tej nie można już zdjąć, chyba że przy użyciu zaklęcia Zdjęcie klątwy. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Klasa Pancerza: 5 (15 przeciw pociskom)
+Waga: 8
+Wymagania: Siła 6
+Nie może używać:
+ Mag~
+
+@209=~Przyciągacz pocisków
+Zbroję tę wykonano tak, aby przypominała z wyglądu Pancerz cienia. W rzeczywistości jest to przeklęta ćwiekowana zbroja skórzana zwana Przyciągaczem pocisków. Raz założonej, nie można jej już zdjąć, chyba że przy użyciu zaklęcia Zdjęcie klątwy. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, zbroja ta tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Klasa Pancerza: 5 (15 przeciw pociskom)
+Waga: 8
+Wymagania: Siła 6
+Nie może używać:
+ Mag~
+
+//@210 and @11 are modified Item Revisions descriptions
+@210=~Zbroję tę wykonano tak, aby przypominała z wyglądu magiczną ćwiekowaną zbroję skórzaną. W rzeczywistości jest to przeklęty przedmiot zwany Przyciągaczem pocisków. Raz założonej, zbroi tej nie można już zdjąć, chyba że przy użyciu zaklęcia Zdjęcie klątwy. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+
+Specjalne:
+ Namagnesowanie: +2 do Klasy Pancerza przeciw broniom do walki wręcz, -10 do Klasy Pancerza przeciw pociskom
+
+Klasa Pancerza: 5
+Waga: 20
+Wymagania: Siła 6
+Nie może używać:
+ Mag
+ Kensai
+ Mnich
+ Mściciel
+ Zmiennokształtny~
+
+@211=~Zbroję tę wykonano tak, aby przypominała z wyglądu Pancerz cienia. W rzeczywistości jest to przeklęta ćwiekowana zbroja skórzana zwana Przyciągaczem pocisków. Raz założonej, nie można jej już zdjąć, chyba że przy użyciu zaklęcia Zdjęcie klątwy. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, zbroja ta tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+
+Specjalne:
+ Namagnesowanie: +2 do Klasy Pancerza przeciw broniom do walki wręcz, -10 do Klasy Pancerza przeciw pociskom
+
+Klasa Pancerza: 5
+Waga: 20
+Wymagania: Siła 6
+Nie może używać:
+ Mag
+ Kensai
+ Mnich
+ Mściciel
+ Zmiennokształtny~
+
+@212=~Zbroja płytowa T'rachiego~
+@213=~Będąc w podeszłym wieku, Baron T'rachie pożądał żony zwykłego żołnierza Libola. Zamiast związać się z nią otwarcie i wywołać skandal, stworzył ten pancerz. Podarował go owemu żołnierzowi. Przekleństwo zbroi wywołało chorobę Libola i straszliwie go zdeformowało, a żona uciekła od niego z obrzydzeniem. Libol, uwięziony w zbroi, ale nie mający pewności co do zdrady T'rachiego, poprosił o przeniesienie na pustkowia, do niebezpiecznej służby przeciwko panoszącym się tam ogrom. Nigdy nie powrócił, a Baron T'rachie mógł związać się z wdową po Libolu. Ten pancerz jest przeklęty i aby go zdjąć potrzeba potężnej magii.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Kary: Obniża Charyzmę o 5 punktów i Kondycję o 2 punkty
+Klasa Pancerza: 3
+Waga: 35
+Wymagania: Siła 12
+Nie może używać:
+ Bard
+ Druid
+ Mag
+ Złodziej~
+
+@214=~Będąc w podeszłym wieku, Baron T'rachie pożądał żony zwykłego żołnierza Libola. Zamiast związać się z nią otwarcie i wywołać skandal, stworzył ten pancerz. Podarował go owemu żołnierzowi. Przekleństwo zbroi wywołało chorobę Libola i straszliwie go zdeformowało, a żona uciekła od niego z obrzydzeniem. Libol, uwięziony w zbroi, ale nie mający pewności co do zdrady T'rachiego, poprosił o przeniesienie na pustkowia, do niebezpiecznej służby przeciwko panoszącym się tam ogrom. Nigdy nie powrócił, a Baron T'rachie mógł związać się z wdową po Libolu. Ten pancerz jest przeklęty i aby go zdjąć potrzeba potężnej magii.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Kary: Obniża Charyzmę o 5 punktów i Kondycję o 2 punkty
+Klasa Pancerza: 3
+Waga: 35
+Wymagania: Siła 12
+Nie może używać:
+ Bard
+ Druid
+ Mag
+ Złodziej~
+
+@216=~Pierścień niezdarności: 'Szaleństwo Błazna'
+Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Zręczność: obniżona o 50%
+Krycie się: obniżone o 50%
+75% szans niepowodzenia rzucanego czaru
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@217=~Pierścień niezdarności: 'Szaleństwo Błazna'
+Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Zręczność: obniżona o 50%
+Krycie się: obniżone o 50%
+75% szans niepowodzenia rzucanego czaru
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@218=~Pierścień niezdarności: 'Szaleństwo Błazna'
+Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Zręczność: obniżona o 50%
+Krycie się: obniżone o 50%
+75% szans niepowodzenia rzucanego czaru
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@219=~Pierścień niezdarności: 'Szaleństwo Błazna'
+Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Zręczność: obniżona o 50%
+Krycie się: obniżone o 50%
+75% szans niepowodzenia rzucanego czaru
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
+
+@219=~Pierścień niezdarności: 'Szaleństwo Błazna'
+Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Zręczność: obniżona o 50%
+Krycie się: obniżone o 50%
+75% szans niepowodzenia rzucanego czaru
+Specjalne: Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy~
 
 
-@900=~Wchodzisz do sadzawki i na dnie znajdujesz pas. Ale od tej całej krwi robi ci się niedobrze.~
-@901=~Wchodzisz do sadzawki i na dnie znajdujesz pierścień. Ale od tej całej krwi robi ci się niedobrze..~
-@902=~Wchodzisz do sadzawki i na dnie znajdujesz hełm. Ale od tej całej krwi robi ci się niedobrze.~
-@903=~Wchodzisz do sadzawki i na dnie znajdujesz kuszę. Ale od tej całej krwi robi ci się niedobrze.~
-@904=~Wchodzisz do sadzawki i na dnie znajdujesz płaszcz. Ale od tej całej krwi robi ci się niedobrze.~
-@905=~Wchodzisz do sadzawki i na dnie znajdujesz łuk. Ale od tej całej krwi robi ci się niedobrze.~
-@906=~Wchodzisz do sadzawki i na dnie znajdujesz skórzany pancerz. Ale od tej całej krwi robi ci się niedobrze.~
-@907=~Wchodzisz do sadzawki i na dnie znajdujesz księgę. Ale od tej całej krwi robi ci się niedobrze.~
-@908=~Wchodzisz do sadzawki i na dnie znajdujesz procę. Ale od tej całej krwi robi ci się niedobrze.~
-@909=~Wchodzisz do sadzawki i na dnie znajdujesz miecz. Ale od tej całej krwi robi ci się niedobrze.~
-@910=~Wchodzisz do sadzawki i na dnie znajdujesz szatę. Ale od tej całej krwi robi ci się niedobrze.~
-@911=~Wchodzisz do sadzawki i na dnie znajdujesz drzewiec. Ale od tej całej krwi robi ci się niedobrze.~
-@912=~Wchodzisz do sadzawki i na dnie znajdujesz parę rękawic. Ale od tej całej krwi robi ci się niedobrze.~
-@913=~Wchodzisz do sadzawki i na dnie znajdujesz sztylet. Ale od tej całej krwi robi ci się niedobrze.~
-@914=~Wchodzisz do sadzawki i na dnie znajdujesz buławę. Ale od tej całej krwi robi ci się niedobrze.~ //String #35877 in BG2
-@915=~Wchodzisz do sadzawki i na dnie znajdujesz naszyjnik. Ale od tej całej krwi robi ci się niedobrze.~
-@916=~Wchodzisz do sadzawki i na dnie znajdujesz płytowy pancerz. Ale od tej całej krwi robi ci się niedobrze.~
-@917=~Wchodzisz do sadzawki i na dnie znajdujesz maczugę. Ale od tej całej krwi robi ci się niedobrze.~
-@918="You enter the blood pool and find a shield at the bottom of the pool. The blood makes you feel sick, however."
-@919="You enter the blood pool and find a morning star at the bottom of the pool. The blood makes you feel sick, however."
-@920="You enter the blood pool and find a war hammer at the bottom of the pool. The blood makes you feel sick, however."
-@921="You enter the blood pool and find a suit of scale armor at the bottom of the pool. The blood makes you feel sick, however."
-@922="You enter the blood pool and find a pair of bracers at the bottom of the pool. The blood makes you feel sick, however."
+@222=~Pierścień szaleństwa: 'Dyscyplinator'
+Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał słynny Pierścień czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
 
-@999=~Wchodzisz do sadzawki i na dnie znajdujesz jakiś przedmiot. Ale od tej całej krwi robi ci się niedobrze.~
-@998="Wchodzisz do sadzawki, jednak nie znajdujesz w niej niczego co mogłoby cię zainteresować. Do tego od tej całej krwi robi ci się niedobrze."
-@997="Gdy kładziesz głowę na oltarzu, komnata zaczyna się trząść. Po chwili głowa znika. Słyszysz bulgoczący głos przemawiający w języku którego nie znasz, jednak wyczuwasz w nim dezaprobatę za to, co właśnie zrobiłeś." "Gdy kładziesz głowę na oltarzu, komnata zaczyna się trząść. Po chwili głowa znika. Słyszysz bulgoczący głos przemawiający w języku którego nie znasz, jednak wyczuwasz w nim dezaprobatę za to, co właśnie zrobiłaś."
+PARAMETRY:
+
+*PRZEKLĘTY*
+Inteligencja: 3
+Mądrość: 3
+Specjalne: użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte po rzuceniu czaru Zdjęcie klątwy~
+
+@223=~Pierścień szaleństwa: 'Dyscyplinator'
+Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał słynny Pierścień czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Inteligencja: 3
+Mądrość: 3
+Specjalne: użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte po rzuceniu czaru Zdjęcie klątwy~
+
+@224=~Pierścień szaleństwa: 'Dyscyplinator'
+Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał słynny Pierścień czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Inteligencja: 3
+Mądrość: 3
+Specjalne: użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte po rzuceniu czaru Zdjęcie klątwy~
+
+@225=~Pierścień szaleństwa: 'Dyscyplinator'
+Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał słynny Pierścień czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
+
+PARAMETRY:
+
+*PRZEKLĘTY*
+Inteligencja: 3
+Mądrość: 3
+Specjalne: użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte po rzuceniu czaru Zdjęcie klątwy~
+
+//@301 is strref #40850
+@301=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz hełm o dziwnym kształcie. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@302=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz pas. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@303=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz pierścień. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@304=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz niepozornie wyglądającą kuszę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@305=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyławiasz zwiniętą pelerynę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@306=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z przymocowanej doń liny odwiązujesz łęczysko łuku. Nim jednak masz okazję je obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@307=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki, a ty zdejmujesz zawieszoną nań tarczę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@308=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz napisaną zawiłym językiem księgę. Nim jednak masz okazję dokładniej ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@309=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz rzemień procy. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@310=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz niewyważony miecz. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@311=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz niebieskawy pierścień. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@312=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz brązowawy pierścień. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@313=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyławiasz zwiniętą szatę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@314=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz makabrycznie wyglądającą zbroję skórzaną. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@315=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z przymocowanej doń liny odwiązujesz drzewce halabardy. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@316=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz wąski sztylet. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@317=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz parę rękawic. Nim jednak masz okazję je obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@318=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz duży klejnot, zawieszony na złotym łańcuchu. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@319=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz drewnianą maczugę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@320=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Choć okazuje się ono nadspodziewanie ciężkie, po chwili znajduje się już w zasięgu twej ręki. Z mętnej wody wyciągasz popielatą zbroję łuskową. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@321=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz zbroję skórzaną, nabijaną i udekorowaną kośćmi. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@322=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz czerwonobrązową zbroję skórzaną. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@323=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz wekierę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@324=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Wygląda ono na znacznie cięższe, niż być powinno, ale po chwili znajduje się już w zasięgu twej ręki, a ty odwiązujesz przywiązaną doń zbroję płytową. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@325=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z przymocowanej doń liny odwiązujesz oburęczny miecz. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@326=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz morgensztern. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@327=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz młot bojowy. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@328=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki, a ty zdejmujesz zawieszoną nań, pokrytą w całości czerwonymi łuskami tarczę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@329=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz wyszukaną kuszę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@330=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz ciemną zbroję skórzaną. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@331=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz krótki miecz z brązu. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@332=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z przymocowanej doń liny odpinasz sejmitar. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@333=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz parę bransolet. Nim jednak masz okazję je obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@334=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz uszyty z czerwonozłotej tkaniny pas. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@335=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz okrągły bladozielony kamień. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@336=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz harfę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@337=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz czarną kolczugę. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@338=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z przymocowanej doń liny odwiązujesz elegancko wykonaną włócznię. Nim jednak masz okazję ją obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@339=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz niebieski klejnot w kształcie serca, zawieszony na srebrnym rzemieniu. Nim jednak masz okazję go obejrzeć, z głębi studni zaczyna dąć porywisty wiatr.~
+@399=~Zaczynasz kręcić kołowrotem, powoli wyciągając wiadro ze studni. Po chwili jest już ono w zasięgu ręki. Z mętnej wody wyciągasz jakiś przedmiot.~
+
+@401=~Znakomicie. Mam dostęp do topora zwanego K'logarath oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@402=~Zagram o topór.~
+@403=~Znakomicie. Mam dostęp do maczugi, w której uwięziono duszę demona, oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@404=~Zagram o maczugę.~
+@405=~Znakomicie. Mam dostęp do krótkiego łuku zwanego Mrocznym Ogniem oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@406=~Zagram o łuk.~
+@407=~Znakomicie. Mam dostęp do Rękawic Niezwykłej Specjalizacji oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@408=~Zagram o rękawice.~
+@409=~Znakomicie. Mam dostęp do sztyletu zwanego Sztyletem Gwiazdy oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@410=~Zagram o sztylet.~
+@411=~Znakomicie. Mam dostęp do halabardy zwanej Pustoszycielem oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@412=~Zagram o halabardę.~
+@413=~Znakomicie. Mam dostęp do brązowego kamienia ioun oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@414=~Zagram o kamień ioun.~
+@415=~Znakomicie. Mam dostęp do ćwiekowanej zbroi skórzanej zwanej Zbroją Cierni oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@416=~Zagram o zbroję.~
+@417=~Znakomicie. Mam dostęp do pełnej zbroi płytowej zwanej Zbroją Enkidu oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@418=~Znakomicie. Mam dostęp do tarczy zwanej Tarczą Zakonu oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@419=~Zagram o tarczę.~
+@420=~Znakomicie. Mam dostęp do miecza półtoraręcznego zwanego Postrachem Wrogów oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@421=~Zagram o miecz półtoraręczny.~
+@422=~Znakomicie. Mam dostęp do drzewiec włóczni zwanej Kolcem Ixila oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@423=~Zagram o drzewce włóczni.~
+@424=~Znakomicie. Mam dostęp kija zwanego Kijem Tarana oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@425=~Zagram o kij.~
+@426=~Znakomicie. Mam dostęp do krótkiego miecza zwanego Mieczem Maska oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@427=~Zagram o miecz.~
+@428=~Znakomicie. Mam dostęp do miecza zwanego Yamato oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@429=~Znakomicie. Mam dostęp do miecza zwanego Zagładą Hindo oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@430=~Znakomicie. Mam dostęp do miecza zwanego Psionicznym mieczem oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@431=~Znakomicie. Mam dostęp do kuszy zwanej Kuszą Ognistych Zębów oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@432=~Zagram o kuszę.~
+@433=~Znakomicie. Mam dostęp do topora zwanego Toporem Nieuległości oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@434=~Znakomicie. Mam dostęp do miecza zwanego Angurvadalem oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@435=~Znakomicie. Mam dostęp do miecza zwanego Ostrzem Usuno oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@436=~Znakomicie. Mam dostęp do pierścienia zwanego Pierścieniem Strażnika oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@437=~Zagram o pierścień.~
+@438=~Znakomicie. Mam dostęp do młota bojowego zwanego Młotem Runów oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@439=~Zagram o młot bojowy.~
+@440=~Znakomicie. Mam dostęp do Widmowego Rodzaju oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~ //string #63681
+@441=~Zagram o Widmowy Rodzaj.~
+@442=~Znakomicie. Mam dostęp do miecza zwanego Replikantem oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~ //string #63681
+@467=~Znakomicie. Mam dostęp do miecza znanego pod nazwą Gram Miecz Żalu, oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~ //string #63681
+@468=~Znakomicie. Mam dostęp do wekiery zwanej Gwiazdą Burzy oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~ //string #63681
+@469=~Znakomicie. Mam dostęp do morgenszterna zwanego Lodową Gwiazdą oraz do Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~ //string #63681
+@474=~Zagram o morgensztern.~
+@475=~Zagram o wekierę.~
+
+@443=~Pożądasz Widmowego Rodzaju, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Widmowego Rodzaju, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~//string #63719
+@444=~Pożądasz K'logaratha, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz K'logaratha, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@445=~Pożądasz maczugi z uwięzioną duszą demona, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz maczugi z uwięzioną duszą demona, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@446=~Pożądasz Mrocznego Ognia, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Mrocznego Ognia, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@447=~Pożądasz Rękawic Niezwykłej Specjalizacji, oto więc i one. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Rękawic Niezwykłej Specjalizacji, oto więc i one. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@448=~Pożądasz Sztyletu Gwiazdy, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Sztyletu Gwiazdy, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@449=~Pożądasz Pustoszyciela, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Pustoszyciela, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@450=~Pożądasz brązowego kamienia ioun, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz brązowego kamienia ioun, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@451=~Pożądasz Ćwiekowanej Zbroi Skórzanej Cierni, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Ćwiekowanej Zbroi Skórzanej Cierni, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@452=~Pożądasz Pełnej Zbroi Płytowej Enkidu, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Pełnej Zbroi Płytowej Enkidu, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@453=~Pożądasz Tarczy Zakonu, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Tarczy Zakonu, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@454=~Pożądasz Postrachu Wrogów, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Postrachu Wrogów, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@455=~Pożądasz Kolca Ixila, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Kolca Ixila, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@456=~Pożądasz Kija Tarana, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Kija Tarana, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@457=~Pożądasz Krótkiego miecza Maska, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Krótkiego miecza Maska, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@458=~Pożądasz Yamato, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Yamato, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@459=~Pożądasz Zagłady Hindo, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Zagłady Hindo, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@460=~Pożądasz Psionicznego miecza, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Psionicznego miecza, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@461=~Pożądasz Kuszy Ognistych Zębów, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Kuszy Ognistych Zębów, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@462=~Pożądasz Topora Nieuległości, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Topora Nieuległości, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@463=~Pożądasz Angurvadala, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Angurvadala, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@464=~Pożądasz Ostrza Usuno, oto więc i ono. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Ostrze Usuno, oto więc i ono. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@465=~Pożądasz Pierścienia Strażnika, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Pierścienia Strażnika, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@466=~Pożądasz Młota Runów, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Młota Runów, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@470=~Pożądasz Replikanta, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Replikanta, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@471=~Pożądasz Grama, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Grama, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@472=~Pożądasz Gwiazdy Burzy, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Gwiazdy Burzy, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+@473=~Pożądasz Lodowej Gwiazdy, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz Lodowej Gwiazdy, oto więc i ona. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+
+@497=~Znakomicie. Mam dostęp do magicznego przedmiotu i Zwoju Życzenia. Dość ciekawe przedmioty, musisz przyznać. No i jest jeszcze klejnot. To o co chcesz zagrać?~
+@498=~Zagram o magiczny przedmiot.~
+@499=~Pożądasz magicznego przedmiotu, oto więc i on. Jeśli chcesz zagrać ponownie, przyjacielu, chętnie skorzystam z szansy na odzyskanie wolności.~ ~Pożądasz magicznego przedmiotu, oto więc i on. Jeśli chcesz zagrać ponownie, przyjaciółko, chętnie skorzystam z szansy na odzyskanie wolności.~
+
+@602=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny miecz, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~ //part of string #33760
+@603=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny pas, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@604=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny pierścień, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@605=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną kuszę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@606=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny łuk, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@607=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną pelerynę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@608=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną tarczę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@609=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną księgę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@610=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną procę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@611=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną szatę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@612=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną zbroję, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@613=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny artefakt, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@614=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny sztylet, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@615=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj parę magicznych rękawic, które wygrałem od tego głupca, Tolgeriasa. Nie będą mi już potrzebne, ale są cenne. Znajdź trochę krwi mimika, a będą twoje.~
+@616=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny amulet, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@617=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną maczugę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@618=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną wekierę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@619=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny morgensztern, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@620=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny młot bojowy, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@621=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny hełm, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@642=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny kamień ioun, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@644=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną halabardę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@646=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną włócznię, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+@648=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczną harfę, którą wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebna, ale jest cenna. Znajdź trochę krwi mimika, a będzie twoja.~
+
+@622=~Pozwoliłem sobie już wcześniej odnaleźć ten miecz, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~ //part of #33777
+@623=~Pozwoliłem sobie już wcześniej odnaleźć ten pas, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@624=~Pozwoliłem sobie już wcześniej odnaleźć ten pierścień, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@625=~Pozwoliłem sobie już wcześniej odnaleźć tę kuszę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@626=~Pozwoliłem sobie już wcześniej odnaleźć ten łuk, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@627=~Pozwoliłem sobie już wcześniej odnaleźć tę pelerynę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@628=~Pozwoliłem sobie już wcześniej odnaleźć tę tarczę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@629=~Pozwoliłem sobie już wcześniej odnaleźć tę księgę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@630=~Pozwoliłem sobie już wcześniej odnaleźć tę procę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@631=~Pozwoliłem sobie już wcześniej odnaleźć tę szatę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@632=~Pozwoliłem sobie już wcześniej odnaleźć tę zbroję, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@633=~Pozwoliłem sobie już wcześniej odnaleźć ten artefakt, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@634=~Pozwoliłem sobie już wcześniej odnaleźć ten sztylet, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@635=~Pozwoliłem sobie już wcześniej odnaleźć te rękawice, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziły kurzem... więc proszę, są twoje. Całkiem zasłużona nagroda, mógłbym rzec.~
+@636=~Pozwoliłem sobie już wcześniej odnaleźć ten amulet, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@637=~Pozwoliłem sobie już wcześniej odnaleźć tę maczugę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@638=~Pozwoliłem sobie już wcześniej odnaleźć tę wekierę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@639=~Pozwoliłem sobie już wcześniej odnaleźć ten morgensztern, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@640=~Pozwoliłem sobie już wcześniej odnaleźć ten młot bojowy, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@641=~Pozwoliłem sobie już wcześniej odnaleźć ten hełm, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@643=~Pozwoliłem sobie już wcześniej odnaleźć ten kamień ioun, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+@645=~Pozwoliłem sobie już wcześniej odnaleźć tę halabardę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@647=~Pozwoliłem sobie już wcześniej odnaleźć tę włócznię, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+@649=~Pozwoliłem sobie już wcześniej odnaleźć tę harfę, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodziła kurzem... więc proszę, jest twoja. Całkiem zasłużona nagroda, mógłbym rzec.~
+
+@698=~Hmm. Przypomniałem sobie, że mam gdzieś tutaj magiczny przedmiot, który wygrałem od tego głupca, Tolgeriasa. Nie będzie mi już potrzebny, ale jest cenny. Znajdź trochę krwi mimika, a będzie twój.~
+@699=~Pozwoliłem sobie już wcześniej odnaleźć ten przedmiot, tak na wszelki wypadek. Byłem wyjątkowo przewidujący, nie sądzisz? I tak tylko zachodził kurzem... więc proszę, jest twój. Całkiem zasłużona nagroda, mógłbym rzec.~
+
+
+@900=~Wchodzisz do sadzawki i na jej dnie znajdujesz pas. Ale od tej całej krwi robi ci się niedobrze.~
+@901=~Wchodzisz do sadzawki i na jej dnie znajdujesz pierścień. Ale od tej całej krwi robi ci się niedobrze.~
+@902=~Wchodzisz do sadzawki i na jej dnie znajdujesz hełm. Ale od tej całej krwi robi ci się niedobrze.~
+@903=~Wchodzisz do sadzawki i na jej dnie znajdujesz kuszę. Ale od tej całej krwi robi ci się niedobrze.~
+@904=~Wchodzisz do sadzawki i na jej dnie znajdujesz pelerynę. Ale od tej całej krwi robi ci się niedobrze.~
+@905=~Wchodzisz do sadzawki i na jej dnie znajdujesz łuk. Ale od tej całej krwi robi ci się niedobrze.~
+@906=~Wchodzisz do sadzawki i na jej dnie znajdujesz zbroję skórzaną. Ale od tej całej krwi robi ci się niedobrze.~
+@907=~Wchodzisz do sadzawki i na jej dnie znajdujesz magiczną księgę. Ale od tej całej krwi robi ci się niedobrze.~
+@908=~Wchodzisz do sadzawki i na jej dnie znajdujesz procę. Ale od tej całej krwi robi ci się niedobrze.~
+@909=~Wchodzisz do sadzawki i na jej dnie znajdujesz miecz. Ale od tej całej krwi robi ci się niedobrze.~
+@910=~Wchodzisz do sadzawki i na jej dnie znajdujesz szatę. Ale od tej całej krwi robi ci się niedobrze.~
+@911=~Wchodzisz do sadzawki i na jej dnie znajdujesz drzewce broni drzewcowej. Ale od tej całej krwi robi ci się niedobrze.~
+@912=~Wchodzisz do sadzawki i na jej dnie znajdujesz parę rękawic. Ale od tej całej krwi robi ci się niedobrze.~
+@913=~Wchodzisz do sadzawki i na jej dnie znajdujesz sztylet. Ale od tej całej krwi robi ci się niedobrze.~
+@914=~Wchodzisz do sadzawki i na jej dnie znajdujesz wekierę. Ale od tej całej krwi robi ci się niedobrze.~ //String #35877 in BG2
+@915=~Wchodzisz do sadzawki i na jej dnie znajdujesz amulet. Ale od tej całej krwi robi ci się niedobrze.~
+@916=~Wchodzisz do sadzawki i na jej dnie znajdujesz zbroję płytową. Ale od tej całej krwi robi ci się niedobrze.~
+@917=~Wchodzisz do sadzawki i na jej dnie znajdujesz maczugę. Ale od tej całej krwi robi ci się niedobrze.~
+@918=~Wchodzisz do sadzawki i na jej dnie znajdujesz tarczę. Ale od tej całej krwi robi ci się niedobrze.~
+@919=~Wchodzisz do sadzawki i na jej dnie znajdujesz morgensztern. Ale od tej całej krwi robi ci się niedobrze.~
+@920=~Wchodzisz do sadzawki i na jej dnie znajdujesz młot bojowy. Ale od tej całej krwi robi ci się niedobrze.~
+@921=~Wchodzisz do sadzawki i na jej dnie znajdujesz zbroję łuskową. Ale od tej całej krwi robi ci się niedobrze.~
+@922=~Wchodzisz do sadzawki i na jej dnie znajdujesz parę bransolet. Ale od tej całej krwi robi ci się niedobrze.~
+@923=~Wchodzisz do sadzawki i na jej dnie znajdujesz harfę. Ale od tej całej krwi robi ci się niedobrze.~
+@924=~Wchodzisz do sadzawki i na jej dnie znajdujesz kolczugę. Ale od tej całej krwi robi ci się niedobrze.~
+@925=~Wchodzisz do sadzawki i na jej dnie znajdujesz halabardę. Ale od tej całej krwi robi ci się niedobrze.~
+@926=~Wchodzisz do sadzawki i na jej dnie znajdujesz włócznię. Ale od tej całej krwi robi ci się niedobrze.~
+@927=~Wchodzisz do sadzawki i na jej dnie znajdujesz kamień ioun. Ale od tej całej krwi robi ci się niedobrze.~
+
+@999=~Wchodzisz do sadzawki i na jej dnie znajdujesz jakiś przedmiot. Ale od tej całej krwi robi ci się niedobrze.~
+@998=~Wchodzisz do sadzawki i brodzisz w kółko w wodzie. Nie widzisz nic szczególnego, a od całej tej krwi robi ci się niedobrze.~
+@997=~Z chwilą, z którą głowa spoczywa na ołtarzu, komnata zaczyna trząść się w posadach, a głowa natychmiast znika. Nagle w pomieszczeniu rozlega się gardłowy głos, okazując szorstkim tonem dezaprobatę dla tego, co właśnie uczyniłeś.~ ~Z chwilą, z którą głowa spoczywa na ołtarzu, komnata zaczyna trząść się w posadach, a głowa natychmiast znika. Nagle w pomieszczeniu rozlega się gardłowy głos, okazując szorstkim tonem dezaprobatę dla tego, co właśnie uczyniłaś.~
+
+@1001=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt, przyciąga uwagę małych brzydkich ludzi. - Lum~ //ax1h16, K'logarath
+@1002=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średnie zielone drewno na opał jest trójkątem. - Lum~ //blun26, Club of Detonation
+@1003=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Szsz! Cisza przed burzą! Średni zielony trójkąt sprowadzi burzę! - Lum~ //blun28, Storm Star
+@1004=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Przeciwieństwo. Przeciwieństwo! Jeden jest średnim zielonym, a drugi jest trójkątem. - Lum~ //bow20, Darkfire Bow
+@1005=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Mój zielony przyjaciel jest najlepszym średnim i trójkątem. - Lum~ //brac21, Gauntlets of Extraordinary Specialization
+@1006=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Patrzę, ale średniego zielonego trójkąta nigdy tam nie ma. - Lum~ //dagg21, Dagger of the Star
+@1007=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Jak chcesz zjeść te okropne ziarna grochu? Średni zielony trójkąt zrobi z ciebie olbrzymi widelec do olbrzymich ziaren grochu. - Lum~ //halb10, Ravager
+@1008=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Kula jest mosiężna, średnia, nieszlachetna, zielona, brązowa, trójkątna. - Lum~ //helm27, Bronze Ioun Stone
+@1009=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt jest kłującym punktem! - Lum~ //leat23, Studded Leather of Thorns
+@1010=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Stalowy ochroniarz. Średni zielony trójkąt kradnie ochroniarza. - Lum~ //plat21, Enkidu's Full Plate
+@1011=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Czubek spiczastego ucha jest średnim zielonym trójkątem. - Lum~ //sw1h62, Foebane
+@1012=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt jest w pogotowiu. - Lum~ //sper11, Ixil's Nail
+@1013=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Między mną a tobą, średni zielony trójkąt śmierdzi kozą. - Lum~ //staf21, Staff of the Ram
+@1014=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Walczysz do końca każdego dnia z większą ilością średnich zielonych trójkątów niż na początku. - Lum~ //sw1h58, Short Sword of Mask
+@1015=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt nigdy nie przyniósł mi nic dobrego. - Lum~ //sw1h66, Yamato
+@1016=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Mówię ci, oczekiwałem więcej średniego od tych zielonych trójkątów. - Lum~ //sw1h70, Hindo's Doom
+@1017=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt nadaje się też do otwierania małż. - Lum~ //sw2h21, Psion's Blade
+@1018=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Och, średni, piękny, zielony, automagiczny trójkąt. - Lum~ //xbow15, Firetooth
+@1019=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Mały człowieczek został pożarty przez dużego i został z niego tylko średni zielony trójkąt. - Lum~ //ax1h14, Axe of the Unyielding
+@1020=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt jest bolesnym cierniem. - Lum~ //sw1h60, Angurvadal
+@1021=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Zielony zbuntowany przybłęda! I tak nikt nie lubi średnich trójkątów. - Lum~ //sw1h67, Usuno's Blade
+@1022=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Ja, trójkąt, słyszę, że on nie był też zieloną zabawą na średnich przyjęciach. - Lum~ //ring41, Ring of Protection +3
+@1023=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Mój średni paznokieć jest cały wykrzywiony. Głupi zielony trojkąt! - Lum~ //hamm10, Runehammer
+@1024=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Za średnim zielonym trójkątem idzie wiatrak. - Lum~ //sw1h68, Spectral Brand
+@1025=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Znalazłem leżący, ot tak, średni zielony trójkąt. - Lum~ //shld32, Shield of the Order
+@1026=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Gdyby tylko trójkąt mógł być średni i zielony. - Lum~ //blun35, Ice Star
+@1027=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Wychował go zielony krasnolud. Biedny średni trójkąt. - Lum~ //sw2h17, Gram the Sword of Grief
+@1028=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt cię wykończył. - Lum~ //sw1h77, The Answerer
+@1099=~Ta krótka notatka napisana została chaotycznie, pismem bez ładu i składu. Słowa sprawiają wrażenie niemal bezsensownego bełkotu:
+
+Średni zielony trójkąt wskazał miejsce. - Lum~ //failsafe
+
+@1100=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczny amulet należący niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1101=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczny miecz należący niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1102=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczny kij należący niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1103=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczne rękawice należące niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1104=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczne bransolety należące niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1105=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczną halabardę należącą niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1106=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczną procę należącą niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1107=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczny sztylet należący niegdyś do pierwszego łowcy, który chronił naszą osadę~
+@1108=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczną tarczę należącą niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1109=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczny łuk należący niegdyś do pierwszego łowcy, który chronił naszą osadę~
+@1110=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczne buty należące niegdyś do pierwszego łowcy, który chronił naszą osadę~
+@1111=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczną maczugę należącą niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1112=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczną księgę należącą niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1113=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczny pierścień należący niegdyś do pierwszego łowcy, który chronił naszą osadę~
+@1114=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczne berło należące niegdyś do pierwszego łowcy, który chronił naszą osadę~
+@1115=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczną kuszę należącą niegdyś do pierwszego łowcy, który chronił naszą osadę~
+
+@1150=~Jak uzgodniliśmy, oto amulet należący do mojego przodka łowcy...zapewniam, że jest silnie nasycony magią!~
+@1151=~Jak uzgodniliśmy, oto miecz należący do mojego przodka łowcy...zapewniam, że jest silnie nasycony magią!~
+@1152=~Jak uzgodniliśmy, oto kij należący do mojego przodka łowcy...zapewniam, że jest silnie nasycony magią!~
+@1153=~Jak uzgodniliśmy, oto rękawice należące do mojego przodka łowcy...zapewniam, że są silnie nasycone magią!~
+@1154=~Jak uzgodniliśmy, oto bransolety należące do mojego przodka łowcy...zapewniam, że są silnie nasycone magią!~
+@1155=~Jak uzgodniliśmy, oto halabarda należąca do mojego przodka łowcy...zapewniam, że jest silnie nasycona magią!~
+@1156=~Jak uzgodniliśmy, oto proca należąca do mojego przodka łowcy...zapewniam, że jest silnie nasycona magią!~
+@1157=~Jak uzgodniliśmy, oto sztylet należący do mojego przodka łowcy...zapewniam, że jest silnie nasycony magią!~
+@1158=~Jak uzgodniliśmy, oto tarcza należąca do mojego przodka łowcy...zapewniam, że jest silnie nasycona magią!~
+@1159=~Jak uzgodniliśmy, oto łuk należący do mojego przodka łowcy...zapewniam, że jest silnie nasycony magią!~
+@1160=~Jak uzgodniliśmy, oto buty należące do mojego przodka łowcy...zapewniam, że są silnie nasycone magią!~
+@1161=~Jak uzgodniliśmy, oto maczuga należąca do mojego przodka łowcy...zapewniam, że jest silnie nasycona magią!~
+@1162=~Jak uzgodniliśmy, oto księga należąca do mojego przodka łowcy...zapewniam, że jest silnie nasycona magią!~
+@1163=~Jak uzgodniliśmy, oto pierścień należący do mojego przodka łowcy...zapewniam, że jest silnie nasycony magią!~
+@1164=~Jak uzgodniliśmy, oto berło należące do mojego przodka łowcy...zapewniam, że jest silnie nasycone magią!~
+@1165=~Jak uzgodniliśmy, oto kusza należąca do mojego przodka łowcy...zapewniam, że jest silnie nasycona magią!~
+
+@1200=~W zasadzie...to mam amulet należący do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1201=~W zasadzie...to mam miecz należący do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1202=~W zasadzie...to mam kij należący do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1203=~W zasadzie...to mam parę rękawic należących do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Mają w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1204=~W zasadzie...to mam parę bransolet należących do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Mają w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1205=~W zasadzie...to mam halabardę należącą do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1206=~W zasadzie...to mam procę należącą do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1207=~W zasadzie...to mam sztylet należący do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1208=~W zasadzie...to mam tarczę należącą do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1209=~W zasadzie...to mam łuk należący do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1210=~W zasadzie...to mam parę butów należących do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Mają w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1211=~W zasadzie...to mam maczugę należącą do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1212=~W zasadzie...to mam księgę należącą do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1213=~W zasadzie...to mam pierścień należący do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1214=~W zasadzie...to mam berło należące do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+@1215=~W zasadzie...to mam kuszę należącą do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne przedmioty.~
+
+@1250=~Nie jestem pewien, czy ten amulet do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1251=~Nie jestem pewien, czy ten miecz do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1252=~Nie jestem pewien, czy ten kij do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1253=~Nie jestem pewien, czy te rękawice do czegoś ci się przydadzą. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1254=~Nie jestem pewien, czy te bransolety do czegoś ci się przydadzą. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1255=~Nie jestem pewien, czy ta halabarda do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1256=~Nie jestem pewien, czy ta proca do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1257=~Nie jestem pewien, czy ten sztylet do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1258=~Nie jestem pewien, czy ta tarcza do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1259=~Nie jestem pewien, czy ten łuk do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1260=~INie jestem pewien, czy te buty do czegoś ci się przydadzą. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1261=~Nie jestem pewien, czy ta maczuga do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1262=~Nie jestem pewien, czy ta księga do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1263=~Nie jestem pewien, czy ten pierścień do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1264=~Nie jestem pewien, czy to berło do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1265=~Nie jestem pewien, czy ta kusza do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+
+@1300=~Zaproponuję ci to samo co rycerzowi... prześwietny magiczny amulet, należący do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1301=~Zaproponuję ci to samo co rycerzowi... prześwietny magiczny miecz, należący do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1302=~Zaproponuję ci to samo co rycerzowi... prześwietny magiczny kij, należący do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1303=~Zaproponuję ci to samo co rycerzowi... prześwietną parę magicznych rękawic, należących do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1304=~Zaproponuję ci to samo co rycerzowi... prześwietną parę magicznych bransolet, należących do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1305=~Zaproponuję ci to samo co rycerzowi... prześwietną magiczną halabardę, należącą do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1306=~Zaproponuję ci to samo co rycerzowi... prześwietną magiczną procę, należącą do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1307=~Zaproponuję ci to samo co rycerzowi... prześwietny magiczny sztylet, należący do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1308=~Zaproponuję ci to samo co rycerzowi... prześwietną magiczną tarczę, należącą do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1309=~Zaproponuję ci to samo co rycerzowi... prześwietny magiczny łuk, należący do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1310=~Zaproponuję ci to samo co rycerzowi... prześwietną parę magicznych butów, należących do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1311=~Zaproponuję ci to samo co rycerzowi... prześwietną magiczną maczugę, należącą do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1312=~Zaproponuję ci to samo co rycerzowi... prześwietną magiczną księgę, należącą do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1313=~Zaproponuję ci to samo co rycerzowi... prześwietny magiczny pierścień, należący do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1314=~Zaproponuję ci to samo co rycerzowi... prześwietne magiczne berło, należące do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1315=~Zaproponuję ci to samo co rycerzowi... prześwietną magiczną kuszę, należącą do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+
+@1350=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stary amulet. Zapłać, zanim się zdenerwuję.~
+@1351=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stary miecz. Zapłać, zanim się zdenerwuję.~
+@1352=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stary kij. Zapłać, zanim się zdenerwuję.~
+@1353=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko parę starych rękawic. Zapłać, zanim się zdenerwuję.~
+@1354=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko parę starych bransolet. Zapłać, zanim się zdenerwuję.~
+@1355=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko starą halabardę. Zapłać, zanim się zdenerwuję.~
+@1356=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko starą procę. Zapłać, zanim się zdenerwuję.~
+@1357=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stary sztylet. Zapłać, zanim się zdenerwuję.~
+@1358=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko starą tarczę. Zapłać, zanim się zdenerwuję.~
+@1359=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stary łuk. Zapłać, zanim się zdenerwuję.~
+@1360=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko parę starych butów. Zapłać, zanim się zdenerwuję.~
+@1361=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko starą maczugę. Zapłać, zanim się zdenerwuję.~
+@1362=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko starą księgę. Zapłać, zanim się zdenerwuję.~
+@1363=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stary pierścień. Zapłać, zanim się zdenerwuję.~
+@1364=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stare berło. Zapłać, zanim się zdenerwuję.~
+@1365=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko starą kuszę. Zapłać, zanim się zdenerwuję.~
+
+@1393=~Nie, nie. Sam ten przedmiot w zupełności wystarczy.~
+@1394=~Eee... więc, moja wioska jest strasznej potrzebie. Rzeknę ci tyle...jeśli położysz kres tym mordom, oddam ci magiczny przedmiot należący niegdyś do pierwszego łowcy, który chronił naszą osadę.~
+@1395=~Jak uzgodniliśmy, oto przedmiot należący do mojego przodka łowcy...zapewniam, że jest silnie nasycony magią!~
+@1396=~W zasadzie...to mam przedmiot należący do mojego przodka...niegdyś łowcy strzegącego Imnesvale. Ma w sobie magię, równie silną, co inne magiczne rzeczy.~
+@1397=~Nie jestem pewien, czy ten przedmiot do czegoś ci się przyda. Eee...czy to...czy to dla ciebie wystarczająca nagroda? Pewnie mógłbym dorzucić do tego jeszcze trochę złota...~
+@1398=~Zaproponuję ci to samo co rycerzowi... prześwietny magiczny przedmiot, należący do mego przodka, łowcy! Plus złoto, jeśli nalegasz. Pomożesz nam?~
+@1399=~Nie tak prędko. Pieniądze, które mi wtedy dałeś, to był tylko zadatek. Oczekuję, że dostanę coś więcej, niż tylko stary przedmiot. Zapłać, zanim się zdenerwuję.~
+
+@1400=~Nie, nie. Sam amulet w zupełności wystarczy.~
+@1401=~Nie, nie. Sam miecz w zupełności wystarczy.~
+@1402=~Nie, nie. Sam kij w zupełności wystarczy.~
+@1403=~Nie, nie. Same rękawice w zupełności wystarczą.~
+@1404=~Nie, nie. Same bransolety w zupełności wystarczą.~
+@1405=~Nie, nie. Sama halabarda w zupełności wystarczy.~
+@1406=~Nie, nie. Sama proca w zupełności wystarczy.~
+@1407=~Nie, nie. Sam sztylet w zupełności wystarczy.~
+@1408=~Nie, nie. Sama tarcza w zupełności wystarczy.~
+@1409=~Nie, nie. Sam łuk w zupełności wystarczy.~
+@1410=~Nie, nie. Same buty w zupełności wystarczą.~
+@1411=~Nie, nie. Sama maczuga w zupełności wystarczy.~
+@1412=~Nie, nie. Sama księga w zupełności wystarczy.~
+@1413=~Nie, nie. Sam pierścień w zupełności wystarczy.~
+@1414=~Nie, nie. Samo berło w zupełności wystarczy.~
+@1415=~Nie, nie. Sama kusza w zupełności wystarczy.~
+
+@1449=~On był moim przodkiem i odziedziczyłem to po nim. Ponoć jest wzmocnione potężną magią ochronną. Oddam ci to z radością i dorzucę przy tym trochę złota, jeśli ochronisz moją wioskę.~
+
+//Kangaxx
+@1500=~W komnacie unosi się namacalna atmosfera starożytnego zła oraz magii, skoncentrowana głównie wokół sarkofagu. Na wieku grobowca znajduje się okrągły otwór, jednak całość wydaje się niemożliwa do poruszenia.~
+@1501=~Wkładasz kamień strażniczy w okrągły otwór wieka i wyczuwasz jakiś ruch energii wypełniających komnatę. Obecność starożytnego zła wydaje się być jeszcze bardziej namacalna. Wygląda na to, że wieko sarkofagu da się teraz odsunąć.~
+@1502=~Gdy zło rozdarto na części, trzy jego fragmenty zostały zamknięte. Od tysiąclecia strzegę tego kawałka, gotów szerzyć śmierć wśród tych, którzy podążyli za Mrokiem.~ //edit of string #55971 The second sentence read ~For a millenium I have guarded this piece, dispensing death to those that follow Darkness.~
+@1502=~Na czterech rogach tego okrągłego kamienia strażniczego wyryto symbole, które można by zinterpretować jako „ciało”, „więzienie”, „zło” i „nieskończoność”. Kamień wygląda z grubsza na pochodzenia netheryjskiego.~
+@1503=~Kamień strażniczy~
+@1504=~Ten okrągły kamień jest płaski i gładki. Po jednej stronie, na każdym z rogów wyryto wyraźne symbole.~
+
+//Illithium
+@1510=~Sztabka metalu~
+@1511=~Sztabka ilitu~
+@1512=~Ta trójkątna sztabka wykonana została ze srebrnego metalu. Jej powierzchnia wygląda na nienaturalnie gładką i błyszczącą.~
+@1513=~Ta trójkątna sztabka wykonana została z wysokiej jakości ilitu. Co charakterystyczne dla tego metalu, jest on błyszczący, gładki i idealnie czysty.~
+
+@1600=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Amulet ten stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1601=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Księga ta stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatna. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1602=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Peleryna ta stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatna. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1603=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Zbroja ta stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatna. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1604=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Pierścień ten stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1605=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Miecz ten stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1606=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Różdżka ta stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatna. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1607=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Rękawice te stanowią rodzinną pamiątkę i pewien jestem, że okażą się przydatne. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1608=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Sztylet ten stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1609=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Łuk ten stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1610=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Ten młot bojowy stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1611=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Buty te stanowią rodzinną pamiątkę i pewien jestem, że okażą się przydatne. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1612=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Tarcza ta stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatna. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+@1613=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Topór ten stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~
+
+@1699=~Należą wam się podziękowania za ocalenie mojego konsorcjum! Za to co dla mnie zrobiliście, zostaniecie wszyscy hojnie wynagrodzeni. Mam nadzieję, że to co wam ofiaruję, będzie dla was wystarczające. Przedmiot ten stanowi rodzinną pamiątkę i pewien jestem, że okaże się przydatny. Wiedzcie, że jeśli kiedykolwiek wpadniecie w tarapaty, drzwi mojej posiadłości będą dla was zawsze otwarte.~

@@ -1,24 +1,28 @@
 // -*- coding: cp1250 -*-
 
-@0="Kamień mi rozkazuję, a ja muszę go słuchać. Ten pas to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@1="Kamień mi rozkazuję, a ja muszę go słuchać. Ten pierścień to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@2="Kamień mi rozkazuję, a ja muszę go słuchać. Ten hełm to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@3="Kamień mi rozkazuję, a ja muszę go słuchać. Ta kusza to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@4="Kamień mi rozkazuję, a ja muszę go słuchać. Ten płaszcz to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@5="Kamień mi rozkazuję, a ja muszę go słuchać. Ten łuk to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@6="Kamień mi rozkazuję, a ja muszę go słuchać. Ta księga to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@7="Kamień mi rozkazuję, a ja muszę go słuchać. Ta proca to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@8="Kamień mi rozkazuję, a ja muszę go słuchać. Ten miecz to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@9="Kamień mi rozkazuję, a ja muszę go słuchać. Ta szata to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@10="Kamień mi rozkazuję, a ja muszę go słuchać. Ten sztylet to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@11="Kamień mi rozkazuję, a ja muszę go słuchać. Te rękawice to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@12="Kamień mi rozkazuję, a ja muszę go słuchać. Ten naszyjnik to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
+@0=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten pas to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@1=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten pierścień to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@2=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten hełm to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@3=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta kusza to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@4=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta peleryna to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@5=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten łuk to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@6=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta księga to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@7=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta proca to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@8=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten miecz to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@9=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta szata to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@10=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten sztylet to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@11=~Kamień mi rozkazuje, a ja muszę go słuchać. Te rękawice to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@12=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten amulet to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
 //@13 is string #48995 in BG2
-@13="Kamień mi rozkazuję, a ja muszę go słuchać. Ta zbroja to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@14="Kamień mi rozkazuję, a ja muszę go słuchać. Ta broń to dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
-@15="The stone commands and I must obey. This club is the gift to those of sound mind. A riddle. A reward. Thusly was my home built and I have fulfilled my duties. You are doing well, <GABBER>."
-@16="The stone commands and I must obey. This morning star is the gift to those of sound mind. A riddle. A reward. Thusly was my home built and I have fulfilled my duties. You are doing well, <GABBER>."
-@17="The stone commands and I must obey. This war hammer is the gift to those of sound mind. A riddle. A reward. Thusly was my home built and I have fulfilled my duties. You are doing well, <GABBER>."
-@18="The stone commands and I must obey. This shield is the gift to those of sound mind. A riddle. A reward. Thusly was my home built and I have fulfilled my duties. You are doing well, <GABBER>."
+@13=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta zbroja to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@14=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta wekiera to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@15=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta maczuga to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@16=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten morgensztern to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@17=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten młot bojowy to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@18=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta tarcza to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@19=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten kamień ioun to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@20=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta harfa to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@21=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta halabarda to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
+@22=~Kamień mi rozkazuje, a ja muszę go słuchać. Ta włócznia to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~
 
-@99="Kamień mi rozkazuję, a ja muszę go słuchać. Oto dar dla zdrowych na umyśle. Rebus, zagadka, nagroda. W ten sposób mój dom zbudowano i wypełniłem me obowiązki. Dobrze się sprawujesz."
+@99=~Kamień mi rozkazuje, a ja muszę go słuchać. Ten przedmiot to dar dla zdrowych na umyśle. Rebus. Zagadka. Nagroda. W ten sposób mój dom zbudowano, a ja wypełniłem swe obowiązki. Dobrze się sprawujesz.~

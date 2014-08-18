@@ -1,0 +1,41 @@
+// -*- coding: cp1250 -*-
+
+@0    = ~A wiêc jesteœmy tu uwiêzieni. Nigdy ju¿ nie wrócimy do naszego œwiata.~
+@1    = ~Byæ mo¿e nie wszystko jeszcze stracone. Mo¿e jest ktoœ na tym planie, kto pomo¿e wam wróciæ do domu.~
+@2    = ~Na to wygl¹da. I co teraz zrobimy?~
+@3    = ~Jako Rycerze Solamnii przyjmiemy to z pokor¹. Bêdziemy przemierzaæ wasz œwiat i s³u¿yæ mieczami oraz duszami w s³usznej sprawie. Byæ mo¿e jeszcze kiedyœ siê spotkamy.~
+@4    = ~Ale jesteœmy przecie¿ obcymi na tym planie. Kogo mielibyœmy prosiæ o pomoc?~
+@5    = ~Mo¿e ja bêdê móg³ wam pomóc. Znam to miasto. Mogê popytaæ w waszym imieniu.~ ~Mo¿e ja bêdê mog³a wam pomóc. Znam to miasto. Mogê popytaæ w waszym imieniu.~
+@6    = ~¯a³ujê, ¿e nie mogê poœwiêciæ czasu, by wam pomóc. Ale jeœli popytacie dooko³a, na pewno w koñcu kogoœ znajdziecie.~
+@7    = ~Dobrze. Zrobimy jak proponujesz. Mo¿e pewnego dnia odnajdziemy drogê do domu.~
+@8    = ~Twoja propozycja jest niezwykle hojna. Z wdziêcznoœci¹ przyjmiemy ka¿d¹ pomoc, jakiej mo¿esz nam udzieliæ.~
+@9    = ~Wrócê, jak tylko siê czegoœ dowiem.~
+@10   = ~Odes³anie Rycerzy Solamnijskich do domu
+
+Reyna, jedna z Rycerzy Solamnii uwiêzionych w Kuli Sfer poprosi³a, bym znalaz³ sposób na odes³anie ich do rodzinnego planu egzystencji. Zasugerowa³em, i¿ jakiœ mieszkaniec tego planu mo¿e coœ na ten temat wiedzieæ. Jedyne co muszê teraz zrobiæ, to odszukaæ kogoœ takiego. Mo¿e Zakapturzeni Czarodzieje mogliby mi pomóc.~
+~Odes³anie Solamnijskich Rycerzy do domu
+
+Reyna, jedna z Rycerzy Solamnii uwiêzionych w Kuli Sfer poprosi³a, bym znalaz³ sposób na odes³anie ich do rodzinnego planu egzystencji. Zasugerowa³am, i¿ jakiœ mieszkaniec tego planu mo¿e coœ na ten temat wiedzieæ. Jedyne co muszê teraz zrobiæ, to odszukaæ kogoœ takiego. Mo¿e Zakapturzeni Czarodzieje mogliby mi pomóc.~
+@11   = ~Z niecierpliwoœci¹ oczekujemy twego powrotu. Niech szczêœcie ci sprzyja.~
+@12   = ~Solamnijscy Rycerze: swego rodzaju dom
+
+Propozycja pra³ata Najszlachetniejszego Zakonu Promiennego Serca zosta³a przekazana Solamnijskim Rycerzom. Przyjêli j¹ i wyruszyli do Zakonu. To s³odko-gorzkie zakoñczenie, bo na pewno woleliby wróciæ do domu.~
+@13   = ~Solamnijscy Rycerze: rycerze mog¹ zostaæ w Zakonie
+
+Uda³o mi siê porozmawiaæ z mistrzem Najszlachetniejszego Zakonu Promiennego Serca. Powiedzia³, ¿e Solamnijscy Rycerze mog¹ u nich zostaæ jako honorowi goœcie. To rozs¹dny pomys³, skoro nie mog¹ wróciæ do domu.~
+@14   = ~Phi! Mam wa¿niejsze sprawy na g³owie. IdŸ i naprzykrzaj siê komuœ innemu takimi b³ahostkami. Na przyk³ad temu g³upcowi Ribaldowi z Targu Przygody. On czêsto zajmuje siê takimi idiotycznymi problemami.~
+@15   = ~Dziêkujê za pomoc.~
+@16   = ~A teraz przestañ marnowaæ mój czas.~
+@17   = ~Muszê odes³aæ grupê Rycerzy Solamnijskich do ich rodzinnego planu. Znasz mo¿e jakiegoœ maga, który móg³by mi w tym pomóc?~
+@18   = ~Solamnijscy Rycerze: Ribald mo¿e pomóc
+
+Ribald z Targu Przygody ma mo¿liwoœæ odes³ania rycerzy do domu, ale domaga siê 9000 sztuk z³ota zap³aty.~
+@19   = ~Solamnijscy Rycerze: zap³aci³em za rycerzy
+
+Ribald wzi¹³ 9000 sztuk z³ota i obieca³, ¿e wyœle maga do kuli i teleportuje rycerzy do domu. Zwa¿ywszy na cenê, lepiej ¿eby siê pojawi³!~
+@20   = ~Solamnijscy Rycerze: nareszcie wolni
+
+Przyby³ Khollynnus Paac, tak jak to zosta³o przepowiedziane i Solamnijscy Rycerze zostali odes³ani do domu. Dobrze jest zobaczyæ, ¿e dostali to, czego chcieli.~
+@21=~Solamnijscy Rycerze: Ribald móg³by pomóc
+
+Zakapturzony Czarodziej Corneil zasugerowa³, ¿e Ribald z Targu Przygody, na promenadzie Waukeeen, mo¿e byæ w stanie odes³aæ Solamnijskich Rycerzy do domu. Trzeba przyznaæ, ¿e mówi¹c to by³ niezbyt uprzejmy.~
