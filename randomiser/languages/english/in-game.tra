@@ -144,13 +144,14 @@ Not Usable By:
  Shapeshifter"
  
 @212="T'rachie's Plate"
-@213="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol.  Instead of openly pursuing her and causing a scandal, he instead created this suit of armor.  The armor was made to look like a suit of magical plate armor but was actually cursed.  He gifted it to the soldier.  This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust.  Libol, trapped in the armor but not certain of T'rachie's treachery asked to be sent to the wastes for a dangerous tour of duty against marauding ogres.  He never returned and Baron T'rachie was free to pursue Libol's widow.  This armor is cursed and requires powerful magic to remove.
+// @213 is as of now unchanged from the Fixpacked and GTULed string
+@213="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol.  Instead of openly pursuing her and causing a scandal, he instead created this suit of armor.  He gifted it to the soldier.  This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust.  Libol, trapped in the armor but not certain of T'rachie's treachery asked to be sent to the wastes for a dangerous tour of duty against marauding ogres.  He never returned and Baron T'rachie was free to pursue Libol's widow.  This armor is cursed and requires powerful magic to remove.
 
 STATISTICS:
 
-*CURSED*
-Penalties: Reduces Charisma by 5 points and Constitution by 2 points
-Armor Class: 3
+Penalties: Cursed.
+                Reduces Charisma by 5 points and Constitution by 2 points
+Armor Class: -2
 Weight: 35
 Requires: 12 Strength
 Not Usable By:
@@ -158,14 +159,14 @@ Not Usable By:
  Druid
  Mage
  Thief"
- 
+
 @214="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol.  Instead of openly pursuing her and causing a scandal, he instead created this suit of armor.  The armor was made to look like the famous suit of plate armor known as Delver's Plate but was actually cursed.  He gifted it to the soldier.  This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust.  Libol, trapped in the armor but not certain of T'rachie's treachery asked to be sent to the wastes for a dangerous tour of duty against marauding ogres.  He never returned and Baron T'rachie was free to pursue Libol's widow.  This armor is cursed and requires powerful magic to remove.
 
 STATISTICS:
 
-*CURSED*
-Penalties: Reduces Charisma by 5 points and Constitution by 2 points
-Armor Class: 3
+Penalties: Cursed.
+                Reduces Charisma by 5 points and Constitution by 2 points
+Armor Class: -2
 Weight: 35
 Requires: 12 Strength
 Not Usable By:
@@ -179,7 +180,6 @@ The most notorious owner of this ring, crafted to look like a Ring of Protection
 
 STATISTICS:
 
-*CURSED*
 Dexterity:  reduced by 50%
 Stealth:  reduced by 50%
 Spells:  75% casting failure
@@ -190,7 +190,6 @@ The most notorious owner of this ring, crafted to look like a Ring of Free Actio
 
 STATISTICS:
 
-*CURSED*
 Dexterity:  reduced by 50%
 Stealth:  reduced by 50%
 Spells:  75% casting failure
@@ -201,7 +200,6 @@ The most notorious owner of this ring, crafted to look like a Ring of Holiness, 
 
 STATISTICS:
 
-*CURSED*
 Dexterity:  reduced by 50%
 Stealth:  reduced by 50%
 Spells:  75% casting failure
@@ -212,7 +210,6 @@ The most notorious owner of this ring, crafted to look like a Ring of Regenerati
 
 STATISTICS:
 
-*CURSED*
 Dexterity:  reduced by 50%
 Stealth:  reduced by 50%
 Spells:  75% casting failure
@@ -223,7 +220,6 @@ The most notorious owner of this ring, crafted to look like one of the famous Ri
 
 STATISTICS:
 
-*CURSED*
 Dexterity:  reduced by 50%
 Stealth:  reduced by 50%
 Spells:  75% casting failure
@@ -235,7 +231,6 @@ Oft the bane of the careless mage, this ring was actually used to promote humili
 
 STATISTICS:
 
-*CURSED*
 Intelligence:  set to 3
 Wisdom:  set to 3
 Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
@@ -245,7 +240,6 @@ Oft the bane of the careless mage, this ring was actually used to promote humili
 
 STATISTICS:
 
-*CURSED*
 Intelligence:  set to 3
 Wisdom:  set to 3
 Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
@@ -255,7 +249,6 @@ Oft the bane of the careless mage, this ring was actually used to promote humili
 
 STATISTICS:
 
-*CURSED*
 Intelligence:  set to 3
 Wisdom:  set to 3
 Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
@@ -265,7 +258,6 @@ Oft the bane of the careless mage, this ring was actually used to promote humili
 
 STATISTICS:
 
-*CURSED*
 Intelligence:  set to 3
 Wisdom:  set to 3
 Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
