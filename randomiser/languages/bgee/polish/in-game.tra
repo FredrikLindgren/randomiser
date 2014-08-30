@@ -29,6 +29,7 @@ Specjalne:
 – TraK0: -10
 – Zręczność: -2
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 2~
 
 @201=~Rękawice niezdarności: 'Rękawice Przemieszczania Elandera'
@@ -40,6 +41,7 @@ Specjalne:
 – TraK0: -10
 – Zręczność: -2
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 2~
 
 @202=~Rękawice niezdarności: 'Rękawice Przemieszczania Elandera'
@@ -51,6 +53,7 @@ Specjalne:
 – TraK0: -10
 – Zręczność: -2
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 2~
 
 @203=~Rękawice niezdarności: 'Rękawice Przemieszczania Elandera'
@@ -62,52 +65,65 @@ Specjalne:
 – TraK0: -10
 – Zręczność: -2
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 2~
 
-@205=~Bransolety te wyglądają jak Bransolety ochrony, lecz z chwilą ich założenia pętają ze sobą nadgarstki noszącej je osoby, czyniąc władanie bronią i rzucanie zaklęć niezwykle trudnymi. Oferuje się je czasem w społeczeństwie drowów jako nagrodę za wykonane usługi. Otrzymująca je osoba zakłada je najczęściej przed dokładnym ich zbadaniem, myśląc że są one niezwykle potężne. Tuż po tym drowy zabawiają się przyzywając hakową poczwarę.
+@205=~Bransolety pętania
+Bransolety te wyglądają jak Bransolety ochrony, lecz z chwilą ich założenia pętają ze sobą nadgarstki noszącej je osoby, czyniąc władanie bronią i rzucanie zaklęć niezwykle trudnymi. Oferuje się je czasem w społeczeństwie drowów jako nagrodę za wykonane usługi. Otrzymująca je osoba zakłada je najczęściej przed dokładnym ich zbadaniem, myśląc że są one niezwykle potężne. Tuż po tym drowy zabawiają się przyzywając hakową poczwarę.
 
 PARAMETRY:
 
 Specjalne:
 – 75% szans niepowodzenia rzucanego czaru
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Obrażenia: -5
 TraK0: -5
+
 Waga: 1~
 
-@206=~Bransolety te wyglądają jak Bransolety łucznictwa, lecz z chwilą ich założenia pętają ze sobą nadgarstki noszącej je osoby, czyniąc władanie bronią i rzucanie zaklęć niezwykle trudnymi. Oferuje się je czasem w społeczeństwie drowów jako nagrodę za wykonane usługi. Otrzymująca je osoba zakłada je najczęściej przed dokładnym ich zbadaniem, myśląc że są one niezwykle potężne. Tuż po tym drowy zabawiają się przyzywając hakową poczwarę.
+@206=~Bransolety pętania
+Bransolety te wyglądają jak Bransolety łucznictwa, lecz z chwilą ich założenia pętają ze sobą nadgarstki noszącej je osoby, czyniąc władanie bronią i rzucanie zaklęć niezwykle trudnymi. Oferuje się je czasem w społeczeństwie drowów jako nagrodę za wykonane usługi. Otrzymująca je osoba zakłada je najczęściej przed dokładnym ich zbadaniem, myśląc że są one niezwykle potężne. Tuż po tym drowy zabawiają się przyzywając hakową poczwarę.
 
 PARAMETRY:
 
 Specjalne:
 – 75% szans niepowodzenia rzucanego czaru
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Obrażenia: -5
 TraK0: -5
+
 Waga: 1~
 
 @208=~Przyciągacz pocisków
-Zbroję tę wykonano tak, aby przypominała z wyglądu magiczną ćwiekowaną zbroję skórzaną. W rzeczywistości jest to przeklęty przedmiot zwany Przyciągaczem pocisków. Raz założonej, zbroi tej nie można już zdjąć, chyba że przy użyciu zaklęcia Zdjęcie klątwy. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
+Raz założonej, tej dziwacznie wyglądającej ćwiekowanej zbroi skórzanej nie można zdjąć, chyba że po interwencji kapłana. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
 
 PARAMETRY:
 
 Specjalne:
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
-Klasa Pancerza: 5 (15 przeciw pociskom)
+
+Klasa Pancerza: 5 (3 przeciw broniom siecznym, 4 przeciw broniom kłutym, 15 przeciw pociskom)
+
 Wymagania:
-– Siła 6
+– Siła: 6
+
 Waga: 8~
 
 @209=~Przyciągacz pocisków
-Zbroję tę wykonano tak, aby przypominała z wyglądu Pancerz cienia. W rzeczywistości jest to przeklęta ćwiekowana zbroja skórzana zwana Przyciągaczem pocisków. Raz założonej, nie można jej już zdjąć, chyba że przy użyciu zaklęcia Zdjęcie klątwy. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, zbroja ta tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
+Raz założonej, tej dziwacznie wyglądającej ćwiekowanej zbroi skórzanej, przypominającej wyglądem Pancerz cienia, nie można zdjąć, chyba że po interwencji kapłana. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
 
 PARAMETRY:
 
 Specjalne:
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
-Klasa Pancerza: 5 (15 przeciw pociskom)
+
+Klasa Pancerza: 5 (3 przeciw broniom siecznym, 4 przeciw broniom kłutym, 15 przeciw pociskom)
+
 Wymagania:
-– Siła 6
+– Siła: 6
+
 Waga: 8~
 
 //@210 and @11 are modified Item Revisions descriptions
@@ -118,9 +134,12 @@ PARAMETRY:
 Specjalne:
 – Namagnesowanie: +2 do Klasy Pancerza przeciw broniom do walki wręcz, -10 do Klasy Pancerza przeciw pociskom
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Klasa Pancerza: 5
+
 Wymagania:
-– Siła 6
+– Siła: 6
+
 Waga: 20~
 
 @211=~Zbroję tę wykonano tak, aby przypominała z wyglądu Pancerz cienia. W rzeczywistości jest to przeklęta ćwiekowana zbroja skórzana zwana Przyciągaczem pocisków. Raz założonej, nie można jej już zdjąć, chyba że przy użyciu zaklęcia Zdjęcie klątwy. Chociaż poprawia ona ochronę przeciw broniom używanym podczas walki wręcz, zbroja ta tak naprawdę czyni noszącą ją osobę łatwym celem dla wszelkich pocisków. Wybór pozostaje więc prosty, zabójcze strzały albo zabójcze miecze.
@@ -130,9 +149,12 @@ PARAMETRY:
 Specjalne:
 – Namagnesowanie: +2 do Klasy Pancerza przeciw broniom do walki wręcz, -10 do Klasy Pancerza przeciw pociskom
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Klasa Pancerza: 5
+
 Wymagania:
-– Siła 6
+– Siła: 6
+
 Waga: 20~
 
 @212=~Zbroja płytowa T'rachiego~
@@ -144,12 +166,15 @@ Specjalne:
 – Charyzma: -5
 – Kondycja: -2
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
-Klasa Pancerza: 3
+
+Klasa Pancerza: -2 (-5 przeciw broniom siecznym)
+
 Wymagania:
-– Siła 12
+– Siła: 12
+
 Waga: 35~
 
-@214=~Będąc w podeszłym wieku, Baron T'rachie pożądał żony zwykłego żołnierza Libola. Zamiast związać się z nią otwarcie i wywołać skandal, stworzył ten pancerz. Podarował go owemu żołnierzowi. Przekleństwo zbroi wywołało chorobę Libola i straszliwie go zdeformowało, a żona uciekła od niego z obrzydzeniem. Libol, uwięziony w zbroi, ale nie mający pewności co do zdrady T'rachiego, poprosił o przeniesienie na pustkowia, do niebezpiecznej służby przeciwko panoszącym się tam ogrom. Nigdy nie powrócił, a Baron T'rachie mógł związać się z wdową po Libolu. Ten pancerz jest przeklęty i aby go zdjąć potrzeba potężnej magii.
+@214=~Będąc w podeszłym wieku, Baron T'rachie pożądał żony zwykłego żołnierza Libola. Zamiast związać się z nią otwarcie i wywołać skandal, stworzył ten pancerz. Wykonano go tak, by przypominał z wyglądu Zbroję płytową Delvera, ale tak naprawdę był on przeklęty. Baron podarował go owemu żołnierzowi. Przekleństwo zbroi wywołało chorobę Libola i straszliwie go zdeformowało, a żona uciekła od niego z obrzydzeniem. Libol, uwięziony w zbroi, ale nie mający pewności co do zdrady T'rachiego, poprosił o przeniesienie na pustkowia, do niebezpiecznej służby przeciwko panoszącym się tam ogrom. Nigdy nie powrócił, a Baron T'rachie mógł związać się z wdową po Libolu. Ten pancerz jest przeklęty i aby go zdjąć potrzeba potężnej magii.
 
 PARAMETRY:
 
@@ -157,13 +182,16 @@ Specjalne:
 – Charyzma: -5
 – Kondycja: -2
 – Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
-Klasa Pancerza: 3
+
+Klasa Pancerza: -2 (-5 przeciw broniom siecznym)
+
 Wymagania:
-– Siła 12
+– Siła: 12
+
 Waga: 35~
 
 @216=~Pierścień niezdarności: 'Szaleństwo Błazna'
-Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+Głupiec Gregoria, najdziwniejszy właściciel tego pierścienia, wykutego na wzór Pierścienia ochrony, wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
 
 PARAMETRY:
 
@@ -171,11 +199,12 @@ Specjalne:
 – Zręczność: -50%
 – Krycie się: -50%
 – 75% szans niepowodzenia rzucanego czaru
-– Można zdjąć jedynie po rzuceniu czaru Zdjęcie klątwy
+– Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @217=~Pierścień niezdarności: 'Szaleństwo Błazna'
-Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+Głupiec Gregoria, najdziwniejszy właściciel tego pierścienia, wykutego na wzór Pierścienia swobody ruchów, wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
 
 PARAMETRY:
 
@@ -183,11 +212,12 @@ Specjalne:
 – Zręczność: -50%
 – Krycie się: -50%
 – 75% szans niepowodzenia rzucanego czaru
-– Można zdjąć jedynie po rzuceniu czaru Zdjęcie klątwy
+– Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @218=~Pierścień niezdarności: 'Szaleństwo Błazna'
-Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+Głupiec Gregoria, najdziwniejszy właściciel tego pierścienia, wykutego na wzór Pierścienia świętości, wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
 
 PARAMETRY:
 
@@ -195,11 +225,12 @@ Specjalne:
 – Zręczność: -50%
 – Krycie się: -50%
 – 75% szans niepowodzenia rzucanego czaru
-– Można zdjąć jedynie po rzuceniu czaru Zdjęcie klątwy
+– Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @219=~Pierścień niezdarności: 'Szaleństwo Błazna'
-Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+Głupiec Gregoria, najdziwniejszy właściciel tego pierścienia, wykutego na wzór Pierścienia regeneracji, wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
 
 PARAMETRY:
 
@@ -207,11 +238,12 @@ Specjalne:
 – Zręczność: -50%
 – Krycie się: -50%
 – 75% szans niepowodzenia rzucanego czaru
-– Można zdjąć jedynie po rzuceniu czaru Zdjęcie klątwy
+– Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @220=~Pierścień niezdarności: 'Szaleństwo Błazna'
-Najdziwniejszy właściciel tego pierścienia – Głupiec Gregoria – wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
+Głupiec Gregoria, najdziwniejszy właściciel tego pierścienia, wykutego na wzór Pierścienia czarów, wykorzystał jego przeklętą naturę i uczynił z niej istotny element swojego życia. Ten błazen z zawodu był niezwykle zręczny i potrafił zamienić swój pierścień z pierścieniem któregoś z widzów. Reszta przedstawienia opierała się na wyśmiewaniu niezdary, co zwykle zachwycało towarzyszy nieszczęśnika. Błazen zdejmował pierścień (sobie tylko znanym sposobem) dopiero po tym, jak ofiara żartu obiecywała nie odgrywać się za te niewybredne dowcipy. Mimo to Gregoria wiele razy musiał szybko uciekać. Powiadają, że jego ostatnie przedstawienie oglądał mag z Twierdzy Zhentil, który nie był w najlepszym humorze. Tym razem Gregoria nie był ponoć wystarczająco szybki.
 
 PARAMETRY:
 
@@ -219,11 +251,12 @@ Specjalne:
 – Zręczność: -50%
 – Krycie się: -50%
 – 75% szans niepowodzenia rzucanego czaru
-– Można zdjąć jedynie po rzuceniu czaru Zdjęcie klątwy
+– Można zdjąć tylko po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @222=~Pierścień szaleństwa: 'Dyscyplinator'
-Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał słynny Pierścień czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
+Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał Pierścień ochrony, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
 
 PARAMETRY:
 
@@ -231,10 +264,11 @@ Specjalne:
 – Inteligencja: spadek do 3
 – Mądrość: spadek do 3
 – Użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte jedynie po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @223=~Pierścień szaleństwa: 'Dyscyplinator'
-Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał słynny Pierścień czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
+Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał Pierścień swobody ruchów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
 
 PARAMETRY:
 
@@ -242,10 +276,11 @@ Specjalne:
 – Inteligencja: spadek do 3
 – Mądrość: spadek do 3
 – Użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte jedynie po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @224=~Pierścień szaleństwa: 'Dyscyplinator'
-Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał słynny Pierścień czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
+Będąc często zgubą nieostrożnych magów, pierścień ten służyć miał pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wręczał Dyscyplinatora, który z wyglądu przypominał Pierścień regeneracji, swoim najlepszym i najbardziej samolubnym uczniom. Zaślepieni ignorancją młodzi magowie uważali ten dar za nagrodę za ich „oczywistą błyskotliwość”, nie zaś jako karę od pełnego dezaprobaty nauczyciela.
 
 PARAMETRY:
 
@@ -253,6 +288,7 @@ Specjalne:
 – Inteligencja: spadek do 3
 – Mądrość: spadek do 3
 – Użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte jedynie po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 @225=~Pierścień szaleństwa: 'Dyscyplinator'
@@ -264,6 +300,7 @@ Specjalne:
 – Inteligencja: spadek do 3
 – Mądrość: spadek do 3
 – Użytkownik znajduje się pod wpływem Ogłupienia, które może zostać usunięte jedynie po rzuceniu czaru Zdjęcie klątwy
+
 Waga: 0~
 
 //@301 is strref #40850

@@ -83,7 +83,7 @@ Obra¿enia: -5
 TraK0: -5~
 
 @208=~Przyci¹gacz pocisków
-Zbrojê tê wykonano tak, aby przypomina³a z wygl¹du magiczn¹ æwiekowan¹ zbrojê skórzan¹. W rzeczywistoœci jest to przeklêty przedmiot zwany Przyci¹gaczem pocisków. Raz za³o¿onej, zbroi tej nie mo¿na ju¿ zdj¹æ, chyba ¿e przy u¿yciu zaklêcia Zdjêcie kl¹twy. Chocia¿ poprawia ona ochronê przeciw broniom u¿ywanym podczas walki wrêcz, tak naprawdê czyni nosz¹c¹ j¹ osobê ³atwym celem dla wszelkich pocisków. Wybór pozostaje wiêc prosty, zabójcze strza³y albo zabójcze miecze.
+Raz za³o¿onej, tej dziwacznie wygl¹daj¹cej æwiekowanej zbroi skórzanej nie mo¿na zdj¹æ, chyba ¿e po interwencji kap³ana. Chocia¿ poprawia ona ochronê przeciw broniom u¿ywanym podczas walki wrêcz, tak naprawdê czyni nosz¹c¹ j¹ osobê ³atwym celem dla wszelkich pocisków. Wybór pozostaje wiêc prosty, zabójcze strza³y albo zabójcze miecze.
 
 PARAMETRY:
 
@@ -95,7 +95,7 @@ Nie mo¿e u¿ywaæ:
  Mag~
 
 @209=~Przyci¹gacz pocisków
-Zbrojê tê wykonano tak, aby przypomina³a z wygl¹du Pancerz cienia. W rzeczywistoœci jest to przeklêta æwiekowana zbroja skórzana zwana Przyci¹gaczem pocisków. Raz za³o¿onej, nie mo¿na jej ju¿ zdj¹æ, chyba ¿e przy u¿yciu zaklêcia Zdjêcie kl¹twy. Chocia¿ poprawia ona ochronê przeciw broniom u¿ywanym podczas walki wrêcz, zbroja ta tak naprawdê czyni nosz¹c¹ j¹ osobê ³atwym celem dla wszelkich pocisków. Wybór pozostaje wiêc prosty, zabójcze strza³y albo zabójcze miecze.
+Raz za³o¿onej, tej dziwacznie wygl¹daj¹cej æwiekowanej zbroi skórzanej, przypominaj¹cej wygl¹dem Pancerz cienia, nie mo¿na zdj¹æ, chyba ¿e po interwencji kap³ana. Chocia¿ poprawia ona ochronê przeciw broniom u¿ywanym podczas walki wrêcz, tak naprawdê czyni nosz¹c¹ j¹ osobê ³atwym celem dla wszelkich pocisków. Wybór pozostaje wiêc prosty, zabójcze strza³y albo zabójcze miecze.
 
 PARAMETRY:
 
@@ -152,7 +152,7 @@ PARAMETRY:
 
 *PRZEKLÊTY*
 Kary: Obni¿a Charyzmê o 5 punktów i Kondycjê o 2 punkty
-Klasa Pancerza: 3
+Klasa Pancerza: -2
 Waga: 35
 Wymagania: Si³a 12
 Nie mo¿e u¿ywaæ:
@@ -161,13 +161,13 @@ Nie mo¿e u¿ywaæ:
  Mag
  Z³odziej~
 
-@214=~Bêd¹c w podesz³ym wieku, Baron T'rachie po¿¹da³ ¿ony zwyk³ego ¿o³nierza Libola. Zamiast zwi¹zaæ siê z ni¹ otwarcie i wywo³aæ skandal, stworzy³ ten pancerz. Podarowa³ go owemu ¿o³nierzowi. Przekleñstwo zbroi wywo³a³o chorobê Libola i straszliwie go zdeformowa³o, a ¿ona uciek³a od niego z obrzydzeniem. Libol, uwiêziony w zbroi, ale nie maj¹cy pewnoœci co do zdrady T'rachiego, poprosi³ o przeniesienie na pustkowia, do niebezpiecznej s³u¿by przeciwko panosz¹cym siê tam ogrom. Nigdy nie powróci³, a Baron T'rachie móg³ zwi¹zaæ siê z wdow¹ po Libolu. Ten pancerz jest przeklêty i aby go zdj¹æ potrzeba potê¿nej magii.
+@214=~Bêd¹c w podesz³ym wieku, Baron T'rachie po¿¹da³ ¿ony zwyk³ego ¿o³nierza Libola. Zamiast zwi¹zaæ siê z ni¹ otwarcie i wywo³aæ skandal, stworzy³ ten pancerz. Wykonano go tak, by przypomina³ z wygl¹du Zbrojê p³ytow¹ Delvera, ale tak naprawdê by³ on przeklêty. Baron podarowa³ go owemu ¿o³nierzowi. Przekleñstwo zbroi wywo³a³o chorobê Libola i straszliwie go zdeformowa³o, a ¿ona uciek³a od niego z obrzydzeniem. Libol, uwiêziony w zbroi, ale nie maj¹cy pewnoœci co do zdrady T'rachiego, poprosi³ o przeniesienie na pustkowia, do niebezpiecznej s³u¿by przeciwko panosz¹cym siê tam ogrom. Nigdy nie powróci³, a Baron T'rachie móg³ zwi¹zaæ siê z wdow¹ po Libolu. Ten pancerz jest przeklêty i aby go zdj¹æ potrzeba potê¿nej magii.
 
 PARAMETRY:
 
 *PRZEKLÊTY*
 Kary: Obni¿a Charyzmê o 5 punktów i Kondycjê o 2 punkty
-Klasa Pancerza: 3
+Klasa Pancerza: -2
 Waga: 35
 Wymagania: Si³a 12
 Nie mo¿e u¿ywaæ:
@@ -177,55 +177,50 @@ Nie mo¿e u¿ywaæ:
  Z³odziej~
 
 @216=~Pierœcieñ niezdarnoœci: 'Szaleñstwo B³azna'
-Najdziwniejszy w³aœciciel tego pierœcienia – G³upiec Gregoria – wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
+G³upiec Gregoria, najdziwniejszy w³aœciciel tego pierœcienia, wykutego na wzór Pierœcienia ochrony, wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Zrêcznoœæ: obni¿ona o 50%
 Krycie siê: obni¿one o 50%
 75% szans niepowodzenia rzucanego czaru
 Specjalne: Mo¿na zdj¹æ tylko po rzuceniu czaru Zdjêcie kl¹twy~
 
 @217=~Pierœcieñ niezdarnoœci: 'Szaleñstwo B³azna'
-Najdziwniejszy w³aœciciel tego pierœcienia – G³upiec Gregoria – wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
+G³upiec Gregoria, najdziwniejszy w³aœciciel tego pierœcienia, wykutego na wzór Pierœcienia swobody ruchów, wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Zrêcznoœæ: obni¿ona o 50%
 Krycie siê: obni¿one o 50%
 75% szans niepowodzenia rzucanego czaru
 Specjalne: Mo¿na zdj¹æ tylko po rzuceniu czaru Zdjêcie kl¹twy~
 
 @218=~Pierœcieñ niezdarnoœci: 'Szaleñstwo B³azna'
-Najdziwniejszy w³aœciciel tego pierœcienia – G³upiec Gregoria – wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
+G³upiec Gregoria, najdziwniejszy w³aœciciel tego pierœcienia, wykutego na wzór Pierœcienia œwiêtoœci, wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Zrêcznoœæ: obni¿ona o 50%
 Krycie siê: obni¿one o 50%
 75% szans niepowodzenia rzucanego czaru
 Specjalne: Mo¿na zdj¹æ tylko po rzuceniu czaru Zdjêcie kl¹twy~
 
 @219=~Pierœcieñ niezdarnoœci: 'Szaleñstwo B³azna'
-Najdziwniejszy w³aœciciel tego pierœcienia – G³upiec Gregoria – wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
+G³upiec Gregoria, najdziwniejszy w³aœciciel tego pierœcienia, wykutego na wzór Pierœcienia regeneracji, wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Zrêcznoœæ: obni¿ona o 50%
 Krycie siê: obni¿one o 50%
 75% szans niepowodzenia rzucanego czaru
 Specjalne: Mo¿na zdj¹æ tylko po rzuceniu czaru Zdjêcie kl¹twy~
 
 @220=~Pierœcieñ niezdarnoœci: 'Szaleñstwo B³azna'
-Najdziwniejszy w³aœciciel tego pierœcienia – G³upiec Gregoria – wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
+G³upiec Gregoria, najdziwniejszy w³aœciciel tego pierœcienia, wykutego na wzór Pierœcienia czarów, wykorzysta³ jego przeklêt¹ naturê i uczyni³ z niej istotny element swojego ¿ycia. Ten b³azen z zawodu by³ niezwykle zrêczny i potrafi³ zamieniæ swój pierœcieñ z pierœcieniem któregoœ z widzów. Reszta przedstawienia opiera³a siê na wyœmiewaniu niezdary, co zwykle zachwyca³o towarzyszy nieszczêœnika. B³azen zdejmowa³ pierœcieñ (sobie tylko znanym sposobem) dopiero po tym, jak ofiara ¿artu obiecywa³a nie odgrywaæ siê za te niewybredne dowcipy. Mimo to Gregoria wiele razy musia³ szybko uciekaæ. Powiadaj¹, ¿e jego ostatnie przedstawienie ogl¹da³ mag z Twierdzy Zhentil, który nie by³ w najlepszym humorze. Tym razem Gregoria nie by³ ponoæ wystarczaj¹co szybki.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Zrêcznoœæ: obni¿ona o 50%
 Krycie siê: obni¿one o 50%
 75% szans niepowodzenia rzucanego czaru
@@ -233,31 +228,28 @@ Specjalne: Mo¿na zdj¹æ tylko po rzuceniu czaru Zdjêcie kl¹twy~
 
 
 @222=~Pierœcieñ szaleñstwa: 'Dyscyplinator'
-Bêd¹c czêsto zgub¹ nieostro¿nych magów, pierœcieñ ten s³u¿yæ mia³ pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wrêcza³ Dyscyplinatora, który z wygl¹du przypomina³ s³ynny Pierœcieñ czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaœlepieni ignorancj¹ m³odzi magowie uwa¿ali ten dar za nagrodê za ich „oczywist¹ b³yskotliwoœæ”, nie zaœ jako karê od pe³nego dezaprobaty nauczyciela.
+Bêd¹c czêsto zgub¹ nieostro¿nych magów, pierœcieñ ten s³u¿yæ mia³ pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wrêcza³ Dyscyplinatora, który z wygl¹du przypomina³ Pierœcieñ ochrony, swoim najlepszym i najbardziej samolubnym uczniom. Zaœlepieni ignorancj¹ m³odzi magowie uwa¿ali ten dar za nagrodê za ich „oczywist¹ b³yskotliwoœæ”, nie zaœ jako karê od pe³nego dezaprobaty nauczyciela.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Inteligencja: 3
 M¹droœæ: 3
 Specjalne: u¿ytkownik znajduje siê pod wp³ywem Og³upienia, które mo¿e zostaæ usuniête po rzuceniu czaru Zdjêcie kl¹twy~
 
 @223=~Pierœcieñ szaleñstwa: 'Dyscyplinator'
-Bêd¹c czêsto zgub¹ nieostro¿nych magów, pierœcieñ ten s³u¿yæ mia³ pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wrêcza³ Dyscyplinatora, który z wygl¹du przypomina³ s³ynny Pierœcieñ czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaœlepieni ignorancj¹ m³odzi magowie uwa¿ali ten dar za nagrodê za ich „oczywist¹ b³yskotliwoœæ”, nie zaœ jako karê od pe³nego dezaprobaty nauczyciela.
+Bêd¹c czêsto zgub¹ nieostro¿nych magów, pierœcieñ ten s³u¿yæ mia³ pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wrêcza³ Dyscyplinatora, który z wygl¹du przypomina³ Pierœcieñ swobody ruchów, swoim najlepszym i najbardziej samolubnym uczniom. Zaœlepieni ignorancj¹ m³odzi magowie uwa¿ali ten dar za nagrodê za ich „oczywist¹ b³yskotliwoœæ”, nie zaœ jako karê od pe³nego dezaprobaty nauczyciela.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Inteligencja: 3
 M¹droœæ: 3
 Specjalne: u¿ytkownik znajduje siê pod wp³ywem Og³upienia, które mo¿e zostaæ usuniête po rzuceniu czaru Zdjêcie kl¹twy~
 
 @224=~Pierœcieñ szaleñstwa: 'Dyscyplinator'
-Bêd¹c czêsto zgub¹ nieostro¿nych magów, pierœcieñ ten s³u¿yæ mia³ pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wrêcza³ Dyscyplinatora, który z wygl¹du przypomina³ s³ynny Pierœcieñ czarów, swoim najlepszym i najbardziej samolubnym uczniom. Zaœlepieni ignorancj¹ m³odzi magowie uwa¿ali ten dar za nagrodê za ich „oczywist¹ b³yskotliwoœæ”, nie zaœ jako karê od pe³nego dezaprobaty nauczyciela.
+Bêd¹c czêsto zgub¹ nieostro¿nych magów, pierœcieñ ten s³u¿yæ mia³ pierwotnie krzewieniu pokory. Hergat Norin, wielki czarodziej z Narfell, wrêcza³ Dyscyplinatora, który z wygl¹du przypomina³ Pierœcieñ regeneracji, swoim najlepszym i najbardziej samolubnym uczniom. Zaœlepieni ignorancj¹ m³odzi magowie uwa¿ali ten dar za nagrodê za ich „oczywist¹ b³yskotliwoœæ”, nie zaœ jako karê od pe³nego dezaprobaty nauczyciela.
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Inteligencja: 3
 M¹droœæ: 3
 Specjalne: u¿ytkownik znajduje siê pod wp³ywem Og³upienia, które mo¿e zostaæ usuniête po rzuceniu czaru Zdjêcie kl¹twy~
@@ -267,7 +259,6 @@ Bêd¹c czêsto zgub¹ nieostro¿nych magów, pierœcieñ ten s³u¿yæ mia³ pierwotnie krz
 
 PARAMETRY:
 
-*PRZEKLÊTY*
 Inteligencja: 3
 M¹droœæ: 3
 Specjalne: u¿ytkownik znajduje siê pod wp³ywem Og³upienia, które mo¿e zostaæ usuniête po rzuceniu czaru Zdjêcie kl¹twy~
