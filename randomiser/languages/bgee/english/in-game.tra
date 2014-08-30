@@ -18,93 +18,112 @@ Weight:  2"
 @116=~I give you this blessed item, that you might prevail gainst what enemies you may have. You have served well under Lathander. Go in peace.~
 @117=~You have also earned a blessing in the form of this item. You will serve the Storm Lord all the better with it.~
 
-@200="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
-With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Ogre Power and mistook these gauntlets for a authentic pair.
+@200="Gauntlets of Fumbling: Elander's Gloves of Misplacement
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival. It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Ogre Power and mistook these gauntlets for an authentic pair.
 
 STATISTICS:
 
-*CURSED*
-THACO:  -10 penalty
-Dexterity:  -2 penalty
-Weight:  2
-Special:  Can only be removed by a 'remove curse' spell"
+Equipped abilities:
+– THAC0: -10
+– Dexterity: -2
+– May only be removed with a Remove Curse spell
 
-@201="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
-With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Dexterity and mistook these gauntlets for a authentic pair.
+Weight: 2"
 
-STATISTICS:
-
-*CURSED*
-THACO:  -10 penalty
-Dexterity:  -2 penalty
-Weight:  2
-Special:  Can only be removed by a 'remove curse' spell"
-
-@202="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
-With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Weapon Skill and mistook these gauntlets for a authentic pair.
+@201="Gauntlets of Fumbling: Elander's Gloves of Misplacement
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival. It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Dexterity and mistook these gauntlets for an authentic pair.
 
 STATISTICS:
 
-*CURSED*
-THACO:  -10 penalty
-Dexterity:  -2 penalty
-Weight:  2
-Special:  Can only be removed by a 'remove curse' spell"
+Equipped abilities:
+– THAC0: -10
+– Dexterity: -2
+– May only be removed with a Remove Curse spell
 
-@203="Cursed Gauntlets of Fumbling:  'Elander's Gloves of Misplacement'
-With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival.  It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Weapon Expertise and mistook these gauntlets for a authentic pair.
+Weight: 2"
 
-STATISTICS:
-
-*CURSED*
-THACO:  -10 penalty
-Dexterity:  -2 penalty
-Weight:  2
-Special:  Can only be removed by a 'remove curse' spell"
-
-@205="These bracers appear to be a pair of Bracers of Defense but when donned, bind the wearers wrists together, making it quite difficult to wield a weapon or cast a spell. These bracers are sometimes offered as rewards for services rendered by the drow. The recipient, believing them to be very powerful, will often don them before examining them. At this point, the drow find it amusing to conjure a hook horror.
+@202="Gauntlets of Fumbling: Elander's Gloves of Misplacement
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival. It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Weapon Skill and mistook these gauntlets for an authentic pair.
 
 STATISTICS:
 
-*CURSED*
-Special:  Casting failure 75%
-THACO:  +5 penalty
-Damage:  -5 penalty"
+Equipped abilities:
+– THAC0: -10
+– Dexterity: -2
+– May only be removed with a Remove Curse spell
 
-@206="These bracers appear to be a pair of Bracers of Archery but when donned, bind the wearers wrists together, making it quite difficult to wield a weapon or cast a spell. These bracers are sometimes offered as rewards for services rendered by the drow. The recipient, believing them to be very powerful, will often don them before examining them. At this point, the drow find it amusing to conjure a hook horror.
+Weight: 2"
 
-STATISTICS:
-
-*CURSED*
-Special:  Casting failure 75%
-THACO:  +5 penalty
-Damage:  -5 penalty"
-
-@208="Missile Attraction
-This armor has the appearance of a magical suit of studded leather but is actually a cursed suit of studded leather known as Missile Attraction. It cannot be removed once put on, except under intervention by a sorcerer.  While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer.  The choice is simple, deadly arrows or deadly swords.
+@203="Gauntlets of Fumbling: Elander's Gloves of Misplacement
+With mischief in mind, the impetuous Elander set out to craft these cursed gauntlets to best a rival. It turns out his malice got the best of him, as he crafted these gauntlets to look like a pair of Gauntlets of Weapon Expertise and mistook these gauntlets for an authentic pair.
 
 STATISTICS:
 
-*CURSED*
-Armor Class: 5  (15 vs. missile weapons)
-Weight: 8
-Requires: 6 Strength
-Not Usable By:
- Mage"
- 
-@209="Missile Attraction
-This armor has been made to look like a suit of Shadow Armor but is actually a cursed suit of studded leather known as Missile Attraction. It cannot be removed once put on, except under intervention by a sorcerer.  While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer.  The choice is simple, deadly arrows or deadly swords.
+Equipped abilities:
+– THAC0: -10
+– Dexterity: -2
+– May only be removed with a Remove Curse spell
+
+Weight: 2"
+
+@205="Bracers of Binding
+The bracers appear to be Bracers of Defense, but when donned they bind the wearer's wrists together, making it quite difficult to wield a weapon or cast a spell. These bracers are sometimes offered as rewards for services rendered by the drow. The recipient, believing them to be very powerful, will often don them before examining them. At this point, the drow find it amusing to conjure a hook horror.
 
 STATISTICS:
 
-*CURSED*
-Armor Class: 5  (15 vs. missile weapons)
-Weight: 8
-Requires: 6 Strength
-Not Usable By:
- Mage"
+Equipped abilities:
+– Casting failure: 75%
+– May only be removed with a Remove Curse spell
 
-//@210 and @11 are modified Item Revisions descriptions
+THAC0: -5
+Damage: -5
+
+Weight: 1"
+
+@206="Bracers of Binding
+The bracers appear to be Bracers of Archery, but when donned they bind the wearer's wrists together, making it quite difficult to wield a weapon or cast a spell. These bracers are sometimes offered as rewards for services rendered by the drow. The recipient, believing them to be very powerful, will often don them before examining them. At this point, the drow find it amusing to conjure a hook horror.
+
+STATISTICS:
+
+Equipped abilities:
+– Casting failure: 75%
+– May only be removed with a Remove Curse spell
+
+THAC0: -5
+Damage: -5
+
+Weight: 1"
+
+//@208 is as of yet unchanged from vanilla BGII: EE
+@208="Armor of Missile Attraction
+This odd-looking suit of studded leather cannot be removed once put on, except under intervention by a priest. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple: deadly arrows or deadly swords.
+
+STATISTICS:
+
+Equipped abilities:
+– May only be removed with a Remove Curse spell
+
+Armor Class: 5 (3 vs. slashing, 4 vs. piercing, 15 vs. missile)
+Requires:
+ 6 Strength
+
+Weight: 8"
+
+@209="Armor of Missile Attraction
+This odd-looking suit of studded leather, fashioned to look like a suit of Shadow Armor, cannot be removed once put on, except under intervention by a priest. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple: deadly arrows or deadly swords.
+
+STATISTICS:
+
+Equipped abilities:
+– May only be removed with a Remove Curse spell
+
+Armor Class: 5 (3 vs. slashing, 4 vs. piercing, 15 vs. missile)
+Requires:
+ 6 Strength
+
+Weight: 8"
+
+//@210 and @211 are modified Item Revisions descriptions
 @210="This armor has the appearance of a magical suit of studded leather but is actually a suit of Cursed Studded Leather of Missile Attraction. It cannot be removed once put on, except through a Remove Curse spell. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple, deadly arrows or deadly swords.
 
 STATISTICS:
@@ -123,7 +142,7 @@ Not Usable By:
  Monk
  Avenger
  Shapeshifter"
- 
+
 @211="This armor has been made to look like a suit of Shadow Armor but is actually a suit of Cursed Studded Leather of Missile Attraction. It cannot be removed once put on, except through a Remove Curse spell. While improving the protection against all melee weapons, this armor actually becomes a target for missile weapons, and hence so does its wearer. The choice is simple, deadly arrows or deadly swords.
 
 STATISTICS:
@@ -142,133 +161,147 @@ Not Usable By:
  Monk
  Avenger
  Shapeshifter"
- 
+
 @212="T'rachie's Plate"
-@213="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol.  Instead of openly pursuing her and causing a scandal, he instead created this suit of armor.  The armor was made to look like a suit of magical plate armor but was actually cursed.  He gifted it to the soldier.  This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust.  Libol, trapped in the armor but not certain of T'rachie's treachery asked to be sent to the wastes for a dangerous tour of duty against marauding ogres.  He never returned and Baron T'rachie was free to pursue Libol's widow.  This armor is cursed and requires powerful magic to remove.
+//@213 is as of yet unchanged from vanilla BGII: EE
+@213="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol. Instead of openly pursuing her and causing a scandal, he instead created this suit of armor. He gifted it to the soldier. This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust. Libol, trapped in the armor but not certain of T'rachie's treachery, asked to be sent to the wastes for a dangerous tour of duty against marauding ogres. He never returned, and Baron T'rachie was free to pursue Libol's widow. This armor is cursed and requires powerful magic to remove.
 
 STATISTICS:
 
-*CURSED*
-Penalties: Reduces Charisma by 5 points and Constitution by 2 points
-Armor Class: 3
-Weight: 35
-Requires: 12 Strength
-Not Usable By:
- Bard
- Druid
- Mage
- Thief"
- 
-@214="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol.  Instead of openly pursuing her and causing a scandal, he instead created this suit of armor.  The armor was made to look like the famous suit of plate armor known as Delver's Plate but was actually cursed.  He gifted it to the soldier.  This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust.  Libol, trapped in the armor but not certain of T'rachie's treachery asked to be sent to the wastes for a dangerous tour of duty against marauding ogres.  He never returned and Baron T'rachie was free to pursue Libol's widow.  This armor is cursed and requires powerful magic to remove.
+Equipped abilities:
+– Constitution: -2
+– Charisma: -5
+– May only be removed with a Remove Curse spell
+
+Armor Class: -2 (-5 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 35"
+
+@214="In his aging years, Baron T'rachie coveted the wife of the lowly foot soldier Libol. Instead of openly pursuing her and causing a scandal, he instead created this suit of armor, made to look like the famous suit of plate armor known as Delver's Plate. He gifted it to the soldier. This armor's curse sickened Libol and hideously disfigured him, and his wife fled from him in disgust. Libol, trapped in the armor but not certain of T'rachie's treachery, asked to be sent to the wastes for a dangerous tour of duty against marauding ogres. He never returned, and Baron T'rachie was free to pursue Libol's widow. This armor is cursed and requires powerful magic to remove.
 
 STATISTICS:
 
-*CURSED*
-Penalties: Reduces Charisma by 5 points and Constitution by 2 points
-Armor Class: 3
-Weight: 35
-Requires: 12 Strength
-Not Usable By:
- Bard
- Druid
- Mage
- Thief"
+Equipped abilities:
+– Constitution: -2
+– Charisma: -5
+– May only be removed with a Remove Curse spell
 
-@216="Ring of Clumsiness:  'The Jester's Folly'
-The most notorious owner of this ring, crafted to look like a Ring of Protection, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+Armor Class: -2 (-5 vs. slashing)
+Requires:
+ 12 Strength
 
-STATISTICS:
+Weight: 35"
 
-*CURSED*
-Dexterity:  reduced by 50%
-Stealth:  reduced by 50%
-Spells:  75% casting failure
-Special:  can only be removed by a 'remove curse' spell"
-
-@217="Ring of Clumsiness:  'The Jester's Folly'
-The most notorious owner of this ring, crafted to look like a Ring of Free Action, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+@216="Ring of Clumsiness: The Jester's Folly
+The most notorious owner of this ring, crafted to look like a Ring of Protection, made a substantial living exploiting its cursed nature. Gregoria the Foole, a Jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience. The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades. The ring was removed (by a method known only to the wily Jester) only once the stooge had promised no reprisals for the treatment he had received, though Gregoria frequently still had to make a hasty retreat. His last known performance was rumored to have been an ill-humored mage in Zhentil Keep: a show from which he did not flee quite fast enough.
 
 STATISTICS:
 
-*CURSED*
-Dexterity:  reduced by 50%
-Stealth:  reduced by 50%
-Spells:  75% casting failure
-Special:  can only be removed by a 'remove curse' spell"
+Equipped abilities:
+– Dexterity: -50%
+– Stealth: -50%
+– 75% chance of spellcasting failure
+– May only be removed with a Remove Curse spell
 
-@218="Ring of Clumsiness:  'The Jester's Folly'
-The most notorious owner of this ring, crafted to look like a Ring of Holiness, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+Weight: 0"
 
-STATISTICS:
-
-*CURSED*
-Dexterity:  reduced by 50%
-Stealth:  reduced by 50%
-Spells:  75% casting failure
-Special:  can only be removed by a 'remove curse' spell"
-
-@219="Ring of Clumsiness:  'The Jester's Folly'
-The most notorious owner of this ring, crafted to look like a Ring of Regeneration, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+@217="Ring of Clumsiness: The Jester's Folly
+The most notorious owner of this ring, crafted to look like a Ring of Free Action, made a substantial living exploiting its cursed nature. Gregoria the Foole, a Jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience. The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades. The ring was removed (by a method known only to the wily Jester) only once the stooge had promised no reprisals for the treatment he had received, though Gregoria frequently still had to make a hasty retreat. His last known performance was rumored to have been an ill-humored mage in Zhentil Keep: a show from which he did not flee quite fast enough.
 
 STATISTICS:
 
-*CURSED*
-Dexterity:  reduced by 50%
-Stealth:  reduced by 50%
-Spells:  75% casting failure
-Special:  can only be removed by a 'remove curse' spell"
+Equipped abilities:
+– Dexterity: -50%
+– Stealth: -50%
+– 75% chance of spellcasting failure
+– May only be removed with a Remove Curse spell
 
-@219="Ring of Clumsiness:  'The Jester's Folly'
-The most notorious owner of this ring, crafted to look like one of the famous Rings of Wizardry, made a substantial living exploiting its cursed nature.  Gregoria the Foole, a jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience.  The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades.  The ring was removed (by a method known only to the wily jester) only once the stooge had promised no reprisals for the treatment he had received; though Gregoria frequently still had to make a hasty retreat.  His last known performance was rumored to have been an ill-humored mage in Zhentil Keep; a show from which he did not flee quite fast enough.
+Weight: 0"
 
-STATISTICS:
-
-*CURSED*
-Dexterity:  reduced by 50%
-Stealth:  reduced by 50%
-Spells:  75% casting failure
-Special:  can only be removed by a 'remove curse' spell"
-
-
-@222=~Ring of Folly:  'Discipliner'
-Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like a Ring of Protection, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+@218="Ring of Clumsiness: The Jester's Folly
+The most notorious owner of this ring, crafted to look like a Ring of Holiness, made a substantial living exploiting its cursed nature. Gregoria the Foole, a Jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience. The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades. The ring was removed (by a method known only to the wily Jester) only once the stooge had promised no reprisals for the treatment he had received, though Gregoria frequently still had to make a hasty retreat. His last known performance was rumored to have been an ill-humored mage in Zhentil Keep: a show from which he did not flee quite fast enough.
 
 STATISTICS:
 
-*CURSED*
-Intelligence:  set to 3
-Wisdom:  set to 3
-Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
+Equipped abilities:
+– Dexterity: -50%
+– Stealth: -50%
+– 75% chance of spellcasting failure
+– May only be removed with a Remove Curse spell
 
-@223=~Ring of Folly:  'Discipliner'
-Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like a Ring of Free Action, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+Weight: 0"
 
-STATISTICS:
-
-*CURSED*
-Intelligence:  set to 3
-Wisdom:  set to 3
-Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
-
-@224=~Ring of Folly:  'Discipliner'
-Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like a Ring of Regeneration, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+@219="Ring of Clumsiness: The Jester's Folly
+The most notorious owner of this ring, crafted to look like a Ring of Regeneration, made a substantial living exploiting its cursed nature. Gregoria the Foole, a Jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience. The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades. The ring was removed (by a method known only to the wily Jester) only once the stooge had promised no reprisals for the treatment he had received, though Gregoria frequently still had to make a hasty retreat. His last known performance was rumored to have been an ill-humored mage in Zhentil Keep: a show from which he did not flee quite fast enough.
 
 STATISTICS:
 
-*CURSED*
-Intelligence:  set to 3
-Wisdom:  set to 3
-Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
+Equipped abilities:
+– Dexterity: -50%
+– Stealth: -50%
+– 75% chance of spellcasting failure
+– May only be removed with a Remove Curse spell
 
-@225=~Ring of Folly:  'Discipliner'
-Oft the bane of the careless mage, this ring was actually used to promote humility.  Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like one of the famous Rings of Wizardry, to his most skilled, and most egotistical, students.  Through their blind arrogance they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+Weight: 0"
+
+@219="Ring of Clumsiness: The Jester's Folly
+The most notorious owner of this ring, crafted to look like one of the famous Rings of Wizardry, made a substantial living exploiting its cursed nature. Gregoria the Foole, a Jester by trade, would use his incomparable sleight of hand to switch this ring with that of a patsy taken from his audience. The rest of his performance would involve the mocking of the newly clumsy individual, much to the delight of their comrades. The ring was removed (by a method known only to the wily Jester) only once the stooge had promised no reprisals for the treatment he had received, though Gregoria frequently still had to make a hasty retreat. His last known performance was rumored to have been an ill-humored mage in Zhentil Keep: a show from which he did not flee quite fast enough.
 
 STATISTICS:
 
-*CURSED*
-Intelligence:  set to 3
-Wisdom:  set to 3
-Special:  infects the wearer with a feeblemind that can only be removed with a 'remove curse' spell~
+Equipped abilities:
+– Dexterity: -50%
+– Stealth: -50%
+– 75% chance of spellcasting failure
+– May only be removed with a Remove Curse spell
+
+Weight: 0"
+
+@222=~Ring of Folly: Discipliner
+Oft the bane of the careless mage, this ring was actually used to promote humility. Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like a Ring of Protection, to his most skilled and most egotistical students. Through their blind arrogance, they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence and Wisdom scores are set to 3
+– May only be removed with a Remove Curse spell
+
+Weight: 0~
+
+@223=~Ring of Folly: Discipliner
+Oft the bane of the careless mage, this ring was actually used to promote humility. Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like a Ring of Free Action, to his most skilled and most egotistical students. Through their blind arrogance, they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence and Wisdom scores are set to 3
+– May only be removed with a Remove Curse spell
+
+Weight: 0~
+
+@224=~Ring of Folly: Discipliner
+Oft the bane of the careless mage, this ring was actually used to promote humility. Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like a Ring of Regeneration, to his most skilled and most egotistical students. Through their blind arrogance, they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence and Wisdom scores are set to 3
+– May only be removed with a Remove Curse spell
+
+Weight: 0~
+
+@225=~Ring of Folly: Discipliner
+Oft the bane of the careless mage, this ring was actually used to promote humility. Hergat Norin, a grand wizard of Narfell, would give the Discipliner, which had been made to look like one of the famous Rings of Wizardry, to his most skilled and most egotistical students. Through their blind arrogance, they would mistake the ring as a reward for their "obvious brilliance," and not the punishment of a disapproving teacher.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence and Wisdom scores are set to 3
+– May only be removed with a Remove Curse spell
+
+Weight: 0~
 
 //@301 is strref #40850
 @301="You begin to operate the winch, slowly lifting the bucket from the bottom of the well.  After a few moments the bucket is within reach.  You pull a strangely shaped helmet from the murky water in the bucket.  Before you are able to examine it, a wind rushes up from the depths of the well."
