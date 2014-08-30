@@ -377,7 +377,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
               READ_LONG 0x50 desc
               READ_ASCII 0x58 iconc
               SPRINT $iconc("%source%") "%iconc%"
-              SPRINT idesc @202
+              SPRINT idesc @203
             END
           BUT_ONLY
         END
@@ -391,7 +391,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
               READ_LONG 0x50 desc
               READ_ASCII 0x58 iconc
               SPRINT $iconc("%source%") "%iconc%"
-              SPRINT idesc @203
+              SPRINT idesc @202
             END
           BUT_ONLY
         END
@@ -754,7 +754,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
               READ_ASCII 0x58 iconc
               SPRINT $iconc("%source%") "%iconc%"
               PATCH_IF "%source%" STRING_EQUAL_CASE "%TUTU_VAR%ring04" BEGIN
-                SPRINT idesc @219
+                SPRINT idesc @220
               END ELSE BEGIN
                 SPRINT idesc @225
               END
