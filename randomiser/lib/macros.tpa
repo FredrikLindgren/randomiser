@@ -408,7 +408,7 @@ DEFINE_PATCH_MACRO read_charge_array BEGIN
   READ_SHORT rca_offset + 0xc charge2 ELSE 0
   READ_SHORT rca_offset + 0xe charge3 ELSE 0
   PATCH_IF VARIABLE_IS_SET category AND IS_AN_INT category AND (category = 9 OR category = 11) BEGIN
-    SPRINT $charge_array("%removed_token%" "%removed_tier%" 0 "%charge2%" "%charge3%") ""
+    SPRINT $charge_array("%removed_token%" "%removed_tier%" 1 "%charge2%" "%charge3%") ""
   END ELSE BEGIN
     SPRINT $charge_array("%removed_token%" "%removed_tier%" "%charge1%" "%charge2%" "%charge3%") ""
   END
