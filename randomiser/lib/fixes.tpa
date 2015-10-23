@@ -218,7 +218,7 @@ ACTION_IF !MOD_IS_INSTALLED bg2_tweaks.tp2 3020 BEGIN //only do this if "identif
         READ_SHORT 0x42 lore  ELSE "-1"
         READ_BYTE  0x18 flags ELSE 0
         READ_SHORT 0x1c cat   ELSE 0
-        PATCH_IF lore = 0 AND (flags BAND 0b01000000) = 0b01000000 AND cat != 11 BEGIN
+        PATCH_IF lore = 0 AND (flags BAND 0b01000000) = 0b01000000 AND cat != 11 AND cat != 9 BEGIN
           WRITE_SHORT 0x42 price/250 < 90 AND (flags BAND 16) = 16 ? 90 : price/250 < 30 ? 30 : price/250
         END
       BUT_ONLY
