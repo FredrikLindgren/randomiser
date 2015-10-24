@@ -941,89 +941,6 @@ DEFINE_PATCH_MACRO define_cre_unusabilities BEGIN //Tedious monkey-work. What we
   dcu_cre_kit_unuse4 = dcu_kit = 0x40010000 ? 0b00000001 : dcu_kit = 0x40020000 ? 0b00000010 : dcu_kit = 0x40030000 ? 0b00000100 : dcu_kit = 0x40040000 ? 0b00001000 : dcu_kit = 0x40050000 ? 0b00010000 : dcu_kit = 0x40060000 ? 0b00100000 : dcu_kit = 0x00400000 ? 0b01000000 : dcu_kit = 0x00800000 ? 0b10000000 : dcu_cre_kit_unuse4
 END
 
-DEFINE_PATCH_FUNCTION comp_transform STR_VAR f_Itm = blank f_Are = blank f_Var = blank f_Cre = blank f_Replace = blank RET f_Itm f_Are f_Var f_Cre f_Replace BEGIN
-  TO_LOWER f_Itm
-  TO_LOWER f_Are
-  TO_LOWER f_Var
-  TO_LOWER f_Cre
-  TO_LOWER f_Replace
-  PATCH_IF BGT = 1 AND BGT_Convert = 1 BEGIN
-    PATCH_IF VARIABLE_IS_SET $bgt_compat_itm_array("%f_Itm%") BEGIN
-      SPRINT f_Itm $bgt_compat_itm_array("%f_Itm%")
-    END
-    PATCH_IF VARIABLE_IS_SET $bgt_compat_itm_array("%f_Replace%") BEGIN
-      SPRINT f_Replace $bgt_compat_itm_array("%f_Replace%")
-    END
-    PATCH_IF "%f_Var%" STRING_MATCHES_REGEXP "%bgt_compat_cre_regexp%\.cre$" = 0 BEGIN
-      INNER_PATCH "%f_Var%" BEGIN
-        READ_ASCII 0 f_Var (STRING_LENGTH "%f_Var%" - 4)
-      END
-      PATCH_IF VARIABLE_IS_SET $bgt_compat_cre_array("%f_Var%") BEGIN //at least this way the false positives will go through the ride without being broken
-        SPRINT f_Var $bgt_compat_cre_array("%f_Var%")
-      END
-      INNER_PATCH_SAVE f_Var "%f_Var%" BEGIN
-        INSERT_BYTES STRING_LENGTH "%f_Var%" 4
-        WRITE_ASCII  STRING_LENGTH "%f_Var%" ".cre"
-      END
-    END
-    PATCH_IF VARIABLE_IS_SET $bgt_compat_cre_array("%f_Cre%") BEGIN
-      SPRINT f_Cre $bgt_compat_cre_array("%f_Cre%")
-    END
-    PATCH_IF "%f_Var%" STRING_MATCHES_REGEXP ".*\.are$" = 0 BEGIN
-      INNER_PATCH "%f_Var%" BEGIN
-        READ_ASCII 0 f_Var (STRING_LENGTH "%f_Var%" - 4)
-      END
-      SPRINT f_Var $bgt_compat_are_array("%f_Var%")
-      INNER_PATCH_SAVE f_Var "%f_Var%" BEGIN
-        INSERT_BYTES STRING_LENGTH "%f_Var%" 4
-        WRITE_ASCII  STRING_LENGTH "%f_Var%" ".are"
-      END
-    END
-    PATCH_IF VARIABLE_IS_SET $bgt_compat_are_array("%f_Are%") BEGIN
-      SPRINT f_Are $bgt_compat_are_array("%f_Are%")
-    END
-  END
-  
-  PATCH_IF Tutu = 1 BEGIN
-    PATCH_IF "%f_Itm%" STRING_COMPARE_CASE blank AND !VARIABLE_IS_SET $tutu_compat_itm_array("%f_Itm%") BEGIN
-      SPRINT f_Itm "_%f_Itm%"
-    END
-    PATCH_IF "%f_Replace%" STRING_COMPARE_CASE blank AND
-    "%f_Replace%" STRING_MATCHES_REGEXP "rndtre.*" AND
-    !VARIABLE_IS_SET $tutu_compat_itm_array("%f_Replace%") BEGIN
-      SPRINT f_Replace "_%f_Replace%"
-    END
-    PATCH_IF "%f_Var%" STRING_MATCHES_REGEXP ".*\.\(cre\|sto\|dlg\|bcs\)$" = 0 BEGIN
-      PATCH_IF STRING_LENGTH "%f_Var%" = 12 BEGIN
-        INNER_PATCH_SAVE f_Var "%f_Var%" BEGIN
-          WRITE_ASCII 0 _
-        END
-      END ELSE BEGIN
-        SPRINT f_Var "_%f_Var%"
-      END
-    END
-    PATCH_IF "%f_Cre%" STRING_MATCHES_REGEXP ".*\.cre$" AND "%f_Cre%" STRING_COMPARE_CASE blank BEGIN
-      PATCH_IF STRING_LENGTH "%f_Cre%" = 8 BEGIN
-        INNER_PATCH_SAVE f_Cre "%f_Cre%" BEGIN
-          WRITE_ASCII 0 _
-        END
-      END ELSE BEGIN
-        SPRINT f_Cre "_%f_Cre%"
-      END
-    END
-    PATCH_IF "%f_Var%" STRING_MATCHES_REGEXP ".*\.are$" = 0 BEGIN
-      INNER_PATCH_SAVE f_Var "%f_Var%" BEGIN
-        WRITE_ASCII 0 fw
-      END
-    END
-    PATCH_IF "%f_Are%" STRING_COMPARE_CASE blank BEGIN
-      INNER_PATCH_SAVE f_Are "%f_Are%" BEGIN
-        WRITE_ASCII 0 fw
-      END
-    END
-  END
-END
-
 DEFINE_PATCH_MACRO create_item_array BEGIN
   COUNT_2DA_ROWS 6 cia_num_row
   FOR (cia1=1;cia1<cia_num_row;cia1+=1) BEGIN
@@ -1043,8 +960,14 @@ DEFINE_PATCH_MACRO create_item_array BEGIN
       SET $cursed_items("%cia_tier%" "%cia_token%") = 1
     END
     cia_skip_item = 0
-    PATCH_IF BGT = 1 OR Tutu = 1 BEGIN
-      LAUNCH_PATCH_FUNCTION comp_transform STR_VAR f_Itm = EVAL "%cia_item%" f_Replace = EVAL "%cia_replace%" f_Var = EVAL "%cia_source%" RET cia_item = f_Itm cia_replace = f_Replace cia_source = f_Var END
+    PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+      LPF fl#bg1pal STR_VAR resource = EVAL "%cia_item%" type = itm RET cia_item = resource END
+      PATCH_IF "%cia_replace%" STR_CMP "blank" BEGIN // Don't attempt to convert empty entries
+        LPF fl#bg1pal STR_VAR resource = EVAL "%cia_replace%" type = itm RET cia_replace = resource END
+      END
+      PATCH_IF "%cia_source%" STR_CMP "blank" AND ("%cia_source%" STRING_MATCHES_REGEXP "+.\.fl$") BEGIN // Don't attempt to convert empty or special entries
+        LPF fl#bg1pal STR_VAR file = EVAL "%cia_source%" RET cia_source = file END
+      END
     END
     PATCH_IF "%cia_source%" STRING_MATCHES_REGEXP ".*\.\(dlg\|bcs\)$" = 0 AND FILE_EXISTS_IN_GAME "%cia_source%" BEGIN //Make sure the item we are after is present in bcs|dlg
       PATCH_IF NOT FILE_CONTAINS_EVALUATED ("%cia_source%" "%cia_item%") BEGIN
@@ -1108,8 +1031,11 @@ DEFINE_PATCH_MACRO create_loc_array BEGIN
       cla_skip_location = 1
     END
     PATCH_IF cla_skip_location = 0 AND (VARIABLE_IS_SET $ident("%cla_ident%") OR "%cla_ident%" STRING_EQUAL_CASE x) BEGIN
-      PATCH_IF BGT = 1 OR Tutu = 1 BEGIN
-        LAUNCH_PATCH_FUNCTION comp_transform STR_VAR f_Var = EVAL "%cla_res%" f_Are = EVAL "%cla_area%" RET cla_res = f_Var cla_area = f_Are END
+      PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+        PATCH_IF "%cla_res%" STRING_CONTAINS_REGEXP ".+\.[a-z]+$" = 0 BEGIN // Don't attempt to convert area-container names
+          LPF fl#bg1pal STR_VAR file = EVAL "%cla_res%" RET cla_res = file END
+        END
+        LPF fl#bg1pal STR_VAR resource = EVAL "%cla_area%" type = ARE RET cla_area = resource END
       END
       PATCH_IF FILE_EXISTS_IN_GAME "%cla_area%.are" OR "%cla_area%" STRING_EQUAL_CASE blank BEGIN
         SPRINT $location_array("%cla_location%" "%cla_tier%" "%cla_res%" "%cla_area%" "%cla_ident%") "%cla1%"
@@ -1125,8 +1051,8 @@ DEFINE_PATCH_MACRO create_group_array BEGIN
       READ_2DA_ENTRY i 1 2 cre
       TO_LOWER group
       TO_LOWER cre
-      PATCH_IF BGT = 1 OR Tutu = 1 BEGIN
-        LAUNCH_PATCH_FUNCTION comp_transform STR_VAR f_Cre = EVAL "%cre%" RET cre = f_Cre END
+      PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+        LPF fl#bg1pal STR_VAR resource = EVAL "%cre%" type = CRE RET cre = resource END
       END
       PATCH_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
         SPRINT $special_array("%i%" "%group%") "%cre%"
@@ -1146,8 +1072,12 @@ DEFINE_PATCH_MACRO create_duplicate_array BEGIN
     TO_LOWER replace
     TO_LOWER ident
     PATCH_IF VARIABLE_IS_SET $ident("%ident%") OR "%ident%" STRING_EQUAL_CASE x BEGIN
-      PATCH_IF BGT = 1 OR Tutu = 1 BEGIN
-        LAUNCH_PATCH_FUNCTION comp_transform STR_VAR f_Itm = EVAL "%item%" f_Var = EVAL "%source%" f_Replace = EVAL "%replace%" RET item = f_Itm source = f_Var replace = f_Replace END
+      PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+        LPF fl#bg1pal STR_VAR resource = EVAL "%item%" type = ITM RET item = resource END
+        LPF fl#bg1pal STR_VAR file = EVAL "%source%" RET source = file END
+        PATCH_IF "%replace%" STR_CMP "blank" BEGIN // Don't attempt to convert empty entries
+          LPF fl#bg1pal STR_VAR resource = "%replace%" type = ITM RET replace = resource END
+        END
       END
       PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" AND FILE_EXISTS_IN_GAME "%source%" BEGIN
         PATCH_IF weidu_action = 0 AND "%token%" STRING_MATCHES_REGEXP "w.*" BEGIN

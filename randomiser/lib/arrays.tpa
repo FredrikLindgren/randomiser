@@ -300,7 +300,7 @@ ACTION_IF BG1 = 1 BEGIN
       TO_LOWER Item
       TO_LOWER Tier
       TO_LOWER Token
-      LPF comp_transform STR_VAR f_Itm = EVAL "%Item%" RET Item = f_Itm END
+      LPF fl#bg1pal STR_VAR resource = EVAL "%Item%" type = ITM RET Item = resource END
       PATCH_IF MOD_IS_INSTALLED "%Mod%" "%Component%" BEGIN
         SPRINT $rebalance_tier("%Item%") "%Tier%"
         SPRINT $rebalance_token("%Item%") "%Token%"
@@ -414,9 +414,7 @@ COPY - "randomiser/lists/item_ranking.2da" "...randomiser/fl-inlined/item_rankin
     READ_2DA_ENTRY i 1 2 rank
     TO_LOWER item
     TO_LOWER rank
-    PATCH_IF Tutu = 1 OR BGT = 1 BEGIN
-      LAUNCH_PATCH_FUNCTION comp_transform STR_VAR f_Itm = EVAL "%item%" RET item = f_Itm END
-    END
+    LPF fl#bg1pal STR_VAR resource = EVAL "%item%" type = ITM RET item = resource END //TODO: neither this nor the old code worked like intended
     SET $itm_rank("%item%") = rank
   END
   
@@ -427,8 +425,6 @@ COPY - "randomiser/lists/race.2da" "...randomiser/fl-inlined/race.2da"
     READ_2DA_ENTRY i 1 2 race
     TO_LOWER item
     TO_LOWER race
-    PATCH_IF Tutu = 1 OR BGT = 1 BEGIN
-      LPF comp_transform STR_VAR f_Itm = EVAL "%item%" RET item = f_Itm END
-    END
+    LPF fl#bg1pal STR_VAR resource = EVAL "%item%" type = ITM RET item = resource END //TODO: neither this nor the old code worked like intended
     SET $race_restriction("%item%") = race
   END
