@@ -1303,36 +1303,50 @@ DEFINE_PATCH_FUNCTION add_store_item INT_VAR f_Flags1 = 1 f_Number = 1 BEGIN //c
   END
 END
 
-//unequips all droppable items from the creature provided there is inventory space for it; f_Force = 1 -> undroppable items are unequiped and items are deleted if there isn't enough inv space
-DEFINE_PATCH_FUNCTION unequip_items INT_VAR f_Lower = 0 f_Upper = 18 f_Force = 0 BEGIN
+/*
+ * Unequips all droppable items from slot lower to slot upper from the
+ * creature, provided there is inventory space for it.
+ *
+ * force -> undroppable items are unequipped and the item is
+ *          deleted if there is not enough space
+ */
+DEFINE_PATCH_FUNCTION unequip_items
+  INT_VAR
+    lower = 0
+    upper = 18
+    force = 0
+BEGIN
   PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
     READ_LONG 0x2b8 itm_slt
     READ_LONG 0x2bc itm_off
     READ_LONG 0x2c0 num_itm
-    FOR (i=f_Lower;i<f_Upper;++i) BEGIN
-      READ_SSHORT itm_slt + 0x2*i ref ELSE "-1"
+    FOR (i = lower; i < upper; ++i) BEGIN
+      READ_SSHORT itm_slt + 0x2 * i ref ELSE "-1"
       PATCH_IF ref >= 0 BEGIN
-        READ_ASCII itm_off + 0x14*ref item ELSE blank
-        READ_BYTE  itm_off + 0x14*ref + 0x10 flags1 ELSE 8
-        PATCH_IF ((flags1 BAND 8) = 0 OR f_Force) AND FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
-          INNER_ACTION BEGIN
-            COPY_EXISTING "%item%.itm" override
-              READ_BYTE 0x18 flags2 ELSE 0
-            BUT_ONLY
+        READ_ASCII itm_off + 0x14 * ref item ELSE blank
+        READ_BYTE  itm_off + 0x14 * ref + 0x10 flags1 ELSE BIT3
+        PATCH_IF (flags1 BAND BIT3) = 0 OR force BEGIN // If not undroppable or force
+          flags2 = BIT2
+          PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" AND NOT force BEGIN
+            INNER_ACTION BEGIN
+              COPY_EXISTING "%item%.itm" override
+                READ_BYTE 0x18 flags2 ELSE BIT2
+              BUT_ONLY
+            END
           END
-          PATCH_IF (flags2 BAND 4) = 4 OR f_Force BEGIN
+          PATCH_IF (flags2 BAND BIT2) = BIT2 OR force BEGIN // If droppable or force
             removed = 0
-            FOR (j=21;j<37;++j) BEGIN
-              READ_SSHORT itm_slt + 0x2*j inv ELSE 0
+            FOR (j = 21; j < 37; ++j) BEGIN // Try to move the item into the inventory
+              READ_SSHORT itm_slt + 0x2 * j inv ELSE 0
               PATCH_IF inv < 0 BEGIN
                 removed = 1
-                WRITE_SHORT itm_slt + 0x2*j ref
-                WRITE_SHORT itm_slt + 0x2*i "-1"
-                WRITE_BYTE  itm_off + 0x14*ref + 0x10 (flags2 BAND 4) = 4 ? (THIS BAND 253) : THIS //remove unstealable if droppable
+                WRITE_SHORT itm_slt + 0x2 * j ref
+                WRITE_SHORT itm_slt + 0x2 * i "-1"
+                WRITE_BYTE  itm_off + 0x14 * ref + 0x10 (flags2 BAND BIT2) = BIT2 ? (THIS BAND BNOT BIT1) : THIS // Remove unstealable if droppable
                 j = 37
               END
             END
-            PATCH_IF removed = 0 AND f_Force BEGIN
+            PATCH_IF removed = 0 AND force BEGIN // Else delete it, if force
               REMOVE_CRE_ITEM "%item%"
             END
           END

@@ -82,7 +82,7 @@ ACTION_IF !BG1 OR BGT BEGIN
           proficiency = IDS_OF_SYMBOL (stats PROFICIENCYTWOHANDEDSWORD)
       END
        //Since his longsword is replaced by a two-handed sword, we empty the shield slot
-      LPF unequip_items INT_VAR f_Lower = 2 f_Upper = 3 f_Force = 1 END
+      LPF unequip_items INT_VAR lower = 2 upper = 3 force = 1 END
     END
   BUT_ONLY
 END
