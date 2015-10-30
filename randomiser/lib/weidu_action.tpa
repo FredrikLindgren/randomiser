@@ -399,7 +399,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       COPY_EXISTING "%Area%.are" override
         LPM insert_item_into_container
         //LPF add_trap_script STR_VAR f_ConName = container1 f_ScriptName = flrsafan END
-        LPF insert_actor STR_VAR ia_cre = flrsafan END
+        LPF insert_actor STR_VAR actor = flrsafan END
       BUT_ONLY
       COPY "randomiser/copy/flrandom.cre" "override/flrsafan.cre"
         WRITE_ASCII 0x248 flrsafan
@@ -718,7 +718,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           samiascript = 1
         END*/
         PATCH_IF !FILE_EXISTS_IN_GAME flrsamia.cre BEGIN
-          LPF insert_actor STR_VAR ia_cre = flrsamia END
+          LPF insert_actor STR_VAR actor = flrsamia END
         END
       BUT_ONLY
       ACTION_IF !FILE_EXISTS_IN_GAME flrsamia.cre BEGIN
@@ -749,7 +749,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       COPY_EXISTING ar1303.are override
         LAUNCH_PATCH_MACRO insert_item_into_container
         //LAUNCH_PATCH_FUNCTION add_trap_script STR_VAR f_ConName = container1 f_ScriptName = flrkeep1 END
-        LPF insert_actor STR_VAR ia_cre = flrkeep1 END
+        LPF insert_actor STR_VAR actor = flrkeep1 END
       BUT_ONLY
       COPY "randomiser/copy/flrandom.cre" "override/flrkeep1.cre"
         WRITE_ASCII 0x248 flrkeep1
@@ -770,7 +770,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       COPY_EXISTING ar1303.are override
         LAUNCH_PATCH_MACRO insert_item_into_container
         //LAUNCH_PATCH_FUNCTION add_trap_script STR_VAR f_ConName = container2 f_ScriptName = flrkeep2 END
-        LPF insert_actor STR_VAR ia_cre = flrkeep2 END
+        LPF insert_actor STR_VAR actor = flrkeep2 END
       BUT_ONLY
       COPY "randomiser/copy/flrandom.cre" "override/flrkeep2.cre"
         WRITE_ASCII 0x248 flrkeep2
@@ -791,7 +791,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       COPY_EXISTING ar1303.are override
         LAUNCH_PATCH_MACRO insert_item_into_container
         //LAUNCH_PATCH_FUNCTION add_trap_script STR_VAR f_ConName = container3 f_ScriptName = flrkeep3 END
-        LPF insert_actor STR_VAR ia_cre = flrkeep3 END
+        LPF insert_actor STR_VAR actor = flrkeep3 END
       BUT_ONLY
       COPY "randomiser/copy/flrandom.cre" "override/flrkeep3.cre"
         WRITE_ASCII 0x248 flrkeep3
@@ -1073,7 +1073,7 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
         ACTION_FOR_EACH area IN ar0801 ar0329 rr#010 ar0300 BEGIN
           ACTION_IF FILE_EXISTS_IN_GAME "%area%.are" BEGIN
             COPY_EXISTING "%area%.are" override
-              LPF insert_actor STR_VAR ia_cre = flrchap3 END
+              LPF insert_actor STR_VAR actor = flrchap3 END
             BUT_ONLY
           END
         END

@@ -85,7 +85,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN //Provide for starting a ToB game with Mode 1
   
   COPY_EXISTING ar3000.are override
                 ar4000.are override
-    LAUNCH_PATCH_FUNCTION insert_actor STR_VAR ia_cre = flrtobc END
+    LPF insert_actor STR_VAR actor = flrtobc END
   BUT_ONLY
   
   COMPILE "randomiser/baf/flrtobc.baf"

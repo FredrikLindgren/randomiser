@@ -707,27 +707,23 @@ DEFINE_ACTION_FUNCTION process_script_for_m1 INT_VAR Get_Tra = 0 BEGIN
   END
 END
 
-//Retire this in favour of fj_are_struct
-DEFINE_PATCH_FUNCTION insert_actor BEGIN //Needs %ia_cre%
-  PATCH_IF SOURCE_SIZE > 0x11b BEGIN
-    READ_LONG 0x54 act_off
-    READ_SHORT 0x58 num_act
-    INSERT_BYTES act_off + 0x110*num_act 0x110
-    WRITE_ASCIIE act_off + 0x110*num_act "%ia_cre%" #32
-    PATCH_FOR_EACH off IN 0x20 0x22 0x24 0x26 BEGIN
-      WRITE_SHORT act_off + 0x110*num_act + off 1
-    END
-    WRITE_LONG   act_off + 0x110*num_act + 0x28 1
-    WRITE_LONG   act_off + 0x110*num_act + 0x38 "-1"
-    WRITE_LONG   act_off + 0x110*num_act + 0x40 0xffffffff
-    WRITE_ASCIIE act_off + 0x110*num_act + 0x80 "%ia_cre%" #8
-    WRITE_SHORT 0x58 num_act + 1
-    PATCH_FOR_EACH off IN 0x5c 0x60 0x68 0x70 0x78 0x7c 0x84 0x88 0xa0 0xa8 0xb0 0xb8 0xbc 0xc0 0xc4 0xcc BEGIN
-      READ_LONG off off_value
-      PATCH_IF (off_value > act_off) OR (off_value = act_off AND num_act = 0) BEGIN
-        WRITE_LONG off off_value + 0x110
-      END
-    END
+DEFINE_PATCH_FUNCTION insert_actor
+  STR_VAR
+    actor = ""
+    name = EVAL "%actor%"
+    loc_x = 1
+    loc_y = 1
+BEGIN
+  LPF fj_are_structure
+    INT_VAR
+      fj_loc_x = loc_x
+      fj_loc_y = loc_y
+      fj_dest_x = fj_loc_x
+      fj_dest_y = fj_loc_y
+    STR_VAR
+      fj_structure_type = actor
+      fj_cre_resref = EVAL "%actor%"
+      fj_name = EVAL "%name%"
   END
 END
 
