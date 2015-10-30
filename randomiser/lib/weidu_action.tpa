@@ -274,11 +274,17 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     LOG "Giving item %Item% to target %Target% in area %Area%"
 
     ACTION_IF "%Target%" STRING_CONTAINS_REGEXP "\." AND FILE_EXISTS_IN_GAME "%Item%.itm" AND FILE_EXISTS_IN_GAME "%Area%.are" BEGIN //Container
-      OUTER_SPRINT insert_item "%Item%"
-      OUTER_SPRINT target_container "%Target%"
-
       COPY_EXISTING "%Area%.are" override
-        LAUNCH_PATCH_MACRO insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = EVAL "%Target%"
+        END
+      BUT_ONLY
     END
     
     ACTION_IF "%Target%" STRING_EQUAL_CASE ddwell.bcs AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
@@ -394,10 +400,16 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
 
     ACTION_IF "%Target%" STRING_EQUAL_CASE safana.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND BG1 = 1 BEGIN
       OUTER_SPRINT FLITEM "%TUTU_VAR%book03"
-      OUTER_SPRINT target_container container1
-      OUTER_SPRINT insert_item "%Item%"
       COPY_EXISTING "%Area%.are" override
-        LPM insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = container1
+        END
         //LPF add_trap_script STR_VAR f_ConName = container1 f_ScriptName = flrsafan END
         LPF insert_actor STR_VAR actor = flrsafan END
       BUT_ONLY
@@ -632,9 +644,15 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE ppchest.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING ar1514.are override
-        SPRINT insert_item "%Item%"
-        SPRINT target_container treasurechest
-        LAUNCH_PATCH_MACRO insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = treasurechest
+        END
       BUT_ONLY
       OUTER_SPRINT FLITEM bow19b
       COPY_EXISTING ppchest.bcs override
@@ -709,10 +727,16 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       ACTION_IF "%Target%" STRING_EQUAL_CASE samia2.fl BEGIN
         OUTER_SPRINT FLITEM sw1h32
       END
-      OUTER_SPRINT insert_item "%Item%"
-      OUTER_SPRINT target_container container10
       COPY_EXISTING ar1202.are override
-        LAUNCH_PATCH_MACRO insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = container10
+        END
         /*PATCH_IF !VARIABLE_IS_SET samiascript BEGIN
           LAUNCH_PATCH_FUNCTION add_trap_script STR_VAR f_ConName = container10 f_ScriptName = flrsamia END
           samiascript = 1
@@ -744,10 +768,16 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE keep1.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
-      OUTER_SPRINT insert_item "%Item%"
-      OUTER_SPRINT target_container container1
       COPY_EXISTING ar1303.are override
-        LAUNCH_PATCH_MACRO insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = container1
+        END
         //LAUNCH_PATCH_FUNCTION add_trap_script STR_VAR f_ConName = container1 f_ScriptName = flrkeep1 END
         LPF insert_actor STR_VAR actor = flrkeep1 END
       BUT_ONLY
@@ -765,10 +795,16 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE keep2.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
-      OUTER_SPRINT insert_item "%Item%"
-      OUTER_SPRINT target_container container2
       COPY_EXISTING ar1303.are override
-        LAUNCH_PATCH_MACRO insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = container2
+        END
         //LAUNCH_PATCH_FUNCTION add_trap_script STR_VAR f_ConName = container2 f_ScriptName = flrkeep2 END
         LPF insert_actor STR_VAR actor = flrkeep2 END
       BUT_ONLY
@@ -786,10 +822,16 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE keep3.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
-      OUTER_SPRINT insert_item "%Item%"
-      OUTER_SPRINT target_container container3
       COPY_EXISTING ar1303.are override
-        LAUNCH_PATCH_MACRO insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = container3
+        END
         //LAUNCH_PATCH_FUNCTION add_trap_script STR_VAR f_ConName = container3 f_ScriptName = flrkeep3 END
         LPF insert_actor STR_VAR actor = flrkeep3 END
       BUT_ONLY
@@ -807,10 +849,16 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     
     END 
     ACTION_IF "%Target%" STRING_EQUAL_CASE sahtreas.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
-      OUTER_SPRINT insert_item "%Item%"
-      OUTER_SPRINT target_container treasury
       COPY_EXISTING ar2300.are override
-        LAUNCH_PATCH_MACRO insert_item_into_container
+        LPF insert_area_item
+          INT_VAR
+            charge1 = Charge1
+            charge2 = Charge2
+            charge3 = Charge3
+          STR_VAR
+            item = EVAL "%Item%"
+            container = treasury
+        END
       BUT_ONLY
       OUTER_SPRINT FLITEM rods02
       COPY_EXISTING sahkng01.dlg override

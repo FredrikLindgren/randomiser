@@ -431,56 +431,34 @@ DEFINE_PATCH_MACRO read_charge_array_on_itm BEGIN
   SPRINT $charge_array("%removed_token%" "%removed_tier%" "%charge1%" "%charge2%" "%charge3%") ""
 END
 
-DEFINE_PATCH_MACRO insert_item_into_container BEGIN //Requires %target_container%, %insert_item%, %Charge1%, %Charge2% and %Charge3%
-  READ_LONG  0x70 iiic_con_off
-  READ_SHORT 0x74 iiic_num_con
-  READ_SHORT 0x76 iiic_num_itm
-  READ_LONG  0x78 iiic_itm_off
-  iiic_delta = 0
-  FOR (iiic1=0;iiic1<iiic_num_con;iiic1+=1) BEGIN
-    READ_ASCII iiic_con_off + 0xc0*iiic1 container (0x20) NULL
-    INNER_PATCH_SAVE container "%container%" BEGIN                                                                     //Because some containers are called things like container 1
-      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH " " ""
+DEFINE_PATCH_FUNCTION insert_area_item
+  INT_VAR
+    charge1 = 1
+    charge2 = 0
+    charge3 = 0
+    flags = 0
+  STR_VAR
+    item = ""
+    container = ""
+BEGIN
+  GET_OFFSET_ARRAY array ARE_V10_CONTAINERS
+  PHP_EACH array AS idx => off BEGIN
+    READ_ASCII off name (32) NULL
+    INNER_PATCH_SAVE name "%name%" BEGIN
+      REPLACE_TEXTUALLY " " ""
     END
-    READ_LONG  iiic_con_off + 0xc0*iiic1 + 0x40 iiic_itm_idx
-    iiic_itm_idx += iiic_delta
-    WRITE_LONG iiic_con_off + 0xc0*iiic1 + 0x40 iiic_itm_idx
-    PATCH_IF "%container%" STRING_EQUAL_CASE "%target_container%" BEGIN
-      READ_LONG    iiic_con_off + 0xc0*iiic1 + 0x44 iiic_num_l_itm
-      INSERT_BYTES iiic_itm_off + 0x14*iiic_itm_idx       0x14
-      WRITE_ASCIIE iiic_itm_off + 0x14*iiic_itm_idx       "%insert_item%" #8
-      WRITE_SHORT  iiic_itm_off + 0x14*iiic_itm_idx + 0xa Charge1
-      WRITE_SHORT  iiic_itm_off + 0x14*iiic_itm_idx + 0xc Charge2
-      WRITE_SHORT  iiic_itm_off + 0x14*iiic_itm_idx + 0xe Charge3
-      iiic_delta += 1
-      iiic_num_l_itm += 1
-      WRITE_LONG iiic_con_off + 0xc0*iiic1 + 0x44 iiic_num_l_itm
-    END
-  END
-  WRITE_SHORT 0x76 iiic_num_itm + iiic_delta
-  iiic_adjust = iiic_delta*0x14
-  SET $iiic_offset(0)  = 0x54
-  SET $iiic_offset(1)  = 0x5c
-  SET $iiic_offset(2)  = 0x60
-  SET $iiic_offset(3)  = 0x68
-  SET $iiic_offset(4)  = 0x70
-  SET $iiic_offset(5)  = 0x7c
-  SET $iiic_offset(6)  = 0x84
-  SET $iiic_offset(7)  = 0x88
-  SET $iiic_offset(8)  = 0xa0
-  SET $iiic_offset(9)  = 0xa8
-  SET $iiic_offset(10) = 0xb0
-  SET $iiic_offset(11) = 0xb8
-  SET $iiic_offset(12) = 0xbc
-  SET $iiic_offset(13) = 0xc0
-  SET $iiic_offset(14) = 0xc4
-  SET $iiic_offset(15) = 0xcc
-  FOR (iiic1=0;iiic1<16;iiic1+=1) BEGIN
-    SET iiic_address = $iiic_offset("%iiic1%")
-    READ_LONG iiic_address iiic_offset
-    PATCH_IF (iiic_offset > iiic_itm_off) OR (iiic_offset = iiic_itm_off AND iiic_num_itm = 0) BEGIN
-      iiic_offset += iiic_adjust
-      WRITE_LONG iiic_address iiic_offset
+    PATCH_IF "%name%" STRING_EQUAL_CASE "%container%" BEGIN
+      LPF fj_are_structure
+        INT_VAR
+          fj_con_itm_idx = idx
+          fj_charge0 = charge1
+          fj_charge1 = charge2
+          fj_charge2 = charge3
+          fj_flags = flags
+        STR_VAR
+          fj_structure_type = itm
+          fj_name = EVAL "%item%"
+      END
     END
   END
 END
