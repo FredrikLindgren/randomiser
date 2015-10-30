@@ -5,6 +5,7 @@ README "randomiser/readme-randomiser.html"
 
 ALWAYS
   INCLUDE "randomiser/lib/fl#bg1pal.tpa"
+  INCLUDE "randomiser/lib/fl#gear.tpa"
   INCLUDE "randomiser/lib/lib.tpa"
   INCLUDE "randomiser/lib/comp_vars.tpa"
   OUTER_SPRINT sslvar ""

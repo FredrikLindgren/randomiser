@@ -1,0 +1,455 @@
+DEFINE_PATCH_FUNCTION give_itm_to_cre INT_VAR f_Equip = 1 f_Flags = 0 BEGIN //requires %itm_to_give%, %Charge[1-3]%, $itemexcl, $itm_rank, $cursed_item_list
+  SPRINT Source_Cre "%SOURCE_RES%"
+  TO_LOWER Source_Cre
+  READ_LONG 0x2b8 itm_slt ELSE 0
+  READ_LONG 0x2bc itm_off ELSE 0
+  READ_LONG 0x2c0 num_itm ELSE 0
+  INSERT_BYTES itm_off + 0x14*num_itm       0x14
+  WRITE_ASCIIE itm_off + 0x14*num_itm       "%itm_to_give%" #8
+  WRITE_SHORT  itm_off + 0x14*num_itm + 0xa Charge1
+  WRITE_SHORT  itm_off + 0x14*num_itm + 0xc Charge2
+  WRITE_SHORT  itm_off + 0x14*num_itm + 0xe Charge3
+  adjust = 0x14
+  itm_slt = itm_slt >= itm_off ? itm_slt + 0x14 : itm_slt
+  added = 0
+  PATCH_IF f_Equip BEGIN
+    ranged = 0
+    launcher = 0
+    no_thief = 0
+    no_mage = 0
+    INNER_ACTION BEGIN
+      COPY_EXISTING "%itm_to_give%.itm" override
+        LAUNCH_PATCH_MACRO read_itm_unusabilities
+        READ_SHORT 0x1c new_cat ELSE 0
+        LPF read_item_prof RET new_prof = f_Prof END
+        PATCH_IF new_cat = 2 OR new_cat = 12 BEGIN //Armor or shields
+          READ_LONG 0x6a fx_off
+          FOR (i=0;i<SHORT_AT 0x70;++i) BEGIN
+            READ_SHORT fx_off + 0x30*i       opcode
+            READ_SLONG fx_off + 0x30*i + 0x4 param1
+            READ_LONG  fx_off + 0x30*i + 0x8 param2
+            no_thief = (opcode = 144 AND param2 = 0) OR (opcode = 275 AND param1 <= "-50") OR (opcode = 59 AND param1 <= "-50") ? 1 : no_thief
+            no_mage = (opcode = 145 AND param2 = 0) OR (opcode = 60 AND param1 >= 40) ? 1 : no_mage
+          END
+        END
+        READ_LONG  0x64 ab_off ELSE 0x72
+        READ_SHORT 0x68 num_ab ELSE 0
+        FOR (i=0;i<num_ab;i+=1) BEGIN
+          READ_BYTE ab_off + 0x38*i ab_type ELSE 0
+          ranged = ab_type = 2 OR ab_type = 4 ? 1 : ranged
+          launcher = ab_type = 4 ? 1 : launcher
+        END
+      BUT_ONLY
+    END
+    add_itm = (riu_itm_flags1 BAND 16) = 0 AND !VARIABLE_IS_SET $cursed_item_list("%itm_to_give%") ? 1 : 0 //Not cursed
+    two_handed = (riu_itm_flags1 BAND 130) = 0 ? 0 : 1 //Two-handed or bow
+    FOR (i=0;i<37;i+=1) BEGIN
+      READ_SSHORT itm_slt + 0x2*i ref ELSE "-2"
+      SET $ref("%i%") = ref
+      PATCH_IF ref >= 0 BEGIN
+        READ_ASCII itm_off + 0x14*ref item ELSE flblank
+        TO_LOWER item
+        SPRINT $items("%i%") "%item%"
+      END ELSE BEGIN
+        SPRINT $items("%i%") flblank
+      END
+    END
+    PATCH_IF $ref(2) >= 0 AND (two_handed = 1 OR ranged = 1) BEGIN //Something in the shield slot
+      add_itm = two_handed = 1 ? 0 : add_itm //do not equip two-handed items
+      SPRINT item $items(2)
+      PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" AND add_itm = 1 BEGIN
+        INNER_ACTION BEGIN
+          COPY_EXISTING "%item%.itm" override
+            READ_BYTE 0x1c item_cat ELSE 0
+            add_itm = item_cat = 12 AND ranged = 1 ? add_itm : 0 //do not equip hurled weapons unless it's a shield
+          BUT_ONLY
+        END
+      END
+    END
+    PATCH_IF riu_category = 12 BEGIN //if new item is a shield, do not equip if there are two-handed weapons
+      FOR (i=9;i<13;i+=1) BEGIN
+        SPRINT item $items("%i%")
+        PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING "%item%.itm" override
+              READ_BYTE 0x18 flags5 ELSE 0
+            BUT_ONLY
+          END
+          add_itm = (flags5 BAND 130) = 0 ? add_itm : 0
+        END
+      END
+    END
+    //Determine which slots the item should be equipped in based on the category of the item.
+    LAUNCH_PATCH_MACRO define_itm_slot_range
+    LAUNCH_PATCH_MACRO define_cre_unusabilities
+    LAUNCH_PATCH_MACRO read_cre_profs
+    PATCH_IF VARIABLE_IS_SET $race_restriction("%itm_to_give%") BEGIN
+      add_itm = dcu_race = $race_restriction("%itm_to_give%") ? add_itm : 0
+    END
+    add_itm = no_thief AND (dcu_class = 4 OR dcu_class = 9 OR dcu_class = 10 OR dcu_class = 13 OR dcu_class = 15) ? 0 : add_itm //do not equip armor that disables thief skills on thieves
+    add_itm = no_mage AND (dcu_class = 1 OR dcu_class = 5 OR dcu_class = 7 OR dcu_class = 10 OR dcu_class = 13 OR dcu_class = 14 OR dcu_class = 17 OR dcu_class = 19) ? 0 : add_itm //do not equip armour that disables spellcasting on mages
+    add_itm = (dcu_race = 124 OR dcu_race = 125) AND lower_bound = 9 ? 0 : add_itm //Do not equip weapons on vampires or mind flayers
+    //Only proceed if the cre is not disallowed from using the item and if there is no other reason for not equipping it
+    PATCH_IF (riu_itm_unuse1 BAND dcu_cre_unuse1) = 0 AND (riu_itm_unuse2 BAND dcu_cre_unuse2) = 0 AND (riu_itm_unuse3 BAND dcu_cre_unuse3) = 0 AND (riu_itm_unuse4 BAND dcu_cre_unuse4) = 0 AND (riu_itm_kit_unuse1 BAND dcu_cre_kit_unuse1) = 0 AND (riu_itm_kit_unuse2 BAND dcu_cre_kit_unuse2) = 0 AND (riu_itm_kit_unuse3 BAND dcu_cre_kit_unuse3) = 0 AND (riu_itm_kit_unuse4 BAND dcu_cre_kit_unuse4) = 0 AND add_itm = 1 BEGIN
+      no_add = 0
+      FOR (i=lower_bound;i<upper_bound;i+=1) BEGIN
+        PATCH_IF $ref("%i%") = "-1" BEGIN
+          PATCH_IF VARIABLE_IS_SET $itemexcl("%itm_to_give%") BEGIN
+            FOR (j=0;j<21;j+=1) BEGIN
+              no_add = VARIABLE_IS_SET $itemexcl($items("%j%")) ? 1 : no_add
+            END
+          END
+          PATCH_IF launcher = 1 BEGIN //Do not equip two launchers of the same type
+            FOR (j=9;j<13;j+=1) BEGIN
+              SPRINT item $items("%j%")
+              PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
+                INNER_ACTION BEGIN
+                  COPY_EXISTING "%item%.itm" override
+                    READ_LONG  0x64 ab_off ELSE 0x72
+                    READ_SHORT 0x68 num_ab ELSE 0
+                    FOR (k=0;k<num_ab;k+=1) BEGIN
+                      READ_BYTE ab_off + 0x38*k ab_type ELSE 0
+                      PATCH_IF ab_type = 4 BEGIN
+                        LPF read_item_prof INT_VAR f_BG1_default = 15 f_BG2_default = 104 RET launcher_prof = f_Prof END
+                        no_add = launcher_prof = new_prof ? 1 : no_add
+                      END
+                    END
+                  BUT_ONLY
+                END
+              END
+            END
+          END
+          PATCH_IF no_add = 0 BEGIN
+            WRITE_SHORT itm_slt + 0x2*i num_itm
+            added = 1
+            i = upper_bound
+            f_Flags = lower_bound > 20 ? f_Flags : f_Flags | 2
+            FOR (j=lower_bound;j<upper_bound;++j) BEGIN //remove replacement items
+              PATCH_IF $ref("%j%") >= 0 AND VARIABLE_IS_SET $EVAL "%Source_Cre%_replace"($items("%j%")) BEGIN
+                SPRINT item $items("%j%")
+                no_delete = 0
+                PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
+                  INNER_ACTION BEGIN
+                    COPY_EXISTING "%item%.itm" override
+                      READ_BYTE  0x18 dflags ELSE 4
+                      READ_SHORT 0x1c old_cat ELSE 0
+                      LPF read_item_prof RET old_prof = f_Prof END
+                    BUT_ONLY
+                  END
+                  ranged_new = new_prof = 104 OR new_prof = 105 OR new_prof = 15 OR (new_prof = 89 AND BG1_STYLE_PROFS = 1) ? 1 : new_prof = 103 OR new_prof = 27 OR (new_prof = 95 AND new_cat = 27 AND BG1_STYLE_PROFS = 1) ? 2 : new_prof = 107 OR new_prof = 18 OR (new_prof = 95 AND new_cat = 18 AND BG1_STYLE_PROFS = 1) ? 3 : 0 //i=bow, 2=xbow, 3=sling, 0=other
+                  ranged_old = old_prof = 104 OR old_prof = 105 OR old_prof = 15 OR (old_prof = 89 AND BG1_STYLE_PROFS = 1) ? 1 : old_prof = 103 OR old_prof = 27 OR (old_prof = 95 AND old_cat = 27 AND BG1_STYLE_PROFS = 1) ? 2 : old_prof = 107 OR old_prof = 18 OR (old_prof = 95 AND old_cat = 18 AND BG1_STYLE_PROFS = 1) ? 3 : 0
+                  no_delete = ranged_new = ranged_old AND (dflags BAND 4) = 4 ? no_delete : 1
+                END
+                PATCH_IF no_delete = 0 BEGIN
+                  DELETE_BYTES itm_off + 0x14*$ref("%j%") 0x14
+                  --num_itm
+                  itm_slt = itm_slt > itm_off ? itm_slt - 0x14 : itm_slt
+                  adjust -= 0x14
+                  SPRINT $items("%j%") flblank
+                  FOR (k=0;k<37;++k) BEGIN
+                    READ_SSHORT itm_slt + 0x2*k refk
+                    ref = $ref("%j%")
+                    PATCH_IF refk > $ref("%j%") BEGIN
+                      WRITE_SHORT itm_slt + 0x2*k refk - 1
+                    END
+                    SET $ref("%k%") = $ref("%k%") > $ref("%j%") ? $ref("%k%") - 1 : $ref("%k%")
+                  END
+                  SET $ref("%j%") = "-1"
+                  WRITE_SHORT itm_slt + 0x2*j "-1"
+                  //fix the selected weapon index if it was pointing at the removed weapon
+                  PATCH_IF lower_bound = 9 BEGIN
+                    READ_SHORT itm_slt + 0x2*38 selected
+                    PATCH_IF lower_bound + selected = j BEGIN
+                      FOR (q = lower_bound; q < upper_bound; ++q) BEGIN
+                        READ_SSHORT itm_slt + 0x2*q ref
+                        PATCH_IF ref >= 0 BEGIN
+                          WRITE_SHORT itm_slt + 0x2*38 q - lower_bound
+                          q = upper_bound
+                        END
+                      END
+                    END
+                  END
+                END
+              END
+            END
+          END
+        END
+      END
+      PATCH_IF added = 0 AND lower_bound < 21 BEGIN //If we couldn't just add the item, try to swap it in
+        FOR (i=lower_bound;i<upper_bound;i+=1) BEGIN
+          no_swap = 0
+          PATCH_IF VARIABLE_IS_SET $itemexcl("%itm_to_give%") BEGIN //Do not swap in a itemexcl item if there is another itemexcl item equipped, unless we are swapping out the other item
+            FOR (j=0;j<21;j+=1) BEGIN
+              no_swap = VARIABLE_IS_SET $itemexcl($item("%j%")) AND j != i ? 1 : no_swap
+            END
+          END
+          SPRINT item $items("%i%")
+          PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
+            READ_BYTE itm_off + 0x14*$ref("%i%") + 0x10 cre_itm_flags1 ELSE 8
+            INNER_ACTION BEGIN
+              COPY_EXISTING "%item%.itm" override
+                READ_BYTE 0x18 flags5 ELSE 16
+                READ_SHORT 0x1c old_cat ELSE 0
+                LPF read_item_prof RET old_prof = f_Prof END
+              BUT_ONLY
+            END
+            ranged_new = new_prof = 104 OR new_prof = 105 OR new_prof = 15 OR (new_prof = 89 AND BG1_STYLE_PROFS = 1) ? 1 : new_prof = 103 OR new_prof = 27 OR (new_prof = 95 AND new_cat = 27 AND BG1_STYLE_PROFS = 1) ? 2 : new_prof = 107 OR new_prof = 18 OR (new_prof = 95 AND new_cat = 18 AND BG1_STYLE_PROFS = 1) ? 3 : 0 //i=bow, 2=xbow, 3=sling, 0=other
+            ranged_old = old_prof = 104 OR old_prof = 105 OR old_prof = 15 OR (old_prof = 89 AND BG1_STYLE_PROFS = 1) ? 1 : old_prof = 103 OR old_prof = 27 OR (old_prof = 95 AND old_cat = 27 AND BG1_STYLE_PROFS = 1) ? 2 : old_prof = 107 OR old_prof = 18 OR (old_prof = 95 AND old_cat = 18 AND BG1_STYLE_PROFS = 1) ? 3 : 0
+            no_swap = ranged_new = ranged_old ? no_swap : 1
+            no_swap = (flags5 BAND 64) = 64 AND !VARIABLE_IS_SET $itm_rank("%item%") ? 1 : no_swap //Do not swap out unranked magical items
+            PATCH_IF VARIABLE_IS_SET $itm_rank("%itm_to_give%") AND VARIABLE_IS_SET $itm_rank("%item%") BEGIN //Do not swap out better items
+              no_swap = $itm_rank("%itm_to_give%") < $itm_rank("%item%") AND lower_bound != 9 ? 1 : no_swap
+              PATCH_IF lower_bound = 9 BEGIN
+                no_swap = ($itm_rank("%itm_to_give%") + (3/2)*$rcp_prof("%new_prof%")) <= ($itm_rank("%item%") + (3/2)*$rcp_prof("%old_prof%")) ? 1 : no_swap
+              END
+            END
+            PATCH_IF (flags5 BAND 4) = 4 AND (cre_itm_flags1 BAND 10) = 0 AND no_swap = 0 BEGIN //If the item is not undroppable and hasn't been disallowed for swapping
+              PATCH_IF VARIABLE_IS_SET $EVAL "%Source_Cre%_replace"("%item%") BEGIN
+                DELETE_BYTES itm_off + 0x14*$ref("%i%") 0x14
+                itm_slt = itm_slt > itm_off ? itm_slt - 0x14 : itm_slt
+                adjust -= 0x14
+                --num_itm
+                SPRINT $items("%i%") flblank
+                FOR (k=0;k<37;++k) BEGIN
+                  READ_SSHORT itm_slt + 0x2*k refk
+                  PATCH_IF refk > $ref("%i%") BEGIN
+                    WRITE_SHORT itm_slt + 0x2*k refk - 1
+                  END
+                  SET $ref("%k%") = $ref("%k%") > $ref("%i%") ? $ref("%k%") - 1 : $ref("%k%")
+                END
+                SET $ref("%i%") = "-1"
+                WRITE_SHORT itm_slt + 0x2*i "-1"
+              END ELSE BEGIN
+                FOR (j=21;j<37;j+=1) BEGIN //Otherwise, place the old item in inventory
+                  PATCH_IF $ref("%j%") = "-1" BEGIN
+                    WRITE_SHORT itm_slt + 0x2*j $ref("%i%")
+                    j=37
+                  END
+                END
+              END
+              WRITE_SHORT itm_slt + 0x2*i num_itm
+              added = 1
+              f_Flags |= 2
+              i = upper_bound
+            END
+          END
+        END
+      END
+    END
+    PATCH_IF added = 1 AND lower_bound = 9 BEGIN //yet more bloat, select the highest ranked weapon, unless there are undroppable or unranked magical weapons
+      flags2 = 4
+      cre_flags = 0
+      READ_SHORT itm_slt + 0x2*38 selected ELSE "-2"
+      READ_SSHORT itm_slt + 0x2*(9 + selected) ref ELSE "-2"
+      PATCH_IF ref >= 0 BEGIN
+        READ_ASCII itm_off + 0x14*ref item ELSE flblank
+        READ_BYTE  itm_off + 0x14*ref + 0x10 cre_flags ELSE 8
+        PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" AND (cre_flags BAND 8) = 0 BEGIN
+          INNER_ACTION BEGIN
+            COPY_EXISTING "%item%.itm" override
+              READ_BYTE 0x18 flags2 ELSE 0
+            BUT_ONLY
+          END
+        END
+      END
+      PATCH_IF (flags2 BAND 4) = 4 AND (cre_flags BAND 8) = 0 BEGIN
+        highest = 0
+        write_ref = "-1"
+        weapon_ref = "-1"
+        FOR (i=lower_bound;i<upper_bound;i+=1) BEGIN
+          weapon_ref += 1
+          READ_SSHORT itm_slt + 0x2*i ref ELSE "-2"
+          PATCH_IF ref >= 0 BEGIN
+            READ_ASCII itm_off + 0x14*ref item ELSE flblank
+            READ_BYTE  itm_off + 0x14*ref + 0x10 cre_flags2 ELSE 8
+            flags2 = 4
+            PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
+              INNER_ACTION BEGIN
+                COPY_EXISTING "%item%.itm" override
+                  READ_BYTE 0x18 flags2 ELSE 4
+                  LPF read_item_prof RET prof = f_Prof END
+                BUT_ONLY
+              END
+              TO_LOWER item
+              PATCH_IF (cre_flags2 BAND 8) = 8 OR (flags2 BAND 4) = 0 OR (!VARIABLE_IS_SET $itm_rank("%item%") AND (flags2 BAND 64) = 64) BEGIN
+                i = upper_bound
+                write_ref = weapon_ref
+              END ELSE PATCH_IF VARIABLE_IS_SET $itm_rank("%item%") BEGIN
+                write_ref = highest < $itm_rank("%item%")*(3/2)*$rcp_prof("%prof%")
+                AND (prof != 103 AND prof != 27 AND !(prof = 95 AND BG1_STYLE_PROFS) OR ((prof = 103 OR prof = 27 OR (prof = 95 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2)) //Only select a ranged weapon if it's the best weapon you have and if your prof is >2
+                AND (prof != 104 AND prof != 15 AND !(prof = 89 AND BG1_STYLE_PROFS) OR ((prof = 104 OR prof = 15 OR (prof = 89 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
+                AND (prof != 105 AND prof != 15 AND !(prof = 89 AND BG1_STYLE_PROFS) OR ((prof = 105 OR prof = 15 OR (prof = 89 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
+                AND (prof != 107 AND prof != 18 AND !(prof = 95 AND BG1_STYLE_PROFS) OR ((prof = 107 OR prof = 18 OR (prof = 95 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
+                ? weapon_ref : write_ref
+                highest = highest < $itm_rank("%item%")*(3/2)*$rcp_prof("%prof%")
+                AND (prof != 103 AND prof != 27 AND !(prof = 95 AND BG1_STYLE_PROFS) OR ((prof = 103 OR prof = 27 OR (prof = 95 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
+                AND (prof != 104 AND prof != 15 AND !(prof = 89 AND BG1_STYLE_PROFS) OR ((prof = 104 OR prof = 15 OR (prof = 89 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
+                AND (prof != 105 AND prof != 15 AND !(prof = 89 AND BG1_STYLE_PROFS) OR ((prof = 105 OR prof = 15 OR (prof = 89 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2))
+                AND (prof != 107 AND prof != 18 AND !(prof = 95 AND BG1_STYLE_PROFS) OR ((prof = 107 OR prof = 18 OR (prof = 95 AND BG1_STYLE_PROFS)) AND $rcp_prof("%prof%") > 2)) //!(prof != 95 AND cat = 18 AND !BG1_STYLE_PROFS)
+                ? $itm_rank("%item%")*(3/2)*$rcp_prof("%prof%") : highest
+              END
+            END
+          END
+        END
+        PATCH_IF write_ref >= 0 BEGIN
+          WRITE_SHORT itm_slt + 0x2*38 write_ref
+        END
+      END
+    END
+    //ad-hoc fix: select the first weapon if no weapon is selected
+    READ_SHORT  itm_slt + 0x2*38 selected
+    READ_SSHORT itm_slt + 0x2*(9 + selected) ref ELSE "-2"
+    PATCH_IF ref = "-1" BEGIN
+      FOR (q = 9; q < 13; ++q) BEGIN
+        READ_SSHORT itm_slt + 0x2*q ref ELSE "-2"
+        PATCH_IF ref >= 0 BEGIN
+          WRITE_SHORT itm_slt + 0x2*38 q - 9
+          q = 13
+        END
+      END
+    END
+  END
+  PATCH_IF added = 0 BEGIN //If we were unable to equip it or swap it in, place the item in inventory
+    FOR (i=21;i<37;i+=1) BEGIN
+      READ_SSHORT itm_slt + 0x2*i ref ELSE "-2"
+      PATCH_IF ref = "-1" BEGIN
+        WRITE_SHORT itm_slt + 0x2*i num_itm
+        i = 37
+      END
+    END
+  END
+  WRITE_BYTE itm_off + 0x14*num_itm + 0x10 f_Flags
+  WRITE_LONG 0x2c0 num_itm + 1
+  PATCH_FOR_EACH off IN 0x2a0 0x2a8 0x2b0 0x2b8 0x2c4 BEGIN
+    READ_LONG off off_value ELSE 0
+    PATCH_IF (off_value > itm_off) OR (off_value = itm_off AND num_itm = 0) BEGIN
+      WRITE_LONG off off_value + adjust
+    END
+  END
+END
+
+DEFINE_PATCH_MACRO define_itm_slot_range BEGIN
+  lower_bound = riu_category = 1 ? 6 : riu_category = 2 ? 1 : riu_category = 3 ? 7 : riu_category = 4 ? 8 : riu_category = 6 ? 3 : riu_category = 7 ? 0 : riu_category = 10 ? 4 : riu_category = 12 ? 2 : riu_category = 15 OR riu_category = 27 OR riu_category = 25 OR riu_category = 17 OR riu_category = 23 OR riu_category = 22 OR riu_category = 16 OR riu_category = 30 OR riu_category = 26 OR riu_category = 19 OR riu_category = 20 OR riu_category = 21 OR riu_category = 18 OR riu_category = 29 ? 9 : riu_category = 32 ? 17 : riu_category = 35 ? 18 : 21
+  upper_bound = riu_category = 1 ? 7 : riu_category = 2 ? 2 : riu_category = 3 ? 8 : riu_category = 4 ? 9 : riu_category = 6 ? 4 : riu_category = 7 ? 1 : riu_category = 10 ? 6 : riu_category = 12 ? 3 : riu_category = 15 OR riu_category = 27 OR riu_category = 25 OR riu_category = 17 OR riu_category = 23 OR riu_category = 22 OR riu_category = 16 OR riu_category = 30 OR riu_category = 26 OR riu_category = 19 OR riu_category = 20 OR riu_category = 21 OR riu_category = 18 OR riu_category = 29 ? 13 : riu_category = 32 ? 18 : riu_category = 35 ? 21 : 37
+END
+
+DEFINE_PATCH_MACRO read_cre_profs BEGIN
+  READ_BYTE 0x6e rcp_large ELSE 0
+  READ_BYTE 0x6f rcp_small ELSE 0
+  READ_BYTE 0x70 rcp_bow   ELSE 0
+  READ_BYTE 0x71 rcp_spear ELSE 0
+  READ_BYTE 0x72 rcp_blunt ELSE 0
+  READ_BYTE 0x73 rcp_spike ELSE 0
+  READ_BYTE 0x74 rcp_axe   ELSE 0
+  READ_BYTE 0x75 rcp_miss  ELSE 0
+  SET BG1_STYLE_PROFS = 0
+  PATCH_IF (BG1 = 1 AND Tutu = 0 AND BGT = 0) AND !GAME_IS ~bgee~ BEGIN //BG1
+    PATCH_FOR_EACH rcp_prof IN 22 23 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_spike
+    END
+    PATCH_FOR_EACH rcp_prof IN 17 21 26 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_blunt
+    END
+    SET $rcp_prof(25) = rcp_axe
+    SET $rcp_prof(15) = rcp_bow
+    PATCH_FOR_EACH rcp_prof IN 16 19 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_small
+    END
+    PATCH_FOR_EACH rcp_prof IN 24 18 27 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_miss
+    END
+    PATCH_FOR_EACH rcp_prof IN 30 29 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_spear
+    END
+    SET $rcp_prof(20) = rcp_large
+  END ELSE PATCH_IF MOD_IS_INSTALLED bg2_tweaks.tp2 2161 OR MOD_IS_INSTALLED bg2_tweaks.tp2 2162 BEGIN //BG1-style proficiency
+    SET BG1_STYLE_PROFS = 1
+    SET $rcp_prof(89) = rcp_bow
+    SET $rcp_prof(90) = rcp_spike
+    SET $rcp_prof(91) = rcp_small
+    SET $rcp_prof(92) = rcp_large
+    SET $rcp_prof(93) = rcp_axe
+    SET $rcp_prof(94) = rcp_blunt
+    SET $rcp_prof(95) = rcp_miss
+    SET $rcp_prof(96) = rcp_spear
+  END ELSE BEGIN //BG2 proficiency
+    PATCH_FOR_EACH rcp_prof IN 89 90 93 94 95 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_large
+    END
+    PATCH_FOR_EACH rcp_prof IN 91 96 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_small
+    END
+    PATCH_FOR_EACH rcp_prof IN 97 115 101 102 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_blunt
+    END
+    PATCH_FOR_EACH rcp_prof IN 104 105 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_bow
+    END
+    PATCH_FOR_EACH rcp_prof IN 103 106 107 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_miss
+    END
+    PATCH_FOR_EACH rcp_prof IN 98 99 BEGIN
+      SET $rcp_prof("%rcp_prof%") = rcp_spear
+    END
+    SET $rcp_prof(92) = rcp_axe
+    SET $rcp_prof(100) = rcp_spike
+  END
+  READ_LONG 0x2c4 rcp_fx_off ELSE 0
+  READ_LONG 0x2c8 rcp_num_fx ELSE 0
+  FOR (rcp1=0;rcp1<rcp_num_fx;rcp1+=1) BEGIN
+    READ_LONG rcp_fx_off + 0x108*i + 0x8  rcp_fx_type ELSE 999
+    READ_LONG rcp_fx_off + 0x108*i + 0x14 rcp_param1 ELSE 0
+    READ_LONG rcp_fx_off + 0x108*i + 0x18 rcp_param2 ELSE 0
+    PATCH_IF rcp_fx_type = 233 BEGIN
+      SET $rcp_prof("%rcp_param2%") = rcp_param1
+    END
+  END
+END
+
+DEFINE_PATCH_MACRO read_itm_unusabilities BEGIN
+  READ_BYTE  0x18 riu_itm_flags1 ELSE 0
+  READ_SHORT 0x1c riu_category ELSE 0
+  READ_BYTE  0x1e riu_itm_unuse1 ELSE 0
+  READ_BYTE  0x1f riu_itm_unuse2 ELSE 0
+  READ_BYTE  0x20 riu_itm_unuse3 ELSE 0
+  READ_BYTE  0x21 riu_itm_unuse4 ELSE 0
+  READ_BYTE  0x29 riu_itm_kit_unuse1 ELSE 0
+  READ_BYTE  0x2b riu_itm_kit_unuse2 ELSE 0
+  READ_BYTE  0x2d riu_itm_kit_unuse3 ELSE 0
+  READ_BYTE  0x2f riu_itm_kit_unuse4 ELSE 0
+END
+
+DEFINE_PATCH_MACRO define_cre_unusabilities BEGIN //Tedious monkey-work. What we are doing here is constructing unusability bytes based on the cre in order to compare them to the unusability bytes of the item, so we don't equip mages with two-handed swords and what have you.
+  READ_LONG 0x244 dcu_kit ELSE 0
+  READ_BYTE 0x272 dcu_race ELSE 0
+  READ_BYTE 0x273 dcu_class ELSE 0
+  READ_BYTE 0x27b dcu_alignment ELSE 0
+  dcu_cre_unuse1 = 0
+  dcu_cre_unuse2 = 0
+  dcu_cre_unuse3 = 0
+  dcu_cre_unuse4 = 0
+  dcu_cre_kit_unuse1 = 0
+  dcu_cre_kit_unuse2 = 0
+  dcu_cre_kit_unuse3 = 0
+  dcu_cre_kit_unuse4 = 0
+  dcu_cre_unuse1 = dcu_alignment = 17 ? 0b00010100 : dcu_alignment = 33 ? 0b00100100 : dcu_alignment = 49 ? 0b00000101 : dcu_alignment = 18 ? 0b00011000 : dcu_alignment = 34 ? 0b00101000 : dcu_alignment = 50 ? 0b0001001 : dcu_alignment = 19 ? 0b00010010 : dcu_alignment = 35 ? 0b00100010 : dcu_alignment = 51 ? 0b00000011 : dcu_cre_unuse1
+  dcu_cre_unuse1 = dcu_class = 5 ? dcu_cre_unuse1 BOR 0b01000000 : dcu_class = 3 ? dcu_cre_unuse1 BOR 0b10000000 : dcu_cre_unuse1
+  dcu_cre_unuse2 = dcu_class = 17 ? 0b10000000 : dcu_class = 8 ? 0b01000000 : dcu_class = 7 ? 0b00100000 : dcu_class = 16 ? 0b00010000 : dcu_class = 2 ? 0b00001000 : dcu_class = 18 ? 0b00000100 : dcu_class = 15 ? 0b00000010 : dcu_class = 14 ? 0b00000001 : dcu_cre_unuse2
+  dcu_cre_unuse3 = dcu_class = 10 ? 0b00000001 : dcu_class = 9 ? 0b00000010 : dcu_class = 1 ? 0b00000100 : dcu_class = 13 ? 0b00001000 : dcu_class = 6 ? 0b00010000 : dcu_class = 12 ? 0b00100000 : dcu_class = 4 ? 0b01000000 : dcu_cre_unuse3
+  dcu_cre_unuse3 = dcu_race = 2 ? dcu_cre_unuse3 BOR 0b10000000 : dcu_cre_unuse3
+  dcu_cre_unuse4 = dcu_race = 4 ? 0b00000001 : dcu_race = 3 ? 0b00000010 : dcu_race = 5 ? 0b00000100 : dcu_race = 1 ? 0b00001000 : dcu_race = 6 ? 0b00010000 : dcu_race = 7 ? 0b10000000 : dcu_cre_unuse4
+  dcu_cre_unuse4 = dcu_class = 20 ? dcu_cre_unuse4 BOR 0b00100000 : dcu_class = 11 ? dcu_cre_unuse4 BOR 0b01000000 : dcu_cre_unuse4
+  dcu_cre_kit_unuse1 = dcu_kit = 0x40130000 ? 0b00000001 : dcu_kit = 0x40140000 ? 0b00000010 : dcu_kit = 0x40150000 ? 0b00000100 : dcu_kit = 0x40100000 ? 0b00001000 : dcu_kit = 0x40110000 ? 0b00010000 : dcu_kit = 0x40120000 ? 0b00100000 : dcu_kit = 0x00004000 ? 0b01000000 : dcu_kit = 0x00008000 ? 0b10000000 : dcu_cre_kit_unuse1
+  dcu_cre_kit_unuse2 = dcu_kit = 0x40080000 ? 0b00000001 : dcu_kit = 0x40090000 ? 0b00000010 : dcu_kit = 0x400a0000 ? 0b00000100 : dcu_kit = 0x400b0000 ? 0b00001000 : dcu_kit = 0x400c0000 ? 0b00010000 : dcu_kit = 0x400d0000 ? 0b00100000 : dcu_kit = 0x400e0000 ? 0b01000000 : dcu_kit = 0x400f0000 ? 0b10000000 : dcu_cre_kit_unuse2
+  dcu_cre_kit_unuse3 = dcu_kit = 0x01000000 ? 0b00000001 : dcu_kit = 0x02000000 ? 0b00000010 : dcu_kit = 0x04000000 ? 0b00000100 : dcu_kit = 0x08000000 ? 0b00001000 : dcu_kit = 0x10000000 ? 0b00010000 : dcu_kit = 0x20000000 ? 0b00100000 : dcu_kit = 0x40070000 ? 0b10000000 : dcu_cre_kit_unuse3
+  dcu_cre_kit_unuse3 = dcu_kit != 0 AND dcu_kit != 0x40000000 ? dcu_cre_kit_unuse3 BOR 0b01000000 : dcu_cre_kit_unuse3
+  dcu_cre_kit_unuse4 = dcu_kit = 0x40010000 ? 0b00000001 : dcu_kit = 0x40020000 ? 0b00000010 : dcu_kit = 0x40030000 ? 0b00000100 : dcu_kit = 0x40040000 ? 0b00001000 : dcu_kit = 0x40050000 ? 0b00010000 : dcu_kit = 0x40060000 ? 0b00100000 : dcu_kit = 0x00400000 ? 0b01000000 : dcu_kit = 0x00800000 ? 0b10000000 : dcu_cre_kit_unuse4
+END
+
+DEFINE_PATCH_FUNCTION read_item_prof INT_VAR f_BG1_default = 20 f_BG2_default = 90 RET f_Prof BEGIN
+  PATCH_IF BG1 = 1 AND Tutu = 0 AND BGT = 0 AND !GAME_IS ~bgee~ BEGIN
+    READ_SHORT 0x1c f_Prof ELSE f_BG1_default
+  END ELSE BEGIN
+    READ_BYTE  0x31 f_Prof ELSE f_BG2_default
+  END
+END
