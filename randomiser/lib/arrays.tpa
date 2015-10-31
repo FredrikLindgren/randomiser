@@ -125,7 +125,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       LAUNCH_PATCH_MACRO create_loc_array
   END
   
-  COPY - "randomiser/lists/item_tra_blpool.2da" "...randomiser/fl-inlined/blpool_item_tra.2da"
+  COPY - "randomiser/lists/tra/blpool.2da" "...randomiser/fl-inlined/tra/blpool.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -135,7 +135,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $blpool_item_tra("%item%") = tra
     END
 
-  COPY - "randomiser/lists/item_tra_ppdjinn.2da" "...randomiser/fl-inlined/ppdjinn_item_tra.2da"
+  COPY - "randomiser/lists/tra/ppdjinn.2da" "...randomiser/fl-inlined/tra/ppdjinn.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -145,7 +145,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $ppdjinn_item_tra("%item%") = tra
     END
     
-  COPY - "randomiser/lists/item_tra_ddwell.2da" "...randomiser/fl-inlined/ddwell_item_tra.2da"
+  COPY - "randomiser/lists/tra/ddwell.2da" "...randomiser/fl-inlined/tra/ddwell.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -155,7 +155,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $ddwell_item_tra("%item%") = tra
     END
   
-  COPY - "randomiser/lists/item_tra_gorcamb.2da" "...randomiser/fl-inlined/gorcamb_item_tra.2da"
+  COPY - "randomiser/lists/tra/gorcamb.2da" "...randomiser/fl-inlined/tra/gorcamb.2da"
     COUNT_2DA_ROWS 4 num_row
     FOR (i=0;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 4 item
@@ -171,7 +171,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $gorcamb_say2("%item%") = say2
     END
   
-  COPY - "randomiser/lists/item_tra_jugjer01.2da" "...randomiser/fl-inlined/jugjer01_item_tra.2da"
+  COPY - "randomiser/lists/tra/jugjer01.2da" "...randomiser/fl-inlined/tra/jugjer01.2da"
     COUNT_2DA_ROWS 3 num_row
     FOR (i=0;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 3 item
@@ -184,7 +184,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $jugjer01_say2("%item%") = say2
     END
     
-  COPY - "randomiser/lists/item_tra_gorlum.2da" "...randomiser/fl-inlined/gorlum_item_tra.2da"
+  COPY - "randomiser/lists/tra/gorlum.2da" "...randomiser/fl-inlined/tra/gorlum.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -194,7 +194,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $gorlum_item_tra("%item%") = tra
     END
   
-  COPY - "randomiser/lists/item_tra_uhmay01.2da" "randomiser/fl-inlined/item_tra_uhmay01.2da"
+  COPY - "randomiser/lists/tra/uhmay01.2da" "randomiser/fl-inlined/tra/uhmay01.2da"
     COUNT_2DA_ROWS 8 num_row
     FOR (i=0;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 8 item
@@ -294,7 +294,7 @@ ACTION_IF BG1 = 1 BEGIN
   COPY - "randomiser/lists/bg1_duplicates.2da" "...randomiser/fl-inlined/bg1_duplicates.2da"
     LAUNCH_PATCH_MACRO create_duplicate_array
     
-  COPY - "randomiser/lists/item_tra_aldeth.2da" "...randomiser/fl-inlined/item_tra_aldeth.2da"
+  COPY - "randomiser/lists/tra/aldeth.2da" "...randomiser/fl-inlined/tra/aldeth.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=0;i<num_row;++i) BEGIN
       READ_2DA_ENTRY i 0 2 item
