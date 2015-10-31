@@ -59,53 +59,6 @@ COPY - "randomiser/lists/no_random.2da" "...randomiser/fl-inlined/no_random.2da"
     END
   END
 
-ACTION_IF BGT = 1 BEGIN
-  COPY - "randomiser/lists/bgt_compat_itm.2da" "...randomiser/fl-inlined/bgt_compat_itm.2da"
-    COUNT_2DA_ROWS 2 num_rows
-    FOR (i=0;i<num_rows;i+=1) BEGIN
-      READ_2DA_ENTRY i 0 2 item
-      READ_2DA_ENTRY i 1 2 bgtitem
-      TO_LOWER item
-      TO_LOWER bgtitem
-      SPRINT $bgt_compat_itm_array("%item%") "%bgtitem%"
-    END
-
-  OUTER_SPRINT bgt_compat_cre_regexp ""
-  COPY - "randomiser/lists/bgt_compat_cre.2da" "...randomiser/fl-inlined/bgt_compat_cre.2da"
-    COUNT_2DA_ROWS 2 num_rows
-    FOR (i=0;i<num_rows;i+=1) BEGIN
-      READ_2DA_ENTRY i 0 2 cre
-      READ_2DA_ENTRY i 1 2 bgtcre
-      TO_LOWER cre
-      TO_LOWER bgtcre
-      SPRINT bgt_compat_cre_regexp "%bgt_compat_cre_regexp%"^"%cre%\|"
-      SPRINT $bgt_compat_cre_array("%cre%") "%bgtcre%"
-    END
-    INNER_PATCH_SAVE bgt_compat_cre_regexp "%bgt_compat_cre_regexp%" BEGIN
-      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "%cre%\|" "%cre%"
-    END
-
-  COPY - "randomiser/lists/bgt_compat_are.2da" "...randomiser/fl-inlined/bgt_compat_are.2da"
-    COUNT_2DA_ROWS 2 num_rows
-    FOR (i=0;i<num_rows;i+=1) BEGIN
-      READ_2DA_ENTRY i 0 2 bg1are
-      READ_2DA_ENTRY i 1 2 bgtare
-      TO_LOWER bg1are
-      TO_LOWER bgtare
-      SPRINT $bgt_compat_are_array("%bg1are%") "%bgtare%"
-    END
-END
-
-ACTION_IF Tutu = 1 BEGIN
-  COPY - "randomiser/lists/tutu_compat_itm.2da" "...randomiser/fl-inlined/tutu_compat_itm.2da"
-    COUNT_2DA_ROWS 1 num_row
-    FOR (i = 0; i < num_row; ++i) BEGIN
-      READ_2DA_ENTRY i 0 1 entry
-      TO_LOWER entry
-      SET $tutu_compat_itm_array("%entry%") = 1
-    END
-END
-
 COPY - "randomiser/lists/cursed_items.2da" "...randomiser/fl-inlined/cursed_items.2da"
   COUNT_2DA_ROWS 1 num_row
   FOR (i=0;i<num_row;i+=1) BEGIN
