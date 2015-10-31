@@ -327,18 +327,16 @@ REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME gromnir.itm @109002
 
 BEGIN @110100 SUBCOMPONENT @110000 DESIGNATED 10100                                                                    //Remove all scrolls of Protection from Undead from stores
 
-  OUTER_SPRINT itm_to_del "%TUTU_VAR%scrl09"
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
-    LAUNCH_PATCH_MACRO del_sto_itm
+    LPF DELETE_STORE_ITEM STR_VAR item_to_delete = EVAL "%TUTU_VAR%scrl09" END
   BUT_ONLY
 
 
 BEGIN @110200 SUBCOMPONENT @110000 DESIGNATED 10200                                                                    //Remove Prot from Undead scrolls from 9 out of 10 stores
 
-  OUTER_SPRINT itm_to_del "%TUTU_VAR%scrl09"
   COPY_EXISTING_REGEXP GLOB ".*\.sto$" override
     PATCH_IF RANDOM(1 100) < 90 BEGIN
-      LAUNCH_PATCH_MACRO del_sto_itm
+      LPF DELETE_STORE_ITEM STR_VAR item_to_delete = EVAL "%TUTU_VAR%scrl09" END
     END
   BUT_ONLY
   

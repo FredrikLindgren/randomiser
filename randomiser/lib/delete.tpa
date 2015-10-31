@@ -40,7 +40,7 @@ ACTION_PHP_EACH item_array AS entry => int BEGIN
         END
         ACTION_IF "%duplicate_source%" STRING_MATCHES_REGEXP ".*\.sto$" = 0 BEGIN
           COPY_EXISTING "%duplicate_source%" override
-            LAUNCH_PATCH_MACRO del_sto_itm
+            LPF DELETE_STORE_ITEM STR_VAR item_to_delete = EVAL "%itm_to_del%" END
           BUT_ONLY
         END
       END

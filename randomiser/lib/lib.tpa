@@ -101,33 +101,6 @@ DEFINE_PATCH_MACRO del_sto_itm_stuff BEGIN //Requires %itm_to_del%, %cre% and %i
   END
 END
 
-DEFINE_PATCH_MACRO del_sto_itm BEGIN //Requires %itm_to_del%, takes regexps
-  READ_LONG 0x34 dsi_sal_off ELSE 0
-  READ_LONG 0x38 dsi_num_itm ELSE 0
-  dsi_adjust = 0
-  FOR (dsi1=0;dsi1<dsi_num_itm;dsi1+=1) BEGIN
-    READ_ASCII dsi_sal_off + 0x1c*dsi1 dsi_item ELSE blank
-    PATCH_IF "%dsi_item%" STRING_MATCHES_REGEXP "%itm_to_del%" = 0 BEGIN
-      DELETE_BYTES dsi_sal_off + 0x1c*dsi1 0x1c
-      dsi_num_itm -= 1
-      dsi1 -= 1
-      WRITE_LONG 0x38 dsi_num_itm
-      dsi_adjust -= 0x1c
-    END
-  END
-  SET $dsi_offset(0) = 0x2c
-  SET $dsi_offset(1) = 0x4c
-  SET $dsi_offset(2) = 0x70
-  FOR(dsi1=0;dsi1<3;dsi1+=1) BEGIN
-    dsi_address = $dsi_offset("%dsi1%")
-    READ_LONG dsi_address dsi_offset ELSE 0
-    PATCH_IF dsi_offset > dsi_sal_off BEGIN
-      dsi_offset += dsi_adjust
-      WRITE_LONG dsi_address dsi_offset
-    END
-  END
-END
-
 DEFINE_PATCH_MACRO del_are_itm_stuff BEGIN
   dais_deleted = 0
 
