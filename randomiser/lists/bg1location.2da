@@ -1,232 +1,232 @@
-Location Tier Target           Area   Ident Comment
+Location Tier Target           Area   Ident Chance Comment
 
-1        24   container1       ar5500 bf    formerly star sapphire, mount gibberling
-2        24   container1       ar1401 b2    ankheg
-3        24   container1       ar2101 x     cloakwood spider nest
-4        24   neira.cre        ar4801 x
-5        24   container1       ar5400 b23   nashkel mine exterior
-6        24   container13      ar3321 b9    Travenhurst manor
-7        24   container6       ar5001 x     valley of the tombs, tomb interior
-8        24   container7       ar4800 b1f   formerly ankheg plate, nashkel
-9        24   container1       ar5500 b20   formerly ring of fire resistance, mount gibberling
-10       24   container4       ar5001 b1    valley of tombs, tomb interior
-11       24   container1       ar5202 b7    formerly cave with halberd +1
-12       24   hairto.cre       ar5100 bd
-13       24   denak.cre        ar3000 b5
+1        24   container1       ar5500 bf    100    formerly star sapphire, mount gibberling
+2        24   container1       ar1401 b2    100    ankheg
+3        24   container1       ar2101 x     100    cloakwood spider nest
+4        24   neira.cre        ar4801 x     100
+5        24   container1       ar5400 b23   100    nashkel mine exterior
+6        24   container13      ar3321 b9    100    Travenhurst manor
+7        24   container6       ar5001 x     100    valley of the tombs, tomb interior
+8        24   container7       ar4800 b1f   100    formerly ankheg plate, nashkel
+9        24   container1       ar5500 b20   100    formerly ring of fire resistance, mount gibberling
+10       24   container4       ar5001 b1    100    valley of tombs, tomb interior
+11       24   container1       ar5202 b7    100    formerly cave with halberd +1
+12       24   hairto.cre       ar5100 bd    100
+13       24   denak.cre        ar3000 b5    100
 
-1        25   container1       ar5102 bc    formerly manual of CHA
-2        25   container4       ar1803 x     davaeron's lair
-3        25   knightsk.cre     ar5201 x     Firewine, undead knight
-4        25   container1       ar1401 b13   ankheg pit
-5        25   container1       ar2615 b14   candlekeep catacombs, first area, pile of bodies
-6        25   zargal.cre       ar3700 b21   known knobgoblin
-7        25   container1       ar4701 b6    formerly cave with morning star +1, by xvart village
-8        25   bassil.cre       ar3700 be
-9        25   container9       ar1900 x     bandit camp, locked chest at 1710x825
-10       25   meilum.cre       ar4500 x
-11       25   container1       ar4501 x     cloakwood wyvern cave
-12       25   container1       ar4101 x     archeological site interior
-13       25   teynga.cre       ar4200 x     bandit trio by lake
-14       25   jalant.cre       ar0609 x     Jalantha Mistmyr (T of Umberlee)
-15       25   throne.flg       ar0615 x     Iron Throne flunkies
-16       25   container1       ar3601 x     pirate cave
-17       25   canto.cre        ar4400 x     Ioin Gallchobhair, lonely peaks
-18       25   silke.cre        ar3300 ba
-19       25   mine.flg         ar1800 x
-20       25   mulahe.cre       ar5405 x
+1        25   container1       ar5102 bc    100    formerly manual of CHA
+2        25   container4       ar1803 x     100    davaeron's lair
+3        25   knightsk.cre     ar5201 x     100    Firewine, undead knight
+4        25   container1       ar1401 b13   100    ankheg pit
+5        25   container1       ar2615 b14   100    candlekeep catacombs, first area, pile of bodies
+6        25   zargal.cre       ar3700 b21   100    known knobgoblin
+7        25   container1       ar4701 b6    100    formerly cave with morning star +1, by xvart village
+8        25   bassil.cre       ar3700 be    100
+9        25   container9       ar1900 x     100    bandit camp, locked chest at 1710x825
+10       25   meilum.cre       ar4500 x     100
+11       25   container1       ar4501 x     100    cloakwood wyvern cave
+12       25   container1       ar4101 x     100    archeological site interior
+13       25   teynga.cre       ar4200 x     100    bandit trio by lake
+14       25   jalant.cre       ar0609 x     100    Jalantha Mistmyr (T of Umberlee)
+15       25   throne.flg       ar0615 x     100    Iron Throne flunkies
+16       25   container1       ar3601 x     100    pirate cave
+17       25   canto.cre        ar4400 x     100    Ioin Gallchobhair, lonely peaks
+18       25   silke.cre        ar3300 ba    100
+19       25   mine.flg         ar1800 x     100
+20       25   mulahe.cre       ar5405 x     100
 
-1        26   container2       ar2615 b1d   candlekeep catacombs, formerly manual of WIS
-2        26   container1       ar2101 b22   cloakwood spider nest
-3        26   container1       ar5405 x     mulahey's chest
-4        26   container6       ar5001 b2b   valley of tombs, tomb interior
-5        26   zhents.flg       ar0704 b1b   Paty of 4, SS
-6        26   jardak.cre       ar0011 x
-7        26   resar.cre        ar0153 x     Mage jerk in Thieves' Guild
-8        26   tranzi.cre       ar3352 x
-9        26   mutami.cre       ar3500 x     Mutamin
-10       26   natash.cre       ar1802 x     Natasha, CW mines
-11       26   mine.flg         ar1800 b16   Cloakwood mines exterior
-12       26   william.cre      ar0704 x     Party of 4 in Sorcerous Sundries
-13       26   silke.cre        ar3300 x
-14       26   denak.cre        ar3000 x     Denak, Spider Wood
-15       26   kirian.cre       ar3500 b15
-16       26   mine.flg         ar1800 x     mine
-17       26   mulahe.cre       ar5405 b17
-18       26   davaeo.cre       ar1803 b18
-19       26   taugos.cre       ar1900 x
-20       26   zal.cre          ar5300 b19
-21       26   ardeno.cre       ar1900 x     Ardernor Crush
-22       26   bgsendai.flg     ar5300 b1a
+1        26   container2       ar2615 b1d   100    candlekeep catacombs, formerly manual of WIS
+2        26   container1       ar2101 b22   100    cloakwood spider nest
+3        26   container1       ar5405 x     100    mulahey's chest
+4        26   container6       ar5001 b2b   100    valley of tombs, tomb interior
+5        26   zhents.flg       ar0704 b1b   100    Party of 4, SS
+6        26   jardak.cre       ar0011 x     100
+7        26   resar.cre        ar0153 x     100    Mage jerk in Thieves' Guild
+8        26   tranzi.cre       ar3352 x     100
+9        26   mutami.cre       ar3500 x     100    Mutamin
+10       26   natash.cre       ar1802 x     100    Natasha, CW mines
+11       26   mine.flg         ar1800 b16   100    Cloakwood mines exterior
+12       26   william.cre      ar0704 x     100    Party of 4 in Sorcerous Sundries
+13       26   silke.cre        ar3300 x     100
+14       26   denak.cre        ar3000 x     100    Denak, Spider Wood
+15       26   kirian.cre       ar3500 b15   100
+16       26   mine.flg         ar1800 x     100    mine
+17       26   mulahe.cre       ar5405 b17   100
+18       26   davaeo.cre       ar1803 b18   100
+19       26   taugos.cre       ar1900 x     100
+20       26   zal.cre          ar5300 b19   100
+21       26   ardeno.cre       ar1900 x     100    Ardernor Crush
+22       26   bgsendai.flg     ar5300 b1a   100
 
-1        27   mutami.cre       ar3500 x
-2        27   container1       ar3601 b2a   pirate cave
-3        27   container10      ar1803 b11   davaeron's
-4        27   container8       ar0138 b1c   formerly manual of INT
-5        27   arkion.cre       ar0805 x
-6        27   container3       ar1111 x     Sunin's
-7        27   ragefa.cre       ar0126 x
-8        27   davaeo.cre       ar1803 b1e
-9        27   container10      ar1803 x     davaeron's chest
-10       27   ogrmba.cre       ar0226 x     Sewer ogre
-11       27   container3       ar0603 x     Seven Suns basement
-12       27   schlum.cre       ar0224 x     Schlumpsha
-13       27   degrod.cre       ar0161 x     Degrodel
-14       27   ogrema02.cre     ar5201 x     Firewine ruins, Ogre Mage
-15       27   void.flg         ar0134 b24   Desreta and friend
-16       27   container9       ar0138 b25   Desk in Ramazith's abode
-17       27   killers.flg      ar0112 b26
-18       27   killers.flg      ar0112 x
-19       27   container2       ar0608 x     FF compound, second floor
-20       27   container2       ar2615 b27
+1        27   mutami.cre       ar3500 x     100
+2        27   container1       ar3601 b2a   100    pirate cave
+3        27   container10      ar1803 b11   100    davaeron's
+4        27   container8       ar0138 b1c   100    formerly manual of INT
+5        27   arkion.cre       ar0805 x     100
+6        27   container3       ar1111 x     100    Sunin's
+7        27   ragefa.cre       ar0126 x     100
+8        27   davaeo.cre       ar1803 b1e   100
+9        27   container10      ar1803 x     100    davaeron's chest
+10       27   ogrmba.cre       ar0226 x     100    Sewer ogre
+11       27   container3       ar0603 x     100    Seven Suns basement
+12       27   schlum.cre       ar0224 x     100    Schlumpsha
+13       27   degrod.cre       ar0161 x     100    Degrodel
+14       27   ogrema02.cre     ar5201 x     100    Firewine ruins, Ogre Mage
+15       27   void.flg         ar0134 b24   100    Desreta and friend
+16       27   container9       ar0138 b25   100    Desk in Ramazith's abode
+17       27   killers.flg      ar0112 b26   100
+18       27   killers.flg      ar0112 x     100
+19       27   container2       ar0608 x     100    FF compound, second floor
+20       27   container2       ar2615 b27   100
 
-1        28   container5       ar2615 b28   candlekeep catacombs, formerly tome or STR
-2        28   container5       ar2615 b29   candlekeep catacombs, formerly cloak of prot +2
-3        28   container1       ar0102 x     Silvershield estate
-4        28   pileofbodies     ar3901 x     Ulcaster dungeon
-5        28   lendar.cre       ar5201 x     Lendarn
-6        28   under.flg        ar0123 x     undercity
-7        28   under.flg        ar0123 x     undercity
-8        28   throne.flg       ar0615 x     iron throne
-9        28   killers.flg      ar0112 x     Slythe or Krystin
-10       28   throne.flg       ar0615 x     Iron Throne, top floor
-11       28   rielta.cre       ar2610 x     Rieltar, Candlekeep
-12       28   tuth.cre         ar2610 x     Tuth, Candlekeep
-13       28   container2       ar0128 x     Trading Coster, desk on second floor
-14       28   gretek.cre       ar0116 x     of the Maulers of the Undermountain
+1        28   container5       ar2615 b28   100    candlekeep catacombs, formerly tome or STR
+2        28   container5       ar2615 b29   100    candlekeep catacombs, formerly cloak of prot +2
+3        28   container1       ar0102 x     100    Silvershield estate
+4        28   pileofbodies     ar3901 x     100    Ulcaster dungeon
+5        28   lendar.cre       ar5201 x     100    Lendarn
+6        28   under.flg        ar0123 x     100    undercity
+7        28   under.flg        ar0123 x     100    undercity
+8        28   throne.flg       ar0615 x     100    iron throne
+9        28   killers.flg      ar0112 x     100    Slythe or Krystin
+10       28   throne.flg       ar0615 x     100    Iron Throne, top floor
+11       28   rielta.cre       ar2610 x     100    Rieltar, Candlekeep
+12       28   tuth.cre         ar2610 x     100    Tuth, Candlekeep
+13       28   container2       ar0128 x     100    Trading Coster, desk on second floor
+14       28   gretek.cre       ar0116 x     100    of the Maulers of the Undermountain
 
-1        29   slime15          ar0514 b30   totsc starts here, 1859x2862
-2        29   container9       ar0504 b31   durlag's, chest by rigglio
-3        29   container12      ar0511 x     504x1751
-4        29   slime16          ar0514 b37   1442x2622
-5        29   container2       ar1501 b2e   bad doggie ship, small, hidden, 221x513
-6        29   container1       ar1505 b35   dradeel's cabin
-7        29   chimneycontainer ar0500 b36   durlag's roof
-8        29   container1       ar0513 b32   statue in maze
-9        29   container36      ar0512 x     chest next to kiel's
-10       29   container3       ar1502 b2d   bad doggie ship, bracers of binding
-11       29   garan.cre        ar1009 x     
+1        29   slime15          ar0514 b30   100    totsc starts here, 1859x2862
+2        29   container9       ar0504 b31   100    durlag's, chest by rigglio
+3        29   container12      ar0511 x     100    504x1751
+4        29   slime16          ar0514 b37   100    1442x2622
+5        29   container2       ar1501 b2e   100    bad doggie ship, small, hidden, 221x513
+6        29   container1       ar1505 b35   100    dradeel's cabin
+7        29   chimneycontainer ar0500 b36   100    durlag's roof
+8        29   container1       ar0513 b32   100    statue in maze
+9        29   container36      ar0512 x     100    chest next to kiel's
+10       29   container3       ar1502 b2d   100    bad doggie ship, bracers of binding
+11       29   garan.cre        ar1009 x     100
 
-1        30   container23      ar0512 x     same container as the lvl 2 exit wardstone
-2        30   tellan.cre       ar1009 x
-3        30   container18      ar0511 b39   1044x2324
-4        30   crate01          ar0514 x     container by Clair
-5        30   container2       ar1502 b2f   323x414
-6        30   container10      ar0504 b2c   formerly tome of WIS
-7        30   chest01          ar0514 b3d   chest past the slime, formerly flame tongue
-8        30   andris.cre       ar1009 x
-9        30   container24      ar0512 x     kiel's chest
-10       30   islsir.cre       ar1500 x     sirine queen
-11       30   kirinh.cre       ar0505 b38   Kirinhale
+1        30   container23      ar0512 x     100    same container as the lvl 2 exit wardstone
+2        30   tellan.cre       ar1009 x     100
+3        30   container18      ar0511 b39   100    1044x2324
+4        30   crate01          ar0514 x     100    container by Clair
+5        30   container2       ar1502 b2f   100    323x414
+6        30   container10      ar0504 b2c   100    formerly tome of WIS
+7        30   chest01          ar0514 b3d   100    chest past the slime, formerly flame tongue
+8        30   andris.cre       ar1009 x     100
+9        30   container24      ar0512 x     100    kiel's chest
+10       30   islsir.cre       ar1500 x     100    sirine queen
+11       30   kirinh.cre       ar0505 b38   100    Kirinhale
 
-1        31   chest02          ar0514 b33   durlag's tower lvl 4, first chest past rune trap
-2        31   chest02          ar0514 b34   3016x719
-3        31   container2       ar1504 x     balduran's table, bad doggie ship
-4        31   container36      ar0514 x     durlag's vault, lvl 4
-5        31   chest01          ar0514 b3c   formerly staff of striking lvl 4
-6        31   king.cre         ar0506 b3f   chess
+1        31   chest02          ar0514 b33   100    durlag's tower lvl 4, first chest past rune trap
+2        31   chest02          ar0514 b34   100    3016x719
+3        31   container2       ar1504 x     100    balduran's table, bad doggie ship
+4        31   container36      ar0514 x     100    durlag's vault, lvl 4
+5        31   chest01          ar0514 b3c   100    formerly staff of striking lvl 4
+6        31   king.cre         ar0506 b3f   100    chess
 
-1        sa   arkush.cre       ar3600 bs1
-2        sa   red.flg          ar3000 bs2   red wizards
-3        sa   red.flg          ar3000 bs3
-4        sa   tarnes.cre       ar2300 bs6
-5        sa   narcil.cre       ar5000 bs7
-6        sa   jemby.cre        ar4200 bs8
-7        sa   mutami.cre       ar3500 x
-8        sa   zordra.cre       ar4906 bs9
-9        sa   tarnes.cre       ar2300 x
-10       sa   tarnes.cre       ar2300 bsb
-11       sa   kirian.cre       ar3500 x
-12       sa   red.flg          ar3000 x
-13       sa   hareis.cre       ar1804 x
-14       sa   natash.cre       ar1802 x
-15       sa   bentha.cre       ar4906 x
-16       sa   container1       ar5405 bs4   mulahey's chest
-17       sa   container1       ar5405 bs5   mulahey's chest
-18       sa   arkush.cre       ar3600 bsc
-19       sa   narcil.cre       ar5000 x
-20       sa   mutami.cre       ar3500 x
+1        sa   arkush.cre       ar3600 bs1   100
+2        sa   red.flg          ar3000 bs2   100    red wizards
+3        sa   red.flg          ar3000 bs3   100
+4        sa   tarnes.cre       ar2300 bs6   100
+5        sa   narcil.cre       ar5000 bs7   100
+6        sa   jemby.cre        ar4200 bs8   100
+7        sa   mutami.cre       ar3500 x     100
+8        sa   zordra.cre       ar4906 bs9   100
+9        sa   tarnes.cre       ar2300 x     100
+10       sa   tarnes.cre       ar2300 bsb   100
+11       sa   kirian.cre       ar3500 x     100
+12       sa   red.flg          ar3000 x     100
+13       sa   hareis.cre       ar1804 x     100
+14       sa   natash.cre       ar1802 x     100
+15       sa   bentha.cre       ar4906 x     100
+16       sa   container1       ar5405 bs4   100    mulahey's chest
+17       sa   container1       ar5405 bs5   100    mulahey's chest
+18       sa   arkush.cre       ar3600 bsc   100
+19       sa   narcil.cre       ar5000 x     100
+20       sa   mutami.cre       ar3500 x     100
 
-1        sb   arkush.cre       ar3600 bsd
-2        sb   hareis.cre       ar1804 bse
-3        sb   natash.cre       ar1802 bsf
-4        sb   tarnes.cre       ar2300 x
-5        sb   container11      ar2609 bs16
-6        sb   container1       ar1901 bs17  main test, chest
-7        sb   red.flg          ar3000 bs18
-8        sb   red.flg          ar3000 x
-9        sb   mutami.cre       ar3500 bs19
-10       sb   narcil.cre       ar5000 bs1c
-11       sb   jemby.cre        ar4200 bs1b
-12       sb   throne.flg       ar0615 bs4e
-13       sb   container7       ar1803 bs1f
-14       sb   container12      ar1803 bs20
-15       sb   natash.cre       ar1802 bs1e
-16       sb   container9       ar1803 bs10
-17       sb   container13      ar2611 bs13
-18       sb   container4       ar2610 bs14
-19       sb   zhents.flg       ar0704 bs1a
-20       sb   hareis.cre       ar1804 bs1d
-21       sb   container10      ar1803 bs21
-22       sb   zhents.flg       ar0704 x
-23       sb   container1       ar1901 bs15
-24       sb   container11      ar1803 bs11
-25       sb   container4       ar1803 bs12
+1        sb   arkush.cre       ar3600 bsd   100
+2        sb   hareis.cre       ar1804 bse   100
+3        sb   natash.cre       ar1802 bsf   100
+4        sb   tarnes.cre       ar2300 x     100
+5        sb   container11      ar2609 bs16  100
+6        sb   container1       ar1901 bs17  100    main test, chest
+7        sb   red.flg          ar3000 bs18  100
+8        sb   red.flg          ar3000 x     100
+9        sb   mutami.cre       ar3500 bs19  100
+10       sb   narcil.cre       ar5000 bs1c  100
+11       sb   jemby.cre        ar4200 bs1b  100
+12       sb   throne.flg       ar0615 bs4e  100
+13       sb   container7       ar1803 bs1f  100
+14       sb   container12      ar1803 bs20  100
+15       sb   natash.cre       ar1802 bs1e  100
+16       sb   container9       ar1803 bs10  100
+17       sb   container13      ar2611 bs13  100
+18       sb   container4       ar2610 bs14  100
+19       sb   zhents.flg       ar0704 bs1a  100
+20       sb   hareis.cre       ar1804 bs1d  100
+21       sb   container10      ar1803 bs21  100
+22       sb   zhents.flg       ar0704 x     100
+23       sb   container1       ar1901 bs15  100
+24       sb   container11      ar1803 bs11  100
+25       sb   container4       ar1803 bs12  100
 
-1        sc   krysti.cre       ar0112 bs22
-2        sc   degrod.cre       ar0161 bs23
-3        sc   hareis.cre       ar1804 bs24
-4        sc   natash.cre       ar1802 bs25
-5        sc   narcil.cre       ar5000 bs26
-6        sc   krysti.cre       ar0112 bs27
-7        sc   wiven.cre        ar1101 bs28
-8        sc   throne.flg       ar0615 bs29
-9        sc   hareis.cre       ar1804 bs2a
-10       sc   cythan.cre       ar0615 x
-11       sc   drelik.cre       ar0010 bs2c
-12       sc   nevill.cre       ar4600 bs2d
-13       sc   container28      ar1802 bs2e
-14       sc   container7       ar1900 bs2f
-15       sc   container2       ar1907 bs30
-16       sc   container3       ar0615 bs31
-17       sc   container2       ar2613 bs32
-18       sc   container5       ar0144 bs33
-19       sc   container1       ar1401 bs34
-20       sc   container1       ar1401 bs35
-21       sc   shaldr.cre       ar0123 x
+1        sc   krysti.cre       ar0112 bs22  100
+2        sc   degrod.cre       ar0161 bs23  100
+3        sc   hareis.cre       ar1804 bs24  100
+4        sc   natash.cre       ar1802 bs25  100
+5        sc   narcil.cre       ar5000 bs26  100
+6        sc   krysti.cre       ar0112 bs27  100
+7        sc   wiven.cre        ar1101 bs28  100
+8        sc   throne.flg       ar0615 bs29  100
+9        sc   hareis.cre       ar1804 bs2a  100
+10       sc   cythan.cre       ar0615 x     100
+11       sc   drelik.cre       ar0010 bs2c  100
+12       sc   nevill.cre       ar4600 bs2d  100
+13       sc   container28      ar1802 bs2e  100
+14       sc   container7       ar1900 bs2f  100
+15       sc   container2       ar1907 bs30  100
+16       sc   container3       ar0615 bs31  100
+17       sc   container2       ar2613 bs32  100
+18       sc   container5       ar0144 bs33  100
+19       sc   container1       ar1401 bs34  100
+20       sc   container1       ar1401 bs35  100
+21       sc   shaldr.cre       ar0123 x     100
 
-1        sd   throne.flg       ar0615 bs36
-2        sd   throne.flg       ar0615 bs37
-3        sd   garan.cre        ar1009 bs38
-4        sd   king.cre         ar0506 bs39
-5        sd   king.cre         ar0506 bs3a
-6        sd   container18      ar0511 bs3b
-7        sd   container10      ar0511 bs3c
-8        sd   container23      ar0512 bs3d
-9        sd   container26      ar0512 bs3e
-10       sd   ogrmba.cre       ar0226 x
-11       sd   container1       ar2613 bs40
-12       sd   container1       ar2613 bs41
-13       sd   container3       ar2613 bs42
-14       sd   container3       ar2613 bs43
-15       sd   krysti.cre       ar0112 x
-16       sd   container1       ar5300 x     hollow in ground
-17       sd   container11      ar1803 x     davaeron's chest
-18       sd   shaldr.cre       ar0123 x
-19       sd   cythan.cre       ar0615 x
-20       sd   resar.cre        ar0153 x
+1        sd   throne.flg       ar0615 bs36  100
+2        sd   throne.flg       ar0615 bs37  100
+3        sd   garan.cre        ar1009 bs38  100
+4        sd   king.cre         ar0506 bs39  100
+5        sd   king.cre         ar0506 bs3a  100
+6        sd   container18      ar0511 bs3b  100
+7        sd   container10      ar0511 bs3c  100
+8        sd   container23      ar0512 bs3d  100
+9        sd   container26      ar0512 bs3e  100
+10       sd   ogrmba.cre       ar0226 x     100
+11       sd   container1       ar2613 bs40  100
+12       sd   container1       ar2613 bs41  100
+13       sd   container3       ar2613 bs42  100
+14       sd   container3       ar2613 bs43  100
+15       sd   krysti.cre       ar0112 x     100
+16       sd   container1       ar5300 x     100    hollow in ground
+17       sd   container11      ar1803 x     100    davaeron's chest
+18       sd   shaldr.cre       ar0123 x     100
+19       sd   cythan.cre       ar0615 x     100
+20       sd   resar.cre        ar0153 x     100
 
-1        se   lendar.cre       ar5201 bs44
-2        se   container8       ar0511 bs45
-3        se   container25      ar0512 bs46
-4        se   container1       ar0513 bs47
-5        se   container1       ar0511 bs48
-6        se   container1       ar0513 bs49
-7        se   krysti.cre       ar0112 x
-8        se   throne.flg       ar0615 x
-9        se   cythan.cre       ar0615 x
-10       se   andris.cre       ar1009 x
-11       se   shaldr.cre       ar0123 x
-12       se   container11      ar1803 x     davaeorn's chest
-13       se   degrod.cre       ar0161 x
-14       se   queen.cre        ar0506 x
-15       se   droth.cre        ar3100 x
+1        se   lendar.cre       ar5201 bs44  100
+2        se   container8       ar0511 bs45  100
+3        se   container25      ar0512 bs46  100
+4        se   container1       ar0513 bs47  100
+5        se   container1       ar0511 bs48  100
+6        se   container1       ar0513 bs49  100
+7        se   krysti.cre       ar0112 x     100
+8        se   throne.flg       ar0615 x     100
+9        se   cythan.cre       ar0615 x     100
+10       se   andris.cre       ar1009 x     100
+11       se   shaldr.cre       ar0123 x     100
+12       se   container11      ar1803 x     100    davaeorn's chest
+13       se   degrod.cre       ar0161 x     100
+14       se   queen.cre        ar0506 x     100
+15       se   droth.cre        ar3100 x     100

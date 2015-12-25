@@ -1,284 +1,284 @@
-Location Tier Target        Area   Ident   Comment
+Location Tier Target        Area   Ident Chance   Comment
 
-w1       1    keep3.fl      ar1302 w1b     formerly hammer
-w2       1    kalah2.cre    ar0607 w2
-w3       1    bernard2.sto  ar0406 x
-w4       1    sahtreas.fl   ar2300 w4      Sahuagin treasury, sahkng01.dlg
-w5       1    grtomb01.cre  ar0802 w5      Skeleton warrior with Halcyon
-w6       1    ribald.sto    ar0702 x       Ribald's regular wares
-w7       1    ribald.sto    ar0702 x
-w8       1    gorch.sto     ar0302 w37
+w1       1    keep3.fl      ar1302 w1b   100      formerly hammer
+w2       1    kalah2.cre    ar0607 w2    100
+w3       1    bernard2.sto  ar0406 x     100
+w4       1    sahtreas.fl   ar2300 w4    100      Sahuagin treasury, sahkng01.dlg
+w5       1    grtomb01.cre  ar0802 w5    100      Skeleton warrior with Halcyon
+w6       1    ribald.sto    ar0702 x     100      Ribald's regular wares
+w7       1    ribald.sto    ar0702 x     100
+w8       1    gorch.sto     ar0302 w37   100
 
-w1       2    bernard2.sto  ar0406 x
-w2       2    keep1.fl      ar1302 w18     de'Arnise chapel (formerly Frostreaver)
-w3       2    ribald.sto    ar0702 x
-w4       2    ribald.sto    ar0702 x
-w5       2    cedruid2.cre  ar1900 w1f     Dalok
-w6       2    uhogre01.dlg  ar1100 we      Madulf
-w7       2    copper.fl     ar0406 wf      Reward from either Lehtinan or Hendak
-w8       2    firorc01.cre  ar1202 w34     DigDag
-w9       2    trmer04.sto   ar2001 x       Trademeet smithy
-w10      2    asysta01.bcs  ar1512 w3      Asylum item riddle
-w11      2    sculptor.fl   blank  w7     
+w1       2    bernard2.sto  ar0406 x     100
+w2       2    keep1.fl      ar1302 w18   100      de'Arnise chapel (formerly Frostreaver)
+w3       2    ribald.sto    ar0702 x     100
+w4       2    ribald.sto    ar0702 x     100
+w5       2    cedruid2.cre  ar1900 w1f   100      Dalok
+w6       2    uhogre01.dlg  ar1100 we    100      Madulf
+w7       2    copper.fl     ar0406 wf    100      Reward from either Lehtinan or Hendak
+w8       2    firorc01.cre  ar1202 w34   100      DigDag
+w9       2    trmer04.sto   ar2001 x     100      Trademeet smithy
+w10      2    asysta01.bcs  ar1512 w3    100      Asylum item riddle
+w11      2    sculptor.fl   blank  w7    100
 
-w1       3    aran1.fl      blank  w15     Aran
-w2       3    chapter3.fl   blank  x
-w3       3    trmer02.sto   ar2000 x       Trademeet merchant
-w4       3    ddwell.bcs    ar1202 wb      Well in Firkraag's
-w5       3    samia2.fl     ar1202 wd
-w6       3    ribald.sto    ar0702 x
-w7       3    ppdjinn.fl    ar1512 w9      Spellhold portal, sapphire reward
-w8       3    jugjer01.fl   ar1103 w12     jugjer01.cre, jugjer01.dlg
-w9       3    trgeni01.fl   ar2014 w13     cre and dlg
-w10      3    mgkhol01.dlg  ar0411 w14     Reward for sending Solamnic knights home, opened up for non-mage characters
-w11      3    draug.cre     ar0701 w32     Draug Fea
-w12      3    ppstat01.dlg  ar1512 wc      Asylum face riddles
-w13      3    trmer02.sto   ar2000 x
-w14      3    pptroll.fl    ar1514 w16     Painting-troll, spellhold
+w1       3    aran1.fl      blank  w15   100      Aran
+w2       3    chapter3.fl   blank  x     100
+w3       3    trmer02.sto   ar2000 x     100      Trademeet merchant
+w4       3    ddwell.bcs    ar1202 wb    100      Well in Firkraag's
+w5       3    samia2.fl     ar1202 wd    100
+w6       3    ribald.sto    ar0702 x     100
+w7       3    ppdjinn.fl    ar1512 w9    100      Spellhold portal, sapphire reward
+w8       3    jugjer01.fl   ar1103 w12   100      jugjer01.cre, jugjer01.dlg
+w9       3    trgeni01.fl   ar2014 w13   100      cre and dlg
+w10      3    mgkhol01.dlg  ar0411 w14   100      Reward for sending Solamnic knights home, opened up for non-mage characters
+w11      3    draug.cre     ar0701 w32   100      Draug Fea
+w12      3    ppstat01.dlg  ar1512 wc    100      Asylum face riddles
+w13      3    trmer02.sto   ar2000 x     100
+w14      3    pptroll.fl    ar1514 w16   100      Painting-troll, spellhold
 
-w1       4    uhrang01.cre  ar1400 w11     Merella
-w2       4    riftg03.dlg   ar0203 w17     Reward from Amunator upon returning Rift Device
-w3       4    uddrow23.sto  ar2200 x
-w4       4    loutcapt.fl   ar0514 w1a     Captain Dennis
-w5       4    keep2.fl      ar1302 w1      middle statue, troll keep, formerly bow
-w6       4    trhmer01.dlg  ar2007 w1d     Guildmistress Busya
-w7       4    udlesa.fl     ar2202 w1e     Lasaonar
-w8       4    uhmay01.fl    ar1104 w35     Umar Hills mayor reward
+w1       4    uhrang01.cre  ar1400 w11   100      Merella
+w2       4    riftg03.dlg   ar0203 w17   100      Reward from Amunator upon returning Rift Device
+w3       4    uddrow23.sto  ar2200 x     100
+w4       4    loutcapt.fl   ar0514 w1a   100      Captain Dennis
+w5       4    keep2.fl      ar1302 w1    100      middle statue, troll keep, formerly bow
+w6       4    trhmer01.dlg  ar2007 w1d   100      Guildmistress Busya
+w7       4    udlesa.fl     ar2202 w1e   100      Lasaonar
+w8       4    uhmay01.fl    ar1104 w35   100      Umar Hills mayor reward
 
-w1       5    templemess.fl blank  w8      Temple reward, special treatment necessary
-w2       5    chapter3.fl   blank  w39     a named vampire or shadow thief during chapter 3
-w3       5    tolger.fl     blank  w1c
-w4       5    uddrow24.sto  ar2200 x
-w5       5    ribald3.sto   ar0702 x
-w6       5    samia1.fl     ar1202 w10
-w7       5    ribald3.sto   ar0702 x       Ribald's special wares
-w8       5    uddoor.flg    ar2402 x
+w1       5    templemess.fl blank  w8    100      Temple reward, special treatment necessary
+w2       5    chapter3.fl   blank  w39   100      a named vampire or shadow thief during chapter 3
+w3       5    tolger.fl     blank  w1c   100
+w4       5    uddrow24.sto  ar2200 x     100
+w5       5    ribald3.sto   ar0702 x     100
+w6       5    samia1.fl     ar1202 w10   100
+w7       5    ribald3.sto   ar0702 x     100      Ribald's special wares
+w8       5    uddoor.flg    ar2402 x     100
 
-w1       6    aran2.fl      blank  w20     Aran
-w2       6    tadpoles1.fl  ar2300 w21     Sahuagin king
-w3       6    tadpoles2.fl  ar2300 w22     Sahuagin prince
-w4       6    tadpoles3.fl  ar2300 w23     Sahuagin king or prince
-w5       6    ppchest.fl    ar1514 w24     chest in golem room
-w6       6    ribald3.sto   ar0702 x
-w7       6    uddrow23.sto  ar2200 x
-w8       6    uddrow23.sto  ar2200 x
-w9       6    udsvir03.dlg  ar2100 w19     Goldander's reward
-w10      6    eggdealio.fl  blank  w33     either Adalon or demon
+w1       6    aran2.fl      blank  w20   100      Aran
+w2       6    tadpoles1.fl  ar2300 w21   100      Sahuagin king
+w3       6    tadpoles2.fl  ar2300 w22   100      Sahuagin prince
+w4       6    tadpoles3.fl  ar2300 w23   100      Sahuagin king or prince
+w5       6    ppchest.fl    ar1514 w24   100      chest in golem room
+w6       6    ribald3.sto   ar0702 x     100
+w7       6    uddrow23.sto  ar2200 x     100
+w8       6    uddrow23.sto  ar2200 x     100
+w9       6    udsvir03.dlg  ar2100 w19   100      Goldander's reward
+w10      6    eggdealio.fl  blank  w33   100      either Adalon or demon
 
-w1       7    udardul.cre   ar2201 w25
+w1       7    udardul.cre   ar2201 w25   100
 
-w1       10   spin621.spl   blank  w26     DoMT Key draw
-w2       10   yaga01.cre    ar5203 w27
-w3       10   gorcamb.fl    ar3015 w28     gambling cambion
-w4       10   yaga01.cre    ar5203 w29
-w5       10   sendai.cre    ar6108 w2a
-w6       10   sendai.cre    ar6108 x
-w7       10   gromnir.cre   ar5002 w2f
-w8       10   dragblue.cre  ar6005 w30
-w9       10   gorlum.fl     ar3017 w31
-w10      10   amtgen01.cre  ar6300 w36
+w1       10   spin621.spl   blank  w26   100      DoMT Key draw
+w2       10   yaga01.cre    ar5203 w27   100
+w3       10   gorcamb.fl    ar3015 w28   100      gambling cambion
+w4       10   yaga01.cre    ar5203 w29   100
+w5       10   sendai.cre    ar6108 w2a   100
+w6       10   sendai.cre    ar6108 x     100
+w7       10   gromnir.cre   ar5002 w2f   100
+w8       10   dragblue.cre  ar6005 w30   100
+w9       10   gorlum.fl     ar3017 w31   100
+w10      10   amtgen01.cre  ar6300 w36   100
 
-w1       11   senpri01.cre  ar6105 w2e     Diaytha
-w2       11   hgkar01.sto   ar6400 x
+w1       11   senpri01.cre  ar6105 w2e   100      Diaytha
+w2       11   hgkar01.sto   ar6400 x     100
 
-w1       12   ammayor.dlg   ar5500 w2b     Reward for saving Asana from Balthazar's mercs
-w2       12   amcler.fl     ar5500 w2c     Reward from the Priest of Waukeen in Amkethran
+w1       12   ammayor.dlg   ar5500 w2b   100      Reward for saving Asana from Balthazar's mercs
+w2       12   amcler.fl     ar5500 w2c   100      Reward from the Priest of Waukeen in Amkethran
 
-w1       13   fiends.fl     blank  w2d     Reward from either Tahazzar or Ka'rashur
+w1       13   fiends.fl     blank  w2d   100      Reward from either Tahazzar or Ka'rashur
 
-w1       fa   torgal.fl     ar1301 x
+w1       fa   torgal.fl     ar1301 x     100
 
-w1       s4   cdaemerc.sto  ar0020 sw47
-w2       s4   ppstor01.sto  ar1603 sw48
-w3       s4   scrolls.sto   ar0702 sw49
-w4       s4   trmer04.sto   ar2001 sw4a
-w5       s4   trthf02.sto   ar2000 sw4b
-w6       s4   bshop01.sto   ar0500 sw4c
-w7       s4   trcar04.sto   ar2015 sw4d
-w8       s4   uddrow25.sto  ar2200 sw4e
-w9       s4   udduer02.sto  ar2100 sw4f
-w10      s4   udsvir05.sto  ar2100 sw50
-w11      s4   bshop01.sto   ar0500 sw51
-w12      s4   ribald.sto    ar0702 sw52
-w13      s4   trcar04.sto   ar2015 sw53
-w14      s4   uddrow25.sto  ar2200 sw54
-w15      s4   udduer02.sto  ar2100 sw55
-w16      s4   udsvir05.sto  ar2100 sw56
-w17      s4   uddrow23.sto  ar2200 sw57
-w18      s4   bshop01.sto   ar0500 sw58
-w19      s4   shop08.sto    ar0700 sw59
-w20      s4   trcar04.sto   ar2015 sw5a
-w21      s4   trmer04.sto   ar2001 sw5b
-w22      s4   uddrow25.sto  ar2200 sw5c
-w23      s4   bmthief.sto   ar0305 sw5d
-w24      s4   garlena.sto   ar3000 sw5e
-w25      s4   sahpr1.sto    ar2300 sw5f
-w26      s4   garlena.sto   ar3000 sw60
-w27      s4   sahpr1.sto    ar2300 sw61
-w28      s4   scrolls.sto   ar0702 sw62
-w29      s4   shop08.sto    ar0700 sw63
-w30      s4   shop08.sto    ar0700 sw64
-w31      s4   sahpr1.sto    ar2300 sw65
-w32      s4   scrolls.sto   ar0702 sw66
-w33      s4   shop08.sto    ar0700 sw67
-w34      s4   arled.sto     ar0312 sw68
-w35      s4   scrolls.sto   ar0702 sw69
-w36      s4   shop08.sto    ar0700 sw6a
-w37      s4   bshop01.sto   ar0500 sw6b
-w38      s4   trcar04.sto   ar2015 sw6c
-w39      s4   uddrow25.sto  ar2200 sw6d
-w40      s4   udduer02.sto  ar2100 sw6e
-w41      s4   udsvir05.sto  ar2100 sw6f
-w42      s4   kalah2.cre    ar0607 sw7c
-w43      s4   kalah2.cre    ar0607 x
-w44      s4   borinall.cre  ar0417 x
-w45      s4   neb.cre       ar0529 x
-w46      s4   sevpat.flg    ar0712 x
-w47      s4   sevpat.flg    ar0712 x
-w48      s4   sevpat.flg    ar0712 x
-w49      s4   nevaziah.cre  ar0802 x
-w50      s4   nevaziah.cre  ar0802 x
-w51      s4   kpsham01.cre  ar1303 x
-w52      s4   kpsham01.cre  ar1303 x
-w53      s4   trrak.flg     ar1902 x
-w54      s4   trrak.flg     ar1902 x
-w55      s4   dgmag01.cre   ar1900 x
-w56      s4   dcowl1.cre    ar0317 x
-w57      s4   thugs.flg     ar0701 x 
-w58      s4   ironpot.flg   ar0411 x
-w59      s4   tolger2.cre   ar0412 x
+w1       s4   cdaemerc.sto  ar0020 sw47  100
+w2       s4   ppstor01.sto  ar1603 sw48  100
+w3       s4   scrolls.sto   ar0702 sw49  100
+w4       s4   trmer04.sto   ar2001 sw4a  100
+w5       s4   trthf02.sto   ar2000 sw4b  100
+w6       s4   bshop01.sto   ar0500 sw4c  100
+w7       s4   trcar04.sto   ar2015 sw4d  100
+w8       s4   uddrow25.sto  ar2200 sw4e  100
+w9       s4   udduer02.sto  ar2100 sw4f  100
+w10      s4   udsvir05.sto  ar2100 sw50  100
+w11      s4   bshop01.sto   ar0500 sw51  100
+w12      s4   ribald.sto    ar0702 sw52  100
+w13      s4   trcar04.sto   ar2015 sw53  100
+w14      s4   uddrow25.sto  ar2200 sw54  100
+w15      s4   udduer02.sto  ar2100 sw55  100
+w16      s4   udsvir05.sto  ar2100 sw56  100
+w17      s4   uddrow23.sto  ar2200 sw57  100
+w18      s4   bshop01.sto   ar0500 sw58  100
+w19      s4   shop08.sto    ar0700 sw59  100
+w20      s4   trcar04.sto   ar2015 sw5a  100
+w21      s4   trmer04.sto   ar2001 sw5b  100
+w22      s4   uddrow25.sto  ar2200 sw5c  100
+w23      s4   bmthief.sto   ar0305 sw5d  100
+w24      s4   garlena.sto   ar3000 sw5e  100
+w25      s4   sahpr1.sto    ar2300 sw5f  100
+w26      s4   garlena.sto   ar3000 sw60  100
+w27      s4   sahpr1.sto    ar2300 sw61  100
+w28      s4   scrolls.sto   ar0702 sw62  100
+w29      s4   shop08.sto    ar0700 sw63  100
+w30      s4   shop08.sto    ar0700 sw64  100
+w31      s4   sahpr1.sto    ar2300 sw65  100
+w32      s4   scrolls.sto   ar0702 sw66  100
+w33      s4   shop08.sto    ar0700 sw67  100
+w34      s4   arled.sto     ar0312 sw68  100
+w35      s4   scrolls.sto   ar0702 sw69  100
+w36      s4   shop08.sto    ar0700 sw6a  100
+w37      s4   bshop01.sto   ar0500 sw6b  100
+w38      s4   trcar04.sto   ar2015 sw6c  100
+w39      s4   uddrow25.sto  ar2200 sw6d  100
+w40      s4   udduer02.sto  ar2100 sw6e  100
+w41      s4   udsvir05.sto  ar2100 sw6f  100
+w42      s4   kalah2.cre    ar0607 sw7c  100
+w43      s4   kalah2.cre    ar0607 x     100
+w44      s4   borinall.cre  ar0417 x     100
+w45      s4   neb.cre       ar0529 x     100
+w46      s4   sevpat.flg    ar0712 x     100
+w47      s4   sevpat.flg    ar0712 x     100
+w48      s4   sevpat.flg    ar0712 x     100
+w49      s4   nevaziah.cre  ar0802 x     100
+w50      s4   nevaziah.cre  ar0802 x     100
+w51      s4   kpsham01.cre  ar1303 x     100
+w52      s4   kpsham01.cre  ar1303 x     100
+w53      s4   trrak.flg     ar1902 x     100
+w54      s4   trrak.flg     ar1902 x     100
+w55      s4   dgmag01.cre   ar1900 x     100
+w56      s4   dcowl1.cre    ar0317 x     100
+w57      s4   thugs.flg     ar0701 x     100
+w58      s4   ironpot.flg   ar0411 x     100
+w59      s4   tolger2.cre   ar0412 x     100
 
-w1       s5   garlena.sto   ar3000 sw36
-w2       s5   shop08.sto    ar0700 sw37
-w3       s5   garlena.sto   ar3000 sw38
-w4       s5   garlena.sto   ar3000 sw39
-w5       s5   shop08.sto    ar0700 sw3a
-w6       s5   cdaemerc.sto  ar0020 sw3b
-w7       s5   ppstor01.sto  ar1603 sw3c
-w8       s5   scrolls.sto   ar0702 sw3d
-w9       s5   trmer04.sto   ar2001 sw3e
-w10      s5   trthf02.sto   ar2000 sw3f
-w11      s5   ribald.sto    ar0702 sw40
-w12      s5   bshop01.sto   ar0500 sw41
-w13      s5   trcar04.sto   ar2015 sw42
-w14      s5   uddrow25.sto  ar2200 sw43
-w15      s5   udduer02.sto  ar2100 sw44
-w16      s5   udsvir05.sto  ar2100 sw45
-w17      s5   garlena.sto   ar3000 sw46
-w18      s5   bshop01.sto   ar0500 sw70
-w19      s5   trcar04.sto   ar2015 sw71
-w20      s5   uddrow25.sto  ar2200 sw72
-w21      s5   udduer01.sto  ar2100 sw73
-w22      s5   udsvir05.sto  ar2100 sw74
-w23      s5   udtrap03.cre  ar2100 x
-w24      s5   nevaziah.cre  ar0802 x
-w25      s5   trrak.flg     ar1902 x
-w26      s5   dgmag01.cre   ar1900 x
-w27      s5   pirmur07.cre  ar1610 x
-w28      s5   lavok02.cre   ar0400 x
-w29      s5   dcowl1.cre    ar0317 x
+w1       s5   garlena.sto   ar3000 sw36  100
+w2       s5   shop08.sto    ar0700 sw37  100
+w3       s5   garlena.sto   ar3000 sw38  100
+w4       s5   garlena.sto   ar3000 sw39  100
+w5       s5   shop08.sto    ar0700 sw3a  100
+w6       s5   cdaemerc.sto  ar0020 sw3b  100
+w7       s5   ppstor01.sto  ar1603 sw3c  100
+w8       s5   scrolls.sto   ar0702 sw3d  100
+w9       s5   trmer04.sto   ar2001 sw3e  100
+w10      s5   trthf02.sto   ar2000 sw3f  100
+w11      s5   ribald.sto    ar0702 sw40  100
+w12      s5   bshop01.sto   ar0500 sw41  100
+w13      s5   trcar04.sto   ar2015 sw42  100
+w14      s5   uddrow25.sto  ar2200 sw43  100
+w15      s5   udduer02.sto  ar2100 sw44  100
+w16      s5   udsvir05.sto  ar2100 sw45  100
+w17      s5   garlena.sto   ar3000 sw46  100
+w18      s5   bshop01.sto   ar0500 sw70  100
+w19      s5   trcar04.sto   ar2015 sw71  100
+w20      s5   uddrow25.sto  ar2200 sw72  100
+w21      s5   udduer01.sto  ar2100 sw73  100
+w22      s5   udsvir05.sto  ar2100 sw74  100
+w23      s5   udtrap03.cre  ar2100 x     100
+w24      s5   nevaziah.cre  ar0802 x     100
+w25      s5   trrak.flg     ar1902 x     100
+w26      s5   dgmag01.cre   ar1900 x     100
+w27      s5   pirmur07.cre  ar1610 x     100
+w28      s5   lavok02.cre   ar0400 x     100
+w29      s5   dcowl1.cre    ar0317 x     100
 
-w1       s6   jayes.sto     ar0700 sw1c
-w2       s6   jayes.sto     ar0700 sw1d
-w3       s6   uddrow25.sto  ar2200 sw1e
-w4       s6   ppstor01.sto  ar1603 sw1f
-w5       s6   cdaemerc.sto  ar0020 sw20
-w6       s6   trthf02.sto   ar2000 sw21
-w7       s6   cdaemerc.sto  ar0020 sw22
-w8       s6   ppstor01.sto  ar1603 sw23
-w9       s6   trthf02.sto   ar2000 sw24
-w10      s6   udduer02.sto  ar2100 sw25
-w11      s6   bernard2.sto  ar0406 sw26
-w12      s6   uddrow25.sto  ar2200 sw27
-w13      s6   trcar04.sto   ar2015 sw28
-w14      s6   bshop01.sto   ar0500 sw29
-w15      s6   udduer01.sto  ar2100 sw2a
-w16      s6   bshop01.sto   ar0500 sw2b
-w17      s6   trcar04.sto   ar2015 sw2c
-w18      s6   trmer04.sto   ar2001 sw2d
-w19      s6   udduer01.sto  ar2100 sw2e
-w20      s6   sahpr1.sto    ar2300 sw2f
-w21      s6   trmer04.sto   ar2001 sw31
-w22      s6   udsvir05.sto  ar2100 sw32
-w23      s6   udduer02.sto  ar2100 sw33
-w24      s6   udsvir05.sto  ar2100 sw34
-w25      s6   udduer02.sto  ar2100 sw35
-w26      s6   udduer01.sto  ar2100 sw75
-w27      s6   trmer04.sto   ar2001 sw76
-w28      s6   jayes.sto     ar0700 sw77
-w29      s6   uddrow25.sto  ar2200 sw79
-w30      s6   udduer01.sto  ar2100 sw7a
-w31      s6   udduer02.sto  ar2100 sw7b
-w32      s6   udtrap02.cre  ar2100 x
-w33      s6   udtrap03.cre  ar2100 sw7e
-w34      s6   udtrap04.cre  ar2100 sw7d
-w35      s6   chapter3.fl   blank  x
-w36      s6   ironpot.flg   ar0411 x
-w37      s6   ironpot.flg   ar0411 x
-w38      s6   thugs.flg     ar0701 x
-w39      s6   mindal01.cre  ar0711 x
-w40      s6   mindal01.cre  ar0711 x
-w41      s6   grvlch01.cre  ar0082 x
-w42      s6   grvlch01.cre  ar0082 x
-w43      s6   goons.flg     ar0530 x
-w44      s6   goons.flg     ar0530 x
-w45      s6   pwarden.cre   ar0516 x
-w46      s6   pwarden.cre   ar0516 x
-w47      s6   shadra01.cre  ar1402 x
-w48      s6   shadra01.cre  ar1402 x
-w49      s6   backstab.flg  ar1202 x
-w50      s6   backstab.flg  ar1202 x
-w51      s6   firkra02.cre  ar1203 x
-w52      s6   ppcowled.cre  ar1605 x
-w53      s6   pirmur07.cre  ar1610 x
-w54      s6   ppworker.cre  ar1515 x
-w55      s6   jarlich.cre   ar2207 x
-w56      s6   lavok02.cre   ar0400 x
+w1       s6   jayes.sto     ar0700 sw1c  100
+w2       s6   jayes.sto     ar0700 sw1d  100
+w3       s6   uddrow25.sto  ar2200 sw1e  100
+w4       s6   ppstor01.sto  ar1603 sw1f  100
+w5       s6   cdaemerc.sto  ar0020 sw20  100
+w6       s6   trthf02.sto   ar2000 sw21  100
+w7       s6   cdaemerc.sto  ar0020 sw22  100
+w8       s6   ppstor01.sto  ar1603 sw23  100
+w9       s6   trthf02.sto   ar2000 sw24  100
+w10      s6   udduer02.sto  ar2100 sw25  100
+w11      s6   bernard2.sto  ar0406 sw26  100
+w12      s6   uddrow25.sto  ar2200 sw27  100
+w13      s6   trcar04.sto   ar2015 sw28  100
+w14      s6   bshop01.sto   ar0500 sw29  100
+w15      s6   udduer01.sto  ar2100 sw2a  100
+w16      s6   bshop01.sto   ar0500 sw2b  100
+w17      s6   trcar04.sto   ar2015 sw2c  100
+w18      s6   trmer04.sto   ar2001 sw2d  100
+w19      s6   udduer01.sto  ar2100 sw2e  100
+w20      s6   sahpr1.sto    ar2300 sw2f  100
+w21      s6   trmer04.sto   ar2001 sw31  100
+w22      s6   udsvir05.sto  ar2100 sw32  100
+w23      s6   udduer02.sto  ar2100 sw33  100
+w24      s6   udsvir05.sto  ar2100 sw34  100
+w25      s6   udduer02.sto  ar2100 sw35  100
+w26      s6   udduer01.sto  ar2100 sw75  100
+w27      s6   trmer04.sto   ar2001 sw76  100
+w28      s6   jayes.sto     ar0700 sw77  100
+w29      s6   uddrow25.sto  ar2200 sw79  100
+w30      s6   udduer01.sto  ar2100 sw7a  100
+w31      s6   udduer02.sto  ar2100 sw7b  100
+w32      s6   udtrap02.cre  ar2100 x     100
+w33      s6   udtrap03.cre  ar2100 sw7e  100
+w34      s6   udtrap04.cre  ar2100 sw7d  100
+w35      s6   chapter3.fl   blank  x     100
+w36      s6   ironpot.flg   ar0411 x     100
+w37      s6   ironpot.flg   ar0411 x     100
+w38      s6   thugs.flg     ar0701 x     100
+w39      s6   mindal01.cre  ar0711 x     100
+w40      s6   mindal01.cre  ar0711 x     100
+w41      s6   grvlch01.cre  ar0082 x     100
+w42      s6   grvlch01.cre  ar0082 x     100
+w43      s6   goons.flg     ar0530 x     100
+w44      s6   goons.flg     ar0530 x     100
+w45      s6   pwarden.cre   ar0516 x     100
+w46      s6   pwarden.cre   ar0516 x     100
+w47      s6   shadra01.cre  ar1402 x     100
+w48      s6   shadra01.cre  ar1402 x     100
+w49      s6   backstab.flg  ar1202 x     100
+w50      s6   backstab.flg  ar1202 x     100
+w51      s6   firkra02.cre  ar1203 x     100
+w52      s6   ppcowled.cre  ar1605 x     100
+w53      s6   pirmur07.cre  ar1610 x     100
+w54      s6   ppworker.cre  ar1515 x     100
+w55      s6   jarlich.cre   ar2207 x     100
+w56      s6   lavok02.cre   ar0400 x     100
 
-w1       s7   udduer01.sto  ar2100 sw10
-w2       s7   uddrow25.sto  ar2200 sw11
-w3       s7   uddrow25.sto  ar2200 sw12
-w4       s7   udduer02.sto  ar2100 sw13
-w5       s7   udduer01.sto  ar2100 sw14
-w6       s7   uddrow25.sto  ar2200 sw15
-w8       s7   bernard2.sto  ar0406 sw16
-w9       s7   uddrow25.sto  ar2200 sw17
-w10      s7   udduer02.sto  ar2100 sw18
-w11      s7   uddrow25.sto  ar2200 sw19
-w12      s7   udduer01.sto  ar2100 sw1a
-w13      s7   bernard2.sto  ar0406 sw1b
-w14      s7   udduer01.sto  ar2100 sw78
-w15      s7   udtrap04.cre  ar2100 sw7f
-w16      s7   chapter3.fl   blank  x
-w17      s7   dcowl1.cre    ar0317 x
-w18      s7   mage18z.cre   blank  x
-w19      s7   bheye.cre     ar0705 x
-w20      s7   hllich.cre    ar0526 x
-w21      s7   hlshade.cre   ar0202 x
-w22      s7   firkra02.cre  ar1203 x
-w23      s7   dragblac.cre  ar2807 x
-w24      s7   dragblac.cre  ar2807 x
+w1       s7   udduer01.sto  ar2100 sw10  100
+w2       s7   uddrow25.sto  ar2200 sw11  100
+w3       s7   uddrow25.sto  ar2200 sw12  100
+w4       s7   udduer02.sto  ar2100 sw13  100
+w5       s7   udduer01.sto  ar2100 sw14  100
+w6       s7   uddrow25.sto  ar2200 sw15  100
+w8       s7   bernard2.sto  ar0406 sw16  100
+w9       s7   uddrow25.sto  ar2200 sw17  100
+w10      s7   udduer02.sto  ar2100 sw18  100
+w11      s7   uddrow25.sto  ar2200 sw19  100
+w12      s7   udduer01.sto  ar2100 sw1a  100
+w13      s7   bernard2.sto  ar0406 sw1b  100
+w14      s7   udduer01.sto  ar2100 sw78  100
+w15      s7   udtrap04.cre  ar2100 sw7f  100
+w16      s7   chapter3.fl   blank  x     100
+w17      s7   dcowl1.cre    ar0317 x     100
+w18      s7   mage18z.cre   blank  x     100
+w19      s7   bheye.cre     ar0705 x     100
+w20      s7   hllich.cre    ar0526 x     100
+w21      s7   hlshade.cre   ar0202 x     100
+w22      s7   firkra02.cre  ar1203 x     100
+w23      s7   dragblac.cre  ar2807 x     100
+w24      s7   dragblac.cre  ar2807 x     100
 
-w1       s8   ppbook.bcs    ar1513 sw7
-w2       s8   ppbook.bcs    ar1513 sw8
-w3       s8   ribald3.sto   ar0702 sw9
-w4       s8   ribald3.sto   ar0702 swa
-w5       s8   uddrow23.sto  ar2200 swb
-w6       s8   uddrow25.sto  ar2200 swc
-w7       s8   udduer02.sto  ar2100 swd
-w8       s8   uddrow25.sto  ar2200 swe
-w9       s8   ribald3.sto   ar0702 swf
-w10      s8   udtrap02.cre  ar2100 x
-w11      s8   udtrap04.cre  ar2100 x
-w12      s8   ppcowled.cre  ar1605 x
-w13      s8   shelf1        ar1513 x
-w14      s8   jarlich.cre   ar2207 x
+w1       s8   ppbook.bcs    ar1513 sw7   100
+w2       s8   ppbook.bcs    ar1513 sw8   100
+w3       s8   ribald3.sto   ar0702 sw9   100
+w4       s8   ribald3.sto   ar0702 swa   100
+w5       s8   uddrow23.sto  ar2200 swb   100
+w6       s8   uddrow25.sto  ar2200 swc   100
+w7       s8   udduer02.sto  ar2100 swd   100
+w8       s8   uddrow25.sto  ar2200 swe   100
+w9       s8   ribald3.sto   ar0702 swf   100
+w10      s8   udtrap02.cre  ar2100 x     100
+w11      s8   udtrap04.cre  ar2100 x     100
+w12      s8   ppcowled.cre  ar1605 x     100
+w13      s8   shelf1        ar1513 x     100
+w14      s8   jarlich.cre   ar2207 x     100
 
-w1       s9   ribald3.sto   ar0702 sw1
-w2       s9   ribald3.sto   ar0702 sw2
-w3       s9   ribald3.sto   ar0702 sw3
-w4       s9   ribald3.sto   ar0702 sw4
-w5       s9   mage18z.cre   blank  x
-w6       s9   twisted.flg   ar1008 x
-w7       s9   susuneer.cre  ar2803 x
-w8       s9   suraam.cre    ar2800 x
+w1       s9   ribald3.sto   ar0702 sw1   100
+w2       s9   ribald3.sto   ar0702 sw2   100
+w3       s9   ribald3.sto   ar0702 sw3   100
+w4       s9   ribald3.sto   ar0702 sw4   100
+w5       s9   mage18z.cre   blank  x     100
+w6       s9   twisted.flg   ar1008 x     100
+w7       s9   susuneer.cre  ar2803 x     100
+w8       s9   suraam.cre    ar2800 x     100

@@ -1,333 +1,333 @@
-Location Tier Target         Area   Ident   Comment
-                                    
-1        1    thugs.flg      ar0701 x       sewer gang
-2        1    mimicchest     ar1106 x       Mimic's chest, umar hills
-3        1    gaal01.cre     ar0202 i1
-4        1    crate2         ar0503 i2      big one, skinner's sub-basement
-5        1    thugs.flg      ar0701 x       Sewer gang gets one
-6        1    container5     ar1202 i88     formerly Horn of Blasting, closet past wolfweres
-7        1    slavers.flg    ar0405 x       slums, slavers
-8        1    container9     ar0705 x       bedroom, mekrath's
-9        1    chest1         ar0528 i87     formerly Silver Horn of Valhalla, house in bridge district
-10       1    drawer2        ar0303 i73     Mae'Var's strongbox, need edwinkey
-11       1    container1     ar0811 ia      tomb, orphan outside
-12       1    container1     ar1302 i13     lion(?) statue, (ring of earth control)
-13       1    container2     ar1103 x       jermien's
-14       1    sewrak01.cre   ar0701 i6      sewer rakshasa
-15       1    beast.cre      ar0406 i2a     beastmaster
-16       1    drawer2        ar0303 x       Mae'var's strongbox, need edwinkey
-17       1    chest1         ar0530 x       valeria's chest
-18       1    bounty.flg     ar0516 id      Bounty Hunter leader, Planar prison
-19       1    container3     ar0407 x       Prebek's house
-20       1    bounty.flg     ar0516 x       bounty hunters, planar prison
-21       1    container2     ar1904 ie      Pile in troll mound
-22       1    table2         ar0406 if      Table in back room, CC
-23       1    container6     ar1401 i10     top rubble in magma
+Location Tier Target         Area   Ident Chance   Comment
 
-1        2    bones1         ar0206 i17     pile of bones (gauntlets of dex)
-2        2    container1     ar0804 i8      Pai'Na's
-3        2    pthral05.cre   ar0516 i5      female thrall, prison
-4        2    table3         ar0202 x       Gaal's table
-5        2    maevar.cre     ar0301 i76
-6        2    theshal.cre    ar0206 i14     Mr. Mayor (deceased)
-7        2    pthral09.cre   ar0516 x       cleric thrall by the warden
-8        2    decret1        ar1601 x       hoho, typo. in the right corner, pirate lord's
-9        2    container2     ar1301 x       pillar cache, behind torgal
-10       2    ironpot.flg    ar0411 i16     feral halfers, Sphere
-11       2    container3     ar1202 x       chest among the debris, by the vampires
-12       2    sevpat.flg     ar0712 i1a     Seven Vales gang
-13       2    container11    ar1301 i1b     chest in de'Arnise keep basement
-14       2    ppmind01.cre   ar1514 i75     painting-illithid, spellhold
-15       2    container6     ar0529 x       Painting containter, Neb's house
-16       2    container1     ar0308 i78     Harper hq eye painting
-17       2    container1     ar1904 i3      the one without the bracers, troll mound
-18       2    container1     ar1613 x       cupboard, galvena's
-19       2    sevpat.flg     ar0712 i86
+1        1    thugs.flg      ar0701 x     100      sewer gang
+2        1    mimicchest     ar1106 x     100      Mimic's chest, umar hills
+3        1    gaal01.cre     ar0202 i1    100
+4        1    crate2         ar0503 i2    100      big one, skinner's sub-basement
+5        1    thugs.flg      ar0701 x     100      Sewer gang gets one
+6        1    container5     ar1202 i88   100      formerly Horn of Blasting, closet past wolfweres
+7        1    slavers.flg    ar0405 x     100      slums, slavers
+8        1    container9     ar0705 x     100      bedroom, mekrath's
+9        1    chest1         ar0528 i87   100      formerly Silver Horn of Valhalla, house in bridge district
+10       1    drawer2        ar0303 i73   100      Mae'Var's strongbox, need edwinkey
+11       1    container1     ar0811 ia    100      tomb, orphan outside
+12       1    container1     ar1302 i13   100      lion(?) statue, (ring of earth control)
+13       1    container2     ar1103 x     100      jermien's
+14       1    sewrak01.cre   ar0701 i6    100      sewer rakshasa
+15       1    beast.cre      ar0406 i2a   100      beastmaster
+16       1    drawer2        ar0303 x     100      Mae'var's strongbox, need edwinkey
+17       1    chest1         ar0530 x     100      valeria's chest
+18       1    bounty.flg     ar0516 id    100      Bounty Hunter leader, Planar prison
+19       1    container3     ar0407 x     100      Prebek's house
+20       1    bounty.flg     ar0516 x     100      bounty hunters, planar prison
+21       1    container2     ar1904 ie    100      Pile in troll mound
+22       1    table2         ar0406 if    100      Table in back room, CC
+23       1    container6     ar1401 i10   100      top rubble in magma
 
-1        3    blpool.bcs     ar0801 i1e     ar0801 (mace of disruption)
-2        3    troalt.bcs     ar1506 i4      ar1506 troll altar in Spellhold
-3        3    container2     ar0412 i11     fire room, sphere
-4        3    container1     ar2602 i2c     (mana bow)
-5        3    closet1        ar1515 x       closet, irenicus' room, spellhold
-6        3    chest1         ar0803 i19     Chest, second level of vampire nest, chapter 3
-7        3    tazok.cre      ar1202 x       duh
-8        3    container4     ar0205 i22     topmost, unseeing's
-9        3    trrak01.cre    ar1902 i18     ithafeer
-10       3    container2     ar0412 i20     fire room
-11       3    bounty.flg     ar0516 x
-12       3    thugs.flg      ar0701 x
-13       3    uddwarf.cre    ar2400 i1d     crazy midget (ring of fire control)
-14       3    container10    ar0705 i79     Mekrath's altar
-15       3    rngsha02.cre   ar1404 i80     Shadow Patrick
-16       3    secret2        ar1511 i81     Spellhold, room with table, drawer
-17       3    sevpat.flg     ar0712 x
-18       3    container1     ar0413 i9      engine room, sphere
-19       3    gc.flg         ar0907 x       need to enter via ar0906
-20       3    ar18gang.flg   ar1800 x
+1        2    bones1         ar0206 i17   100      pile of bones (gauntlets of dex)
+2        2    container1     ar0804 i8    100      Pai'Na's
+3        2    pthral05.cre   ar0516 i5    100      female thrall, prison
+4        2    table3         ar0202 x     100      Gaal's table
+5        2    maevar.cre     ar0301 i76   100
+6        2    theshal.cre    ar0206 i14   100      Mr. Mayor (deceased)
+7        2    pthral09.cre   ar0516 x     100      cleric thrall by the warden
+8        2    decret1        ar1601 x     100      hoho, typo. in the right corner, pirate lord's
+9        2    container2     ar1301 x     100      pillar cache, behind torgal
+10       2    ironpot.flg    ar0411 i16   100      feral halfers, Sphere
+11       2    container3     ar1202 x     100      chest among the debris, by the vampires
+12       2    sevpat.flg     ar0712 i1a   100      Seven Vales gang
+13       2    container11    ar1301 i1b   100      chest in de'Arnise keep basement
+14       2    ppmind01.cre   ar1514 i75   100      painting-illithid, spellhold
+15       2    container6     ar0529 x     100      Painting containter, Neb's house
+16       2    container1     ar0308 i78   100      Harper hq eye painting
+17       2    container1     ar1904 i3    100      the one without the bracers, troll mound
+18       2    container1     ar1613 x     100      cupboard, galvena's
+19       2    sevpat.flg     ar0712 i86   100
 
-1        4    container4     ar1401 x       temple ruins, pillar cache, across the magma
-2        4    container3     ar1401 i12     temple ruins, statue with the hands, across the word game
-3        4    container1     ar1605 x       chest, perth's
-4        4    container1     ar1800 x       tomb, north forest
-5        4    udsilver.cre   ar2102 x       adalon
-6        4    trrak01.cre    ar1902 x       ithafeer
-7        4    container9     ar1202 x       closet by DigDag and tazok
-8        4    pmaster.cre    ar0516 x       demon, prison
-9        4    pwarden.cre    ar0516 i25     warden, prison
-10       4    container11    ar1202 i27     golem stash, firkraag's
-11       4    container3     ar1401 x       statue, ruined temple
-12       4    spectatorchest ar2300 x       not the spectator's chest
-13       4    bounty.flg     ar0516 i74     bounty hunters
-14       4    sahzom01.cre   ar2300 x       Sea Zombie Lord
-15       4    jael.flg       ar2209 i82
-16       4    ironpot.flg    ar0411 i83
-17       4    goons.flg      ar0530 x       Valeria etc
-18       4    sahramb3.cre   ar2300 i34     sahuagin priestess, fish-mouth ambush
-19       4    bhcrypt.cre    ar0806 i85     Crypt King
-20       4    shelf3         ar2207 i1c     closet in Deirex' quarters, Deirex kills you unless you have miscbe
+1        3    blpool.bcs     ar0801 i1e   100      ar0801 (mace of disruption)
+2        3    troalt.bcs     ar1506 i4    100      ar1506 troll altar in Spellhold
+3        3    container2     ar0412 i11   100      fire room, sphere
+4        3    container1     ar2602 i2c   100      (mana bow)
+5        3    closet1        ar1515 x     100      closet, irenicus' room, spellhold
+6        3    chest1         ar0803 i19   100      Chest, second level of vampire nest, chapter 3
+7        3    tazok.cre      ar1202 x     100      duh
+8        3    container4     ar0205 i22   100      topmost, unseeing's
+9        3    trrak01.cre    ar1902 i18   100      ithafeer
+10       3    container2     ar0412 i20   100      fire room
+11       3    bounty.flg     ar0516 x     100
+12       3    thugs.flg      ar0701 x     100
+13       3    uddwarf.cre    ar2400 i1d   100      crazy dwarf (ring of fire control)
+14       3    container10    ar0705 i79   100      Mekrath's altar
+15       3    rngsha02.cre   ar1404 i80   100      Shadow Patrick
+16       3    secret2        ar1511 i81   100      Spellhold, room with table, drawer
+17       3    sevpat.flg     ar0712 x     100
+18       3    container1     ar0413 i9    100      engine room, sphere
+19       3    gc.flg         ar0907 x     100      need to enter via ar0906
+20       3    ar18gang.flg   ar1800 x     100
 
-1        5    container1     ar0711 i7      big pot, sewer illithids
-2        5    container1     ar0205 x       Mr. Eye's private stash, rift device
-3        5    container1     ar0711 i23     also big pot
-4        5    pwarden.cre    ar0516 i15     prison warden
-5        5    gpfight.flg    ar2100 x
-6        5    suadsaan.cre   ar2801 i24
-7        5    gc.flg         ar0907 x       Guarded compound gang
-8        5    shadra01.cre   ar1402 x       temple ruins
-9        5    uddeath2.cre   ar2402 i38     Demonknight in underdark
-10       5    chest6         ar2300 i26     Imp riddle
-11       5    container2     ar1301 x       pillar cache
-12       5    gpfight.flg    ar2100 i3a
-13       5    ironpot.flg    ar0411 i21     feral halfers
-14       5    wyvcult.flg    ar2600 x
-15       5    hidden4        ar2101 i2d     by the drow fighting the beholder
-16       5    container1     ar0412 i31     Sphere ice room
+1        4    container4     ar1401 x     100      temple ruins, pillar cache, across the magma
+2        4    container3     ar1401 i12   100      temple ruins, statue with the hands, across the word game
+3        4    container1     ar1605 x     100      chest, perth's
+4        4    container1     ar1800 x     100      tomb, north forest
+5        4    udsilver.cre   ar2102 x     100      adalon
+6        4    trrak01.cre    ar1902 x     100      ithafeer
+7        4    container9     ar1202 x     100      closet by DigDag and tazok
+8        4    pmaster.cre    ar0516 x     100      demon, prison
+9        4    pwarden.cre    ar0516 i25   100      warden, prison
+10       4    container11    ar1202 i27   100      golem stash, firkraag's
+11       4    container3     ar1401 x     100      statue, ruined temple
+12       4    spectatorchest ar2300 x     100      not the spectator's chest
+13       4    bounty.flg     ar0516 i74   100      bounty hunters
+14       4    sahzom01.cre   ar2300 x     100      Sea Zombie Lord
+15       4    jael.flg       ar2209 i82   100
+16       4    ironpot.flg    ar0411 i83   100
+17       4    goons.flg      ar0530 x     100      Valeria etc
+18       4    sahramb3.cre   ar2300 i34   100      sahuagin priestess, fish-mouth ambush
+19       4    bhcrypt.cre    ar0806 i85   100      Crypt King
+20       4    shelf3         ar2207 i1c   100      closet in Deirex' quarters, Deirex kills you unless you have miscbe
 
-1        6    ppbook.bcs     ar1513 i29     ar1513 (ring of free action)
-2        6    container1     ar2210 x       deirex' stash
-3        6    chest1         ar0808 x       chapter 6, bodhi's lair, by the collapsed entrance
-4        6    udprince.cre   ar2402 i2b     kuo-toa one
-5        6    suadsaan.cre   ar2801 x       adsaan, Suldanessellar
-6        6    container1     ar0082 i28     lich-in-the-wall's chest
-7        6    udardul.cre    ar2201 x
-8        6    container1     ar0410 x       in lavok's room
-9        6    suraam.cre     ar2800 x       drow in Suldanessellar
-10       6    firkra02.cre   ar1203 x       big dragon
-11       6    eggs           ar2201 x       egg room, drow temple
-12       6    udelder.cre    ar2101 i1f     elder orb (the one with the equalizer bit)
-13       6    shadra01.cre   ar1402 i2e
-14       6    udmaster.cre   ar2400 x
-15       6    uddoor.flg     ar2402 x       drow party guarding the way out of the underdark
-16       6    susuneer.cre   ar2803 x
-17       6    firkra02.cre   ar1203 x
-18       6    daqilue.cre    ar2206 i30
-19       6    jael.flg       ar2209 x
-20       6    obsdem01.cre   ar0414 x       lea'liyl
-21       6    ar18gang.flg   ar1800 x
-22       6    gc.flg         ar0907 i3b
+1        5    container1     ar0711 i7    100      big pot, sewer illithids
+2        5    container1     ar0205 x     100      Mr. Eye's private stash, rift device
+3        5    container1     ar0711 i23   100      also big pot
+4        5    pwarden.cre    ar0516 i15   100      prison warden
+5        5    gpfight.flg    ar2100 x     100
+6        5    suadsaan.cre   ar2801 i24   100
+7        5    gc.flg         ar0907 x     100      Guarded compound gang
+8        5    shadra01.cre   ar1402 x     100      temple ruins
+9        5    uddeath2.cre   ar2402 i38   100      Demonknight in underdark
+10       5    chest6         ar2300 i26   100      Imp riddle
+11       5    container2     ar1301 x     100      pillar cache
+12       5    gpfight.flg    ar2100 i3a   100
+13       5    ironpot.flg    ar0411 i21   100      feral halfers
+14       5    wyvcult.flg    ar2600 x     100
+15       5    hidden4        ar2101 i2d   100      by the drow fighting the beholder
+16       5    container1     ar0412 i31   100      Sphere ice room
 
-1        7    dragblac.cre   ar2807 i35     (bladesinger)
-2        7    container6     ar0808 i33     spike room, chaper 6
-3        7    udmaster.cre   ar2400 x       master brain
-4        7    jael.flg       ar2209 x       Jae'llat
-5        7    twisted.flg    ar1008 i36     Runies
-6        7    endtreasure    ar2101 x       amusingly enough, not by the second elder orb. topmost, in the wall
-7        7    dragblac.cre   ar2807 x
-8        7    twisted.flg    ar1008 x
-9        7    uddeath2.cre   ar2402 i37     Demonknight in underdark
-10       7    udelder.cre    ar2101 i2f
-11       7    uddeath2.cre   ar2402 i39
-12       7    altar1         ar0809 i32     Bodhi's lair, boat
-13       7    jarlich.cre    ar2207 x       Deirex
+1        6    ppbook.bcs     ar1513 i29   100      ar1513 (ring of free action)
+2        6    container1     ar2210 x     100      deirex' stash
+3        6    chest1         ar0808 x     100      chapter 6, bodhi's lair, by the collapsed entrance
+4        6    udprince.cre   ar2402 i2b   100      kuo-toa one
+5        6    suadsaan.cre   ar2801 x     100      adsaan, Suldanessellar
+6        6    container1     ar0082 i28   100      lich-in-the-wall's chest
+7        6    udardul.cre    ar2201 x     100
+8        6    container1     ar0410 x     100      in lavok's room
+9        6    suraam.cre     ar2800 x     100      drow in Suldanessellar
+10       6    firkra02.cre   ar1203 x     100      big dragon
+11       6    eggs           ar2201 x     100      egg room, drow temple
+12       6    udelder.cre    ar2101 i1f   100      elder orb (the one with the equalizer bit)
+13       6    shadra01.cre   ar1402 i2e   100
+14       6    udmaster.cre   ar2400 x     100
+15       6    uddoor.flg     ar2402 x     100      drow party guarding the way out of the underdark
+16       6    susuneer.cre   ar2803 x     100
+17       6    firkra02.cre   ar1203 x     100
+18       6    daqilue.cre    ar2206 i30   100
+19       6    jael.flg       ar2209 x     100
+20       6    obsdem01.cre   ar0414 x     100      lea'liyl
+21       6    ar18gang.flg   ar1800 x     100
+22       6    gc.flg         ar0907 i3b   100
 
-1        10   gorgua01.cre   ar3019 i71     aurumach rilmani, wk
-2        10   gorwom.flg     ar3019 i72     y'tossi, wk
-3        10   demilich.cre   ar3027 i3e     wk
-4        10   elemimix.cre   ar5204 i3f     imix, yaga's
+1        7    dragblac.cre   ar2807 i35   100      (bladesinger)
+2        7    container6     ar0808 i33   100      spike room, chaper 6
+3        7    udmaster.cre   ar2400 x     100      master brain
+4        7    jael.flg       ar2209 x     100      Jae'llat
+5        7    twisted.flg    ar1008 i36   100      Runies
+6        7    endtreasure    ar2101 x     100      amusingly enough, not by the second elder orb. topmost, in the wall
+7        7    dragblac.cre   ar2807 x     100
+8        7    twisted.flg    ar1008 x     100
+9        7    uddeath2.cre   ar2402 i37   100      Demonknight in underdark
+10       7    udelder.cre    ar2101 i2f   100
+11       7    uddeath2.cre   ar2402 i39   100
+12       7    altar1         ar0809 i32   100      Bodhi's lair, boat
+13       7    jarlich.cre    ar2207 x     100      Deirex
+
+1        10   gorgua01.cre   ar3019 i71   100      aurumach rilmani, wk
+2        10   gorwom.flg     ar3019 i72   100      y'tossi, wk
+3        10   demilich.cre   ar3027 i3e   100      wk
+4        10   elemimix.cre   ar5204 i3f   100      imix, yaga's
 5        10
 6        10
-7        10   gorlic01.cre   ar3019 i55     azamantes
-8        10   gorsal.cre     ar3018 i43     saladrex
-9        10   fsdragon.cre   ar3024 i44     dragon you defeat as part of getting the courage key, wk
-10       10   dragblue.cre   ar6005 x       abazigal
-11       10   bazdra03.cre   ar6004 i4f     Fll'Yissetat
-12       10   amlich01.cre   ar5509 i50     Vongoethe
-13       10   senlich.cre    ar6110 x       Odamaron
+7        10   gorlic01.cre   ar3019 i55   100      azamantes
+8        10   gorsal.cre     ar3018 i43   100      saladrex
+9        10   fsdragon.cre   ar3024 i44   100      dragon you defeat as part of getting the courage key, wk
+10       10   dragblue.cre   ar6005 x     100      abazigal
+11       10   bazdra03.cre   ar6004 i4f   100      Fll'Yissetat
+12       10   amlich01.cre   ar5509 i50   100      Vongoethe
+13       10   senlich.cre    ar6110 x     100      Odamaron
 14       10
-15       10   amlich01.cre   ar5509 x       Vongoethe
-16       10   container5     ar3014 i52     Demon Wraith's
-17       10   pool1          ar3025 i42     orc horde, wk
-18       10   gorwom.flg     ar3019 x       Xei Win Toh
-19       10   rock.cre       ar3017 i46
-20       10   gorgit.cre     ar3022 i47     wk gith captain
-21       10   gorchr.cre     ar3016 i69
+15       10   amlich01.cre   ar5509 x     100      Vongoethe
+16       10   container5     ar3014 i52   100      Demon Wraith's
+17       10   pool1          ar3025 i42   100      orc horde, wk
+18       10   gorwom.flg     ar3019 x     100      Xei Win Toh
+19       10   rock.cre       ar3017 i46   100
+20       10   gorgit.cre     ar3022 i47   100      wk gith captain
+21       10   gorchr.cre     ar3016 i69   100
 
-1        11   bed2           ar5006 i40     saradush prison, end treasure
-2        11   firepit2       ar5201 i45     where you used to find Psion's Blade
-3        11   slimepit       ar3016 i49     where you used to find the FoA poison head
-4        11   chest1         ar3001 i4b     where you used to find Paladin's Bracers, first floor of wk
-5        11   shelf6         ar3001 i4d     where you used to find the Case of Plenty +1, also wk, 1st
-6        11   bed            ar5204 i4e     yaga's stone slab
-7        11   container1     ar6111 i5f     Wodcutter's lodge
-8        11   garock.cre     ar3017 x       Carston! Lord of the Level! or not
-9        11   gflunk.flg     ar5002 i84     Gromnir's henchies
-10       11   amarch01.cre   ar5500 x       captain erelon, amkethran
-11       11   gflunk.flg     ar5002 x       Karun the Black
-12       11   container1     ar5007 i5a     where you used to find Fflar's Scabbard
-13       11   senill02.cre   ar6107 x       Mithykyl
-14       11   sengua03.cre   ar6106 i60     Captain Egeissag
-15       11   amtgen01.cre   ar6300 x       Tethyrian general, oasis ambush
-16       11   gorsta.flg     ar3001 i41     wk first floor, statues
-17       11   elemimix.cre   ar5204 i56
-18       11   tent           ar3011 i57     Yakman's garbage
-19       11   container5     ar3022 i53     Githyanki wk hideout, table
-20       11   table5         ar3016 i63     chromatic demon level
+1        11   bed2           ar5006 i40   100      saradush prison, end treasure
+2        11   firepit2       ar5201 i45   100      where you used to find Psion's Blade
+3        11   slimepit       ar3016 i49   100      where you used to find the FoA poison head
+4        11   chest1         ar3001 i4b   100      where you used to find Paladin's Bracers, first floor of wk
+5        11   shelf6         ar3001 i4d   100      where you used to find the Case of Plenty +1, also wk, 1st
+6        11   bed            ar5204 i4e   100      yaga's stone slab
+7        11   container1     ar6111 i5f   100      Wodcutter's lodge
+8        11   garock.cre     ar3017 x     100      Carston! Lord of the Level! or not
+9        11   gflunk.flg     ar5002 i84   100      Gromnir's henchies
+10       11   amarch01.cre   ar5500 x     100      captain erelon, amkethran
+11       11   gflunk.flg     ar5002 x     100      Karun the Black
+12       11   container1     ar5007 i5a   100      where you used to find Fflar's Scabbard
+13       11   senill02.cre   ar6107 x     100      Mithykyl
+14       11   sengua03.cre   ar6106 i60   100      Captain Egeissag
+15       11   amtgen01.cre   ar6300 x     100      Tethyrian general, oasis ambush
+16       11   gorsta.flg     ar3001 i41   100      wk first floor, statues
+17       11   elemimix.cre   ar5204 i56   100
+18       11   tent           ar3011 i57   100      Yakman's garbage
+19       11   container5     ar3022 i53   100      Githyanki wk hideout, table
+20       11   table5         ar3016 i63   100      chromatic demon level
 
 
-1        12   shelf10        ar3001 i51     quiver of plenty, wk, 1st
-2        12   container2     ar3021 i54     illithids in wk
-3        12   senill02.cre   ar6107 i58     Mithykyl
-4        12   senlich.cre    ar6110 i59     Odamaron
-5        12   hgber01.cre    ar5204 i5b     Berenn
-6        12   amlich01.cre   ar5509 x
-7        12   gromnir.cre    ar5002 i5c
-8        12   senlich.cre    ar6110 i5d
-9        12   bazmonk.cre    ar6002 i5e     Monk at Abazigal's
-10       12   picture1       ar5008 x       Kiser's
-11       12   gorgit.cre     ar3022 i61     Githyanki Captain
-12       12   gorgoli.cre    ar3016 i62     Ice Golem, chromatic demon level
-13       12   hgnya01.cre    ar5202 i64     Nyalee
-14       12   gorchr.cre     ar3016 i65     Chromatic Demon
-15       12   container2     ar3014 i66     Demon Wraith's
-16       12   table2         ar6003 i68     Iycanth's
-17       12   gorsal.cre     ar3018 x
-18       12   dragblue.cre   ar6005 i4a
-19       12   dragblue.cre   ar6005 x
-20       12   bed            ar5204 i67
+1        12   shelf10        ar3001 i51   100      quiver of plenty, wk, 1st
+2        12   container2     ar3021 i54   100      illithids in wk
+3        12   senill02.cre   ar6107 i58   100      Mithykyl
+4        12   senlich.cre    ar6110 i59   100      Odamaron
+5        12   hgber01.cre    ar5204 i5b   100      Berenn
+6        12   amlich01.cre   ar5509 x     100
+7        12   gromnir.cre    ar5002 i5c   100
+8        12   senlich.cre    ar6110 i5d   100
+9        12   bazmonk.cre    ar6002 i5e   100      Monk at Abazigal's
+10       12   picture1       ar5008 x     100      Kiser's
+11       12   gorgit.cre     ar3022 i61   100      Githyanki Captain
+12       12   gorgoli.cre    ar3016 i62   100      Ice Golem, chromatic demon level
+13       12   hgnya01.cre    ar5202 i64   100      Nyalee
+14       12   gorchr.cre     ar3016 i65   100      Chromatic Demon
+15       12   container2     ar3014 i66   100      Demon Wraith's
+16       12   table2         ar6003 i68   100      Iycanth's
+17       12   gorsal.cre     ar3018 x     100
+18       12   dragblue.cre   ar6005 i4a   100
+19       12   dragblue.cre   ar6005 x     100
+20       12   bed            ar5204 i67   100
 
-1        13   bed            ar5204 x       yaga's
-2        13   gromnir.cre    ar5002 x
-3        13   bazeye01.cre   ar6003 x       Iycanth
-4        13   shelf4         ar3016 i6b     chromatic demon level
-5        13   picture1       ar5008 i4c     kiser's
-6        13   sengua01.cre   ar6100 x       Woodcutter
-7        13   gorchr.cre     ar3016 x       Chromatic Demon
-8        13   gormind.cre    ar3021 x       Ulitharid with Illithid Rod part
-9        13   gorsta.flg     ar3001 i48     statues
-10       13   gorlic01.cre   ar3019 i6a
-11       13   table1         ar6003 x       Iycanth's
-12       13   gorfirg.cre    ar3016 i6c     Fire Giant on second WK level
+1        13   bed            ar5204 x     100      yaga's
+2        13   gromnir.cre    ar5002 x     100
+3        13   bazeye01.cre   ar6003 x     100      Iycanth
+4        13   shelf4         ar3016 i6b   100      chromatic demon level
+5        13   picture1       ar5008 i4c   100      kiser's
+6        13   sengua01.cre   ar6100 x     100      Woodcutter
+7        13   gorchr.cre     ar3016 x     100      Chromatic Demon
+8        13   gormind.cre    ar3021 x     100      Ulitharid with Illithid Rod part
+9        13   gorsta.flg     ar3001 i48   100      statues
+10       13   gorlic01.cre   ar3019 i6a   100
+11       13   table1         ar6003 x     100      Iycanth's
+12       13   gorfirg.cre    ar3016 i6c   100      Fire Giant on second WK level
 
-1        fa   container3     ar1301 x       chest by stairs
-2        fa   container5     ar1301 x
-3        fa   container6     ar1301 x
-4        fa   container2     ar1301 x       pillar cache
-5        fa   container1     ar1303 x       chapel statue
-6        fa   container2     ar1303 x       chapel
-7        fa   container3     ar1303 x       chapel
-8        fa   kpglai01.cre   ar1303 x
-9        fa   container4     ar1303 x
-10       fa   container5     ar1303 x
-11       fa   container1     ar1302 x
+1        fa   container3     ar1301 x     100      chest by stairs
+2        fa   container5     ar1301 x     100
+3        fa   container6     ar1301 x     100
+4        fa   container2     ar1301 x     100      pillar cache
+5        fa   container1     ar1303 x     100      chapel statue
+6        fa   container2     ar1303 x     100      chapel
+7        fa   container3     ar1303 x     100      chapel
+8        fa   kpglai01.cre   ar1303 x     100
+9        fa   container4     ar1303 x     100
+10       fa   container5     ar1303 x     100
+11       fa   container1     ar1302 x     100
 
-1        ka   altar1         ar0809 x
-2        ka   obsdem01.cre   ar0414 x       lea'liyl
-3        ka   ar18gang.flg   ar1800 x
-4        ka   twisted.flg    ar1008 x
-5        ka   jarlich.cre    ar2207 x       Deirex
-6        ka   shadra01.cre   ar1402 x
-7        ka   udmaster.cre   ar2400 x
-8        ka   firkra02.cre   ar1203 x
-9        ka   udardul.cre    ar2201 x
-10       ka   gc.flg         ar0907 x
+1        ka   altar1         ar0809 x     100
+2        ka   obsdem01.cre   ar0414 x     100      lea'liyl
+3        ka   ar18gang.flg   ar1800 x     100
+4        ka   twisted.flg    ar1008 x     100
+5        ka   jarlich.cre    ar2207 x     100      Deirex
+6        ka   shadra01.cre   ar1402 x     100
+7        ka   udmaster.cre   ar2400 x     100
+8        ka   firkra02.cre   ar1203 x     100
+9        ka   udardul.cre    ar2201 x     100
+10       ka   gc.flg         ar0907 x     100
 
-1        s4   container4     ar1103 is3c    jermien's closet
-2        s4   container5     ar1302 is3d    servant's table on first floor
-3        s4   container14    ar1302 is3e    chest in dormitory
-4        s4   container1     ar0804 is3f
-5        s4   container9     ar1202 is40
-6        s4   container2     ar0205 is41    southern pulsating container
-7        s4   container8     ar1202 is42    Tazok's table
-8        s4   container1     ar0204 is43    screaming statue
-9        s4   container1     ar0510 is44    crate
-10       s4   container2     ar0412 is45
-11       s4   shelf1         ar0530 is46    closet
-12       s4   vase1          ar1513 is47    by the door in the room with the secret door
-13       s4   tolmag02.cre   ar0412 x
-14       s4   shelf2         ar0302 is49    bookshelf in the middle
-15       s4   container1     ar0503 is4a    small crate
-16       s4   pirsea03.cre   ar0310 x
+1        s4   container4     ar1103 is3c  100      jermien's closet
+2        s4   container5     ar1302 is3d  100      servant's table on first floor
+3        s4   container14    ar1302 is3e  100      chest in dormitory
+4        s4   container1     ar0804 is3f  100
+5        s4   container9     ar1202 is40  100
+6        s4   container2     ar0205 is41  100      southern pulsating container
+7        s4   container8     ar1202 is42  100      Tazok's table
+8        s4   container1     ar0204 is43  100      screaming statue
+9        s4   container1     ar0510 is44  100      crate
+10       s4   container2     ar0412 is45  100
+11       s4   shelf1         ar0530 is46  100      closet
+12       s4   vase1          ar1513 is47  100      by the door in the room with the secret door
+13       s4   tolmag02.cre   ar0412 x     100
+14       s4   shelf2         ar0302 is49  100      bookshelf in the middle
+15       s4   container1     ar0503 is4a  100      small crate
+16       s4   pirsea03.cre   ar0310 x     100
 
-1        s5   toolct4        ar0411 is27    tool shed, chest by the door
-2        s5   container7     ar1303 is28    southernmost bookshelf
-3        s5   shelf1         ar0309 is29    leftmost bookshelf on catwalk
-4        s5   container9     ar1514 is2a    vase outside golem room
-5        s5   container4     ar0205 is2b
-6        s5   chest3         ar0202 is2c    third chest clockwise
-7        s5   chest1         ar0202 is2d    first chest clockwise
-8        s5   xappren2.cre   ar0407 is2e
-9        s5   container4     ar1202 is2f    wolfwere table
-10       s5   container4     ar1202 is30
-11       s5   chest1         ar0202 is31
-12       s5   body1          ar0411 is32    corpse by elder orb
-13       s5   toolct1        ar0411 is33    furnace
-14       s5   shelf1         ar0530 is34
-15       s5   container14    ar1302 is35
-16       s5   container8     ar1514 is36    vase, horseshoe-shaped passage
-17       s5   chest7         ar0202 is37    outcast cultists, northmost chest
-18       s5   container1     ar0804 is38
-19       s5   container9     ar1202 is39    digdag's closet
-20       s5   container6     ar1202 is3a    wolfwere barrel
-21       s5   container7     ar1514 is3b    minotaur vase
-22       s5   pirsea03.cre   ar0310 x
+1        s5   toolct4        ar0411 is27  100      tool shed, chest by the door
+2        s5   container7     ar1303 is28  100      southernmost bookshelf
+3        s5   shelf1         ar0309 is29  100      leftmost bookshelf on catwalk
+4        s5   container9     ar1514 is2a  100      vase outside golem room
+5        s5   container4     ar0205 is2b  100
+6        s5   chest3         ar0202 is2c  100      third chest clockwise
+7        s5   chest1         ar0202 is2d  100      first chest clockwise
+8        s5   xappren2.cre   ar0407 is2e  100
+9        s5   container4     ar1202 is2f  100      wolfwere table
+10       s5   container4     ar1202 is30  100
+11       s5   chest1         ar0202 is31  100
+12       s5   body1          ar0411 is32  100      corpse by elder orb
+13       s5   toolct1        ar0411 is33  100      furnace
+14       s5   shelf1         ar0530 is34  100
+15       s5   container14    ar1302 is35  100
+16       s5   container8     ar1514 is36  100      vase, horseshoe-shaped passage
+17       s5   chest7         ar0202 is37  100      outcast cultists, northmost chest
+18       s5   container1     ar0804 is38  100
+19       s5   container9     ar1202 is39  100      digdag's closet
+20       s5   container6     ar1202 is3a  100      wolfwere barrel
+21       s5   container7     ar1514 is3b  100      minotaur vase
+22       s5   pirsea03.cre   ar0310 x     100
 
-1        s6   lehtin.cre     ar0406 is15
-2        s6   container9     ar0705 is16
-3        s6   container4     ar1401 is17
-4        s6   container5     ar0705 is18
-5        s6   container4     ar0705 is19
-6        s6   container4     ar1103 is1a
-7        s6   container3     ar1401 is1b
-8        s6   container4     ar1514 is1c
-9        s6   pbhunt03.cre   ar0516 is1d
-10       s6   lehtin.cre     ar0406 is1e
-11       s6   container3     ar1401 is1f
-12       s6   container1     ar1401 is20
-13       s6   table1         ar0317 is21
-14       s6   table1         ar0315 is22
-15       s6   pbhunt03.cre   ar0516 is23
-16       s6   xappren1.cre   ar0407 x
-17       s6   pbhunt01.cre   ar0516 is24
-18       s6   container2     ar0412 is25
-19       s6   container1     ar0407 is26
-20       s6   firmag01.cre   ar1202 x
-22       s6   maevar.cre     ar0301 x
-23       s6   container1     ar0410 is48
+1        s6   lehtin.cre     ar0406 is15  100
+2        s6   container9     ar0705 is16  100
+3        s6   container4     ar1401 is17  100
+4        s6   container5     ar0705 is18  100
+5        s6   container4     ar0705 is19  100
+6        s6   container4     ar1103 is1a  100
+7        s6   container3     ar1401 is1b  100
+8        s6   container4     ar1514 is1c  100
+9        s6   pbhunt03.cre   ar0516 is1d  100
+10       s6   lehtin.cre     ar0406 is1e  100
+11       s6   container3     ar1401 is1f  100
+12       s6   container1     ar1401 is20  100
+13       s6   table1         ar0317 is21  100
+14       s6   table1         ar0315 is22  100
+15       s6   pbhunt03.cre   ar0516 is23  100
+16       s6   xappren1.cre   ar0407 x     100
+17       s6   pbhunt01.cre   ar0516 is24  100
+18       s6   container2     ar0412 is25  100
+19       s6   container1     ar0407 is26  100
+20       s6   firmag01.cre   ar1202 x     100
+22       s6   maevar.cre     ar0301 x     100
+23       s6   container1     ar0410 is48  100
 
-1        s7   shelf1         ar1513 isb
-2        s7   container4     ar1512 isc
-3        s7   chest1         ar0808 isd
-4        s7   shelf1         ar1513 ise
-5        s7   container19    ar1512 isf
-6        s7   container1     ar2210 is10
-7        s7   knighttable    ar0411 is11
-8        s7   container1     ar2210 is12
-9        s7   container19    ar1512 is13
-10       s7   treasury       ar2300 is14
-11       s7   mekrat.cre     ar0705 x
-12       s7   ironpot.flg    ar0411 x
+1        s7   shelf1         ar1513 isb   100
+2        s7   container4     ar1512 isc   100
+3        s7   chest1         ar0808 isd   100
+4        s7   shelf1         ar1513 ise   100
+5        s7   container19    ar1512 isf   100
+6        s7   container1     ar2210 is10  100
+7        s7   knighttable    ar0411 is11  100
+8        s7   container1     ar2210 is12  100
+9        s7   container19    ar1512 is13  100
+10       s7   treasury       ar2300 is14  100
+11       s7   mekrat.cre     ar0705 x     100
+12       s7   ironpot.flg    ar0411 x     100
 
-1        s8   container5     ar1514 is6
-2        s8   vase2          ar1513 is7
-3        s8   altar1         ar0809 is8
-4        s8   altar1         ar0809 is9
-5        s8   gpmage1.cre    ar2100 isa
-6        s8   firmag01.cre   ar1202 x
-7        s8   tolger2.cre    ar0412 x
+1        s8   container5     ar1514 is6   100
+2        s8   vase2          ar1513 is7   100
+3        s8   altar1         ar0809 is8   100
+4        s8   altar1         ar0809 is9   100
+5        s8   gpmage1.cre    ar2100 isa   100
+6        s8   firmag01.cre   ar1202 x     100
+7        s8   tolger2.cre    ar0412 x     100
 
-1        s9   table2         ar2809 is1     Suldanessellar
-2        s9   ar18mage.cre   ar1800 is2
-3        s9   drawer1        ar2810 is3     Suldanessellar
-4        s9   drawer1        ar2801 is4     Suldanessellar
-5        s9   shelf1         ar2808 is5     Suldanessellar
-6        s9   twisted.flg    ar1008 x
+1        s9   table2         ar2809 is1   100      Suldanessellar
+2        s9   ar18mage.cre   ar1800 is2   100
+3        s9   drawer1        ar2810 is3   100      Suldanessellar
+4        s9   drawer1        ar2801 is4   100      Suldanessellar
+5        s9   shelf1         ar2808 is5   100      Suldanessellar
+6        s9   twisted.flg    ar1008 x     100
