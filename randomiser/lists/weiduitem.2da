@@ -1,275 +1,275 @@
-Item     Replacement Source        Tier Token Ident Comment
+Item     Replacement Source        Tier Token Ident Chance Comment
 
-leat03   blank       ar0420.are    1    w01   x
-belt04   blank       kalah2.cre    1    w02   w2
-helm19   blank       asysta01.bcs  1    w03   w3
-ring34   blank       udardul.cre   1    w04   x
-rods02   blank       ar2300.are    1    w05   w4    sahkng01.dlg, sahtreas.bcs
-sper09   sper01      grtomb01.cre  1    w06   w5
-sw1h53   blank       ribald.sto    1    w07   wa
-clck07   blank       gorch.sto     1    w08   w37
+leat03   blank       ar0420.are    1    w01   x     100
+belt04   blank       kalah2.cre    1    w02   w2    100
+helm19   blank       asysta01.bcs  1    w03   w3    100
+ring34   blank       udardul.cre   1    w04   x     100
+rods02   blank       ar2300.are    1    w05   w4    100    sahkng01.dlg, sahtreas.bcs
+sper09   sper01      grtomb01.cre  1    w06   w5    100
+sw1h53   blank       ribald.sto    1    w07   wa    100
+clck07   blank       gorch.sto     1    w08   w37   100
 
-blun20   blank       bhoisig.dlg   2    w01   w8    bharval.dlg, bhnalla.dlg, scyarryl.dlg formerly templemess.fl
-blun16   blank       bernard2.sto  2    w02   x
-shld26   blank       uhogre01.dlg  2    w03   we
-sw1h32   blank       ar1202.are    2    w04   w10   ar1202.bcs, samia.bcs, samia.dlg
-staf13   blank       ar1515.are    2    w05   x
-clck25   blank       uhrang01.cre  2    w06   w11
-misc3c   blank       trgeni02.cre  2    w07   x
-plat11   plat01      firorc01.cre  2    w08   w34
-sw2h07   blank       uddrow23.sto  2    w09   x
-bow12    blank       ar1303.are    2    w10   w1
-helm03   blank       sctelwyn.dlg  2    w11   w7    sctelwyn.cre
+blun20   blank       bhoisig.dlg   2    w01   w8    100    bharval.dlg, bhnalla.dlg, scyarryl.dlg formerly templemess.fl
+blun16   blank       bernard2.sto  2    w02   x     100
+shld26   blank       uhogre01.dlg  2    w03   we    100
+sw1h32   blank       ar1202.are    2    w04   w10   100    ar1202.bcs, samia.bcs, samia.dlg
+staf13   blank       ar1515.are    2    w05   x     100
+clck25   blank       uhrang01.cre  2    w06   w11   100
+misc3c   blank       trgeni02.cre  2    w07   x     100
+plat11   plat01      firorc01.cre  2    w08   w34   100
+sw2h07   blank       uddrow23.sto  2    w09   x     100
+bow12    blank       ar1303.are    2    w10   w1    100
+helm03   blank       sctelwyn.dlg  2    w11   w7    100    sctelwyn.cre
 
-plat12   blank       ppdjinn.dlg   3    w01   w9
-leat14   blank       uhmay01.dlg   3    w02   w35
-hamm06   blank       trmer02.sto   3    w03   x
-helm21   blank       ddwell.bcs    3    w04   wb
-ring31   blank       ppstat01.dlg  3    w05   wc
-shld21   blank       ar1202.are    3    w06   wd    ar1202.bcs, samia.bcs, samia.dlg
-sw1h03   blank       hendak.dlg    3    w07   wf    lehtin.dlg
-sw1h26   blank       jugjer01.dlg  3    w08   w12   jugjer01.cre
-sw1h23   blank       trgeni01.dlg  3    w09   w13   trgeni01.cre
-belt02   blank       mgkhol01.dlg  3    w10   w14
-blun17   blun07      draug.cre     3    w11   w32
-xbow14   blank       ribald.sto    3    w12   x
-amul23   blank       scsain.dlg    3    w13   x
+plat12   blank       ppdjinn.dlg   3    w01   w9    100
+leat14   blank       uhmay01.dlg   3    w02   w35   100
+hamm06   blank       trmer02.sto   3    w03   x     100
+helm21   blank       ddwell.bcs    3    w04   wb    100
+ring31   blank       ppstat01.dlg  3    w05   wc    100
+shld21   blank       ar1202.are    3    w06   wd    100    ar1202.bcs, samia.bcs, samia.dlg
+sw1h03   blank       hendak.dlg    3    w07   wf    100    lehtin.dlg
+sw1h26   blank       jugjer01.dlg  3    w08   w12   100    jugjer01.cre
+sw1h23   blank       trgeni01.dlg  3    w09   w13   100    trgeni01.cre
+belt02   blank       mgkhol01.dlg  3    w10   w14   100
+blun17   blun07      draug.cre     3    w11   w32   100
+xbow14   blank       ribald.sto    3    w12   x     100
+amul23   blank       scsain.dlg    3    w13   x     100
 
-shld27   blank       riftg03.dlg   4    w01   w17
-dagg11   blank       loutcapt.dlg  4    w02   w1a   loutcapt.cre
-ring33   blank       tolger2.cre   4    w03   w1c   tolger.cre, tolger.dlg, #18409
-rods04   blank       uddrow24.sto  4    w04   x
-sw1h39   dwsw1h02    udlesa.cre    4    w05   w1e   udlesa.dlg #52664; is given ** in long sword, because there are no drow bastard swords
-xbow08   blank       ribald.sto    4    w06   x
-xbow10   blank       udsilver.dlg  4    w07   w33
-bow11    blank       ribald.sto    4    w08   x
+shld27   blank       riftg03.dlg   4    w01   w17   100
+dagg11   blank       loutcapt.dlg  4    w02   w1a   100    loutcapt.cre
+ring33   blank       tolger2.cre   4    w03   w1c   100    tolger.cre, tolger.dlg, #18409
+rods04   blank       uddrow24.sto  4    w04   x     100
+sw1h39   dwsw1h02    udlesa.cre    4    w05   w1e   100    udlesa.dlg #52664; is given ** in long sword, because there are no drow bastard swords
+xbow08   blank       ribald.sto    4    w06   x     100
+xbow10   blank       udsilver.dlg  4    w07   w33   100
+bow11    blank       ribald.sto    4    w08   x     100
 
-ring07   blank       aran.dlg      5    w01   w15   aran02.cre formerly aran1.fl
-ax1h09   blank       arkanisg.cre  5    w02   w39
-ax1h13   blank       ar1303.are    5    w03   w18
-blun18   blank       udsvir03.dlg  5    w04   w19
-hamm04   blank       ar1303.are    5    w05   w1b   kpgol05.bcs, kpgol06.bcs
-shld25   blank       trhmer01.dlg  5    w06   w1d
-sw1h24   blank       cedruid2.cre  5    w07   w1f
-sw1h45   blank       pptroll1.cre  5    w08   w16
+ring07   blank       aran.dlg      5    w01   w15   100    aran02.cre formerly aran1.fl
+ax1h09   blank       arkanisg.cre  5    w02   w39   100
+ax1h13   blank       ar1303.are    5    w03   w18   100
+blun18   blank       udsvir03.dlg  5    w04   w19   100
+hamm04   blank       ar1303.are    5    w05   w1b   100    kpgol05.bcs, kpgol06.bcs
+shld25   blank       trhmer01.dlg  5    w06   w1d   100
+sw1h24   blank       cedruid2.cre  5    w07   w1f   100
+sw1h45   blank       pptroll1.cre  5    w08   w16   100
 
-amul21   blank       aran.dlg      6    w01   w20   aran02.cre formerly aran2.fl
-brac19   blank       sahkng01.dlg  6    w02   w21   Sahuagin king formerly tadpoles1.fl
-halb09b  blank       sahpr2.cre    6    w03   w22   Sahuagin prince formerly tadpoles2.fl
-sper08   sper02      sahkng02.cre  6    w04   w23   both sahuagin formerly tadpoles3.fl
-bow19b   blank       ar1514.are    6    w05   w24   ppchest.bcs
-chan11   blank       ribald3.sto   6    w06   x
-shld23   blank       ribald.sto    6    w07   x
-staf20   blank       ribald.sto    6    w08   x
-sw1h38   sw1h02      udtrap01.cre  6    w09   x
-halb06   blank       uddemon.dlg   6    w10   x
+amul21   blank       aran.dlg      6    w01   w20   100    aran02.cre formerly aran2.fl
+brac19   blank       sahkng01.dlg  6    w02   w21   100    Sahuagin king formerly tadpoles1.fl
+halb09b  blank       sahpr2.cre    6    w03   w22   100    Sahuagin prince formerly tadpoles2.fl
+sper08   sper02      sahkng02.cre  6    w04   w23   100    both sahuagin formerly tadpoles3.fl
+bow19b   blank       ar1514.are    6    w05   w24   100    ppchest.bcs
+chan11   blank       ribald3.sto   6    w06   x     100
+shld23   blank       ribald.sto    6    w07   x     100
+staf20   blank       ribald.sto    6    w08   x     100
+sw1h38   sw1h02      udtrap01.cre  6    w09   x     100
+halb06   blank       uddemon.dlg   6    w10   x     100
 
-plat13   dwplat01    udardul.cre   7    w01   w25
+plat13   dwplat01    udardul.cre   7    w01   w25   100
 
-ring41   blank       spin621.spl   10   w01   w26
-hamm10   blank       yaga01.cre    10   w02   w27
-sw1h68   blank       gorcamb.dlg   10   w03   w28   adjust dlg
-shld32   shld30      yaga01.cre    10   w04   w29
-leat23   blank       sendai.cre    10   w05   w2a
-bow20    bow18       amarch01.cre  10   w06   x
-blun35   blun34      gromnir.cre   10   w07   w2f
-sw2h17   blank       dragblue.cre  10   w08   w30
-blun28   blank       gorlum2.dlg   10   w09   w31
-sw1h77   blank       amtgen01.cre  10   w10   w36
+ring41   blank       spin621.spl   10   w01   w26   100
+hamm10   blank       yaga01.cre    10   w02   w27   100
+sw1h68   blank       gorcamb.dlg   10   w03   w28   100    adjust dlg
+shld32   shld30      yaga01.cre    10   w04   w29   100
+leat23   blank       sendai.cre    10   w05   w2a   100
+bow20    bow18       amarch01.cre  10   w06   x     100
+blun35   blun34      gromnir.cre   10   w07   w2f   100
+sw2h17   blank       dragblue.cre  10   w08   w30   100
+blun28   blank       gorlum2.dlg   10   w09   w31   100
+sw1h77   blank       amtgen01.cre  10   w10   w36   100
 
-helm29   blank       gortan1.dlg   11   w01   w2d   formerly fiends.fl
-brac26   blank       bazdra02.cre  11   w02   x
+helm29   blank       gortan1.dlg   11   w01   w2d   100    formerly fiends.fl
+brac26   blank       bazdra02.cre  11   w02   x     100
 
-compon16 blank       ammayor.dlg   12   w01   w2b
-ring43   blank       amcler01.dlg  12   w02   w2c   formerly amcler.fl
+compon16 blank       ammayor.dlg   12   w01   w2b   100
+ring43   blank       amcler01.dlg  12   w02   w2c   100    formerly amcler.fl
 
-shld31   dwshld01    senpri01.cre  13   w02   w2e
+shld31   dwshld01    senpri01.cre  13   w02   w2e   100
 
 w3a
 
-scrl6t   blank       cdaemerc.sto  s4   w01   sw47  Protection From Normal Weapons
-scrl6t   blank       ppstor01.sto  s4   w02   sw48  Protection From Normal Weapons
-scrl6t   blank       scrolls.sto   s4   w03   sw49  Protection From Normal Weapons x2
-scrl6t   blank       trmer04.sto   s4   w04   sw4a  Protection From Normal Weapons
-scrl6t   blank       trthf02.sto   s4   w05   sw4b  Protection From Normal Weapons
-scrl6r   blank       bshop01.sto   s4   w06   sw4c  Spider Spawn x2
-scrl6r   blank       trcar04.sto   s4   w07   sw4d  Spider Spawn x2
-scrl6r   blank       uddrow25.sto  s4   w08   sw4e  Spider Spawn
-scrl6r   blank       udduer02.sto  s4   w09   sw4f  Spider Spawn x2
-scrl6r   blank       udsvir05.sto  s4   w10   sw50  Spider Spawn x2
-scrl6p   blank       bshop01.sto   s4   w11   sw6b  Minor Sequencer x2
-scrl6p   blank       trcar04.sto   s4   w12   sw6c  Minor Sequencer x2
-scrl6p   blank       uddrow25.sto  s4   w13   sw6d  Minor Sequencer
-scrl6p   blank       udduer02.sto  s4   w14   sw6e  Minor Sequencer x2
-scrl6p   blank       udsvir05.sto  s4   w15   sw6f  Minor Sequencer x2
-scrl6o   blank       bshop01.sto   s4   w16   sw51  Secret Word x3
-scrl6o   blank       ribald.sto    s4   w17   sw52  Secret Word x3
-scrl6o   blank       trcar04.sto   s4   w18   sw53  Secret Word x3
-scrl6o   blank       uddrow25.sto  s4   w19   sw54  Secret Word
-scrl6o   blank       udduer02.sto  s4   w20   sw55  Secret Word x2
-scrl6o   blank       udsvir05.sto  s4   w21   sw56  Secret Word x2
-scrl6n   blank       bshop01.sto   s4   w22   x     Fire Shield (Red)
-scrl6n   blank       trcar04.sto   s4   w23   x     Fire Shield (Red)
-scrl6n   blank       trmer04.sto   s4   w24   x     Fire Shield (Red) x2
-scrl6n   blank       uddrow23.sto  s4   w25   sw57  Fire Shield (Red) x2
-scrl6n   blank       uddrow25.sto  s4   w26   x     Fire Shield (Red)
-scrl6m   blank       bshop01.sto   s4   w27   sw58  Enchanted Weapon
-scrl6m   blank       ribald.sto    s4   w28   x     Enchanted Weapon x3
-scrl6m   blank       shop08.sto    s4   w29   sw59  Enchanted Weapon x2
-scrl6m   blank       trcar04.sto   s4   w30   sw5a  Enchanted Weapon
-scrl6m   blank       trmer04.sto   s4   w31   sw5b  Enchanted Weapon
-scrl6m   blank       uddrow25.sto  s4   w32   sw5c  Enchanted Weapon
-scrl1w   blank       bmthief.sto   s4   w33   sw5d  Fire Shield (Blue) x3
-scrl1w   blank       garlena.sto   s4   w34   sw5e  Fire Shield (Blue) x3
-scrl1w   blank       sahpr1.sto    s4   w35   sw5f  Fire Shield (Blue) x3
-scrl1v   blank       garlena.sto   s4   w36   x     Stoneskin x3
-scrl1v   blank       sahpr1.sto    s4   w37   x     Stoneskin x3
-scrl2b   blank       garlena.sto   s4   w38   sw60  Stoneskin x3
-scrl2b   blank       sahpr1.sto    s4   w39   sw61  Stoneskin x3
-scrl2b   blank       scrolls.sto   s4   w40   sw62  Stoneskin x2
-scrl2b   blank       kalah2.cre    s4   w41   sw7c  Stoneskin
-scrl2b   blank       vvshad2.cre   s4   w42   x     Stoneskin
-scrl5k   blank       garlena.sto   s4   w43   x     Spirit Armor x3
-scrl5k   blank       sahpr1.sto    s4   w44   x     Spirit Armor x3
-scrl5k   blank       shop08.sto    s4   w45   sw63  Spirit Armor x3
-scrl5m   blank       garlena.sto   s4   w46   x     Polymorph Self x3
-scrl5m   blank       sahpr1.sto    s4   w47   x     Polymorph Self x3
-scrl5m   blank       shop08.sto    s4   w48   sw64  Polymorph Self x3
-scrl1z   blank       bmthief.sto   s4   w49   x     Minor Globe of Invulnerability x2
-scrl1z   blank       garlena.sto   s4   w50   x     Minor Globe of Invulnerability x3
-scrl1z   blank       sahpr1.sto    s4   w51   sw65  Minor Globe of Invulnerability x3
-scrl1z   blank       scrolls.sto   s4   w52   sw66  Minor Globe of Invulnerability x3
-scrl1z   blank       shop08.sto    s4   w53   sw67  Minor Globe of Invulnerability x3
-scrl1y   blank       arled.sto     s4   w54   sw68  Improved Invisibility
-scrl1y   blank       bmthief.sto   s4   w55   x     Improved Invisibility x3
-scrl1y   blank       garlena.sto   s4   w56   x     Improved Invisibility x3
-scrl1y   blank       sahpr1.sto    s4   w57   x     Improved Invisibility x3
-scrl1y   blank       scrolls.sto   s4   w58   sw69  Improved Invisibility x5
-scrl1y   blank       shop08.sto    s4   w59   sw6a  Improved Invisibility x5
+scrl6t   blank       cdaemerc.sto  s4   w01   sw47  100    Protection From Normal Weapons
+scrl6t   blank       ppstor01.sto  s4   w02   sw48  100    Protection From Normal Weapons
+scrl6t   blank       scrolls.sto   s4   w03   sw49  100    Protection From Normal Weapons x2
+scrl6t   blank       trmer04.sto   s4   w04   sw4a  100    Protection From Normal Weapons
+scrl6t   blank       trthf02.sto   s4   w05   sw4b  100    Protection From Normal Weapons
+scrl6r   blank       bshop01.sto   s4   w06   sw4c  100    Spider Spawn x2
+scrl6r   blank       trcar04.sto   s4   w07   sw4d  100    Spider Spawn x2
+scrl6r   blank       uddrow25.sto  s4   w08   sw4e  100    Spider Spawn
+scrl6r   blank       udduer02.sto  s4   w09   sw4f  100    Spider Spawn x2
+scrl6r   blank       udsvir05.sto  s4   w10   sw50  100    Spider Spawn x2
+scrl6p   blank       bshop01.sto   s4   w11   sw6b  100    Minor Sequencer x2
+scrl6p   blank       trcar04.sto   s4   w12   sw6c  100    Minor Sequencer x2
+scrl6p   blank       uddrow25.sto  s4   w13   sw6d  100    Minor Sequencer
+scrl6p   blank       udduer02.sto  s4   w14   sw6e  100    Minor Sequencer x2
+scrl6p   blank       udsvir05.sto  s4   w15   sw6f  100    Minor Sequencer x2
+scrl6o   blank       bshop01.sto   s4   w16   sw51  100    Secret Word x3
+scrl6o   blank       ribald.sto    s4   w17   sw52  100    Secret Word x3
+scrl6o   blank       trcar04.sto   s4   w18   sw53  100    Secret Word x3
+scrl6o   blank       uddrow25.sto  s4   w19   sw54  100    Secret Word
+scrl6o   blank       udduer02.sto  s4   w20   sw55  100    Secret Word x2
+scrl6o   blank       udsvir05.sto  s4   w21   sw56  100    Secret Word x2
+scrl6n   blank       bshop01.sto   s4   w22   x     100    Fire Shield (Red)
+scrl6n   blank       trcar04.sto   s4   w23   x     100    Fire Shield (Red)
+scrl6n   blank       trmer04.sto   s4   w24   x     100    Fire Shield (Red) x2
+scrl6n   blank       uddrow23.sto  s4   w25   sw57  100    Fire Shield (Red) x2
+scrl6n   blank       uddrow25.sto  s4   w26   x     100    Fire Shield (Red)
+scrl6m   blank       bshop01.sto   s4   w27   sw58  100    Enchanted Weapon
+scrl6m   blank       ribald.sto    s4   w28   x     100    Enchanted Weapon x3
+scrl6m   blank       shop08.sto    s4   w29   sw59  100    Enchanted Weapon x2
+scrl6m   blank       trcar04.sto   s4   w30   sw5a  100    Enchanted Weapon
+scrl6m   blank       trmer04.sto   s4   w31   sw5b  100    Enchanted Weapon
+scrl6m   blank       uddrow25.sto  s4   w32   sw5c  100    Enchanted Weapon
+scrl1w   blank       bmthief.sto   s4   w33   sw5d  100    Fire Shield (Blue) x3
+scrl1w   blank       garlena.sto   s4   w34   sw5e  100    Fire Shield (Blue) x3
+scrl1w   blank       sahpr1.sto    s4   w35   sw5f  100    Fire Shield (Blue) x3
+scrl1v   blank       garlena.sto   s4   w36   x     100    Stoneskin x3
+scrl1v   blank       sahpr1.sto    s4   w37   x     100    Stoneskin x3
+scrl2b   blank       garlena.sto   s4   w38   sw60  100    Stoneskin x3
+scrl2b   blank       sahpr1.sto    s4   w39   sw61  100    Stoneskin x3
+scrl2b   blank       scrolls.sto   s4   w40   sw62  100    Stoneskin x2
+scrl2b   blank       kalah2.cre    s4   w41   sw7c  100    Stoneskin
+scrl2b   blank       vvshad2.cre   s4   w42   x     100    Stoneskin
+scrl5k   blank       garlena.sto   s4   w43   x     100    Spirit Armor x3
+scrl5k   blank       sahpr1.sto    s4   w44   x     100    Spirit Armor x3
+scrl5k   blank       shop08.sto    s4   w45   sw63  100    Spirit Armor x3
+scrl5m   blank       garlena.sto   s4   w46   x     100    Polymorph Self x3
+scrl5m   blank       sahpr1.sto    s4   w47   x     100    Polymorph Self x3
+scrl5m   blank       shop08.sto    s4   w48   sw64  100    Polymorph Self x3
+scrl1z   blank       bmthief.sto   s4   w49   x     100    Minor Globe of Invulnerability x2
+scrl1z   blank       garlena.sto   s4   w50   x     100    Minor Globe of Invulnerability x3
+scrl1z   blank       sahpr1.sto    s4   w51   sw65  100    Minor Globe of Invulnerability x3
+scrl1z   blank       scrolls.sto   s4   w52   sw66  100    Minor Globe of Invulnerability x3
+scrl1z   blank       shop08.sto    s4   w53   sw67  100    Minor Globe of Invulnerability x3
+scrl1y   blank       arled.sto     s4   w54   sw68  100    Improved Invisibility
+scrl1y   blank       bmthief.sto   s4   w55   x     100    Improved Invisibility x3
+scrl1y   blank       garlena.sto   s4   w56   x     100    Improved Invisibility x3
+scrl1y   blank       sahpr1.sto    s4   w57   x     100    Improved Invisibility x3
+scrl1y   blank       scrolls.sto   s4   w58   sw69  100    Improved Invisibility x5
+scrl1y   blank       shop08.sto    s4   w59   sw6a  100    Improved Invisibility x5
 
-scrl2e   blank       garlena.sto   s5   w01   sw36  Cloudkill x3
-scrl2e   blank       shop08.sto    s5   w02   sw37  Cloudkill x4
-scrl2f   blank       garlena.sto   s5   w03   x     Cone of Cold x3
-scrl2f   blank       shop08.sto    s5   w04   x     Cone of Cold x3
-scrl5o   blank       garlena.sto   s5   w05   sw38  Hold Monster x3
-scrl5n   blank       garlena.sto   s5   w06   x     Domination x3
-scrl2d   blank       garlena.sto   s5   w07   sw39  Animate Dead x3
-scrl2d   blank       shop08.sto    s5   w08   sw3a  Animate Dead x3
-scrl6u   blank       garlena.sto   s5   w09   x     Breach x2
-scrl6u   blank       ribald.sto    s5   w10   sw40  Breach x2
-scrl6v   blank       cdaemerc.sto  s5   w11   sw3b  Lower Resistance x3
-scrl6v   blank       ppstor01.sto  s5   w12   sw3c  Lower Resistance x3
-scrl6v   blank       scrolls.sto   s5   w13   sw3d  Lower Resistance
-scrl6v   blank       trmer04.sto   s5   w14   sw3e  Lower Resistance
-scrl6v   blank       trthf02.sto   s5   w15   sw3f  Lower Resistance x3
-scrl6s   blank       bshop01.sto   s5   w16   sw41  Spell Immunity
-scrl6s   blank       trcar04.sto   s5   w17   sw42  Spell Immunity
-scrl6s   blank       uddrow25.sto  s5   w18   sw43  Spell Immunity
-scrl6s   blank       udduer02.sto  s5   w19   sw44  Spell Immunity x2
-scrl6s   blank       udsvir05.sto  s5   w20   sw45  Spell Immunity x2
-scrl6q   blank       bshop01.sto   s5   w21   sw70  Teleport Field
-scrl6q   blank       trcar04.sto   s5   w22   sw71  Teleport Field
-scrl6q   blank       uddrow25.sto  s5   w23   sw72  Teleport Field
-scrl6q   blank       udduer02.sto  s5   w24   sw73  Teleport Field x2
-scrl6q   blank       udsvir05.sto  s5   w25   sw74  Teleport Field x2
-scrl5p   blank       garlena.sto   s5   w26   sw46  Chaos x3
-scrl5p   blank       shop08.sto    s5   w27   x     Chaos x3
-scrlal   blank       udduer01.sto  s5   w28   x     Sunfire
+scrl2e   blank       garlena.sto   s5   w01   sw36  100    Cloudkill x3
+scrl2e   blank       shop08.sto    s5   w02   sw37  100    Cloudkill x4
+scrl2f   blank       garlena.sto   s5   w03   x     100    Cone of Cold x3
+scrl2f   blank       shop08.sto    s5   w04   x     100    Cone of Cold x3
+scrl5o   blank       garlena.sto   s5   w05   sw38  100    Hold Monster x3
+scrl5n   blank       garlena.sto   s5   w06   x     100    Domination x3
+scrl2d   blank       garlena.sto   s5   w07   sw39  100    Animate Dead x3
+scrl2d   blank       shop08.sto    s5   w08   sw3a  100    Animate Dead x3
+scrl6u   blank       garlena.sto   s5   w09   x     100    Breach x2
+scrl6u   blank       ribald.sto    s5   w10   sw40  100    Breach x2
+scrl6v   blank       cdaemerc.sto  s5   w11   sw3b  100    Lower Resistance x3
+scrl6v   blank       ppstor01.sto  s5   w12   sw3c  100    Lower Resistance x3
+scrl6v   blank       scrolls.sto   s5   w13   sw3d  100    Lower Resistance
+scrl6v   blank       trmer04.sto   s5   w14   sw3e  100    Lower Resistance
+scrl6v   blank       trthf02.sto   s5   w15   sw3f  100    Lower Resistance x3
+scrl6s   blank       bshop01.sto   s5   w16   sw41  100    Spell Immunity
+scrl6s   blank       trcar04.sto   s5   w17   sw42  100    Spell Immunity
+scrl6s   blank       uddrow25.sto  s5   w18   sw43  100    Spell Immunity
+scrl6s   blank       udduer02.sto  s5   w19   sw44  100    Spell Immunity x2
+scrl6s   blank       udsvir05.sto  s5   w20   sw45  100    Spell Immunity x2
+scrl6q   blank       bshop01.sto   s5   w21   sw70  100    Teleport Field
+scrl6q   blank       trcar04.sto   s5   w22   sw71  100    Teleport Field
+scrl6q   blank       uddrow25.sto  s5   w23   sw72  100    Teleport Field
+scrl6q   blank       udduer02.sto  s5   w24   sw73  100    Teleport Field x2
+scrl6q   blank       udsvir05.sto  s5   w25   sw74  100    Teleport Field x2
+scrl5p   blank       garlena.sto   s5   w26   sw46  100    Chaos x3
+scrl5p   blank       shop08.sto    s5   w27   x     100    Chaos x3
+scrlal   blank       udduer01.sto  s5   w28   x     100    Sunfire
 
-scrl8c   blank       jayes.sto     s6   w01   sw1c  Stone to Flesh
-scrl8b   blank       jayes.sto     s6   w02   sw77  Summon Nishruu x2
-scrl8b   blank       udtrap04.cre  s6   w03   sw7d  Summon Nishruu
-scrl8a   blank       jayes.sto     s6   w04   sw1d  Carrion Summons
-scrl8a   blank       uddrow25.sto  s6   w05   sw1e  Carrion Summons
-scrl7w   blank       jayes.sto     s6   w06   x     Wyvern Call
-scrl7v   blank       ppstor01.sto  s6   w07   sw1f  Spell Deflection
-scrl7v   blank       cdaemerc.sto  s6   w08   sw20  Spell Deflection
-scrl7v   blank       trthf02.sto   s6   w09   sw21  Spell Deflection
-scrl7u   blank       cdaemerc.sto  s6   w10   x     Contingency x2
-scrl7u   blank       ppstor01.sto  s6   w11   x     Contingency x2
-scrl7u   blank       trthf02.sto   s6   w12   x     Contingency x2
-scrl7t   blank       cdaemerc.sto  s6   w13   sw22  Disintegrate
-scrl7t   blank       ppstor01.sto  s6   w14   sw23  Disintegrate
-scrl7t   blank       trthf02.sto   s6   w15   sw24  Disintegrate
-scrl7t   blank       udduer02.sto  s6   w16   sw25  Disintegrate x3
-scrl7s   blank       bernard2.sto  s6   w17   sw26  Chain Lightning
-scrl7s   blank       cdaemerc.sto  s6   w18   x     Chain Lightning
-scrl7s   blank       ppstor01.sto  s6   w19   x     Chain Lightning
-scrl7s   blank       trthf02.sto   s6   w20   x     Chain Lightning
-scrl7s   blank       uddrow25.sto  s6   w21   sw79  Chain Lightning
-scrl7r   blank       uddrow25.sto  s6   w22   sw27  Death Fog
-scrl7r   blank       trcar04.sto   s6   w23   sw28  Death Fog x2
-scrl7r   blank       bshop01.sto   s6   w24   sw29  Death Fog x2
-scrl7q   blank       bshop01.sto   s6   w25   x     Improved Haste x2
-scrl7q   blank       trcar04.sto   s6   w26   x     Improved Haste x2
-scrl7q   blank       udduer01.sto  s6   w27   sw2a  Improved Haste
-scrl7q   blank       udtrap03.cre  s6   w28   sw7e  Improved Haste
-scrl7p   blank       bshop01.sto   s6   w29   sw2b  Power Word Silence x2
-scrl7p   blank       trcar04.sto   s6   w30   sw2c  Power Word Silence x2
-scrl7p   blank       udduer01.sto  s6   w31   sw75  Power Word Silence
-scrl7o   blank       bshop01.sto   s6   w32   x     Protection From Magical Weapons x2
-scrl7m   blank       trmer04.sto   s6   w33   sw2d  True Sight
-scrl7m   blank       udduer01.sto  s6   w34   sw2e  True Sight
-scrl7l   blank       sahpr1.sto    s6   w35   sw2f  Pierce Magic
-scrl7l   blank       trmer04.sto   s6   w36   x     Pierce Magic
-scrl7k   blank       trmer04.sto   s6   w37   sw31  Mislead x3
-scrl7j   blank       trmer04.sto   s6   w38   sw76  Protection From Magic Energy x3
-scrl7i   blank       udduer02.sto  s6   w39   sw7b  Death Spell x3
-scrl7i   blank       udsvir05.sto  s6   w40   sw32  Death Spell x3
-scrl7h   blank       udduer02.sto  s6   w41   sw33  Flesh to Stone x2
-scrl7h   blank       udsvir05.sto  s6   w42   x     Flesh to Stone x2
-scrl7f   blank       udduer02.sto  s6   w43   sw7a  Globe of Invulnerability x3
-scrl7f   blank       udsvir05.sto  s6   w44   sw34  Globe of Invulnerability x3
-scrl7e   blank       udduer02.sto  s6   w45   sw35  Invisible Stalker x2
-scrl7e   blank       udsvir05.sto  s6   w46   x     Invisible Stalker x2
-scrl7u   blank       vvshad1.cre   s6   w47   x     Contingency
-scrl7t   blank       vvshad4.cre   s6   w48   x     Disintegrate
+scrl8c   blank       jayes.sto     s6   w01   sw1c  100    Stone to Flesh
+scrl8b   blank       jayes.sto     s6   w02   sw77  100    Summon Nishruu x2
+scrl8b   blank       udtrap04.cre  s6   w03   sw7d  100    Summon Nishruu
+scrl8a   blank       jayes.sto     s6   w04   sw1d  100    Carrion Summons
+scrl8a   blank       uddrow25.sto  s6   w05   sw1e  100    Carrion Summons
+scrl7w   blank       jayes.sto     s6   w06   x     100    Wyvern Call
+scrl7v   blank       ppstor01.sto  s6   w07   sw1f  100    Spell Deflection
+scrl7v   blank       cdaemerc.sto  s6   w08   sw20  100    Spell Deflection
+scrl7v   blank       trthf02.sto   s6   w09   sw21  100    Spell Deflection
+scrl7u   blank       cdaemerc.sto  s6   w10   x     100    Contingency x2
+scrl7u   blank       ppstor01.sto  s6   w11   x     100    Contingency x2
+scrl7u   blank       trthf02.sto   s6   w12   x     100    Contingency x2
+scrl7t   blank       cdaemerc.sto  s6   w13   sw22  100    Disintegrate
+scrl7t   blank       ppstor01.sto  s6   w14   sw23  100    Disintegrate
+scrl7t   blank       trthf02.sto   s6   w15   sw24  100    Disintegrate
+scrl7t   blank       udduer02.sto  s6   w16   sw25  100    Disintegrate x3
+scrl7s   blank       bernard2.sto  s6   w17   sw26  100    Chain Lightning
+scrl7s   blank       cdaemerc.sto  s6   w18   x     100    Chain Lightning
+scrl7s   blank       ppstor01.sto  s6   w19   x     100    Chain Lightning
+scrl7s   blank       trthf02.sto   s6   w20   x     100    Chain Lightning
+scrl7s   blank       uddrow25.sto  s6   w21   sw79  100    Chain Lightning
+scrl7r   blank       uddrow25.sto  s6   w22   sw27  100    Death Fog
+scrl7r   blank       trcar04.sto   s6   w23   sw28  100    Death Fog x2
+scrl7r   blank       bshop01.sto   s6   w24   sw29  100    Death Fog x2
+scrl7q   blank       bshop01.sto   s6   w25   x     100    Improved Haste x2
+scrl7q   blank       trcar04.sto   s6   w26   x     100    Improved Haste x2
+scrl7q   blank       udduer01.sto  s6   w27   sw2a  100    Improved Haste
+scrl7q   blank       udtrap03.cre  s6   w28   sw7e  100    Improved Haste
+scrl7p   blank       bshop01.sto   s6   w29   sw2b  100    Power Word Silence x2
+scrl7p   blank       trcar04.sto   s6   w30   sw2c  100    Power Word Silence x2
+scrl7p   blank       udduer01.sto  s6   w31   sw75  100    Power Word Silence
+scrl7o   blank       bshop01.sto   s6   w32   x     100    Protection From Magical Weapons x2
+scrl7m   blank       trmer04.sto   s6   w33   sw2d  100    True Sight
+scrl7m   blank       udduer01.sto  s6   w34   sw2e  100    True Sight
+scrl7l   blank       sahpr1.sto    s6   w35   sw2f  100    Pierce Magic
+scrl7l   blank       trmer04.sto   s6   w36   x     100    Pierce Magic
+scrl7k   blank       trmer04.sto   s6   w37   sw31  100    Mislead x3
+scrl7j   blank       trmer04.sto   s6   w38   sw76  100    Protection From Magic Energy x3
+scrl7i   blank       udduer02.sto  s6   w39   sw7b  100    Death Spell x3
+scrl7i   blank       udsvir05.sto  s6   w40   sw32  100    Death Spell x3
+scrl7h   blank       udduer02.sto  s6   w41   sw33  100    Flesh to Stone x2
+scrl7h   blank       udsvir05.sto  s6   w42   x     100    Flesh to Stone x2
+scrl7f   blank       udduer02.sto  s6   w43   sw7a  100    Globe of Invulnerability x3
+scrl7f   blank       udsvir05.sto  s6   w44   sw34  100    Globe of Invulnerability x3
+scrl7e   blank       udduer02.sto  s6   w45   sw35  100    Invisible Stalker x2
+scrl7e   blank       udsvir05.sto  s6   w46   x     100    Invisible Stalker x2
+scrl7u   blank       vvshad1.cre   s6   w47   x     100    Contingency
+scrl7t   blank       vvshad4.cre   s6   w48   x     100    Disintegrate
 
-scrl8x   blank       udduer01.sto  s7   w01   sw10  Spell Shield
-scrl8w   blank       uddrow25.sto  s7   w02   sw11  Mass Invisibility
-scrl8w   blank       udduer01.sto  s7   w03   sw78  Mass Invisibility
-scrl8t   blank       uddrow25.sto  s7   w04   x     Summon Djinni
-scrl8s   blank       uddrow25.sto  s7   w05   sw12  Summon Efreet
-scrl8s   blank       udtrap02.cre  s7   w06   x     Summon Efreet
-scrl8r   blank       udduer02.sto  s7   w07   sw13  Mordenkainen's Sword
-scrl8p   blank       uddrow25.sto  s7   w08   x     Prismatic Spray
-scrl8p   blank       udduer01.sto  s7   w09   sw14  Prismatic Spray
-scrl8o   blank       uddrow25.sto  s7   w10   sw15  Finger of Death
-scrl8n   blank       udtrap04.cre  s7   w11   sw7f  Delayed Blast Fireball
-scrl8l   blank       bernard2.sto  s7   w12   sw16  Spell Sequencer
-scrl8l   blank       uddrow25.sto  s7   w13   x     Spell Sequencer
-scrl8l   blank       udduer01.sto  s7   w14   x     Spell Sequencer
-scrl8j   blank       uddrow25.sto  s7   w15   sw17  Mantle
-scrl8i   blank       bernard2.sto  s7   w16   x     Cacofiend
-scrl8i   blank       uddrow25.sto  s7   w17   x     Cacofiend
-scrl8i   blank       udduer02.sto  s7   w18   sw18  Cacofiend
-scrl8g   blank       uddrow25.sto  s7   w19   sw19  RRR
-scrl8f   blank       udduer01.sto  s7   w20   sw1a  Project Image
-scrl8d   blank       bernard2.sto  s7   w21   sw1b  Spell Turning
-scrl8d   blank       uddrow25.sto  s7   w22   x     Spell Turning
-scrl8d   blank       udtrap04.cre  s7   w23   x     Spell Turning
+scrl8x   blank       udduer01.sto  s7   w01   sw10  100    Spell Shield
+scrl8w   blank       uddrow25.sto  s7   w02   sw11  100    Mass Invisibility
+scrl8w   blank       udduer01.sto  s7   w03   sw78  100    Mass Invisibility
+scrl8t   blank       uddrow25.sto  s7   w04   x     100    Summon Djinni
+scrl8s   blank       uddrow25.sto  s7   w05   sw12  100    Summon Efreet
+scrl8s   blank       udtrap02.cre  s7   w06   x     100    Summon Efreet
+scrl8r   blank       udduer02.sto  s7   w07   sw13  100    Mordenkainen's Sword
+scrl8p   blank       uddrow25.sto  s7   w08   x     100    Prismatic Spray
+scrl8p   blank       udduer01.sto  s7   w09   sw14  100    Prismatic Spray
+scrl8o   blank       uddrow25.sto  s7   w10   sw15  100    Finger of Death
+scrl8n   blank       udtrap04.cre  s7   w11   sw7f  100    Delayed Blast Fireball
+scrl8l   blank       bernard2.sto  s7   w12   sw16  100    Spell Sequencer
+scrl8l   blank       uddrow25.sto  s7   w13   x     100    Spell Sequencer
+scrl8l   blank       udduer01.sto  s7   w14   x     100    Spell Sequencer
+scrl8j   blank       uddrow25.sto  s7   w15   sw17  100    Mantle
+scrl8i   blank       bernard2.sto  s7   w16   x     100    Cacofiend
+scrl8i   blank       uddrow25.sto  s7   w17   x     100    Cacofiend
+scrl8i   blank       udduer02.sto  s7   w18   sw18  100    Cacofiend
+scrl8g   blank       uddrow25.sto  s7   w19   sw19  100    RRR
+scrl8f   blank       udduer01.sto  s7   w20   sw1a  100    Project Image
+scrl8d   blank       bernard2.sto  s7   w21   sw1b  100    Spell Turning
+scrl8d   blank       uddrow25.sto  s7   w22   x     100    Spell Turning
+scrl8d   blank       udtrap04.cre  s7   w23   x     100    Spell Turning
 
-scrl9w   blank       ribald3.sto   s8   w01   sw9   Energy Drain
-scrl9j   blank       ribald3.sto   s8   w02   swa   Power Word Blind
-scrl9h   blank       ribald3.sto   s8   w03   x     Maze x2
-scrl9h   blank       uddrow23.sto  s8   w04   swb   Maze x2
-scrl9e   blank       bernard2.sto  s8   w05   x     Incendiary Cloud
-scrl9e   blank       ribald3.sto   s8   w06   x     Incendiary Cloud
-scrl9e   blank       uddrow25.sto  s8   w07   swc   Incendiary Cloud
-scrl9c   blank       udduer02.sto  s8   w08   swd   Improved Mantle
-scrl9b   blank       ppbook.bcs    s8   w09   sw7   Summon Fiend
-scrl9b   blank       uddrow25.sto  s8   w10   swe   Summon Fiend
-scrl8z   blank       ppbook.bcs    s8   w11   sw8   Simulacrum
-scrl8z   blank       uddrow25.sto  s8   w12   x     Simulacrum
-scrl8y   blank       ribald3.sto   s8   w13   swf   Protection From Energy
+scrl9w   blank       ribald3.sto   s8   w01   sw9   100    Energy Drain
+scrl9j   blank       ribald3.sto   s8   w02   swa   100    Power Word Blind
+scrl9h   blank       ribald3.sto   s8   w03   x     100    Maze x2
+scrl9h   blank       uddrow23.sto  s8   w04   swb   100    Maze x2
+scrl9e   blank       bernard2.sto  s8   w05   x     100    Incendiary Cloud
+scrl9e   blank       ribald3.sto   s8   w06   x     100    Incendiary Cloud
+scrl9e   blank       uddrow25.sto  s8   w07   swc   100    Incendiary Cloud
+scrl9c   blank       udduer02.sto  s8   w08   swd   100    Improved Mantle
+scrl9b   blank       ppbook.bcs    s8   w09   sw7   100    Summon Fiend
+scrl9b   blank       uddrow25.sto  s8   w10   swe   100    Summon Fiend
+scrl8z   blank       ppbook.bcs    s8   w11   sw8   100    Simulacrum
+scrl8z   blank       uddrow25.sto  s8   w12   x     100    Simulacrum
+scrl8y   blank       ribald3.sto   s8   w13   swf   100    Protection From Energy
 
-scrl9y   blank       ribald3.sto   s9   w01   sw1   Shapechange
-scrl9x   blank       ribald3.sto   s9   w02   sw2   BBoD
-scrl9v   blank       ribald3.sto   s9   w03   sw3   Wail of the Banshee x2
-scrl9u   blank       ribald3.sto   s9   w04   sw4   Power Word Kill
-scrl9r   blank       ribald3.sto   s9   w05   x     Time Stop
-scrl9q   blank       ribald3.sto   s9   w06   x     Chain Contigency x2
-scrl9m   blank       ribald3.sto   s9   w07   x     Spellstrike
-scrl9l   blank       ribald3.sto   s9   w08   x     Spell Trap
+scrl9y   blank       ribald3.sto   s9   w01   sw1   100    Shapechange
+scrl9x   blank       ribald3.sto   s9   w02   sw2   100    BBoD
+scrl9v   blank       ribald3.sto   s9   w03   sw3   100    Wail of the Banshee x2
+scrl9u   blank       ribald3.sto   s9   w04   sw4   100    Power Word Kill
+scrl9r   blank       ribald3.sto   s9   w05   x     100    Time Stop
+scrl9q   blank       ribald3.sto   s9   w06   x     100    Chain Contigency x2
+scrl9m   blank       ribald3.sto   s9   w07   x     100    Spellstrike
+scrl9l   blank       ribald3.sto   s9   w08   x     100    Spell Trap
 
 sw80 sw30 sw6 sw5

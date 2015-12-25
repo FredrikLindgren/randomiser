@@ -1,318 +1,318 @@
-Item        Replacement Source       Tier Token Ident Comment
+Item        Replacement Source       Tier Token Ident Chance Comment
 
-amul16      amul10      ar0602.are   1    01    ib
-boot02      blank       ar0303.are   1    02    i73
-belt09      blank       gaal01.cre   1    03    i1
-misc3h      blank       ar1202.are   1    04    i88
-ring26      blank       ar0329.are   1    05    i89
-misc3l      blank       ar1515.are   1    06    x
-blun23      blank       troalt.bcs   1    07    i4
-brac09      blank       pthral05.cre 1    08    i5
-rods05      blank       grvlch01.cre 1    09    x
-misc3i      blank       ar0528.are   1    10    i87
-ring35      blank       arnwar07.cre 1    11    i77
-scrl16      blank       blank        1    12    x
-xbow03      xbow02      bhcapt01.cre 1    13    x  higher tier?
-leat06      blank       blank        1    14    x
-ring36      blank       ar0413.are   1    15    i9
-staf10      blank       ar0811.are   1    16    ia
-misc3p      blank       arled.sto    1    17    x
-sper03      blank       udtrap03.cre 1    18    x  higher tier?
-ring30      blank       kalah2.cre   1    19    x
-boot01      blank       pbhunt05.cre 1    20    id
-brac04      blank       ar1904.are   1    21    ie
-brac17      blank       ar0406.are   1    22    if
-helm18      blank       ar1401.are   1    23    i10
+amul16      amul10      ar0602.are   1    01    ib    100
+boot02      blank       ar0303.are   1    02    i73   100
+belt09      blank       gaal01.cre   1    03    i1    100
+misc3h      blank       ar1202.are   1    04    i88   100
+ring26      blank       ar0329.are   1    05    i89   100
+misc3l      blank       ar1515.are   1    06    x     100
+blun23      blank       troalt.bcs   1    07    i4    100
+brac09      blank       pthral05.cre 1    08    i5    100
+rods05      blank       grvlch01.cre 1    09    x     100
+misc3i      blank       ar0528.are   1    10    i87   100
+ring35      blank       arnwar07.cre 1    11    i77   100
+scrl16      blank       blank        1    12    x     100
+xbow03      xbow02      bhcapt01.cre 1    13    x     100    higher tier?
+leat06      blank       blank        1    14    x     100
+ring36      blank       ar0413.are   1    15    i9    100
+staf10      blank       ar0811.are   1    16    ia    100
+misc3p      blank       arled.sto    1    17    x     100
+sper03      blank       udtrap03.cre 1    18    x     100    higher tier?
+ring30      blank       kalah2.cre   1    19    x     100
+boot01      blank       pbhunt05.cre 1    20    id    100
+brac04      blank       ar1904.are   1    21    ie    100
+brac17      blank       ar0406.are   1    22    if    100
+helm18      blank       ar1401.are   1    23    i10   100
 
-shld07      blank       ar0412.are   2    01    i11
-sw2h03      sw2h02      sevpat04.cre 2    02    i86
-ring28      blank       ribald.sto   2    03    x
-ring29      blank       ar1302.are   2    04    i13
-leat08      blank       maevar.cre   2    05    i76
-dagg17      blank       obshal03.cre 2    06    i16
-brac07      blank       ar0206.are   2    07    i17
-amul22      blank       trrak01.cre  2    08    i18
-chan17      blank       ar0803.are   2    09    i19
-clck06      blank       sevpat02.cre 2    10    i1a
-leat16      blank       ar1301.are   2    11    i1b
-leat18      blank       ar2207.are   2    12    i1c
-blun19      blank       bernard2.sto 2    13    x
-sw2h12      blank       ppmind01.cre 2    14    i75
-leat17      blank       ribald.sto   2    15    x
-helm06      blank       ar0308.are   2    16    i78
-wand12      blank       ar0711.are   2    17    i7
-sw1h54c     blank       ar0602.are   2    18    ic
-clck27      blank       sewrak01.cre 2    19    i6
+shld07      blank       ar0412.are   2    01    i11   100
+sw2h03      sw2h02      sevpat04.cre 2    02    i86   100
+ring28      blank       ribald.sto   2    03    x     100
+ring29      blank       ar1302.are   2    04    i13   100
+leat08      blank       maevar.cre   2    05    i76   100
+dagg17      blank       obshal03.cre 2    06    i16   100
+brac07      blank       ar0206.are   2    07    i17   100
+amul22      blank       trrak01.cre  2    08    i18   100
+chan17      blank       ar0803.are   2    09    i19   100
+clck06      blank       sevpat02.cre 2    10    i1a   100
+leat16      blank       ar1301.are   2    11    i1b   100
+leat18      blank       ar2207.are   2    12    i1c   100
+blun19      blank       bernard2.sto 2    13    x     100
+sw2h12      blank       ppmind01.cre 2    14    i75   100
+leat17      blank       ribald.sto   2    15    x     100
+helm06      blank       ar0308.are   2    16    i78   100
+wand12      blank       ar0711.are   2    17    i7    100
+sw1h54c     blank       ar0602.are   2    18    ic    100
+clck27      blank       sewrak01.cre 2    19    i6    100
 
-belt06      blank       ribald.sto   3    01    x
-ring31      blank       ribald.cre   3    02    x
-helm20      blank       ar0804.are   3    03    i8
-clck03      blank       trmer02.sto  3    04    x
-slng05      blank       ar1401.are   3    05    i12
-sw1h40      blank       bernard2.sto 3    06    x
-clck15      blank       trmer04.sto  3    07    x
-clck16      blank       blank        3    08    x
-clck17      blank       uddrow23.sto 3    09    x
-halb09a     blank       pwarden.cre  3    10    i15
-blun24      blun01      cedruid2.cre 3    11    x
-brac11      blank       ar2200.are   3    12    x
-leat13      blank       theshal.cre  3    13    i14
-misc3m      blank       ar0705.are   3    14    i79
-misc3o      blank       ar2400.are   3    15    x
-hamm03      blank       ar0204.are   3    16    x
-clck24      blank       ar1511.are   3    17    i81
-chan09      chan01      rngsha02.cre 3    18    x
-halb08      halb02      rngsha02.cre 3    19    i80
-sper07      blank       ar1904.are   3    20    i3
+belt06      blank       ribald.sto   3    01    x     100
+ring31      blank       ribald.cre   3    02    x     100
+helm20      blank       ar0804.are   3    03    i8    100
+clck03      blank       trmer02.sto  3    04    x     100
+slng05      blank       ar1401.are   3    05    i12   100
+sw1h40      blank       bernard2.sto 3    06    x     100
+clck15      blank       trmer04.sto  3    07    x     100
+clck16      blank       blank        3    08    x     100
+clck17      blank       uddrow23.sto 3    09    x     100
+halb09a     blank       pwarden.cre  3    10    i15   100
+blun24      blun01      cedruid2.cre 3    11    x     100
+brac11      blank       ar2200.are   3    12    x     100
+leat13      blank       theshal.cre  3    13    i14   100
+misc3m      blank       ar0705.are   3    14    i79   100
+misc3o      blank       ar2400.are   3    15    x     100
+hamm03      blank       ar0204.are   3    16    x     100
+clck24      blank       ar1511.are   3    17    i81   100
+chan09      chan01      rngsha02.cre 3    18    x     100
+halb08      halb02      rngsha02.cre 3    19    i80   100
+sper07      blank       ar1904.are   3    20    i3    100
 
-amul25      blank       udelder.cre  4    01    i1f
-sw1h33      blank       trmer02.sto  4    02    x
-staf16      blank       uddrow23.sto 4    03    x
-staf17      blank       ar0412.are   4    04    i20
-brac06      blank       obshal01.cre 4    05    i21
-brac15      blank       ribald.sto   4    06    x
-halb04      blank       ar0205.are   4    07    i22
-sw1h35      sw2h02      pwarden.cre  4    08    i25  anything in the shield slot is unequipped; is given * in two-handed sword
-sw1h54a     blank       ar2400.are   4    09    x
-bow19a      blank       ar0503.are   4    10    i2
-slng07      blank       bernard2.sto 4    11    x
-dagg13      dagg01      pbhunt05.cre 4    12    i74
-brac08      blank       blank        4    13    x
-shld22      blank       uddrow23.sto 4    14    x
-bow09       blank       obshal02.cre 4    15    i83
-boot04      blank       reti.cre     4    16    x
-sw1h52      blank       ar2209.are   4    17    i82
-blun22      blank       trmer02.sto  4    18    x
-sw1h36      flbhcryp    bhcrypt.cre  4    19    i85
-misc3a      blank       ppcowled.cre 4    20    x
+amul25      blank       udelder.cre  4    01    i1f   100
+sw1h33      blank       trmer02.sto  4    02    x     100
+staf16      blank       uddrow23.sto 4    03    x     100
+staf17      blank       ar0412.are   4    04    i20   100
+brac06      blank       obshal01.cre 4    05    i21   100
+brac15      blank       ribald.sto   4    06    x     100
+halb04      blank       ar0205.are   4    07    i22   100
+sw1h35      sw2h02      pwarden.cre  4    08    i25   100    anything in the shield slot is unequipped; is given * in two-handed sword
+sw1h54a     blank       ar2400.are   4    09    x     100
+bow19a      blank       ar0503.are   4    10    i2    100
+slng07      blank       bernard2.sto 4    11    x     100
+dagg13      dagg01      pbhunt05.cre 4    12    i74   100
+brac08      blank       blank        4    13    x     100
+shld22      blank       uddrow23.sto 4    14    x     100
+bow09       blank       obshal02.cre 4    15    i83   100
+boot04      blank       reti.cre     4    16    x     100
+sw1h52      blank       ar2209.are   4    17    i82   100
+blun22      blank       trmer02.sto  4    18    x     100
+sw1h36      flbhcryp    bhcrypt.cre  4    19    i85   100
+misc3a      blank       ppcowled.cre 4    20    x     100
 
-ring27      blank       uddwarf.cre  5    01    i1d
-blun12      blank       blpool.bcs   5    02    i1e
-bow13       blank       ar2602.are   5    03    i2c
-xbow06      blank       bernard2.sto 5    04    i3c
-belt10      blank       trmer02.sto  5    05    x
-ring08      blank       jaga3.cre    5    06    x
-bow10       blank       ar1202.are   5    07    i27
-helm07      blank       blank        5    08    i3d
-belt07      blank       suadsaan.cre 5    09    i24
-clck02      blank       ar2300.are   5    10    i26
-leat20      blank       ribald.sto   5    11    x
-ring23      blank       ar2100.are   5    12    x
-bow15       blank       trmer02.sto  5    13    x
-hamm07      blank       ar0711.are   5    14    i23
-ax1h12      blank       bernard2.sto 5    15    x
-slng06      blank       ar2101.are   5    16    i2d
+ring27      blank       uddwarf.cre  5    01    i1d   100
+blun12      blank       blpool.bcs   5    02    i1e   100
+bow13       blank       ar2602.are   5    03    i2c   100
+xbow06      blank       bernard2.sto 5    04    i3c   100
+belt10      blank       trmer02.sto  5    05    x     100
+ring08      blank       jaga3.cre    5    06    x     100
+bow10       blank       ar1202.are   5    07    i27   100
+helm07      blank       blank        5    08    i3d   100
+belt07      blank       suadsaan.cre 5    09    i24   100
+clck02      blank       ar2300.are   5    10    i26   100
+leat20      blank       ribald.sto   5    11    x     100
+ring23      blank       ar2100.are   5    12    x     100
+bow15       blank       trmer02.sto  5    13    x     100
+hamm07      blank       ar0711.are   5    14    i23   100
+ax1h12      blank       bernard2.sto 5    15    x     100
+slng06      blank       ar2101.are   5    16    i2d   100
 
-sw1h25      sw1h08      pthral05.cre 6    01    x
-sw1h30      blank       ar1905.are   6    02    x
-sw1h31      blank       ar0082.are   6    03    i28
-ring09      blank       ppbook.bcs   6    04    i29
-bow14       bow06       beast.cre    6    05    i2a
-brac16      blank       udprince.cre 6    06    i2b
-rods03      blank       ribald.sto   6    07    x
-scrl07      blank       ribald.sto   6    08    x     x2
-sw2h09      blank       ribald3.sto  6    09    x
-wasling     blank       wmart1.sto   6    10    x
-ax1h10      blank       bernard2.sto 6    11    x
-shld24      blank       ribald.sto   6    12    x
-scrlag      blank       shadra01.cre 6    13    i2e
-sw1h54b     blank       udelder.cre  6    14    i2f
-sper10      blank       uddrow23.sto 6    15    x
-dagg12      blank       uddrow23.sto 6    16    x
-helm16      blank       ribald3.sto  6    17    x
-dagg14      blank       daqilue.cre  6    18    i30
-helm04      blank       ar0412.are   6    19    i31
-sw1h28      blank       ar0809.are   6    20    i32
-plat17      blank       ribald3.sto  6    21    x
-ring04      blank       ar2210.are   6    22    x
+sw1h25      sw1h08      pthral05.cre 6    01    x     100
+sw1h30      blank       ar1905.are   6    02    x     100
+sw1h31      blank       ar0082.are   6    03    i28   100
+ring09      blank       ppbook.bcs   6    04    i29   100
+bow14       bow06       beast.cre    6    05    i2a   100
+brac16      blank       udprince.cre 6    06    i2b   100
+rods03      blank       ribald.sto   6    07    x     100
+scrl07      blank       ribald.sto   6    08    x     100    x2
+sw2h09      blank       ribald3.sto  6    09    x     100
+wasling     blank       wmart1.sto   6    10    x     100
+ax1h10      blank       bernard2.sto 6    11    x     100
+shld24      blank       ribald.sto   6    12    x     100
+scrlag      blank       shadra01.cre 6    13    i2e   100
+sw1h54b     blank       udelder.cre  6    14    i2f   100
+sper10      blank       uddrow23.sto 6    15    x     100
+dagg12      blank       uddrow23.sto 6    16    x     100
+helm16      blank       ribald3.sto  6    17    x     100
+dagg14      blank       daqilue.cre  6    18    i30   100
+helm04      blank       ar0412.are   6    19    i31   100
+sw1h28      blank       ar0809.are   6    20    i32   100
+plat17      blank       ribald3.sto  6    21    x     100
+ring04      blank       ar2210.are   6    22    x     100
 
-brac10      blank       ar0808.are   7    01    i33
-clck26      blank       sahramb3.cre 7    02    i34
-wa2helm     blank       wmart2.sto   7    03    x
-wa2robe     blank       wmart2.sto   7    04    x
-wa2shiel    blank       wmart2.sto   7    05    x
-waflail     blank       wmart1.sto   7    06    x
-chan16      blank       dragblac.cre 7    07    i35
-staf11      blank       hllayen.cre  7    08    i36
-belt08      blank       uddeath2.cre 7    09    i37
-plat16      blank       uddeath2.cre 7    10    i38
-sw2h08      sw2h02      uddeath2.cre 7    11    i39
-halb05      halb01      gpfight1.cre 7    12    i3a
-sw1h51      sw1h44      hlkoshi.cre  7    13    i3b
+brac10      blank       ar0808.are   7    01    i33   100
+clck26      blank       sahramb3.cre 7    02    i34   100
+wa2helm     blank       wmart2.sto   7    03    x     100
+wa2robe     blank       wmart2.sto   7    04    x     100
+wa2shiel    blank       wmart2.sto   7    05    x     100
+waflail     blank       wmart1.sto   7    06    x     100
+chan16      blank       dragblac.cre 7    07    i35   100
+staf11      blank       hllayen.cre  7    08    i36   100
+belt08      blank       uddeath2.cre 7    09    i37   100
+plat16      blank       uddeath2.cre 7    10    i38   100
+sw2h08      sw2h02      uddeath2.cre 7    11    i39   100
+halb05      halb01      gpfight1.cre 7    12    i3a   100
+sw1h51      sw1h44      hlkoshi.cre  7    13    i3b   100
 
-ax1h16      blank       amsmug02.sto 10   01    i6d
-blun26      blank       gorgua01.cre 10   02    i71
-sw1h67      sw1h49      gorsta07.cre 10   03    i48
-brac21      blank       gorwom03.cre 10   04    i72
-dagg21      blank       demilich.cre 10   05    i3e
-halb10      blank       elemimix.cre 10   06    i3f
-helm27      blank       ar5006.are   10   07    i40
-sw1h60      sw1h41      gorgit.cre   10   08    i47
-plat21      blank       amsmug02.sto 10   09    i6f
-ax1h14      ax1h17      rock.cre     10   10    i46
-sw1h62      sw1h42      gorsta01.cre 10   11    i41
-sper11      blank       ar3025.are   10   12    i42
-staf21      blank       gorsal.cre   10   13    i43
-sw1h58      blank       garlena.sto  10   14    x
-sw1h66      blank       sarbar01.sto 10   15    x
-sw1h70      blank       fsdragon.cre 10   16    i44
-sw2h21      blank       ar5201.are   10   17    i45
-xbow15      blank       garlena.sto  10   18    x
+ax1h16      blank       amsmug02.sto 10   01    i6d   100
+blun26      blank       gorgua01.cre 10   02    i71   100
+sw1h67      sw1h49      gorsta07.cre 10   03    i48   100
+brac21      blank       gorwom03.cre 10   04    i72   100
+dagg21      blank       demilich.cre 10   05    i3e   100
+halb10      blank       elemimix.cre 10   06    i3f   100
+helm27      blank       ar5006.are   10   07    i40   100
+sw1h60      sw1h41      gorgit.cre   10   08    i47   100
+plat21      blank       amsmug02.sto 10   09    i6f   100
+ax1h14      ax1h17      rock.cre     10   10    i46   100
+sw1h62      sw1h42      gorsta01.cre 10   11    i41   100
+sper11      blank       ar3025.are   10   12    i42   100
+staf21      blank       gorsal.cre   10   13    i43   100
+sw1h58      blank       garlena.sto  10   14    x     100
+sw1h66      blank       sarbar01.sto 10   15    x     100
+sw1h70      blank       fsdragon.cre 10   16    i44   100
+sw2h21      blank       ar5201.are   10   17    i45   100
+xbow15      blank       garlena.sto  10   18    x     100
 
-blun30a     blank       ar3016.are   11   01    i49
-blun30b     blank       dragblue.cre 11   02    i4a
-brac22      blank       ar3001.are   11   03    i4b
-figure01    blank       sarkis01.cre 11   04    i4c
-quiver01    blank       ar3001.are   11   05    i51
-quiver02    blank       ar3001.are   11   06    i4d
-quiver05    blank       ar5204.are   11   07    i4e
-ring42      blank       bazdra03.cre 11   08    i4f
-ring46      blank       amlich01.cre 11   09    i50
-rods06      blank       amsmug02.sto 11   10    i70
-tome01      blank       ar3001.are   11   11    x
-wand18      blank       ar3014.are   11   12    i52
-wand18      blank       ar3022.are   11   13    i53
-wand19      blank       ar3016.are   11   14    x
-wand19      blank       ar3021.are   11   15    i54
-helm23      blank       25spell.sto  11   16    x
-amul28      blank       elemimix.cre 11   17    i56
-brac24      blank       ar3011.are   11   18    i57
-helm24      blank       hgkar01.sto  11   19    x
-helm25      blank       ambar01.sto  11   20    x
+blun30a     blank       ar3016.are   11   01    i49   100
+blun30b     blank       dragblue.cre 11   02    i4a   100
+brac22      blank       ar3001.are   11   03    i4b   100
+figure01    blank       sarkis01.cre 11   04    i4c   100
+quiver01    blank       ar3001.are   11   05    i51   100
+quiver02    blank       ar3001.are   11   06    i4d   100
+quiver05    blank       ar5204.are   11   07    i4e   100
+ring42      blank       bazdra03.cre 11   08    i4f   100
+ring46      blank       amlich01.cre 11   09    i50   100
+rods06      blank       amsmug02.sto 11   10    i70   100
+tome01      blank       ar3001.are   11   11    x     100
+wand18      blank       ar3014.are   11   12    i52   100
+wand18      blank       ar3022.are   11   13    i53   100
+wand19      blank       ar3016.are   11   14    x     100
+wand19      blank       ar3021.are   11   15    i54   100
+helm23      blank       25spell.sto  11   16    x     100
+amul28      blank       elemimix.cre 11   17    i56   100
+brac24      blank       ar3011.are   11   18    i57   100
+helm24      blank       hgkar01.sto  11   19    x     100
+helm25      blank       ambar01.sto  11   20    x     100
 
-compon01    blank       ar6107.are   12   01    i58
-compon02    blank       senlich.cre  12   02    i59
-compon03    blank       ar5007.are   12   03    i5a
-compon04    blank       hgber01.cre  12   04    i5b
-compon05    blank       gromnir.cre  12   05    i5c
-compon06    blank       ar6110.are   12   06    i5d
-compon07    blank       bazmonk.cre  12   07    i5e
-compon08    blank       ar5014.are   12   08    x
-compon09    blank       ar6111.are   12   09    i5f
-compon10    blank       sengua03.cre 12   10    i60
-compon11    blank       ar3022.are   12   11    i61
-compon12    blank       gorgoli.cre  12   12    i62
-compon13    blank       ar3016.are   12   13    i63
-compon14    blank       ar5202.are   12   14    i64
-compon15    blank       senlich.cre  12   15    x
-compon17    blank       gorchr.cre   12   16    i65
-compon18    blank       ar3014.are   12   17    i66
-tome02a     blank       ar3017.are   12   18    x
-tome03a     blank       ar5204.are   12   19    i67
-tome04a     blank       ar6003.are   12   20    i68
+compon01    blank       ar6107.are   12   01    i58   100
+compon02    blank       senlich.cre  12   02    i59   100
+compon03    blank       ar5007.are   12   03    i5a   100
+compon04    blank       hgber01.cre  12   04    i5b   100
+compon05    blank       gromnir.cre  12   05    i5c   100
+compon06    blank       ar6110.are   12   06    i5d   100
+compon07    blank       bazmonk.cre  12   07    i5e   100
+compon08    blank       ar5014.are   12   08    x     100
+compon09    blank       ar6111.are   12   09    i5f   100
+compon10    blank       sengua03.cre 12   10    i60   100
+compon11    blank       ar3022.are   12   11    i61   100
+compon12    blank       gorgoli.cre  12   12    i62   100
+compon13    blank       ar3016.are   12   13    i63   100
+compon14    blank       ar5202.are   12   14    i64   100
+compon15    blank       senlich.cre  12   15    x     100
+compon17    blank       gorchr.cre   12   16    i65   100
+compon18    blank       ar3014.are   12   17    i66   100
+tome02a     blank       ar3017.are   12   18    x     100
+tome03a     blank       ar5204.are   12   19    i67   100
+tome04a     blank       ar6003.are   12   20    i68   100
 
-scrlb4      blank       25spell.sto  13   01    x
-slng08      blank       gorlic01.cre 13   02    i55
-helm34      blank       sendai.cre   13   03    x
-helm26      blank       gromnir.cre  13   04    i84
-ring02      blank       25spell.sto  13   05    x
-dagg23      blank       gorchr.cre   13   06    i69
-dart08      blank       ar3001.are   13   07    x
-staf23      blank       gorlic01.cre 13   08    i6a
-boot12      blank       amsmug02.sto 13   09    i6e
-wand18      blank       ar3016.are   13   10    i6b
-wand18      blank       ar3017.are   13   11    x
-helm31      blank       gorfirg.cre  13   12    i6c
+scrlb4      blank       25spell.sto  13   01    x     100
+slng08      blank       gorlic01.cre 13   02    i55   100
+helm34      blank       sendai.cre   13   03    x     100
+helm26      blank       gromnir.cre  13   04    i84   100
+ring02      blank       25spell.sto  13   05    x     100
+dagg23      blank       gorchr.cre   13   06    i69   100
+dart08      blank       ar3001.are   13   07    x     100
+staf23      blank       gorlic01.cre 13   08    i6a   100
+boot12      blank       amsmug02.sto 13   09    i6e   100
+wand18      blank       ar3016.are   13   10    i6b   100
+wand18      blank       ar3017.are   13   11    x     100
+helm31      blank       gorfirg.cre  13   12    i6c   100
 
 
 i8a
 
-blun14a     blank       ar1302.are   fa   01    x     cold
-blun14b     blank       ar1303.are   fa   02    x     fire
-blun14c     blank       kpglai01.cre fa   03    x     acid
+blun14a     blank       ar1302.are   fa   01    x     100    cold
+blun14b     blank       ar1303.are   fa   02    x     100    fire
+blun14c     blank       kpglai01.cre fa   03    x     100    acid
 
-flrward1    blank       blank        ka   01    x     Are only included if the Kangaxx component is installed
-flrward1    blank       blank        ka   02    x
+flrward1    blank       blank        ka   01    x     100    Are only included if the Kangaxx component is installed
+flrward1    blank       blank        ka   02    x     100
 
-scrl6t      blank       ar1103.are   s4   01    is3c  Protection From Normal Weapons
-scrl6t      blank       ar1302.are   s4   02    is3d  Protection From Normal Weapons
-scrl6t      blank       ar1302.are   s4   03    is3e  Protection From Normal Weapons
-scrl6r      blank       ar0804.are   s4   04    is3f  Spider Spawn
-scrl6p      blank       ar1202.are   s4   05    is40  Minor Sequencer
-scrl6o      blank       ar0205.are   s4   06    is41  Secret Word
-scrl6n      blank       ar1202.are   s4   07    is42  Fire Shield (Red)
-scrl6m      blank       ar0204.are   s4   08    is43  Enchanted Weapon
-scrl1w      blank       sahcpt01.cre s4   09    x     Fire Shield (Blue)
-scrl1v      blank       ar0510.are   s4   10    is44  Stoneskin
-scrl5k      blank       ar0412.are   s4   11    is45  Spirit Armor
-scrl5k      blank       ar0530.are   s4   12    is46  Spirit Armor
-scrl5k      blank       ar1513.are   s4   13    is47  Spirit Armor
-scrl5m      blank       ar0410.are   s4   14    is48  Polymorph Self
-scrl1z      blank       ar0302.are   s4   15    is49  Minor Globe of Invulnerability
-scrl1y      blank       ar0503.are   s4   16    is4a  Improved Invisibility
+scrl6t      blank       ar1103.are   s4   01    is3c  100    Protection From Normal Weapons
+scrl6t      blank       ar1302.are   s4   02    is3d  100    Protection From Normal Weapons
+scrl6t      blank       ar1302.are   s4   03    is3e  100    Protection From Normal Weapons
+scrl6r      blank       ar0804.are   s4   04    is3f  100    Spider Spawn
+scrl6p      blank       ar1202.are   s4   05    is40  100    Minor Sequencer
+scrl6o      blank       ar0205.are   s4   06    is41  100    Secret Word
+scrl6n      blank       ar1202.are   s4   07    is42  100    Fire Shield (Red)
+scrl6m      blank       ar0204.are   s4   08    is43  100    Enchanted Weapon
+scrl1w      blank       sahcpt01.cre s4   09    x     100    Fire Shield (Blue)
+scrl1v      blank       ar0510.are   s4   10    is44  100    Stoneskin
+scrl5k      blank       ar0412.are   s4   11    is45  100    Spirit Armor
+scrl5k      blank       ar0530.are   s4   12    is46  100    Spirit Armor
+scrl5k      blank       ar1513.are   s4   13    is47  100    Spirit Armor
+scrl5m      blank       ar0410.are   s4   14    is48  100    Polymorph Self
+scrl1z      blank       ar0302.are   s4   15    is49  100    Minor Globe of Invulnerability
+scrl1y      blank       ar0503.are   s4   16    is4a  100    Improved Invisibility
 
-scrl7d      blank       ar0411.are   s5   01    is27  Minor Spell Turning
-scrl7d      blank       ar1303.are   s5   02    is28  Minor Spell Turning
-scrl6z      blank       ar0309.are   s5   03    is29  Phantom Blade
-scrl6z      blank       ar1514.are   s5   04    is2a  Phantom Blade
-scrl6y      blank       ar0205.are   s5   05    is2b  Protection From Acid
-scrl2e      blank       ar0202.are   s5   06    is2c  Cloudkill
-scrl2f      blank       ar0202.are   s5   07    is2d  Cone of Cold
-scrl2f      blank       xappren2.cre s5   08    is2e  Cone of Cold
-scrl5o      blank       ar1202.are   s5   09    is2f  Hold Monster
-scrl5n      blank       ar1202.are   s5   10    is30  Domination
-scrl2d      blank       ar0202.are   s5   11    is31  Animate Dead
-scrl6u      blank       ar0411.are   s5   12    is32  Breach
-scrl6u      blank       ar0411.are   s5   13    is33  Breach
-scrl6u      blank       ar0530.are   s5   14    is34  Breach
-scrl6u      blank       ar1302.are   s5   15    is35  Breach
-scrl6u      blank       ar1514.are   s5   16    is36  Breach
-scrl6v      blank       ar0202.are   s5   17    is37  Lower Resistance
-scrl6s      blank       ar0804.are   s5   18    is38  Spell Immunity
-scrl6q      blank       ar1202.are   s5   19    is39  Teleport Field
-scrl5p      blank       ar1202.are   s5   20    is3a  Chaos
-scrlal      blank       ar1514.are   s5   21    is3b  Sunfire
-scrlal      blank       scrolls.sto  s5   22    x     Sunfire x2
+scrl7d      blank       ar0411.are   s5   01    is27  100    Minor Spell Turning
+scrl7d      blank       ar1303.are   s5   02    is28  100    Minor Spell Turning
+scrl6z      blank       ar0309.are   s5   03    is29  100    Phantom Blade
+scrl6z      blank       ar1514.are   s5   04    is2a  100    Phantom Blade
+scrl6y      blank       ar0205.are   s5   05    is2b  100    Protection From Acid
+scrl2e      blank       ar0202.are   s5   06    is2c  100    Cloudkill
+scrl2f      blank       ar0202.are   s5   07    is2d  100    Cone of Cold
+scrl2f      blank       xappren2.cre s5   08    is2e  100    Cone of Cold
+scrl5o      blank       ar1202.are   s5   09    is2f  100    Hold Monster
+scrl5n      blank       ar1202.are   s5   10    is30  100    Domination
+scrl2d      blank       ar0202.are   s5   11    is31  100    Animate Dead
+scrl6u      blank       ar0411.are   s5   12    is32  100    Breach
+scrl6u      blank       ar0411.are   s5   13    is33  100    Breach
+scrl6u      blank       ar0530.are   s5   14    is34  100    Breach
+scrl6u      blank       ar1302.are   s5   15    is35  100    Breach
+scrl6u      blank       ar1514.are   s5   16    is36  100    Breach
+scrl6v      blank       ar0202.are   s5   17    is37  100    Lower Resistance
+scrl6s      blank       ar0804.are   s5   18    is38  100    Spell Immunity
+scrl6q      blank       ar1202.are   s5   19    is39  100    Teleport Field
+scrl5p      blank       ar1202.are   s5   20    is3a  100    Chaos
+scrlal      blank       ar1514.are   s5   21    is3b  100    Sunfire
+scrlal      blank       scrolls.sto  s5   22    x     100    Sunfire x2
 
-scrl8c      blank       beast.cre    s6   01    x     Stone to Flesh
-scrl8b      blank       lehtin.cre   s6   02    is15  Summon Nishruu
-scrl8a      blank       ar0705.are   s6   03    is16  Carrion Summons
-scrl7w      blank       ar1401.are   s6   04    is17  Wyvern Call
-scrl7v      blank       ar0705.are   s6   05    is18  Spell Deflection
-scrl7u      blank       ar0705.are   s6   06    is19  Contingency
-scrl7u      blank       ar1103.are   s6   07    is1a  Contingency
-scrl7o      blank       trcar04.sto  s6   08    x     Protection From Magical Weapons x2
-scrl7t      blank       ar1401.are   s6   09    is1b  Disintegrate
-scrl7s      blank       ar1514.are   s6   10    is1c  Chain Lightning
-scrl7s      blank       pbhunt03.cre s6   11    is1d  Chain Lightning
-scrl7s      blank       sahkng01.cre s6   12    x     Chain Lightning
-scrl7r      blank       lehtin.cre   s6   13    is1e  Death Fog
-scrl7r      blank       sahkng01.cre s6   14    x     Death Fog
-scrl7o      blank       ar1401.are   s6   15    is1f  Protection From Magical Weapons
-scrl7l      blank       ar1401.are   s6   16    is20  Pierce Magic
-scrl7k      blank       ar0317.are   s6   17    is21  Mislead
-scrl7j      blank       ar0315.are   s6   18    is22  Protection From Magic Energy
-scrl7i      blank       pbhunt03.cre s6   19    is23  Death Spell
-scrl7h      blank       pbhunt01.cre s6   20    is24  Flesh to Stone
-scrl7f      blank       ar0412.are   s6   21    is25  Globe of Invulnerability
-scrl7e      blank       ar0407.are   s6   22    is26  Invisible Stalker
+scrl8c      blank       beast.cre    s6   01    x     100    Stone to Flesh
+scrl8b      blank       lehtin.cre   s6   02    is15  100    Summon Nishruu
+scrl8a      blank       ar0705.are   s6   03    is16  100    Carrion Summons
+scrl7w      blank       ar1401.are   s6   04    is17  100    Wyvern Call
+scrl7v      blank       ar0705.are   s6   05    is18  100    Spell Deflection
+scrl7u      blank       ar0705.are   s6   06    is19  100    Contingency
+scrl7u      blank       ar1103.are   s6   07    is1a  100    Contingency
+scrl7o      blank       trcar04.sto  s6   08    x     100    Protection From Magical Weapons x2
+scrl7t      blank       ar1401.are   s6   09    is1b  100    Disintegrate
+scrl7s      blank       ar1514.are   s6   10    is1c  100    Chain Lightning
+scrl7s      blank       pbhunt03.cre s6   11    is1d  100    Chain Lightning
+scrl7s      blank       sahkng01.cre s6   12    x     100    Chain Lightning
+scrl7r      blank       lehtin.cre   s6   13    is1e  100    Death Fog
+scrl7r      blank       sahkng01.cre s6   14    x     100    Death Fog
+scrl7o      blank       ar1401.are   s6   15    is1f  100    Protection From Magical Weapons
+scrl7l      blank       ar1401.are   s6   16    is20  100    Pierce Magic
+scrl7k      blank       ar0317.are   s6   17    is21  100    Mislead
+scrl7j      blank       ar0315.are   s6   18    is22  100    Protection From Magic Energy
+scrl7i      blank       pbhunt03.cre s6   19    is23  100    Death Spell
+scrl7h      blank       pbhunt01.cre s6   20    is24  100    Flesh to Stone
+scrl7f      blank       ar0412.are   s6   21    is25  100    Globe of Invulnerability
+scrl7e      blank       ar0407.are   s6   22    is26  100    Invisible Stalker
 
-scrl8q      blank       ar1513.are   s7   01    isb   Power Word Stun
-scrl8p      blank       ar1512.are   s7   02    isc   Prismatic Spray
-scrl8o      blank       ar0808.are   s7   03    isd   Finger of Death
-scrl8o      blank       ar1513.are   s7   04    ise   Finger of Death
-scrl8n      blank       ar1512.are   s7   05    isf   Delayed Blast Fireball
-scrl8i      blank       ar2210.are   s7   06    is10  Cacofiend
-scrl8h      blank       ar0411.are   s7   07    is11  Warding Whip
-scrl8g      blank       ar2210.are   s7   08    is12  RRR
-scrl8f      blank       ar1512.are   s7   09    is13  Project Image
-scrl8e      blank       ar2300.are   s7   10    is14  Protection From The Elements
-scrl8h      blank       udduer02.sto s7   11    x     Warding Whip
-scrl8o      blank       udduer02.sto s7   12    x     Finger of Death
+scrl8q      blank       ar1513.are   s7   01    isb   100    Power Word Stun
+scrl8p      blank       ar1512.are   s7   02    isc   100    Prismatic Spray
+scrl8o      blank       ar0808.are   s7   03    isd   100    Finger of Death
+scrl8o      blank       ar1513.are   s7   04    ise   100    Finger of Death
+scrl8n      blank       ar1512.are   s7   05    isf   100    Delayed Blast Fireball
+scrl8i      blank       ar2210.are   s7   06    is10  100    Cacofiend
+scrl8h      blank       ar0411.are   s7   07    is11  100    Warding Whip
+scrl8g      blank       ar2210.are   s7   08    is12  100    RRR
+scrl8f      blank       ar1512.are   s7   09    is13  100    Project Image
+scrl8e      blank       ar2300.are   s7   10    is14  100    Protection From The Elements
+scrl8h      blank       udduer02.sto s7   11    x     100    Warding Whip
+scrl8o      blank       udduer02.sto s7   12    x     100    Finger of Death
 
-scrl9h      blank       ar1514.are   s8   01    is6   Maze
-scrl9g      blank       ar0809.are   s8   02    is8   ADHW
-scrl9g      blank       gpmage1.cre  s8   03    isa   ADHW
-scrl9f      blank       ar0809.are   s8   04    is9   Symbol Fear
-scrl9d      blank       blank        s8   05    x     Spell Trigger
-scrl8z      blank       ar1513.are   s8   06    is7   Simulacrum
-scrl9a      blank       ribald3.sto  s8   07    x     Pierce Shield
+scrl9h      blank       ar1514.are   s8   01    is6   100    Maze
+scrl9g      blank       ar0809.are   s8   02    is8   100    ADHW
+scrl9g      blank       gpmage1.cre  s8   03    isa   100    ADHW
+scrl9f      blank       ar0809.are   s8   04    is9   100    Symbol Fear
+scrl9d      blank       blank        s8   05    x     100    Spell Trigger
+scrl8z      blank       ar1513.are   s8   06    is7   100    Simulacrum
+scrl9a      blank       ribald3.sto  s8   07    x     100    Pierce Shield
 
-scrl9t      blank       ar2809.are   s9   01    is1   Meteor Swarm
-scrl9s      blank       blank        s9   02    x     Imprisonment
-scrl9r      blank       ar18mage.cre s9   03    is2   Time Stop
-scrl9r      blank       ar2810.are   s9   04    is3   Time Stop
-scrl9p      blank       ar2801.are   s9   05    is4   Absolute Immunity
-scrl9n      blank       ar2808.are   s9   06    is5   Gate
+scrl9t      blank       ar2809.are   s9   01    is1   100    Meteor Swarm
+scrl9s      blank       blank        s9   02    x     100    Imprisonment
+scrl9r      blank       ar18mage.cre s9   03    is2   100    Time Stop
+scrl9r      blank       ar2810.are   s9   04    is3   100    Time Stop
+scrl9p      blank       ar2801.are   s9   05    is4   100    Absolute Immunity
+scrl9n      blank       ar2808.are   s9   06    is5   100    Gate
 
 is4b
