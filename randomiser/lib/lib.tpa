@@ -436,71 +436,195 @@ BEGIN
   END
 END
 
+DEFINE_PATCH_MACRO create_item_array#read_row BEGIN
+  READ_2DA_ENTRY_FORMER cia_file i 0 item
+  READ_2DA_ENTRY_FORMER cia_file i 1 replacement
+  READ_2DA_ENTRY_FORMER cia_file i 2 source
+  READ_2DA_ENTRY_FORMER cia_file i 3 tier
+  READ_2DA_ENTRY_FORMER cia_file i 4 token
+  READ_2DA_ENTRY_FORMER cia_file i 5 ident
+  READ_2DA_ENTRY_FORMER cia_file i 6 chance
+  TO_LOWER item
+  TO_LOWER replacement
+  TO_LOWER source
+  TO_LOWER tier
+  TO_LOWER token
+  TO_LOWER ident
+END
+
+DEFINE_PATCH_MACRO create_item_array#mark_cursed_item BEGIN
+  PATCH_IF VARIABLE_IS_SET $cursed_item_list("%item%") BEGIN
+    SET $cursed_items("%tier%" "%token%") = 1
+  END
+END
+
+DEFINE_PATCH_MACRO create_item_array#convert_resrefs BEGIN
+  /*
+   * Only convert on Trilogy games if explicitly told to (do not
+   * convert BGII resources).
+   * Non-Trilogy games can be passed through unconditionally.
+   */
+  PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+    LPF fl#bg1pal
+      STR_VAR
+        resource = EVAL "%item%"
+        type = itm
+      RET
+        item = resource
+    END
+    /*  Don't attempt to convert empty entries */
+    PATCH_IF "%replacement%" STR_CMP "blank" BEGIN
+      LPF fl#bg1pal
+        STR_VAR
+          resource = EVAL "%replacement%"
+          type = itm
+        RET
+          replacement = resource
+      END
+    END
+    /* Don't attempt to convert empty or special entries */
+    PATCH_IF "%source%" STR_CMP "blank" AND
+             ("%source%" STRING_MATCHES_REGEXP ".+\.fl$")
+    BEGIN
+      LPF fl#bg1pal STR_VAR file = EVAL "%source%" RET source = file END
+    END
+  END
+END
+
+DEFINE_PATCH_FUNCTION create_item_array#filter
+  INT_VAR
+    global_chance = 0
+    chance = 100
+  STR_VAR
+    item = ""
+    source = ""
+    tier = ""
+    ident = ""
+  RET
+    skip
+BEGIN
+  skip = 0
+
+  /* Items which have already been filtered out earlier in the
+   * installation process
+   */
+  PATCH_IF VARIABLE_IS_SET $item_filter("%ident%") BEGIN skip = 1 END
+
+  /* Global chance of skipping item, but only for items with a source
+   * global_chance is an exclusion percentage; 0 is never exclude
+   */
+  PATCH_IF "%source%" STR_CMP "blank" AND
+           (RANDOM(1 100) <= global_chance)
+  BEGIN skip = 1 END
+
+  /* Item chance
+   * chance is an inclusion percentage; 100 is always include
+   */
+  PATCH_IF RANDOM(1 100) > chance BEGIN skip = 1 END
+
+  /* For BCS|DLG sources, filter out items that do not exist in the source */
+  PATCH_IF "%source%" STRING_MATCHES_REGEXP ".+\.\(bcs\|dlg\)$" = 0 AND
+           FILE_EXISTS_IN_GAME "%source%" AND
+           NOT FILE_CONTAINS_EVALUATED ("%source%" "%item%")
+  BEGIN skip = 1 END
+
+  /* Filter out option-dependent tiers that are not installed */
+  PATCH_IF ("%tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND
+            !VARIABLE_IS_SET $RandOptions(flrc530)) OR
+           ("%tier%" STRING_EQUAL_CASE ka AND
+            !VARIABLE_IS_SET $RandOptions(flrc520)) OR
+           ("%tier%" STRING_EQUAL_CASE fa AND
+            !VARIABLE_IS_SET $RandOptions(flrc540))
+  BEGIN skip = 1 END
+
+  /* Filter out invalid items
+   * Items that do not exist
+   * Items whose source does not exist
+   *   unless the source is "blank" or an .fl source
+   */
+  PATCH_IF !FILE_EXISTS_IN_GAME "%item%.itm" OR
+          (!FILE_EXISTS_IN_GAME "%source%" AND
+           "%source%" STR_CMP "blank" AND
+           "%source%" STRING_MATCHES_REGEXP ".+\.fl$")
+  BEGIN skip = 1 END
+END
+
+DEFINE_PATCH_MACRO create_item_array#side_effects#totsc_tome BEGIN
+  LOCAL_SET r = 0
+  PATCH_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
+    DEFINE_ARRAY create_item_array#side_effects#totsc_tome#books BEGIN
+                 book03
+                 book04
+                 book05
+                 book06
+                 book07
+                 book08
+    END
+    r = RANDOM (0 5)
+    SPRINT item $create_item_array#side_effects#totsc_tome#books("%r%")
+    LPF fl#bg1pal STR_VAR file = EVAL "%item%.itm" RET item = resource END
+    SPRINT replacement_b2c "%item%"
+  END
+END
+
+DEFINE_PATCH_MACRO create_item_array#side_effects#helm_balduran BEGIN
+  SET remove_helm07 = 1
+END
+
+DEFINE_PATCH_MACRO create_item_array#rebalance BEGIN
+  PATCH_IF VARIABLE_IS_SET $rebalance_tier("%item%") BEGIN
+    SPRINT tier $rebalance_tier("%item%")
+    SPRINT token $rebalance_token("%item%")
+  END
+END
+
 DEFINE_PATCH_MACRO create_item_array BEGIN
-  COUNT_2DA_ROWS 6 cia_num_row
-  FOR (cia1=1;cia1<cia_num_row;cia1+=1) BEGIN
-    READ_2DA_ENTRY cia1 0 6 cia_item
-    READ_2DA_ENTRY cia1 1 6 cia_replace
-    READ_2DA_ENTRY cia1 2 6 cia_source
-    READ_2DA_ENTRY cia1 3 6 cia_tier
-    READ_2DA_ENTRY cia1 4 6 cia_token
-    READ_2DA_ENTRY cia1 5 6 cia_ident
-    TO_LOWER cia_item
-    TO_LOWER cia_replace
-    TO_LOWER cia_source
-    TO_LOWER cia_tier
-    TO_LOWER cia_token
-    TO_LOWER cia_ident
-    PATCH_IF VARIABLE_IS_SET $cursed_item_list("%cia_item%") AND FILE_EXISTS_IN_GAME "%TUTU_VAR%%cia_item%.itm" BEGIN
-      SET $cursed_items("%cia_tier%" "%cia_token%") = 1
+  LOCAL_SPRINT item ""
+  LOCAL_SPRINT replacement ""
+  LOCAL_SPRINT source ""
+  LOCAL_SPRINT tier ""
+  LOCAL_SPRINT token ""
+  LOCAL_SPRINT ident ""
+  LOCAL_SET chance = 0
+
+  LOCAL_SET i = 0
+  LOCAL_SET skip = 0
+  LOCAL_SPRINT macro ""
+
+  DEFINE_ASSOCIATIVE_ARRAY create_item_array#side_effects BEGIN
+    b2c => create_item_array#side_effects#totsc_tome
+    i3d => create_item_array#side_effects#helm_balduran
+  END
+
+  READ_2DA_ENTRIES_NOW cia_file 7
+  FOR (i = 1; i < cia_file; ++i) BEGIN
+    LPM create_item_array#read_row
+    LPM create_item_array#mark_cursed_item
+    LPM create_item_array#convert_resrefs
+    LPF create_item_array#filter
+      INT_VAR
+        global_chance = RandomNotRandom
+        chance
+      STR_VAR
+        item source tier ident
+      RET
+        skip
     END
-    cia_skip_item = 0
-    PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
-      LPF fl#bg1pal STR_VAR resource = EVAL "%cia_item%" type = itm RET cia_item = resource END
-      PATCH_IF "%cia_replace%" STR_CMP "blank" BEGIN // Don't attempt to convert empty entries
-        LPF fl#bg1pal STR_VAR resource = EVAL "%cia_replace%" type = itm RET cia_replace = resource END
+    PATCH_IF skip BEGIN
+      PATCH_IF "%ident%" STRING_COMPARE_CASE "x" BEGIN
+        SPRINT $item_filter("%ident%") ""
       END
-      PATCH_IF "%cia_source%" STR_CMP "blank" AND ("%cia_source%" STRING_MATCHES_REGEXP "+.\.fl$") BEGIN // Don't attempt to convert empty or special entries
-        LPF fl#bg1pal STR_VAR file = EVAL "%cia_source%" RET cia_source = file END
+    END ELSE BEGIN
+      PATCH_IF VARIABLE_IS_SET $create_item_array#side_effects("%ident%") BEGIN
+        SPRINT macro $create_item_array#side_effects("%ident%")
+        LPM "%macro%"
       END
-    END
-    PATCH_IF "%cia_source%" STRING_MATCHES_REGEXP ".*\.\(dlg\|bcs\)$" = 0 AND FILE_EXISTS_IN_GAME "%cia_source%" BEGIN //Make sure the item we are after is present in bcs|dlg
-      PATCH_IF NOT FILE_CONTAINS_EVALUATED ("%cia_source%" "%cia_item%") BEGIN
-        SPRINT $item_filter("%cia_ident%") ""
+      PATCH_IF "%ident%" STRING_COMPARE_CASE "x" BEGIN
+        SPRINT $identitem("%ident%") "%item%"
       END
-    END
-    PATCH_IF ("%cia_tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND !VARIABLE_IS_SET $RandOptions(flrc530))
-          OR ("%cia_tier%" STRING_EQUAL_CASE ka AND !VARIABLE_IS_SET $RandOptions(flrc520))
-          OR ("%cia_tier%" STRING_EQUAL_CASE fa AND !VARIABLE_IS_SET $RandOptions(flrc540))
-          OR VARIABLE_IS_SET $item_filter("%cia_ident%") BEGIN
-      cia_skip_item = 1
-    END
-    PATCH_IF "%cia_item%" STRING_EQUAL_CASE helm07 AND (BG1 = 0 OR BGT = 1) BEGIN
-      remove_helm07 = 1
-    END
-    PATCH_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 AND "%cia_ident%" STRING_EQUAL_CASE b2c BEGIN //real pretty
-      SPRINT $book_array(0) "%TUTU_VAR%book03"
-      SPRINT $book_array(1) "%TUTU_VAR%book04"
-      SPRINT $book_array(2) "%TUTU_VAR%book05"
-      SPRINT $book_array(3) "%TUTU_VAR%book06"
-      SPRINT $book_array(4) "%TUTU_VAR%book07"
-      SPRINT $book_array(5) "%TUTU_VAR%book08"
-      r_f = RANDOM(0 5)
-      SPRINT cia_item $book_array("%r_f%")
-      SPRINT replacement_b2c "%cia_item%"
-    END
-    PATCH_IF cia_skip_item = 0 AND (RANDOM(1 100) > RandomNotRandom OR "%cia_source%" STRING_EQUAL_CASE blank) BEGIN
-      PATCH_IF "%cia_ident%" STRING_COMPARE_CASE x BEGIN
-        SPRINT $identitem("%cia_ident%") "%cia_item%"
-      END
-      SET $ident("%cia_ident%") = 1
-      PATCH_IF VARIABLE_IS_SET $rebalance_tier("%cia_item%") BEGIN
-        SPRINT cia_tier $rebalance_tier("%cia_item%")
-        SPRINT cia_token $rebalance_token("%cia_item%")
-      END
-      PATCH_IF FILE_EXISTS_IN_GAME "%cia_item%.itm" AND (FILE_EXISTS_IN_GAME "%cia_source%" OR "%cia_source%" STRING_EQUAL_CASE blank OR "%cia_source%" STRING_MATCHES_REGEXP ".*\.fl$" = 0) BEGIN
-        SPRINT $item_array("%cia_item%" "%cia_replace%" "%cia_source%" "%cia_tier%" "%cia_token%" "%cia_ident%") "%cia1%"
-      END
+      SET $ident("%ident%") = 1
+      LPM create_item_array#rebalance
+      SPRINT $item_array("%item%" "%replacement%" "%source%" "%tier%" "%token%" "%ident%") ""
     END
   END
 END
