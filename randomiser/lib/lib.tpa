@@ -507,7 +507,7 @@ BEGIN
   /* Items which have already been filtered out earlier in the
    * installation process
    */
-  PATCH_IF VARIABLE_IS_SET $item_filter("%ident%") BEGIN skip = 1 END
+  PATCH_IF VARIABLE_IS_SET $ident_filter("%ident%") BEGIN skip = 1 END
 
   /* Global chance of skipping item, but only for items with a source
    * global_chance is an exclusion percentage; 0 is never exclude
@@ -611,7 +611,7 @@ DEFINE_PATCH_MACRO create_item_array BEGIN
     END
     PATCH_IF skip BEGIN
       PATCH_IF "%ident%" STRING_COMPARE_CASE "x" BEGIN
-        SPRINT $item_filter("%ident%") ""
+        SPRINT $ident_filter("%ident%") ""
       END
     END ELSE BEGIN
       PATCH_IF VARIABLE_IS_SET $create_item_array#side_effects("%ident%") BEGIN
@@ -677,7 +677,7 @@ BEGIN
   /* Locations which have already been filtered out earlier in the
    * installation process
    */
-  PATCH_IF VARIABLE_IS_SET $item_filter("%ident%") BEGIN skip = 1 END
+  PATCH_IF VARIABLE_IS_SET $ident_filter("%ident%") BEGIN skip = 1 END
 
   /* Chance of skipping location
    * chance is an inclusion percentage; 100 is always include
