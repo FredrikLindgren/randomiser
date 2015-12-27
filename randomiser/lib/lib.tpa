@@ -459,8 +459,7 @@ DEFINE_PATCH_MACRO create_item_array#mark_cursed_item BEGIN
 END
 
 DEFINE_PATCH_MACRO create_item_array#convert_resrefs BEGIN
-  /*
-   * Only convert on Trilogy games if explicitly told to (do not
+  /* Only convert on Trilogy games if explicitly told to (do not
    * convert BGII resources).
    * Non-Trilogy games can be passed through unconditionally.
    */
@@ -472,7 +471,7 @@ DEFINE_PATCH_MACRO create_item_array#convert_resrefs BEGIN
       RET
         item = resource
     END
-    /*  Don't attempt to convert empty entries */
+    /* Don't attempt to convert empty entries */
     PATCH_IF "%replacement%" STR_CMP "blank" BEGIN
       LPF fl#bg1pal
         STR_VAR
@@ -531,9 +530,9 @@ BEGIN
   /* Filter out option-dependent tiers that are not installed */
   PATCH_IF ("%tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND
             !VARIABLE_IS_SET $RandOptions(flrc530)) OR
-           ("%tier%" STRING_EQUAL_CASE ka AND
+           ("%tier%" STRING_EQUAL_CASE "ka" AND
             !VARIABLE_IS_SET $RandOptions(flrc520)) OR
-           ("%tier%" STRING_EQUAL_CASE fa AND
+           ("%tier%" STRING_EQUAL_CASE "fa" AND
             !VARIABLE_IS_SET $RandOptions(flrc540))
   BEGIN skip = 1 END
 
@@ -629,36 +628,120 @@ DEFINE_PATCH_MACRO create_item_array BEGIN
   END
 END
 
-DEFINE_PATCH_MACRO create_loc_array BEGIN
-  COUNT_2DA_ROWS 5 cla_num_rows
-  FOR (cla1=1;cla1<cla_num_rows;cla1+=1) BEGIN
-    READ_2DA_ENTRY cla1 0 5 cla_location
-    READ_2DA_ENTRY cla1 1 5 cla_tier
-    READ_2DA_ENTRY cla1 2 5 cla_res
-    READ_2DA_ENTRY cla1 3 5 cla_area
-    READ_2DA_ENTRY cla1 4 5 cla_ident
-    TO_LOWER cla_location
-    TO_LOWER cla_tier
-    TO_LOWER cla_res
-    TO_LOWER cla_area
-    TO_LOWER cla_ident
-    cla_skip_location = 0
-    PATCH_IF ("%cla_tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND !VARIABLE_IS_SET $RandOptions(flrc530))
-          OR ("%cla_tier%" STRING_EQUAL_CASE fa AND !VARIABLE_IS_SET $RandOptions(flrc540))
-          OR ("%cla_tier%" STRING_EQUAL_CASE ka AND !VARIABLE_IS_SET $RandOptions(flrc520)) 
-          OR VARIABLE_IS_SET $item_filter("%cla_ident%") BEGIN
-      cla_skip_location = 1
+DEFINE_PATCH_MACRO create_loc_array#read_row BEGIN
+  READ_2DA_ENTRY_FORMER cla_file i 0 location
+  READ_2DA_ENTRY_FORMER cla_file i 1 tier
+  READ_2DA_ENTRY_FORMER cla_file i 2 target
+  READ_2DA_ENTRY_FORMER cla_file i 3 area
+  READ_2DA_ENTRY_FORMER cla_file i 4 ident
+  READ_2DA_ENTRY_FORMER cla_file i 5 chance
+  TO_LOWER location
+  TO_LOWER tier
+  TO_LOWER target
+  TO_LOWER area
+  TO_LOWER ident
+END
+
+DEFINE_PATCH_MACRO create_loc_array#convert_resrefs BEGIN
+  /* Only convert on Trilogy games if explicitly told to (do not
+   * convert BGII resources).
+   * Non-Trilogy games can be passed through unconditionally.
+   */
+  PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+    /* Only convert targets with a file extension (not area containers)
+     *   except .fl and .flg targets
+     */
+    PATCH_IF "%target%" STRING_MATCHES_REGEXP ".+\.[a-z]+$" = 0 AND
+             "%target%" STRING_MATCHES_REGEXP ".+\.flg?$"
+    BEGIN
+      LPF fl#bg1pal STR_VAR file = EVAL "%target%" RET target = file END
     END
-    PATCH_IF cla_skip_location = 0 AND (VARIABLE_IS_SET $ident("%cla_ident%") OR "%cla_ident%" STRING_EQUAL_CASE x) BEGIN
-      PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
-        PATCH_IF "%cla_res%" STRING_CONTAINS_REGEXP ".+\.[a-z]+$" = 0 BEGIN // Don't attempt to convert area-container names
-          LPF fl#bg1pal STR_VAR file = EVAL "%cla_res%" RET cla_res = file END
-        END
-        LPF fl#bg1pal STR_VAR resource = EVAL "%cla_area%" type = ARE RET cla_area = resource END
-      END
-      PATCH_IF FILE_EXISTS_IN_GAME "%cla_area%.are" OR "%cla_area%" STRING_EQUAL_CASE blank BEGIN
-        SPRINT $location_array("%cla_location%" "%cla_tier%" "%cla_res%" "%cla_area%" "%cla_ident%") "%cla1%"
-      END
+    LPF fl#bg1pal STR_VAR resource = EVAL "%area%" type = ARE RET area = resource END
+  END
+END
+
+DEFINE_PATCH_FUNCTION create_loc_array#filter
+  INT_VAR
+    chance = 100
+  STR_VAR
+    location = ""
+    tier = ""
+    target = ""
+    area = ""
+    ident = ""
+  RET
+    skip
+BEGIN
+  skip = 0
+
+  /* Locations which have already been filtered out earlier in the
+   * installation process
+   */
+  PATCH_IF VARIABLE_IS_SET $item_filter("%ident%") BEGIN skip = 1 END
+
+  /* Chance of skipping location
+   * chance is an inclusion percentage; 100 is always include
+   */
+  PATCH_IF RANDOM(1 100) > chance BEGIN skip = 1 END
+
+  /* Filter out option-dependent tiers that are not installed */
+  PATCH_IF ("%tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND
+            !VARIABLE_IS_SET $RandOptions(flrc530)) OR
+           ("%tier%" STRING_EQUAL_CASE "fa" AND
+            !VARIABLE_IS_SET $RandOptions(flrc540)) OR
+           ("%tier%" STRING_EQUAL_CASE "ka" AND
+            !VARIABLE_IS_SET $RandOptions(flrc520))
+  BEGIN skip = 1 END
+
+  /* Filter out locations with idents for which the item was not randomised
+   *   unless the ident is x (no ident)
+   */
+  PATCH_IF !VARIABLE_IS_SET $ident("%ident%") AND
+           "%ident%" STRING_COMPARE_CASE "x"
+  BEGIN skip = 1 END
+
+  /* Filter out invalid locations
+   * Areas which do not exist
+   *   unless the area is blank
+   * Targets which do not exist
+   *   unless it's an area container
+   *   or an .fl or .flg target
+   */
+  PATCH_IF (!FILE_EXISTS_IN_GAME "%area%.are" AND
+            !"%area%" STRING_EQUAL_CASE "blank") OR
+           ("%target%" STRING_MATCHES_REGEXP ".+\.[a-z]+$" = 0 AND
+            !"%target%" STRING_MATCHES_REGEXP ".+\.flg?$" = 0 AND
+            !FILE_EXISTS_IN_GAME "%target%")
+  BEGIN skip = 1 END
+END
+
+DEFINE_PATCH_MACRO create_loc_array BEGIN
+  LOCAL_SPRINT location ""
+  LOCAL_SPRINT tier ""
+  LOCAL_SPRINT target ""
+  LOCAL_SPRINT area ""
+  LOCAL_SPRINT ident ""
+  LOCAL_SET chance = 0
+
+  LOCAL_SET i = 0
+  LOCAL_SET skip = 0
+
+  READ_2DA_ENTRIES_NOW cla_file 6
+  FOR (i = 1; i < cla_file; ++i)  BEGIN
+    LPM create_loc_array#read_row
+    LPM create_loc_array#convert_resrefs
+    LPF create_loc_array#filter
+      INT_VAR
+        chance
+      STR_VAR
+        location tier target area ident
+      RET
+        skip
+    END
+    PATCH_IF skip BEGIN
+      // Do something
+    END ELSE BEGIN
+      SPRINT $location_array("%location%" "%tier%" "%target%" "%area%" "%ident%") ""
     END
   END
 END
