@@ -111,20 +111,22 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       END
     END
 
+  OUTER_SPRINT tier_hook "bg2_tiers"
+
   COPY - "randomiser/lists/itemlist.2da" "...randomiser/fl-inlined/itemlist.2da"
-    LAUNCH_PATCH_MACRO create_item_array
+    LAUNCH_PATCH_MACRO create_item_array#stage1
 
   COPY - "randomiser/lists/locationlist.2da" "...randomiser/fl-inlined/locationlist.2da"
-    LAUNCH_PATCH_MACRO create_loc_array
+    LAUNCH_PATCH_MACRO create_loc_array#stage1
 
   ACTION_IF weidu_action = 1 BEGIN
     COPY - "randomiser/lists/weiduitem.2da" "...randomiser/fl-inlined/weiduitem.2da"
-      LAUNCH_PATCH_MACRO create_item_array
+      LAUNCH_PATCH_MACRO create_item_array#stage1
     
     COPY - "randomiser/lists/weidulocation.2da" "...randomiser/fl-inlined/weidulocation.2da"
-      LAUNCH_PATCH_MACRO create_loc_array
+      LAUNCH_PATCH_MACRO create_loc_array#stage1
   END
-  
+
   COPY - "randomiser/lists/tra/blpool.2da" "...randomiser/fl-inlined/tra/blpool.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
@@ -232,11 +234,6 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
 END
 
 
-ACTION_PHP_EACH location_array AS la_entry => int BEGIN
-  OUTER_SPRINT $bg2_tiers("%la_entry_1%") ""
-END
-
-
 ACTION_IF BG1 = 1 BEGIN
   OUTER_SET BGT_Convert = 1
   
@@ -260,34 +257,22 @@ ACTION_IF BG1 = 1 BEGIN
       END
     END
 
+  OUTER_SPRINT tier_hook "bg1_tiers"
+
   COPY - "randomiser/lists/bg1item.2da" "...randomiser/fl-inlined/bg1item.2da"
-    LAUNCH_PATCH_MACRO create_item_array
+    LAUNCH_PATCH_MACRO create_item_array#stage1
 
   COPY - "randomiser/lists/bg1location.2da" "...randomiser/fl-inlined/bg1location.2da"
-    LAUNCH_PATCH_MACRO create_loc_array
+    LAUNCH_PATCH_MACRO create_loc_array#stage1
 
   ACTION_IF weidu_action = 1 BEGIN
     COPY - "randomiser/lists/weidu_bg1item.2da" "...randomiser/fl-inlined/weidu_bg1item.2da"
-      LAUNCH_PATCH_MACRO create_item_array
+      LAUNCH_PATCH_MACRO create_item_array#stage1
       
     COPY - "randomiser/lists/weidu_bg1location.2da" "...randomiser/fl-inlined/weidu_bg1location.2da"
-      LAUNCH_PATCH_MACRO create_loc_array
+      LAUNCH_PATCH_MACRO create_loc_array#stage1
   END
 
-  COPY - "randomiser/lists/bg1location.2da" "...randomiser/fl-inlined/bg1location.2da"
-    COUNT_2DA_ROWS 4 num_row
-    FOR(i=1;i<num_row;i+=1) BEGIN
-      READ_2DA_ENTRY i 1 4 tier
-      TO_LOWER tier
-      SPRINT $bg1_tiers("%tier%") ""
-    END
-
-  ACTION_PHP_EACH bg1_tiers AS tier => blank BEGIN
-    //ACTION_IF tier > 0 BEGIN
-      OUTER_SPRINT $tier_array("%tier%") ""
-    //END
-  END
-  
   COPY - "randomiser/lists/bg1_special_groups.2da" "...randomiser/fl-inlined/bg1_special_groups.2da"
     LAUNCH_PATCH_MACRO create_group_array
 
@@ -302,14 +287,6 @@ ACTION_IF BG1 = 1 BEGIN
       TO_LOWER item
       SET $aldeth_item_tra("%item%") = tra
     END
-END
-
-ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
-  ACTION_PHP_EACH bg2_tiers AS tier => blank BEGIN
-    //ACTION_IF tier > 0 BEGIN
-      OUTER_SPRINT $tier_array("%tier%") ""
-    //END
-  END
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME lclist_scrolls.2da AND weidu_action AND VARIABLE_IS_SET $RandOptions(flrc530) BEGIN
@@ -350,6 +327,8 @@ ACTION_IF FILE_EXISTS_IN_GAME lclist_scrolls.2da AND weidu_action AND VARIABLE_I
   BUT_ONLY
 END
 
+LAM create_item_array#finalise
+LAM create_loc_array#finalise
 
 COPY_EXISTING itemexcl.2da override
   READ_2DA_ENTRIES_NOW r2en_itemexcl.2da 2

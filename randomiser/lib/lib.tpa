@@ -452,9 +452,9 @@ DEFINE_PATCH_MACRO create_item_array#read_row BEGIN
   TO_LOWER ident
 END
 
-DEFINE_PATCH_MACRO create_item_array#mark_cursed_item BEGIN
-  PATCH_IF VARIABLE_IS_SET $cursed_item_list("%item%") BEGIN
-    SET $cursed_items("%tier%" "%token%") = 1
+DEFINE_ACTION_MACRO create_item_array#mark_cursed_item BEGIN
+  ACTION_IF VARIABLE_IS_SET $cursed_item_list("%item%") BEGIN
+    OUTER_SET $cursed_items("%tier%" "%token%") = 1
   END
 END
 
@@ -490,7 +490,7 @@ DEFINE_PATCH_MACRO create_item_array#convert_resrefs BEGIN
   END
 END
 
-DEFINE_PATCH_FUNCTION create_item_array#filter
+DEFINE_PATCH_FUNCTION create_item_array#stage1#filter
   INT_VAR
     global_chance = 0
     chance = 100
@@ -504,31 +504,9 @@ DEFINE_PATCH_FUNCTION create_item_array#filter
 BEGIN
   skip = 0
 
-  /* Items which have already been filtered out earlier in the
-   * installation process
-   */
-  PATCH_IF VARIABLE_IS_SET $ident_filter("%ident%") BEGIN skip = 1 END
-
-  /* Global chance of skipping item, but only for items with a source
-   * global_chance is an exclusion percentage; 0 is never exclude
-   */
-  PATCH_IF "%source%" STR_CMP "blank" AND
-           (RANDOM(1 100) <= global_chance)
-  BEGIN skip = 1 END
-
-  /* Item chance
-   * chance is an inclusion percentage; 100 is always include
-   */
-  PATCH_IF RANDOM(1 100) > chance BEGIN skip = 1 END
-
-  /* For BCS|DLG sources, filter out items that do not exist in the source */
-  PATCH_IF "%source%" STRING_MATCHES_REGEXP ".+\.\(bcs\|dlg\)$" = 0 AND
-           FILE_EXISTS_IN_GAME "%source%" AND
-           NOT FILE_CONTAINS_EVALUATED ("%source%" "%item%")
-  BEGIN skip = 1 END
-
   /* Filter out option-dependent tiers that are not installed */
-  PATCH_IF ("%tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND
+  PATCH_IF !skip AND
+           ("%tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND
             !VARIABLE_IS_SET $RandOptions(flrc530)) OR
            ("%tier%" STRING_EQUAL_CASE "ka" AND
             !VARIABLE_IS_SET $RandOptions(flrc520)) OR
@@ -541,43 +519,70 @@ BEGIN
    * Items whose source does not exist
    *   unless the source is "blank" or an .fl source
    */
-  PATCH_IF !FILE_EXISTS_IN_GAME "%item%.itm" OR
-          (!FILE_EXISTS_IN_GAME "%source%" AND
+  PATCH_IF !skip AND
+           (!FILE_EXISTS_IN_GAME "%item%.itm" OR
+           ("%source%" STR_CMP "blank" AND
+           "%source%" STRING_MATCHES_REGEXP ".+\.fl$" AND
+           !FILE_EXISTS_IN_GAME "%source%"))
+  BEGIN skip = 1 END
+
+  /* For BCS|DLG sources, filter out items that do not exist in the source */
+  PATCH_IF !skip AND
+           "%source%" STRING_MATCHES_REGEXP ".+\.\(bcs\|dlg\)$" = 0 AND
+           FILE_EXISTS_IN_GAME "%source%" AND
+           NOT FILE_CONTAINS_EVALUATED ("%source%" "%item%")
+  BEGIN skip = 1 END
+
+  /* Global chance of skipping item, but only for items with a source
+   * global_chance is an exclusion percentage; 0 is never exclude
+   */
+  PATCH_IF !skip AND global_chance > 0 AND
            "%source%" STR_CMP "blank" AND
-           "%source%" STRING_MATCHES_REGEXP ".+\.fl$")
+           (RANDOM(1 100) <= global_chance)
+  BEGIN skip = 1 END
+
+  /* Item chance
+   * chance is an inclusion percentage; 100 is always include
+   */
+  PATCH_IF !skip AND chance < 100 AND
+           RANDOM(1 100) > chance
   BEGIN skip = 1 END
 END
 
-DEFINE_PATCH_MACRO create_item_array#side_effects#totsc_tome BEGIN
+DEFINE_ACTION_MACRO create_item_array#side_effects#totsc_tome BEGIN
   LOCAL_SET r = 0
-  PATCH_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
-    DEFINE_ARRAY create_item_array#side_effects#totsc_tome#books BEGIN
-                 book03
-                 book04
-                 book05
-                 book06
-                 book07
-                 book08
+  ACTION_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
+    ACTION_DEFINE_ARRAY create_item_array#side_effects#totsc_tome#books BEGIN
+                        book03
+                        book04
+                        book05
+                        book06
+                        book07
+                        book08
     END
-    r = RANDOM (0 5)
-    SPRINT item $create_item_array#side_effects#totsc_tome#books("%r%")
-    LPF fl#bg1pal STR_VAR file = EVAL "%item%.itm" RET item = resource END
-    SPRINT replacement_b2c "%item%"
+    OUTER_SET r = RANDOM (0 5)
+    OUTER_SPRINT item $create_item_array#side_effects#totsc_tome#books("%r%")
+    LAF fl#bg1pal STR_VAR file = EVAL "%item%.itm" RET item = resource END
+    OUTER_SPRINT replacement_b2c "%item%"
   END
 END
 
-DEFINE_PATCH_MACRO create_item_array#side_effects#helm_balduran BEGIN
-  SET remove_helm07 = 1
+DEFINE_ACTION_MACRO create_item_array#side_effects#helm_balduran BEGIN
+  OUTER_SET remove_helm07 = 1
 END
 
-DEFINE_PATCH_MACRO create_item_array#rebalance BEGIN
-  PATCH_IF VARIABLE_IS_SET $rebalance_tier("%item%") BEGIN
-    SPRINT tier $rebalance_tier("%item%")
-    SPRINT token $rebalance_token("%item%")
+DEFINE_ACTION_MACRO create_item_array#rebalance BEGIN
+  ACTION_IF VARIABLE_IS_SET $rebalance_tier("%item%") BEGIN
+    OUTER_SPRINT tier $rebalance_tier("%item%")
+    OUTER_SPRINT token $rebalance_token("%item%")
   END
 END
 
-DEFINE_PATCH_MACRO create_item_array BEGIN
+/*
+ * Create a preliminary array from only the item lists themselves and the
+ * global environment.
+ */
+DEFINE_PATCH_MACRO create_item_array#stage1 BEGIN
   LOCAL_SPRINT item ""
   LOCAL_SPRINT replacement ""
   LOCAL_SPRINT source ""
@@ -590,17 +595,11 @@ DEFINE_PATCH_MACRO create_item_array BEGIN
   LOCAL_SET skip = 0
   LOCAL_SPRINT macro ""
 
-  DEFINE_ASSOCIATIVE_ARRAY create_item_array#side_effects BEGIN
-    b2c => create_item_array#side_effects#totsc_tome
-    i3d => create_item_array#side_effects#helm_balduran
-  END
-
   READ_2DA_ENTRIES_NOW cia_file 7
   FOR (i = 1; i < cia_file; ++i) BEGIN
     LPM create_item_array#read_row
-    LPM create_item_array#mark_cursed_item
     LPM create_item_array#convert_resrefs
-    LPF create_item_array#filter
+    LPF create_item_array#stage1#filter
       INT_VAR
         global_chance = RandomNotRandom
         chance
@@ -614,16 +613,84 @@ DEFINE_PATCH_MACRO create_item_array BEGIN
         SPRINT $ident_filter("%ident%") ""
       END
     END ELSE BEGIN
-      PATCH_IF VARIABLE_IS_SET $create_item_array#side_effects("%ident%") BEGIN
-        SPRINT macro $create_item_array#side_effects("%ident%")
-        LPM "%macro%"
-      END
       PATCH_IF "%ident%" STRING_COMPARE_CASE "x" BEGIN
         SPRINT $identitem("%ident%") "%item%"
       END
-      SET $ident("%ident%") = 1
-      LPM create_item_array#rebalance
-      SPRINT $item_array("%item%" "%replacement%" "%source%" "%tier%" "%token%" "%ident%") ""
+      SPRINT $item_array#stage1("%item%" "%replacement%" "%source%" "%tier%" "%token%" "%ident%") ""
+      SPRINT $EVAL "%tier_hook%"("%tier%") ""
+    END
+  END
+END
+
+DEFINE_ACTION_FUNCTION create_item_array#finalise#filter
+  STR_VAR
+    ident = ""
+  RET
+    skip
+BEGIN
+  OUTER_SET skip = 0
+
+  /* Idents which have been filtered out earlier in the
+   * installation process
+   */
+  ACTION_IF VARIABLE_IS_SET $ident_filter("%ident%") BEGIN
+    OUTER_SET skip = 1
+  END
+END
+
+/*
+ * Create the final item array by processing a preliminary array
+ * and retaining those items which made the final cut, based on all
+ * other lists and circumstances.
+ * Also pick out the cursed items and perform any rebalancing and special
+ * side-effects associated with the item.
+ */
+DEFINE_ACTION_MACRO create_item_array#finalise BEGIN
+  LOCAL_SPRINT create_item_array#finalise#array "item_array#stage1"
+
+  LOCAL_SPRINT item ""
+  LOCAL_SPRINT replacement ""
+  LOCAL_SPRINT source ""
+  LOCAL_SPRINT tier ""
+  LOCAL_SPRINT token ""
+  LOCAL_SPRINT ident ""
+  LOCAL_SET skip = 0
+  LOCAL_SPRINT entry ""
+  LOCAL_SPRINT entry_0 ""
+  LOCAL_SPRINT entry_1 ""
+  LOCAL_SPRINT entry_2 ""
+  LOCAL_SPRINT entry_3 ""
+  LOCAL_SPRINT entry_4 ""
+  LOCAL_SPRINT entry_5 ""
+  LOCAL_SPRINT macro ""
+
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY create_item_array#side_effects BEGIN
+    b2c => create_item_array#side_effects#totsc_tome
+    i3d => create_item_array#side_effects#helm_balduran
+  END
+
+  ACTION_PHP_EACH "%create_item_array#finalise#array%" AS entry => _ BEGIN
+    OUTER_SPRINT item "%entry_0%"
+    OUTER_SPRINT replacement "%entry_1%"
+    OUTER_SPRINT source "%entry_2%"
+    OUTER_SPRINT tier "%entry_3%"
+    OUTER_SPRINT token "%entry_4%"
+    OUTER_SPRINT ident "%entry_5%"
+
+    LAF create_item_array#finalise#filter
+      STR_VAR
+        ident
+      RET
+        skip
+    END
+    ACTION_IF !skip BEGIN
+      LAM create_item_array#mark_cursed_item
+      ACTION_IF VARIABLE_IS_SET $create_item_array#side_effects("%ident%") BEGIN
+        OUTER_SPRINT macro $create_item_array#side_effects("%ident%")
+        LAM "%macro%"
+      END
+      LAM create_item_array#rebalance
+      OUTER_SPRINT $item_array("%item%" "%replacement%" "%source%" "%tier%" "%token%" "%ident%") ""
     END
   END
 END
@@ -674,30 +741,14 @@ DEFINE_PATCH_FUNCTION create_loc_array#filter
 BEGIN
   skip = 0
 
-  /* Locations which have already been filtered out earlier in the
-   * installation process
-   */
-  PATCH_IF VARIABLE_IS_SET $ident_filter("%ident%") BEGIN skip = 1 END
-
-  /* Chance of skipping location
-   * chance is an inclusion percentage; 100 is always include
-   */
-  PATCH_IF RANDOM(1 100) > chance BEGIN skip = 1 END
-
   /* Filter out option-dependent tiers that are not installed */
-  PATCH_IF ("%tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND
+  PATCH_IF !skip AND
+           ("%tier%" STRING_MATCHES_REGEXP "s.*" = 0 AND
             !VARIABLE_IS_SET $RandOptions(flrc530)) OR
            ("%tier%" STRING_EQUAL_CASE "fa" AND
             !VARIABLE_IS_SET $RandOptions(flrc540)) OR
            ("%tier%" STRING_EQUAL_CASE "ka" AND
             !VARIABLE_IS_SET $RandOptions(flrc520))
-  BEGIN skip = 1 END
-
-  /* Filter out locations with idents for which the item was not randomised
-   *   unless the ident is x (no ident)
-   */
-  PATCH_IF !VARIABLE_IS_SET $ident("%ident%") AND
-           "%ident%" STRING_COMPARE_CASE "x"
   BEGIN skip = 1 END
 
   /* Filter out invalid locations
@@ -707,15 +758,27 @@ BEGIN
    *   unless it's an area container
    *   or an .fl or .flg target
    */
-  PATCH_IF (!FILE_EXISTS_IN_GAME "%area%.are" AND
-            !"%area%" STRING_EQUAL_CASE "blank") OR
+  PATCH_IF !skip AND
+           ((!"%area%" STRING_EQUAL_CASE "blank" AND
+             !FILE_EXISTS_IN_GAME "%area%.are") OR
            ("%target%" STRING_MATCHES_REGEXP ".+\.[a-z]+$" = 0 AND
             !"%target%" STRING_MATCHES_REGEXP ".+\.flg?$" = 0 AND
-            !FILE_EXISTS_IN_GAME "%target%")
+            !FILE_EXISTS_IN_GAME "%target%"))
+  BEGIN skip = 1 END
+
+  /* Chance of skipping location
+   * chance is an inclusion percentage; 100 is always include
+   */
+  PATCH_IF !skip AND chance < 100 AND
+           RANDOM(1 100) > chance
   BEGIN skip = 1 END
 END
 
-DEFINE_PATCH_MACRO create_loc_array BEGIN
+/*
+ * Create a preliminary array from only the location lists themselves and
+ * the global environment.
+ */
+DEFINE_PATCH_MACRO create_loc_array#stage1 BEGIN
   LOCAL_SPRINT location ""
   LOCAL_SPRINT tier ""
   LOCAL_SPRINT target ""
@@ -739,9 +802,70 @@ DEFINE_PATCH_MACRO create_loc_array BEGIN
         skip
     END
     PATCH_IF skip BEGIN
-      // Do something
+      PATCH_IF "%ident%" STRING_COMPARE_CASE "x" BEGIN
+        SPRINT $ident_filter("%ident%") ""
+      END
     END ELSE BEGIN
-      SPRINT $location_array("%location%" "%tier%" "%target%" "%area%" "%ident%") ""
+      SPRINT $location_array#stage1("%location%" "%tier%" "%target%" "%area%" "%ident%") ""
+      SPRINT $EVAL "%tier_hook%"("%tier%") ""
+    END
+  END
+END
+
+DEFINE_ACTION_FUNCTION create_loc_array#finalise#filter
+  STR_VAR
+    ident = ""
+  RET
+    skip
+BEGIN
+  OUTER_SET skip = 0
+
+  /* Idents which have been filtered out earlier in the
+   * installation process
+   */
+  ACTION_IF VARIABLE_IS_SET $ident_filter("%ident%") BEGIN
+    OUTER_SET skip = 1
+  END
+END
+
+/*
+ * Create the final location array by processing a preliminary array
+ * and retaining those locations which made the final cut, based on all
+ * other lists and circumstances.
+ * Also create the tier array, from those tiers which are retained.
+ */
+DEFINE_ACTION_MACRO create_loc_array#finalise BEGIN
+  LOCAL_SPRINT create_loc_array#finalise#array "location_array#stage1"
+
+  LOCAL_SPRINT location ""
+  LOCAL_SPRINT tier ""
+  LOCAL_SPRINT target ""
+  LOCAL_SPRINT area ""
+  LOCAL_SPRINT ident ""
+  LOCAL_SET skip = 0
+  LOCAL_SPRINT entry ""
+  LOCAL_SPRINT entry_0 ""
+  LOCAL_SPRINT entry_1 ""
+  LOCAL_SPRINT entry_2 ""
+  LOCAL_SPRINT entry_3 ""
+  LOCAL_SPRINT entry_4 ""
+
+  ACTION_PHP_EACH "%create_loc_array#finalise#array%" AS entry => _ BEGIN
+    OUTER_SPRINT location "%entry_0%"
+    OUTER_SPRINT tier "%entry_1%"
+    OUTER_SPRINT target "%entry_2%"
+    OUTER_SPRINT area "%entry_3%"
+    OUTER_SPRINT ident "%entry_4%"
+
+    LAF create_loc_array#finalise#filter
+      STR_VAR
+        ident
+      RET
+        skip
+    END
+    ACTION_IF !skip BEGIN
+      OUTER_SPRINT $location_array("%location%" "%tier%" "%target%" "%area%" "%ident%") ""
+      OUTER_SPRINT $tier_array("%tier%") ""
     END
   END
 END
