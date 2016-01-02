@@ -1,4 +1,4 @@
-ADD_STATE_TRIGGER botsmith 2 ~G("flItemMaker",0)~
+ADD_STATE_TRIGGER botsmith 2 ~Global("flItemMaker","GLOBAL",0)~
 
 APPEND botsmith
 

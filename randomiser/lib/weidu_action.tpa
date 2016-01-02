@@ -8,7 +8,7 @@ END
 <<<<<<<< ...randomiser/fl-inlined/alternativescompat1.baf
 IF
   !HasItem("%Item%","%Target%")
-  G("%Variable%",0)
+  Global("%Variable%","GLOBAL",0)
 THEN RESPONSE #100
   SetGlobal("%Variable%","GLOBAL",1)
 END
@@ -17,8 +17,8 @@ END
 <<<<<<<< ...randomiser/fl-inlined/alternativescompat2.baf
 IF
   HasItem("%Item%","%Target%")
-  G("%Variable%",1)
-  GGT("B!Alternatives",5)
+  Global("%Variable%","GLOBAL",1)
+  GlobalGT("B!Alternatives","GLOBAL",5)
 THEN RESPONSE #100
   ActionOverride("%Target%",DestroyItem("%Item%"))
   SetGlobal("%Variable%","GLOBAL",2)

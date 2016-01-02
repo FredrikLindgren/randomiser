@@ -1,5 +1,5 @@
 IF
-  G("flSqueaked",0)
+  Global("flSqueaked","GLOBAL",0)
   Global("flToBC","LOCALS",0)
 THEN
   RESPONSE #100
@@ -17,11 +17,11 @@ THEN
 END
 
 IF
-  G("fl10tDone",1)
-  G("fl11tDone",1)
-  G("fl12tDone",1)
-  G("fl13tDone",1)
-  G("flSqueaked",0)
+  Global("fl10tDone","GLOBAL",1)
+  Global("fl11tDone","GLOBAL",1)
+  Global("fl12tDone","GLOBAL",1)
+  Global("fl13tDone","GLOBAL",1)
+  Global("flSqueaked","GLOBAL",0)
 THEN
   RESPONSE #100
     SetGlobal("flSqueaked","GLOBAL",1)
@@ -30,7 +30,7 @@ THEN
 END
 
 IF
-  G("flSqueaked",1)
+  Global("flSqueaked","GLOBAL",1)
 THEN
   RESPONSE #100
     DestroySelf()

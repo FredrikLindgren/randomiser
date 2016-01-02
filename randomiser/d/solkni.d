@@ -39,11 +39,11 @@ EXTEND_BOTTOM obssol01 25
 END
 
 EXTEND_BOTTOM obssol01 15
-IF ~G("flrsolamnic",1)~ THEN EXIT
+IF ~Global("flrsolamnic","GLOBAL",1)~ THEN EXIT
 END
 
 EXTEND_BOTTOM obssol01 24
-IF ~G("PCSphere",0)~ THEN DO ~AddExperienceParty(45000)
+IF ~Global("PCSphere","GLOBAL",0)~ THEN DO ~AddExperienceParty(45000)
 SetGlobal("SolamnicPrelate","GLOBAL",2)
 ActionOverride("obssol02",EscapeAreaObject("Tran0400"))
 ActionOverride("obssol03",EscapeAreaObject("Tran0400"))
@@ -55,11 +55,11 @@ EraseJournalEntry(@21)
 EscapeAreaObject("Tran0400")~ SOLVED_JOURNAL @12 EXIT
 END
 
-ADD_TRANS_TRIGGER hprelate 28 ~G("PCSphere",1)~
+ADD_TRANS_TRIGGER hprelate 28 ~Global("PCSphere","GLOBAL",1)~
 
 EXTEND_BOTTOM hprelate 28
-+ ~G("PCSphere",0)~ + #42239 DO ~SetGlobal("SolamnicPrelate","GLOBAL",1)~ UNSOLVED_JOURNAL @13 GOTO 25
-+ ~G("PCSphere",0)~ + #42240 DO ~SetGlobal("SolamnicPrelate","GLOBAL",1)~ UNSOLVED_JOURNAL @13 GOTO 25
++ ~Global("PCSphere","GLOBAL",0)~ + #42239 DO ~SetGlobal("SolamnicPrelate","GLOBAL",1)~ UNSOLVED_JOURNAL @13 GOTO 25
++ ~Global("PCSphere","GLOBAL",0)~ + #42240 DO ~SetGlobal("SolamnicPrelate","GLOBAL",1)~ UNSOLVED_JOURNAL @13 GOTO 25
 END
 
 APPEND corneil
@@ -74,22 +74,22 @@ APPEND corneil
 END
 
 EXTEND_BOTTOM corneil 0
-+ ~G("flrsolamnic",1)~ + @17 + cwsol1
++ ~Global("flrsolamnic","GLOBAL",1)~ + @17 + cwsol1
 END
 
-ADD_TRANS_TRIGGER ribald 34 ~G("PCSphere",1)~
+ADD_TRANS_TRIGGER ribald 34 ~Global("PCSphere","GLOBAL",1)~
 
 EXTEND_BOTTOM ribald 33
-IF ~G("flrsolamnic",1)~ THEN DO ~EraseJournalEntry(@21)~ UNSOLVED_JOURNAL @18 EXIT
+IF ~Global("flrsolamnic","GLOBAL",1)~ THEN DO ~EraseJournalEntry(@21)~ UNSOLVED_JOURNAL @18 EXIT
 END
 
 EXTEND_BOTTOM ribald 34
-+ ~G("flrsolamnic",1)~ + #42026 DO ~EraseJournalEntry(@18) EraseJournalEntry(@21)~ UNSOLVED_JOURNAL @19 GOTO 35
-+ ~G("flrsolamnic",1)~ + #42027 DO ~EraseJournalEntry(@18) EraseJournalEntry(@21)~ UNSOLVED_JOURNAL @19 GOTO 36
++ ~Global("flrsolamnic","GLOBAL",1)~ + #42026 DO ~EraseJournalEntry(@18) EraseJournalEntry(@21)~ UNSOLVED_JOURNAL @19 GOTO 35
++ ~Global("flrsolamnic","GLOBAL",1)~ + #42027 DO ~EraseJournalEntry(@18) EraseJournalEntry(@21)~ UNSOLVED_JOURNAL @19 GOTO 36
 END
 
 EXTEND_BOTTOM mgkhol01 4
-IF ~G("flrsolamnic",1)~ THEN DO ~AddExperienceParty(45000)
+IF ~Global("flrsolamnic","GLOBAL",1)~ THEN DO ~AddExperienceParty(45000)
 GiveItemCreate("BELT02",LastTalkedToBy,0,0,0)
 CreateVisualEffectObject("ICCSWOUI",Myself)
 Wait(1)
@@ -104,4 +104,4 @@ SetGlobal("Solamnicbuttplug","GLOBAL",1)
 ForceSpell(Myself,DRYAD_TELEPORT)~ SOLVED_JOURNAL @20 EXIT
 END
 
-REPLACE_STATE_TRIGGER obssol01 25 ~Global("TalkedPCSphere","LOCALS",0) G("PCSphere",0) Dead("lavok02") GlobalGT("PowerObsidianSphere","GLOBAL",0)~
+REPLACE_STATE_TRIGGER obssol01 25 ~Global("TalkedPCSphere","LOCALS",0) Global("PCSphere","GLOBAL",0) Dead("lavok02") GlobalGT("PowerObsidianSphere","GLOBAL",0)~
