@@ -1,10 +1,11 @@
 #!/usr/bin/perl
 
 my $scsline="";
-# my $defaultlibraryfile="scsII/ssl/library.slb";
-# my $autolibfile="scsII/ssl/autolib.slb";
+# my $defaultlibraryfile="scsii/ssl/library.slb";
+# my $autolibfile="scsii/ssl/autolib.slb";
 # my $sslfiles="sslfiles.txt";
 my $outputroot="ssl_out";
+my $outputoverride="no";
 my $location="none";
 my @scsarray=();
 my @trigger=();
@@ -31,13 +32,15 @@ sub process_user_input {
 
 # The format is:
 #
-# perl ssl.pl "<inputfiles> -l <library files> <variable list>"
+# perl ssl.pl "<inputfiles> -o <output directory> -l <library files> <variable list>"
 #
-# library.slb and autolib.slb are always checked in the working directory 
+# library.slb and autolib.slb are always checked in the working directory
 # unless they don't exist
 #
 # input files can be given without suffix; if they are, we append .ssl . Ditto if library files are
 # given without .slb
+#
+# if output directory is blank, output to input directory/ssl_out
 #
 # The variable list has form IsVampire=True&IsLich=False . Each occurrence of the entry before the = sign is replaced
 # by the respective entry after the = sign
@@ -52,7 +55,12 @@ sub process_user_input {
 		if ($1 eq "-l") {
 			$suffix=".slb";
 			$libfiles=1;
+			$outputloc=0;
 		}
+		elsif ($1 eq "-o") {
+                        $outputloc=1;
+                        $libfiles=0;
+                }
 		elsif ($1=~m/=/ eq "1") {
 			$therearevars="Yes";
 			@vararraytemp=split('&',$1);
@@ -61,13 +69,16 @@ sub process_user_input {
 				$varhash{$vararraytemp2[0]}=$vararraytemp2[1];
 			}
 		}
+		elsif ($outputloc eq 1) {
+                     $outputroot=$1;
+                     $outputoverride="yes";
+                  }
 		else {
-
 			$dotcheck=substr $1,-4,1;
-			if (length $1<4 or $dotcheck ne ".") { 		
+			if (length $1<4 or $dotcheck ne ".") {
 				$1=join('',$1,$suffix);
-			}	
-			if ($libfiles eq 0) {
+			}
+                        if ($libfiles eq 0) {
 				push @filelist,$1;
 				$aretherefiles=1;
 			}
@@ -75,7 +86,7 @@ sub process_user_input {
 				push @librarylist,$1;
 			}
 		}
-					
+
 	}
 
 	if ($aretherefiles eq "0") {
@@ -96,9 +107,9 @@ sub get_files {
 	foreach $1 (@temparray) {
 		chomp $1;
 		$dotcheck=substr $1,-4,1;
-		if (length $1<4 or $dotcheck ne ".") { 		
+		if (length $1<4 or $dotcheck ne ".") {
 			$1=join('',$1,".ssl");
-		}	
+		}
 		push @filelist,$1;
 	}
 }
@@ -165,22 +176,28 @@ sub work_out_outputfile {
 
 	substr $outputfile,-4,4,".baf";
 	if ($outputroot ne "") {
+                #$outputroot="ssl_out";
 		if ($outputfile=~m/\\/ eq "1") { ### delimited by \
 			@outputarray=split(/\\/,$outputfile);
-		} 
+		}
 		elsif ($outputfile=~m/\// eq "1") { ### delimited by /
 			@outputarray=split(/\//,$outputfile);
-		} 
+		}
 		if ($outputfile=~m/\\/ eq "1" or $outputfile=~m/\// eq "1") {
 			$outputarraylength=scalar @outputarray;
 			$outputres=$outputarray[$outputarraylength-1];
 			$outputarray[$outputarraylength-1]=$outputroot;
-			$outputdir=join("\/",@outputarray);
+			if ($outputoverride eq "no") {
+			   $outputdir=join("\/",@outputarray);
+                        }
+                        else {
+                         $outputdir=$outputroot;
+                        }
 			$outputfile=join("\/",$outputdir,$outputres);
 			if (-e $outputdir ne "1") {
 				print "$outputdir \n";
 				system "mkdir $outputdir";
-			}	
+			}
 		}
 	}
 
@@ -192,7 +209,7 @@ sub write_output {
 
 	unless (open(outfile, ">$outputfile")) {
 		die "FATAL ERROR: SSL cannot open the output file $outputfile";
-	}	
+	}
 	foreach $1 (@output) {
 		print outfile "$1\n";
 	}
@@ -217,7 +234,7 @@ sub extract_from_brackets {
 	$lastbracket=rindex $scsline,")";
 	$size=$lastbracket-$firstbracket;
 	$scsline=substr $scsline, $firstbracket,$size;
-	
+
 }
 ###############################################################
 
@@ -262,7 +279,7 @@ sub process_line {
 				@defaulttrigger=split('&',$scsline)
 			}
 		}
-                elsif ($scsline eq "BEGIN_ACTION_DEFINITION") {
+		elsif ($scsline eq "BEGIN_ACTION_DEFINITION") {
 			$location="actiondefinename";
 		}
 		elsif ($scsline eq "IF TRIGGER") {
@@ -280,7 +297,7 @@ sub process_line {
 		elsif ($scsline eq "IF") {
 			$location="bafblock";
 			$baflocation="triggers";
-			@bafactionarray=();	
+			@bafactionarray=();
 			$ignorethisblock="No";
 			@bafblock=();
 			push @bafblock,$scsline;
@@ -305,7 +322,7 @@ sub process_line {
 			$definename=$scsline;
 			$definenamehash{$definename}=1;
 			@{ $defineaction{$definename}}=();
-			@{ $definetrigger{$definename}}=();				
+			@{ $definetrigger{$definename}}=();
 		}
 		elsif ($scsline=~m/RANDOMIZE/ eq "1") {
 			extract_from_brackets();
@@ -364,7 +381,7 @@ sub process_line {
 			extract_from_brackets();
 			@temparray=split('&',$scsline);
 			push @target,@temparray;
-		}	
+		}
 		elsif ($scsline=~m/TriggerBlock/ eq "1") {
 			extract_from_brackets();
 			@triggerlist=split('\|',$scsline);
@@ -392,7 +409,7 @@ sub process_line {
 					$temp=~s/scsmultiple/$8/g;
 					push @trigger,$temp;
 				}
-			}	
+			}
 
 		}
 		elsif ($scsline=~m/IgnoreBlock/ eq "1") {
@@ -480,7 +497,7 @@ sub process_line {
 			die "3: Unexpected THEN DO at line $linenum";
 		}
 		else {
-			push @alwaysaction, $scsline; #always here
+			push @alwaysaction, $scsline;
 		}
 		return;
 	}
@@ -489,10 +506,10 @@ sub process_line {
 		if ($scsline eq "END") {
 			$location="none";
 			if ($ignorethisresponse eq "No") {
-                                push @bafblock,@bafactionarray;
+				push @bafblock,@bafactionarray;
 			}
 			push @bafblock,$scsline;
-			
+
 			if ($ignorethisblock eq "No") {
 				push @output, @bafblock;
 				push @output, "";
@@ -501,7 +518,7 @@ sub process_line {
 		elsif ($scsline=~m/RESPONSE/ eq "1") {
 			$baflocation="responses";
 			if ($ignorethisresponse eq "No") {
-                                push @bafblock,@bafactionarray;
+				push @bafblock,@bafactionarray;
 			}
 			@bafactionarray=();
 			push @bafactionarray,$scsline;
@@ -539,7 +556,8 @@ sub process_line {
 					}
 			}
 
-		} else {
+		}
+		else {
 			if ($baflocation eq "responses") {
 				push @bafactionarray,$scsline;
 			} else {
@@ -571,7 +589,7 @@ sub streamline_trigger {
 			push @starray,$st;
 			$sthash{$st}="Yes";
 		}
-		
+
 	}
 
 	@trigger=@starray;
@@ -591,7 +609,7 @@ sub get_combine_top {
 			foreach $replace (@actionargs) {
 				$replacelabel=join ('',"scsargument",$statelabel);
 				$triggerlabel=0;
-				foreach (@temptriggertop) {	
+				foreach (@temptriggertop) {
 					$temptriggertop[$triggerlabel]=~s/$replacelabel/$actionargs[$statelabel]/g;
 					$triggerlabel=$triggerlabel+1;
 				}
@@ -697,17 +715,17 @@ sub make_action {
 	@triggertop=();
 	@actiontop=();
 	@randomreplace=();
-	
+
 	if ($definenamehash{$actionargs[0]} eq "1") {
 		@triggertop=@{ $definetrigger{$actionargs[0]} };
 		@actiontop=@{ $defineaction{$actionargs[0]} };
 		$statelabel=0;
-		if ($randomaction{$actionargs[0]} ne "") {	
+		if ($randomaction{$actionargs[0]} ne "") {
 			$replacelabel=join ('',"scsargument",$randomaction{$actionargs[0]});
 			@randomreplace=@actionargs;
 			splice (@randomreplace,0,$randomaction{$actionargs[0]}-1);
 			@tempactiontop=@actiontop;
-			@actiontop=();	
+			@actiontop=();
 			$actionlabel=0;
 			foreach $replace (@randomreplace) {
 				foreach $tempstring (@tempactiontop) {
@@ -733,11 +751,11 @@ sub make_action {
 		}
 		$replacelabel="scsprob1";
 		$actionlabel=0;
-                foreach (@actiontop) {
+		foreach (@actiontop) {
 			$actiontop[$actionlabel]=~s/$replacelabel/$prob1/g;
 			$actionlabel=$actionlabel+1;
 		}
-                push @actiontop, @alwaysaction;
+		push @actiontop, @alwaysaction;
 	}
 
 	elsif ($actionargs[0] eq "SpellReplaceRandom") {
@@ -777,7 +795,7 @@ sub make_action {
 				push @triggertop,$temp;
 			}
 		}
-	}	
+	}
 	elsif ($actionargs[0] eq "LiteralRandomTarget") {
 		@literalactionarray=();
 		@temparray=split('&',$actionargs[1]);
@@ -808,14 +826,14 @@ sub make_action {
 				push @actiontop,$temp;
 			}
 			push @actiontop,@alwaysaction;
-			
+
 		}
 		push @triggertop,@literalconditionarray;
 	}
-	
+
 	else {
 		die "unrecognised Action : $actionargs[0], near line $linenum";
-	}	
+	}
 	if ($prob2 ne "0") {
 		push @actiontop, "RESPONSE #$prob2";
 		push @actiontop, @continueaction;
@@ -864,10 +882,10 @@ sub block_print {
 			push @output, "False()";
 		}
 		push @output, "THEN";
-                foreach $4 (@actiontop) {
+		foreach $4 (@actiontop) {
 			push @output, sub_target($4,$3);
 		}
-                push @output, "END";
+		push @output, "END";
 		push @output, "";
 		$conditioncounter=$conditioncounter+1;
 
@@ -893,11 +911,9 @@ sub process_include_blocks {
 
 			extract_from_brackets;
 			$scsline=~s/\\/\//g;
-			print "attempting to open file $scsline ...";
 			unless (open (infile, lc $scsline)) {
 				die "FATAL ERROR (SSL cannot find file requested [$scsline] at line $linenum)";
 			}
-			print "successful!\n";
 			@temparray=<infile>;
 			close(infile);
 			splice(@scsarray,$linenum,1,@temparray);
@@ -975,7 +991,7 @@ sub work_out_outer_loops {
 		}
 		else {
 			if ($scsline=~m/VARIABLE/ eq "1") {
-				strip_spaces();	
+				strip_spaces();
 				extract_from_brackets();
 				$therearevars="Yes";
 				@vararraytemp=split('&',$scsline);
@@ -983,7 +999,7 @@ sub work_out_outer_loops {
 					@vararraytemp2=split('=',$2);
 					$varhash{$vararraytemp2[0]}=$vararraytemp2[1];
 				}
-			
+
 			}
 			$linenum=$linenum+1;
 		}
@@ -1015,6 +1031,7 @@ foreach (@filelist) {
 
 
 	$inputfile=~s/\\/\//g;
+	print "\n \n Input file is $inputfile \n";
 	read_input();
 
 
@@ -1124,7 +1141,7 @@ foreach (@filelist) {
 	}
 	if ($outputexists eq "Yes") {
 		print "\n Output file is $outputfile \n";
-		write_output();	
+		write_output();
 	}
 	else {
 		print "\n No output file for this input file ";
