@@ -3,7 +3,8 @@ OUTER_SET prompt = 0
 OUTER_SET affirmatory = 0
 OUTER_SET remove_helm07 = 0
 
-COPY - "randomiser/lists/mod_compat.2da" "...randomiser/fl-inlined/mod_compat.2da"
+COPY - "randomiser/lists/mod_compat.2da"
+       ".../randomiser/fl-inlined/lists/mod_compat.2da"
   COUNT_2DA_ROWS 4 rows
   FOR (i=1;i<rows;i+=1) BEGIN
     READ_2DA_ENTRY i 0 4 detection
@@ -45,7 +46,8 @@ ACTION_IF "%Preserve%" STRING_EQUAL_CASE y AND VARIABLE_IS_SET $RandOptions(ModC
   END
 END
 
-COPY - "randomiser/lists/no_random.2da" "...randomiser/fl-inlined/no_random.2da"
+COPY - "randomiser/lists/no_random.2da"
+       ".../randomiser/fl-inlined/lists/no_random.2da"
   COUNT_2DA_ROWS 4 num_rows
   FOR (i=1;i<num_rows;i+=1) BEGIN
     READ_2DA_ENTRY i 0 4 detection
@@ -59,7 +61,8 @@ COPY - "randomiser/lists/no_random.2da" "...randomiser/fl-inlined/no_random.2da"
     END
   END
 
-COPY - "randomiser/lists/cursed_items.2da" "...randomiser/fl-inlined/cursed_items.2da"
+COPY - "randomiser/lists/cursed_items.2da"
+       ".../randomiser/fl-inlined/lists/cursed_items.2da"
   COUNT_2DA_ROWS 1 num_row
   FOR (i=0;i<num_row;i+=1) BEGIN
     READ_2DA_ENTRY i 0 1 item
@@ -69,7 +72,8 @@ COPY - "randomiser/lists/cursed_items.2da" "...randomiser/fl-inlined/cursed_item
     END
   END
   
-COPY - "randomiser/lists/fast-lane.2da" "...randomiser/fl-inlined/fast-lane.2da"
+COPY - "randomiser/lists/fast-lane.2da"
+       ".../randomiser/fl-inlined/lists/fast-lane.2da"
   COUNT_2DA_ROWS 3 num_row
   FOR (i=0;i<num_row;i+=1) BEGIN
     READ_2DA_ENTRY i 0 3 cre
@@ -93,7 +97,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
   OUTER_SET BGT_Convert = 0
   
   COPY - "randomiser/lists/rebalancing/bg2.2da"
-       "...randomiser/fl-inlined/rebalancing/bg2.2da"
+         ".../randomiser/fl-inlined/lists/rebalancing/bg2.2da"
     COUNT_2DA_ROWS 5 num_row
     FOR (i=1;i<num_row;++i) BEGIN
       READ_2DA_ENTRY i 0 5 Mod
@@ -115,24 +119,25 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
   OUTER_SPRINT tier_hook "bg2_tiers"
 
   COPY - "randomiser/lists/items/base/bg2.2da"
-       "...randomiser/fl-inlined/items/base/bg2.2da"
+         ".../randomiser/fl-inlined/lists/items/base/bg2.2da"
     LAUNCH_PATCH_MACRO create_item_array#stage1
 
   COPY - "randomiser/lists/locations/base/bg2.2da"
-       "...randomiser/fl-inlined/locations/base/bg2.2da"
+         ".../randomiser/fl-inlined/lists/locations/base/bg2.2da"
     LAUNCH_PATCH_MACRO create_loc_array#stage1
 
   ACTION_IF weidu_action = 1 BEGIN
     COPY - "randomiser/lists/items/mode2/bg2.2da"
-         "...randomiser/fl-inlined/items/mode2/bg2.2da"
+           ".../randomiser/fl-inlined/lists/items/mode2/bg2.2da"
       LAUNCH_PATCH_MACRO create_item_array#stage1
     
     COPY - "randomiser/lists/locations/mode2/bg2.2da"
-         "...randomiser/fl-inlined/locations/mode2/bg2.2da"
+         ".../randomiser/fl-inlined/lists/locations/mode2/bg2.2da"
       LAUNCH_PATCH_MACRO create_loc_array#stage1
   END
 
-  COPY - "randomiser/lists/tra/blpool.2da" "...randomiser/fl-inlined/tra/blpool.2da"
+  COPY - "randomiser/lists/tra/blpool.2da"
+         ".../randomiser/fl-inlined/lists/tra/blpool.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -142,7 +147,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $blpool_item_tra("%item%") = tra
     END
 
-  COPY - "randomiser/lists/tra/ppdjinn.2da" "...randomiser/fl-inlined/tra/ppdjinn.2da"
+  COPY - "randomiser/lists/tra/ppdjinn.2da"
+         ".../randomiser/fl-inlined/lists/tra/ppdjinn.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -152,7 +158,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $ppdjinn_item_tra("%item%") = tra
     END
     
-  COPY - "randomiser/lists/tra/ddwell.2da" "...randomiser/fl-inlined/tra/ddwell.2da"
+  COPY - "randomiser/lists/tra/ddwell.2da"
+         ".../randomiser/fl-inlined/lists/tra/ddwell.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -162,7 +169,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $ddwell_item_tra("%item%") = tra
     END
   
-  COPY - "randomiser/lists/tra/gorcamb.2da" "...randomiser/fl-inlined/tra/gorcamb.2da"
+  COPY - "randomiser/lists/tra/gorcamb.2da"
+         ".../randomiser/fl-inlined/lists/tra/gorcamb.2da"
     COUNT_2DA_ROWS 4 num_row
     FOR (i=0;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 4 item
@@ -178,7 +186,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $gorcamb_say2("%item%") = say2
     END
   
-  COPY - "randomiser/lists/tra/jugjer01.2da" "...randomiser/fl-inlined/tra/jugjer01.2da"
+  COPY - "randomiser/lists/tra/jugjer01.2da"
+         ".../randomiser/fl-inlined/lists/tra/jugjer01.2da"
     COUNT_2DA_ROWS 3 num_row
     FOR (i=0;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 3 item
@@ -191,7 +200,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $jugjer01_say2("%item%") = say2
     END
     
-  COPY - "randomiser/lists/tra/gorlum.2da" "...randomiser/fl-inlined/tra/gorlum.2da"
+  COPY - "randomiser/lists/tra/gorlum.2da"
+         ".../randomiser/fl-inlined/lists/tra/gorlum.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -201,7 +211,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $gorlum_item_tra("%item%") = tra
     END
   
-  COPY - "randomiser/lists/tra/uhmay01.2da" "randomiser/fl-inlined/tra/uhmay01.2da"
+  COPY - "randomiser/lists/tra/uhmay01.2da"
+         "randomiser/fl-inlined/lists/tra/uhmay01.2da"
     COUNT_2DA_ROWS 8 num_row
     FOR (i=0;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 8 item
@@ -223,7 +234,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
     END  
     
   COPY - "randomiser/lists/groups/bg2.2da"
-       "...randomiser/fl-inlined/groups/bg2.2da"
+         ".../randomiser/fl-inlined/lists/groups/bg2.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR(i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 group
@@ -236,7 +247,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
     END
 
   COPY - "randomiser/lists/duplicates/bg2.2da"
-       "...randomiser/fl-inlined/duplicates/bg2.2da"
+         ".../randomiser/fl-inlined/lists/duplicates/bg2.2da"
     LAUNCH_PATCH_MACRO create_duplicate_array
 END
 
@@ -245,7 +256,7 @@ ACTION_IF BG1 = 1 BEGIN
   OUTER_SET BGT_Convert = 1
   
   COPY - "randomiser/lists/rebalancing/bg1.2da"
-       "...randomiser/fl-inlined/rebalancing/bg1.2da"
+         ".../randomiser/fl-inlined/lists/rebalancing/bg1.2da"
     COUNT_2DA_ROWS 5 num_row
     FOR (i=1;i<num_row;++i) BEGIN
       READ_2DA_ENTRY i 0 5 Mod
@@ -268,32 +279,33 @@ ACTION_IF BG1 = 1 BEGIN
   OUTER_SPRINT tier_hook "bg1_tiers"
 
   COPY - "randomiser/lists/items/base/bg1.2da"
-       "...randomiser/fl-inlined/items/base/bg1.2da"
+         ".../randomiser/fl-inlined/lists/items/base/bg1.2da"
     LAUNCH_PATCH_MACRO create_item_array#stage1
 
   COPY - "randomiser/lists/locations/base/bg1.2da"
-       "...randomiser/fl-inlined/locations/base/bg1.2da"
+         ".../randomiser/fl-inlined/lists/locations/base/bg1.2da"
     LAUNCH_PATCH_MACRO create_loc_array#stage1
 
   ACTION_IF weidu_action = 1 BEGIN
     COPY - "randomiser/lists/items/mode2/bg1.2da"
-         "...randomiser/fl-inlined/items/mode2/bg1.2da"
+           ".../randomiser/fl-inlined/lists/items/mode2/bg1.2da"
       LAUNCH_PATCH_MACRO create_item_array#stage1
       
     COPY - "randomiser/lists/locations/mode2/bg1.2da"
-         "...randomiser/fl-inlined/locations/mode2/bg1.2da"
+           ".../randomiser/fl-inlined/lists/locations/mode2/bg1.2da"
       LAUNCH_PATCH_MACRO create_loc_array#stage1
   END
 
   COPY - "randomiser/lists/groups/bg1.2da"
-       "...randomiser/fl-inlined/groups/bg1.2da"
+         ".../randomiser/fl-inlined/lists/groups/bg1.2da"
     LAUNCH_PATCH_MACRO create_group_array
 
   COPY - "randomiser/lists/duplicates/bg1.2da"
-       "...randomiser/fl-inlined/duplicates/bg1.2da"
+         ".../randomiser/fl-inlined/lists/duplicates/bg1.2da"
     LAUNCH_PATCH_MACRO create_duplicate_array
     
-  COPY - "randomiser/lists/tra/aldeth.2da" "...randomiser/fl-inlined/tra/aldeth.2da"
+  COPY - "randomiser/lists/tra/aldeth.2da"
+         ".../randomiser/fl-inlined/lists/tra/aldeth.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR (i=0;i<num_row;++i) BEGIN
       READ_2DA_ENTRY i 0 2 item
@@ -353,7 +365,8 @@ COPY_EXISTING itemexcl.2da override
   END
 BUT_ONLY
 
-COPY - "randomiser/lists/item_ranking.2da" "...randomiser/fl-inlined/item_ranking.2da"
+COPY - "randomiser/lists/item_ranking.2da"
+       ".../randomiser/fl-inlined/lists/item_ranking.2da"
   COUNT_2DA_ROWS 2 num_rows
   FOR (i=0;i<num_rows;i+=1) BEGIN
     READ_2DA_ENTRY i 0 2 item
@@ -364,7 +377,8 @@ COPY - "randomiser/lists/item_ranking.2da" "...randomiser/fl-inlined/item_rankin
     SET $itm_rank("%item%") = rank
   END
   
-COPY - "randomiser/lists/race.2da" "...randomiser/fl-inlined/race.2da"
+COPY - "randomiser/lists/race.2da"
+       ".../randomiser/fl-inlined/lists/race.2da"
   COUNT_2DA_ROWS 2 num_rows
   FOR (i=0;i<num_rows;++i) BEGIN
     READ_2DA_ENTRY i 0 2 item
