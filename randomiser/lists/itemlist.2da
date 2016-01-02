@@ -133,7 +133,7 @@ wa2robe     blank       wmart2.sto   7    04    x     100
 wa2shiel    blank       wmart2.sto   7    05    x     100
 waflail     blank       wmart1.sto   7    06    x     100
 chan16      blank       dragblac.cre 7    07    i35   100
-staf11      blank       hllayen.cre  7    08    i36   100
+staf11      staf01      hllayen.cre  7    08    i36   100
 belt08      blank       uddeath2.cre 7    09    i37   100
 plat16      blank       uddeath2.cre 7    10    i38   100
 sw2h08      sw2h02      uddeath2.cre 7    11    i39   100
