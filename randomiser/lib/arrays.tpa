@@ -92,7 +92,8 @@ COPY - "randomiser/lists/fast-lane.2da" "...randomiser/fl-inlined/fast-lane.2da"
 ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
   OUTER_SET BGT_Convert = 0
   
-  COPY - "randomiser/lists/bg2rebalancing.2da" "...randomiser/fl-inlined/bg2rebalancing.2da"
+  COPY - "randomiser/lists/rebalancing/bg2.2da"
+       "...randomiser/fl-inlined/rebalancing/bg2.2da"
     COUNT_2DA_ROWS 5 num_row
     FOR (i=1;i<num_row;++i) BEGIN
       READ_2DA_ENTRY i 0 5 Mod
@@ -113,17 +114,21 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
 
   OUTER_SPRINT tier_hook "bg2_tiers"
 
-  COPY - "randomiser/lists/itemlist.2da" "...randomiser/fl-inlined/itemlist.2da"
+  COPY - "randomiser/lists/items/base/bg2.2da"
+       "...randomiser/fl-inlined/items/base/bg2.2da"
     LAUNCH_PATCH_MACRO create_item_array#stage1
 
-  COPY - "randomiser/lists/locationlist.2da" "...randomiser/fl-inlined/locationlist.2da"
+  COPY - "randomiser/lists/locations/base/bg2.2da"
+       "...randomiser/fl-inlined/locations/base/bg2.2da"
     LAUNCH_PATCH_MACRO create_loc_array#stage1
 
   ACTION_IF weidu_action = 1 BEGIN
-    COPY - "randomiser/lists/weiduitem.2da" "...randomiser/fl-inlined/weiduitem.2da"
+    COPY - "randomiser/lists/items/mode2/bg2.2da"
+         "...randomiser/fl-inlined/items/mode2/bg2.2da"
       LAUNCH_PATCH_MACRO create_item_array#stage1
     
-    COPY - "randomiser/lists/weidulocation.2da" "...randomiser/fl-inlined/weidulocation.2da"
+    COPY - "randomiser/lists/locations/mode2/bg2.2da"
+         "...randomiser/fl-inlined/locations/mode2/bg2.2da"
       LAUNCH_PATCH_MACRO create_loc_array#stage1
   END
 
@@ -217,7 +222,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $uhmay01_reply2("%item%") = reply2
     END  
     
-  COPY - "randomiser/lists/special_groups.2da" "...randomiser/fl-inlined/special_groups.2da"
+  COPY - "randomiser/lists/groups/bg2.2da"
+       "...randomiser/fl-inlined/groups/bg2.2da"
     COUNT_2DA_ROWS 2 num_row
     FOR(i=1;i<num_row;i+=1) BEGIN
       READ_2DA_ENTRY i 0 2 group
@@ -229,7 +235,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       END
     END
 
-  COPY - "randomiser/lists/duplicates.2da" "...randomiser/fl-inlined/duplicates.2da"
+  COPY - "randomiser/lists/duplicates/bg2.2da"
+       "...randomiser/fl-inlined/duplicates/bg2.2da"
     LAUNCH_PATCH_MACRO create_duplicate_array
 END
 
@@ -237,7 +244,8 @@ END
 ACTION_IF BG1 = 1 BEGIN
   OUTER_SET BGT_Convert = 1
   
-  COPY - "randomiser/lists/bg1rebalancing.2da" "...randomiser/fl-inlined/bg1rebalancing.2da"
+  COPY - "randomiser/lists/rebalancing/bg1.2da"
+       "...randomiser/fl-inlined/rebalancing/bg1.2da"
     COUNT_2DA_ROWS 5 num_row
     FOR (i=1;i<num_row;++i) BEGIN
       READ_2DA_ENTRY i 0 5 Mod
@@ -259,24 +267,30 @@ ACTION_IF BG1 = 1 BEGIN
 
   OUTER_SPRINT tier_hook "bg1_tiers"
 
-  COPY - "randomiser/lists/bg1item.2da" "...randomiser/fl-inlined/bg1item.2da"
+  COPY - "randomiser/lists/items/base/bg1.2da"
+       "...randomiser/fl-inlined/items/base/bg1.2da"
     LAUNCH_PATCH_MACRO create_item_array#stage1
 
-  COPY - "randomiser/lists/bg1location.2da" "...randomiser/fl-inlined/bg1location.2da"
+  COPY - "randomiser/lists/locations/base/bg1.2da"
+       "...randomiser/fl-inlined/locations/base/bg1.2da"
     LAUNCH_PATCH_MACRO create_loc_array#stage1
 
   ACTION_IF weidu_action = 1 BEGIN
-    COPY - "randomiser/lists/weidu_bg1item.2da" "...randomiser/fl-inlined/weidu_bg1item.2da"
+    COPY - "randomiser/lists/items/mode2/bg1.2da"
+         "...randomiser/fl-inlined/items/mode2/bg1.2da"
       LAUNCH_PATCH_MACRO create_item_array#stage1
       
-    COPY - "randomiser/lists/weidu_bg1location.2da" "...randomiser/fl-inlined/weidu_bg1location.2da"
+    COPY - "randomiser/lists/locations/mode2/bg1.2da"
+         "...randomiser/fl-inlined/locations/mode2/bg1.2da"
       LAUNCH_PATCH_MACRO create_loc_array#stage1
   END
 
-  COPY - "randomiser/lists/bg1_special_groups.2da" "...randomiser/fl-inlined/bg1_special_groups.2da"
+  COPY - "randomiser/lists/groups/bg1.2da"
+       "...randomiser/fl-inlined/groups/bg1.2da"
     LAUNCH_PATCH_MACRO create_group_array
 
-  COPY - "randomiser/lists/bg1_duplicates.2da" "...randomiser/fl-inlined/bg1_duplicates.2da"
+  COPY - "randomiser/lists/duplicates/bg1.2da"
+       "...randomiser/fl-inlined/duplicates/bg1.2da"
     LAUNCH_PATCH_MACRO create_duplicate_array
     
   COPY - "randomiser/lists/tra/aldeth.2da" "...randomiser/fl-inlined/tra/aldeth.2da"
