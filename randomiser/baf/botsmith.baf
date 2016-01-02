@@ -1,89 +1,89 @@
 IF
-	Global("flItemMaker","GLOBAL",1)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",1)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("plat06",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("plat06",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",2)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",2)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("plat18",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("plat18",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",3)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",3)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("leat19",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("leat19",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",4)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",4)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("hamm09",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("hamm09",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",5)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",5)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("sw1h54",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("sw1h54",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",6)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",6)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("bow19",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("bow19",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",7)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",7)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("halb09",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("halb09",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",8)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",8)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("sw2h15",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("sw2h15",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END
 
 IF
-	Global("flItemMaker","GLOBAL",9)
-	Global("ImpForgeStuff","GLOBAL",1)
+  Global("flItemMaker","GLOBAL",9)
+  Global("ImpForgeStuff","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ImpForgeStuff","GLOBAL",0)
-		GiveItemCreate("blun25",Player1,0,0,0)
-		StartDialogueNoSet(Player1)
+  RESPONSE #100
+    SetGlobal("ImpForgeStuff","GLOBAL",0)
+    GiveItemCreate("blun25",Player1,0,0,0)
+    StartDialogueNoSet(Player1)
 END

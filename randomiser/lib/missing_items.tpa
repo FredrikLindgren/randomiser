@@ -32,21 +32,21 @@ END
       REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\(SetGlobal(\"UsedCrypt\",\"AR\(0526\|0202\)\",1)\)~ ~\1 TakePartyItem("flrward1")~
     COMPILE_BAF_TO_BCS
   //UNLESS "flrward[12]"
-  
+
   OUTER_SPRINT ward flrward1
   OUTER_SPRINT area ar0526
   EXTEND_TOP crypt526.bcs ~...randomiser/fl-inlined/crypt.baf~ EVAL
   //OUTER_SPRINT ward flrward2
   OUTER_SPRINT area ar0202
   EXTEND_TOP crypt202.bcs ~...randomiser/fl-inlined/crypt.baf~ EVAL
-  
+
   COPY "randomiser/copy/ward.itm" "override/flrward1.itm"
     SAY 0x8 @1503
     SAY 0xc @1503
     WRITE_ASCII 0x3a flrward1
     SAY 0x54 @1502
     SAY 0x50 @1504
-    
+
   COPY "randomiser/copy/flrward1.bam" override
   /*
   COPY "randomiser/copy/ward.itm" "override/flrward2.itm"
@@ -65,7 +65,7 @@ ACTION_IF (BG1 = 0 OR BGT = 1) AND VARIABLE_IS_SET $RandOptions(flrc550) BEGIN
     SAY 0x50 @1512
     SAY 0x54 @1513
     WRITE_ASCII 0x58 flrcbar #8
-    
+
   COPY "randomiser/copy/flribar.bam" override
        "randomiser/copy/flrcbar.bam" override
 END
@@ -76,7 +76,7 @@ ACTION_IF BG1 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%file%" BEGIN
       COPY_EXISTING "%file%" override
         PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-      	  LPF change_store_stock STR_VAR item = EVAL "%TUTU_VAR%shld06" END
+          LPF change_store_stock STR_VAR item = EVAL "%TUTU_VAR%shld06" END
         END
       BUT_ONLY
     END
@@ -89,4 +89,3 @@ ACTION_IF GAME_IS ~bgee~ BEGIN
     LPF change_store_stock STR_VAR item = "scrl5[pmgijk]" END
   BUT_ONLY
 END
-

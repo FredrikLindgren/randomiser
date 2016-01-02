@@ -1,6 +1,6 @@
 
 MKDIR "randomiser/baf/compile"
-      "randomiser/ssl/compile"    
+      "randomiser/ssl/compile"
 
 ACTION_IF !weidu_action BEGIN
   ACTION_PHP_EACH tier_array AS ta_entry => blank BEGIN
@@ -404,7 +404,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
       END
     END
   BUT_ONLY
-  
+
   ACTION_IF FILE_EXISTS_IN_GAME "%TUTU_VAR%brac11.itm" BEGIN
     COPY_EXISTING "%TUTU_VAR%brac11.itm" override
       SPRINT source "%SOURCE_RES%"
@@ -517,7 +517,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
       END
     BUT_ONLY
   END
-  
+
   COPY_EXISTING "%TUTU_VAR%leat06.itm" override
     SPRINT source "%SOURCE_RES%"
     PATCH_IF SOURCE_SIZE > 0x71 BEGIN
@@ -584,7 +584,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
       END
     END
   BUT_ONLY
-  
+
   ACTION_IF FILE_EXISTS_IN_GAME plat17.itm AND !MOD_IS_INSTALLED item_rev.tp2 0 BEGIN //Also nerf T'rahcie's Plate
     COPY_EXISTING plat17.itm override
       SPRINT source "%SOURCE_RES%"
@@ -652,7 +652,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
       END
     BUT_ONLY
   END
-  
+
   COPY_EXISTING "%TUTU_VAR%ring04.itm" override
                 "%TUTU_VAR%ring23.itm" override
     SPRINT source "%SOURCE_RES%"
@@ -770,7 +770,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
       END
     END
   BUT_ONLY
-  
+
   COPY_EXISTING "%TUTU_VAR%sper03.itm" override
     SPRINT source "%SOURCE_RES%"
     PATCH_IF SOURCE_SIZE > 0x71 BEGIN
@@ -808,7 +808,7 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc570) BEGIN //Make cursed items random
       END
     END
   BUT_ONLY
-  
+
   COPY_EXISTING "%TUTU_VAR%sw2h03.itm" override
     SPRINT source "%SOURCE_RES%"
     PATCH_IF SOURCE_SIZE > 0x71 BEGIN
@@ -855,7 +855,7 @@ ACTION_IF !MOD_IS_INSTALLED questpack.tp2 16 AND (BG1 = 0 OR BGT = 1) BEGIN
     COMPILE_D_TO_DLG
   BUT_ONLY
   UNLESS flrsolamnic
-  
+
   COPY_EXISTING obssol01.dlg override
     DECOMPILE_DLG_TO_D
       REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~!Class(Player,MAGE_ALL)~ ~!Class(Player1,MAGE_ALL)~
@@ -875,11 +875,11 @@ ACTION_IF VARIABLE_IS_SET $RandOptions(flrc500) AND weidu_action = 1 BEGIN
   END ELSE ACTION_IF GAME_IS totsc OR GAME_IS ~bgee~ BEGIN
     OUTER_SPRINT area ar0504
   END
-  
+
   ACTION_IF FILE_EXISTS_IN_GAME "%area%.are" BEGIN
     COPY_EXISTING "%area%.are" override
       PATCH_IF SOURCE_SIZE > 0x11b BEGIN
-        READ_SHORT 0x76 num_itm 
+        READ_SHORT 0x76 num_itm
         READ_LONG  0x78 itm_off
         FOR (i=0;i<num_itm;++i) BEGIN
           READ_ASCII itm_off + 0x14*i item ELSE blank

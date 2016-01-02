@@ -1,14 +1,13 @@
-
 IF
-	Contains("MISC9D",Myself) // Giant Troll's Head
-	Global("%Variable%","GLOBAL",%Value%)
+  Contains("MISC9D",Myself) // Giant Troll's Head
+  Global("%Variable%","GLOBAL",%Value%)
 THEN
-	RESPONSE #100
-		DestroyItem("MISC9D") // Giant Troll's Head
-		SetGlobal("SecretThree","GLOBAL",1)
-		PlaySound("EFF_P92")
-		ScreenShake([20.45],15)
-		CreateItem("%Item%",%Charge1%,%Charge2%,%Charge3%)
-		Wait(2)
-		DisplayString(Myself,47724) // When the head is placed on the altar, the room rumbles and the head disappears. A gruff voice speaks a word in a guttural language and an item appears on the altar.
+  RESPONSE #100
+    DestroyItem("MISC9D") // Giant Troll's Head
+    SetGlobal("SecretThree","GLOBAL",1)
+    PlaySound("EFF_P92")
+    ScreenShake([20.45],15)
+    CreateItem("%Item%",%Charge1%,%Charge2%,%Charge3%)
+    Wait(2)
+    DisplayString(Myself,47724) // When the head is placed on the altar, the room rumbles and the head disappears. A gruff voice speaks a word in a guttural language and an item appears on the altar.
 END

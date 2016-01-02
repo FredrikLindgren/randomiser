@@ -1,14 +1,16 @@
 IF
   Global("flSoundOff","GLOBAL",1)
   Global("Shouted","LOCALS",0)
-THEN RESPONSE #100
-  SetGlobal("Shouted","LOCALS",1)
-  DisplayString(Myself,~Chipmunks!~)
+THEN
+  RESPONSE #100
+    SetGlobal("Shouted","LOCALS",1)
+    DisplayString(Myself,~Chipmunks!~)
 END
 
 IF
   Global("flSoundOff","GLOBAL",0)
   Global("Shouted","LOCALS",1)
-THEN RESPONSE #100
-  SetGlobal("Shouted","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Shouted","LOCALS",0)
 END

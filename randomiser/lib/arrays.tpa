@@ -71,7 +71,7 @@ COPY - "randomiser/lists/cursed_items.2da"
       SET $cursed_item_list("%item%") = 1
     END
   END
-  
+
 COPY - "randomiser/lists/fast-lane.2da"
        ".../randomiser/fl-inlined/lists/fast-lane.2da"
   COUNT_2DA_ROWS 3 num_row
@@ -95,7 +95,7 @@ COPY - "randomiser/lists/fast-lane.2da"
 
 ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
   OUTER_SET BGT_Convert = 0
-  
+
   COPY - "randomiser/lists/rebalancing/bg2.2da"
          ".../randomiser/fl-inlined/lists/rebalancing/bg2.2da"
     COUNT_2DA_ROWS 5 num_row
@@ -130,7 +130,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
     COPY - "randomiser/lists/items/mode2/bg2.2da"
            ".../randomiser/fl-inlined/lists/items/mode2/bg2.2da"
       LAUNCH_PATCH_MACRO create_item_array#stage1
-    
+
     COPY - "randomiser/lists/locations/mode2/bg2.2da"
          ".../randomiser/fl-inlined/lists/locations/mode2/bg2.2da"
       LAUNCH_PATCH_MACRO create_loc_array#stage1
@@ -157,7 +157,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       TO_LOWER tra
       SET $ppdjinn_item_tra("%item%") = tra
     END
-    
+
   COPY - "randomiser/lists/tra/ddwell.2da"
          ".../randomiser/fl-inlined/lists/tra/ddwell.2da"
     COUNT_2DA_ROWS 2 num_row
@@ -168,7 +168,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       TO_LOWER tra
       SET $ddwell_item_tra("%item%") = tra
     END
-  
+
   COPY - "randomiser/lists/tra/gorcamb.2da"
          ".../randomiser/fl-inlined/lists/tra/gorcamb.2da"
     COUNT_2DA_ROWS 4 num_row
@@ -185,7 +185,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $gorcamb_reply("%item%") = reply
       SET $gorcamb_say2("%item%") = say2
     END
-  
+
   COPY - "randomiser/lists/tra/jugjer01.2da"
          ".../randomiser/fl-inlined/lists/tra/jugjer01.2da"
     COUNT_2DA_ROWS 3 num_row
@@ -199,7 +199,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $jugjer01_say1("%item%") = say1
       SET $jugjer01_say2("%item%") = say2
     END
-    
+
   COPY - "randomiser/lists/tra/gorlum.2da"
          ".../randomiser/fl-inlined/lists/tra/gorlum.2da"
     COUNT_2DA_ROWS 2 num_row
@@ -210,7 +210,7 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       TO_LOWER tra
       SET $gorlum_item_tra("%item%") = tra
     END
-  
+
   COPY - "randomiser/lists/tra/uhmay01.2da"
          "randomiser/fl-inlined/lists/tra/uhmay01.2da"
     COUNT_2DA_ROWS 8 num_row
@@ -231,8 +231,8 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
       SET $uhmay01_say5("%item%") = say5
       SET $uhmay01_reply1("%item%") = reply1
       SET $uhmay01_reply2("%item%") = reply2
-    END  
-    
+    END
+
   COPY - "randomiser/lists/groups/bg2.2da"
          ".../randomiser/fl-inlined/lists/groups/bg2.2da"
     COUNT_2DA_ROWS 2 num_row
@@ -254,7 +254,7 @@ END
 
 ACTION_IF BG1 = 1 BEGIN
   OUTER_SET BGT_Convert = 1
-  
+
   COPY - "randomiser/lists/rebalancing/bg1.2da"
          ".../randomiser/fl-inlined/lists/rebalancing/bg1.2da"
     COUNT_2DA_ROWS 5 num_row
@@ -290,7 +290,7 @@ ACTION_IF BG1 = 1 BEGIN
     COPY - "randomiser/lists/items/mode2/bg1.2da"
            ".../randomiser/fl-inlined/lists/items/mode2/bg1.2da"
       LAUNCH_PATCH_MACRO create_item_array#stage1
-      
+
     COPY - "randomiser/lists/locations/mode2/bg1.2da"
            ".../randomiser/fl-inlined/lists/locations/mode2/bg1.2da"
       LAUNCH_PATCH_MACRO create_loc_array#stage1
@@ -303,7 +303,7 @@ ACTION_IF BG1 = 1 BEGIN
   COPY - "randomiser/lists/duplicates/bg1.2da"
          ".../randomiser/fl-inlined/lists/duplicates/bg1.2da"
     LAUNCH_PATCH_MACRO create_duplicate_array
-    
+
   COPY - "randomiser/lists/tra/aldeth.2da"
          ".../randomiser/fl-inlined/lists/tra/aldeth.2da"
     COUNT_2DA_ROWS 2 num_row
@@ -376,7 +376,7 @@ COPY - "randomiser/lists/item_ranking.2da"
     LPF fl#bg1pal STR_VAR resource = EVAL "%item%" type = ITM RET item = resource END //TODO: neither this nor the old code worked like intended
     SET $itm_rank("%item%") = rank
   END
-  
+
 COPY - "randomiser/lists/race.2da"
        ".../randomiser/fl-inlined/lists/race.2da"
   COUNT_2DA_ROWS 2 num_rows

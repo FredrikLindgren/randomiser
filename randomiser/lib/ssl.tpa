@@ -54,7 +54,7 @@ OUTER_FOR (sslpass=0;sslpass<pass;sslpass+=1) BEGIN
   OUTER_PATCH_SAVE TierList "%TierList%" BEGIN
     REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ";$" ""
   END
-  
+
   ACTION_PHP_EACH "%array%" AS tier => blank BEGIN
     //ACTION_IF tier > 0 BEGIN
       ACTION_IF lost = 0 OR "%tier%" STRING_EQUAL_CASE fa OR "%tier%" STRING_EQUAL_CASE ka BEGIN

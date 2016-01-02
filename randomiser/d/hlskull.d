@@ -42,7 +42,7 @@ SAY @16
 END
 
 IF ~~ altexit
-SAY @19 
+SAY @19
 IF ~~ DO ~SetGlobal("KangaxxQuest","GLOBAL",1)~ UNSOLVED_JOURNAL @20 EXIT
 END
 

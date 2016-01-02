@@ -135,14 +135,14 @@ ACTION_PHP_EACH tier_array AS tier => blank BEGIN
       OUTER_SET ++counter
       ACTION_IF VARIABLE_IS_SET $fast_lane("%la_entry_2%" "%tier%") BEGIN
         ACTION_IF $fast_lane("%la_entry_2%" "%tier%") > 0 BEGIN
-	  LOG "Doing fast-lane for %la_entry_2%"
+          LOG "Doing fast-lane for %la_entry_2%"
           OUTER_SET num_item = $fast_lane("%la_entry_2%" "%tier%")
           OUTER_SET done = 0
           OUTER_WHILE done = 0 BEGIN
             OUTER_SET r_f = RANDOM(1 num_item)
             OUTER_SPRINT Item $EVAL "%la_entry_2%"("%tier%" "%r_f%")
             ACTION_PHP_EACH removed_item_array AS ria_entry => blank BEGIN
-	      OUTER_SPRINT item_resref $plugintierandtokenandgetitem("%ria_entry_0%" "%ria_entry_1%")
+              OUTER_SPRINT item_resref $plugintierandtokenandgetitem("%ria_entry_0%" "%ria_entry_1%")
               ACTION_IF "%ria_entry_0%" STRING_EQUAL_CASE "%tier%" AND "%Item%" STRING_EQUAL_CASE "%item_resref%" BEGIN
                 OUTER_SPRINT Token "%ria_entry_1%"
                 ACTION_IF $TokenAssigned("%Token%") = 0 BEGIN
@@ -286,7 +286,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         END
       BUT_ONLY
     END
-    
+
     ACTION_IF "%Target%" STRING_EQUAL_CASE ddwell.bcs AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SET GetOne = 0
       OUTER_SPRINT FLITEM helm21
@@ -301,7 +301,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "40850" "@%TRA%"
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
+
     END ELSE ACTION_IF "%Target%" STRING_EQUAL_CASE blpool.bcs AND FILE_EXISTS_IN_GAME blpool.bcs AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN //Special treatment because of stupid descriptive text
       OUTER_SET GetOne = 0
       OUTER_SPRINT FLITEM blun12
@@ -318,7 +318,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "35877" "@%TRA%"
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
+
     END ELSE ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.bcs$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Script
       OUTER_SET GetOne = 0
       OUTER_SPRINT FLITEM $identitem("%Loc_Ident%")
@@ -330,7 +330,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         COMPILE_BAF_TO_BCS
       BUT_ONLY
     END
-    
+
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.cre$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Creature
 
       COPY_EXISTING "%Target%" override
@@ -338,7 +338,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         LAUNCH_PATCH_FUNCTION give_itm_to_cre END
       BUT_ONLY
     END
-    
+
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.dlg$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Dialogue
       OUTER_SET GetOne = 0
       OUTER_SPRINT FLITEM $identitem("%Loc_Ident%")
@@ -349,7 +349,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         COMPILE_D_TO_DLG
       BUT_ONLY
     END
-    
+
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.spl$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN //Spell
 
       COPY_EXISTING "%Target%" override
@@ -377,7 +377,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         WRITE_LONG   0x60 Charge2
         WRITE_LONG   0x64 Charge3
     END
-    
+
     ACTION_IF "%Target%" STRING_MATCHES_REGEXP ".*\.sto$" = 0 AND FILE_EXISTS_IN_GAME "%Target%" AND FILE_EXISTS_IN_GAME "%Item%.itm" BEGIN
 
       COPY_EXISTING "%Target%" override
@@ -385,7 +385,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         LAUNCH_PATCH_FUNCTION add_store_item END
       BUT_ONLY
     END
-    
+
     ACTION_IF "%Target%" STRING_EQUAL_CASE varci.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND BG1 = 1 BEGIN
       OUTER_SPRINT FLITEM "%TUTU_VAR%shld07"
 
@@ -395,7 +395,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~GiveItem(\"%FLITEM%\",\(.+\))~ ~GiveItemCreate("%Item%",\1,%Charge1%,%Charge2%,%Charge3%)~
         COMPILE_D_TO_DLG
       BUT_ONLY
-    
+
     END
 
     ACTION_IF "%Target%" STRING_EQUAL_CASE safana.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND BG1 = 1 BEGIN
@@ -436,7 +436,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         BUT_ONLY
       END
     END
-    
+
     ACTION_IF "%Target%" STRING_EQUAL_CASE nemphr.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND BG1 = 1 BEGIN
       OUTER_SPRINT FLITEM "%TUTU_VAR%scrl1q"
 
@@ -454,11 +454,11 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
     ACTION_IF "%Target%" STRING_EQUAL_CASE mgappr1.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       PRINT "Code for mgappr1 goes here"
     END
-    
+
     ACTION_IF "%Target%" STRING_EQUAL_CASE mgappr2.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       PRINT "Code for mgappr2 goes here"
     END
-    
+
     ACTION_IF "%Target%" STRING_EQUAL_CASE mgappr3.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       PRINT "Code for mgappr3 goes here"
     END
@@ -541,7 +541,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       STRING_SET_EVALUATE 32207 "%say5%"
       STRING_SET_EVALUATE 49560 "%reply1%"
       STRING_SET_EVALUATE 32191 "%reply2%"
-      
+
       STRING_SET 32063 @1449 //be less specific about what kind of magic affects the item
     END
 
@@ -575,8 +575,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       STRING_SET_EVALUATE 63683 "%reply%"
       STRING_SET_EVALUATE 64611 "%reply%"
       STRING_SET_EVALUATE 63719 "%say2%"
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE sculptor.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM helm03
       COPY_EXISTING sctelwyn.dlg override
@@ -602,8 +602,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       STRING_SET 29325 @111 //Telwyn's dialogue
       STRING_SET 28489 @116 //Sain
       STRING_SET 29378 @117 //Yarryl
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE trgeni01.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM sw1h23
       COPY_EXISTING trgeni01.cre override
@@ -616,8 +616,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         COMPILE_D_TO_DLG
       BUT_ONLY
       STRING_SET 43514 @110 //Khan Zahraa's dialogue
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE jugjer01.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM sw1h26
       COPY_EXISTING jugjer01.dlg override
@@ -640,8 +640,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       END
       STRING_SET_EVALUATE 33760 "%say1%"
       STRING_SET_EVALUATE 33777 "%say2%"
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE ppchest.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING ar1514.are override
         LPF insert_area_item
@@ -660,8 +660,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~"%FLITEM%"~ ~"%Item%"~
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE udlesa.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING udlesa.cre override
         SPRINT itm_to_give "%Item%"
@@ -674,8 +674,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
         COMPILE_D_TO_DLG
       BUT_ONLY
       STRING_SET 52664 @104 //Lasaonar's dialogue
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE tolger.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING tolger2.cre override
                     tolger.cre  override
@@ -695,7 +695,7 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~"%FLITEM%"~ ~"%Item%"~
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
+
     END
     ACTION_IF "%Target%" STRING_EQUAL_CASE loutcapt.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM dagg11
@@ -708,8 +708,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~"%FLITEM%"~ ~"%Item%"~
         COMPILE_D_TO_DLG
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE copper.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM sw1h03
       COPY_EXISTING hendak.dlg override
@@ -718,8 +718,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
         COMPILE_D_TO_DLG
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE samia1.fl OR "%Target%" STRING_EQUAL_CASE samia2.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       ACTION_IF "%Target%" STRING_EQUAL_CASE samia1.fl BEGIN
         OUTER_SPRINT FLITEM shld21
@@ -765,8 +765,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       REPLACE_STATE_TRIGGER samia 24 ~Global("flSamiaTreasure","ar1202",1)~
       >>>>>>>>
       COMPILE "...flrsamia.d"
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE keep1.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING ar1303.are override
         LPF insert_area_item
@@ -792,8 +792,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE           CASE_INSENSITIVE EXACT_MATCH 38758 @101
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE keep2.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING ar1303.are override
         LPF insert_area_item
@@ -819,8 +819,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE           CASE_INSENSITIVE EXACT_MATCH 38758 @101
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE keep3.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING ar1303.are override
         LPF insert_area_item
@@ -846,8 +846,8 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE           CASE_INSENSITIVE EXACT_MATCH 38758 @101
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE sahtreas.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING ar2300.are override
         LPF insert_area_item
@@ -871,17 +871,17 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE "%FLITEM%" "%Item%"
         COMPILE_BAF_TO_BCS
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE aldeth.fl AND FILE_EXISTS_IN_GAME "%TUTU_VAR%aldeth.cre" AND BG1 = 1 BEGIN
       OUTER_SET TRA = 1699
       ACTION_IF VARIABLE_IS_SET $aldeth_item_tra("%Item%") BEGIN
-	OUTER_SET TRA = $aldeth_item_tra("%Item%")
+        OUTER_SET TRA = $aldeth_item_tra("%Item%")
       END
       <<<<<<<< randomiser/fl-inlined/aldeth_I_dont_have_Tutu_or_BGT_installed_right_now.d
 REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
       >>>>>>>>
-      COMPILE "randomiser/fl-inlined/aldeth_I_dont_have_Tutu_or_BGT_installed_right_now.d" EVAL	    	
+      COMPILE "randomiser/fl-inlined/aldeth_I_dont_have_Tutu_or_BGT_installed_right_now.d" EVAL
 
       OUTER_SPRINT FLITEM "%TUTU_VAR%sw1h03"
       COPY_EXISTING "%TUTU_VAR%aldeth.cre" override
@@ -895,8 +895,8 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
         REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
         REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~"%FLITEM%"~ ~"%Item%"~
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE ppdjinn.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SET TRA = 99
       ACTION_PHP_EACH ppdjinn_item_tra AS ppdjinn_entry => ref BEGIN
@@ -905,8 +905,8 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
         END
       END
       COMPILE EVALUATE_BUFFER "randomiser/d/ppdjinn.d"
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE tadpoles1.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN //Sahuagin king
       OUTER_SPRINT FLITEM brac19
       COPY_EXISTING sahkng01.cre override
@@ -919,16 +919,16 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
           REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~GiveItemCreate("%FLITEM%",LastTalkedToBy,0,0,0)~ ~GiveItem("%Item%",LastTalkedToBy)~
         COMPILE_D_TO_DLG
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE tadpoles2.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN //Sahuagin prince
       COPY_EXISTING sahpr2.cre override
         SPRINT itm_to_give "%Item%"
         LAUNCH_PATCH_FUNCTION give_itm_to_cre END
       BUT_ONLY
       COMPILE EVALUATE_BUFFER "randomiser/d/sahpr2.d"
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE tadpoles3.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN //Sahuagin king or prince
       OUTER_SPRINT itm_to_give "%Item%"
       ACTION_IF RANDOM (1 100) > 50 BEGIN
@@ -941,8 +941,8 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
           LAUNCH_PATCH_FUNCTION give_itm_to_cre END
         BUT_ONLY
       END
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE templemess.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN //Temple reward
       OUTER_SPRINT FLITEM blun20
       COPY_EXISTING bhnalla.dlg override
@@ -952,8 +952,8 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
         COMPILE_D_TO_DLG
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE aran1.fl OR "%Target%" STRING_EQUAL_CASE aran2.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN //Aran's loot
       ACTION_IF "%Target%" STRING_EQUAL_CASE aran1.fl BEGIN
         OUTER_SPRINT FLITEM ring07
@@ -983,8 +983,8 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
           COMPILE_BAF_TO_BCS
         BUT_ONLY
       END
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE fiends.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND FILE_EXISTS_IN_GAME gorbat1.dlg AND (BG1 = 0 OR BGT = 1) BEGIN //Reward from the happy couple
       OUTER_SPRINT FLITEM helm29
       COPY_EXISTING gorbat1.dlg override
@@ -993,8 +993,8 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
         COMPILE_D_TO_DLG
       BUT_ONLY
-    
-    END 
+
+    END
     ACTION_IF "%Target%" STRING_EQUAL_CASE amcler.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND FILE_EXISTS_IN_GAME amcler01.dlg AND (BG1 = 0 OR BGT = 1) BEGIN //Amkethran, Priest of Waukeen
       OUTER_SPRINT FLITEM ring43
       COPY_EXISTING amcler01.cre override
@@ -1011,7 +1011,7 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
           REPLACE CASE_INSENSITIVE EXACT_MATCH "74025" @100
         COMPILE_D_TO_DLG
       BUT_ONLY
-    
+
     END
     ACTION_IF "%Target%" STRING_EQUAL_CASE gorlum.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND FILE_EXISTS_IN_GAME gorlum2.dlg AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SET GetOne = 0
@@ -1028,7 +1028,7 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
           REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
         COMPILE_D_TO_DLG
       BUT_ONLY
-      
+
     END
     ACTION_IF "%Target%" STRING_EQUAL_CASE eggdealio.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       OUTER_SPRINT FLITEM halb06
@@ -1044,7 +1044,7 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
         COMPILE_D_TO_DLG
       BUT_ONLY
     END
-    
+
     ACTION_IF "%Target%" STRING_EQUAL_CASE chapter3.fl AND FILE_EXISTS_IN_GAME "%Item%.itm" AND (BG1 = 0 OR BGT = 1) BEGIN
       COPY_EXISTING "%Item%.itm" override
         LPM read_itm_unusabilities
@@ -1063,7 +1063,7 @@ REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
         OUTER_SPRINT haz arnwar06
         OUTER_SPRINT arkanis arkanisg
       END
-      
+
       OUTER_SET vcount = 0
       OUTER_SET vuse = 0
       ACTION_FOR_EACH v IN lassal02 bodvam01 bodvam02 bodtan BEGIN
@@ -1244,7 +1244,7 @@ ACTION_IF FILE_EXISTS_IN_GAME abazigal.cre BEGIN
       READ_ASCII itm_off + 0x14*i item ELSE blank
       READ_BYTE  itm_off + 0x14*i + 0x10 flags ELSE 8
       PATCH_IF FILE_EXISTS_IN_GAME "%item%.itm" BEGIN
-        SET $abazigal2("%item%") = 1 
+        SET $abazigal2("%item%") = 1
       END
     END
     PHP_EACH abazigal1 AS item => int BEGIN

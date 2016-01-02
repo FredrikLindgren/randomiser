@@ -26,23 +26,23 @@ APPEND kpglai01
     SAY @4
       IF ~~  DO ~GiveItem("blun14a",LastTalkedToBy) GiveItem("blun14b",LastTalkedToBy) GiveItem("blun14c",LastTalkedToBy)~  GOTO 9
   END
-  
+
   IF ~~ twohead
     SAY @5
       IF ~~  DO ~GiveItem("blun14a",LastTalkedToBy) GiveItem("blun14b",LastTalkedToBy) GiveItem("blun14c",LastTalkedToBy)~  GOTO twohead2
   END
-  
+
   IF ~~ twohead2
     SAY @6
     =   @3
       IF ~~  GOTO 7
   END
-  
+
   IF ~~ luckybastard
     SAY @7
       IF ~~  DO ~GiveItem("blun14a",LastTalkedToBy) GiveItem("blun14b",LastTalkedToBy) GiveItem("blun14c",LastTalkedToBy)~  GOTO luckybastard2
   END
-  
+
   IF ~~ luckybastard2
     SAY @8
       IF ~~  GOTO 7

@@ -138,13 +138,13 @@ BEGIN @101200 SUBCOMPONENT @101000 DESIGNATED 1200                              
 
   OUTER_SET lost = 1
   OUTER_SET weidu_action = 0
-  
+
   INCLUDE "randomiser/lib/random_seed.tpa"
 
-  INCLUDE "randomiser/lib/missing_items.tpa"                                                                           
+  INCLUDE "randomiser/lib/missing_items.tpa"
 
   INCLUDE "randomiser/lib/arrays.tpa"
-  
+
   INCLUDE "randomiser/lib/copy.tpa"
 
   INCLUDE "randomiser/lib/numbercrunchers.tpa"
@@ -156,7 +156,7 @@ BEGIN @101200 SUBCOMPONENT @101000 DESIGNATED 1200                              
   INCLUDE "randomiser/lib/delivery.tpa"
 
   INCLUDE "randomiser/lib/ssl.tpa"
-  
+
 
 BEGIN @101300 SUBCOMPONENT @101000 DESIGNATED 1300                                                                     //WeiDU randomisation: no items are lost
                                                                                                                        //Marker file: flrandomiser2.mrk
@@ -170,7 +170,7 @@ BEGIN @101300 SUBCOMPONENT @101000 DESIGNATED 1300                              
   INCLUDE "randomiser/lib/arrays.tpa"
 
   INCLUDE "randomiser/lib/delete.tpa"
-  
+
   INCLUDE "randomiser/lib/fixes.tpa"
 
   INCLUDE "randomiser/lib/weidu_action.tpa"                                                                            //Randomises and distributes items
@@ -188,7 +188,7 @@ BEGIN @101400 SUBCOMPONENT @101000 DESIGNATED 1400                              
   INCLUDE "randomiser/lib/arrays.tpa"
 
   INCLUDE "randomiser/lib/delete.tpa"
-  
+
   INCLUDE "randomiser/lib/fixes.tpa"
 
   INCLUDE "randomiser/lib/weidu_action.tpa"
@@ -196,7 +196,7 @@ BEGIN @101400 SUBCOMPONENT @101000 DESIGNATED 1400                              
 
 
 BEGIN @105005 GROUP @105000 DESIGNATED 5005                                                                            //Beholders have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN udelder BEGIN
@@ -209,7 +209,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 
 BEGIN @105015 GROUP @105000 DESIGNATED 5015                                                                            //Demi-liches have no items rquipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN demilich BEGIN
@@ -222,7 +222,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 
 BEGIN @105025 GROUP @105000 DESIGNATED 5025                                                                            //Dragons have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN udsilver shadra01 firkra02 dragblac gorsal fsdragon dragblue bazdra03 BEGIN
@@ -235,7 +235,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 
 BEGIN @105035 GROUP @105000 DESIGNATED 5035                                                                            //Elementals have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN elemimix BEGIN
@@ -246,9 +246,9 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
     END
   END
 
-  
+
 BEGIN @105045 GROUP @105000 DESIGNATED 5045                                                                            //Fiends have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN pmaster obsdem01 gorchr BEGIN
@@ -261,7 +261,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 
 BEGIN @105055 GROUP @105000 DESIGNATED 5055                                                                            //Golems have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN gorgoli BEGIN
@@ -274,7 +274,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 
 BEGIN @105065 GROUP @105000 DESIGNATED 5065                                                                            //Master Brains have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN udmaster BEGIN
@@ -287,7 +287,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 
 BEGIN @105075 GROUP @105000 DESIGNATED 5075                                                                            //Slimes have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~bg1 totsc tutu tutu_totsc bgt bgee~ @105003
 
   ACTION_FOR_EACH cre IN schlum BEGIN
@@ -300,7 +300,7 @@ REQUIRE_PREDICATE GAME_IS ~bg1 totsc tutu tutu_totsc bgt bgee~ @105003
 
 
 BEGIN @105085 GROUP @105000 DESIGNATED 5085                                                                            //Trolls have no items equipped
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001 
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   ACTION_FOR_EACH cre IN pptroll1 pptroll2 BEGIN
@@ -316,10 +316,10 @@ REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @109001
 
   COMPILE "randomiser/d/botsmith.d"
   EXTEND_BOTTOM botsmith.bcs "randomiser/baf/botsmith.baf"
-  
+
 
 BEGIN @109050 DESIGNATED 9050                                                                                          //Make Gromnir a proper Barbarian
-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @109001 
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @109001
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME gromnir.itm @109002
 
   INCLUDE "randomiser/lib/gromnir.tpa"
@@ -339,14 +339,14 @@ BEGIN @110200 SUBCOMPONENT @110000 DESIGNATED 10200                             
       LPF DELETE_STORE_ITEM STR_VAR item_to_delete = EVAL "%TUTU_VAR%scrl09" END
     END
   BUT_ONLY
-  
+
 
 BEGIN @110210 DESIGNATED 10210                                                                                         //Duergar merchants
 REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
   COMPILE "randomiser/d/udduer01.d"
 
-  
+
 BEGIN @110300 DESIGNATED 10300                                                                                         //Prevent Watcker's Keep statues from disappearing
 REQUIRE_PREDICATE !MOD_IS_INSTALLED scsii.tp2 7030
               AND !MOD_IS_INSTALLED scsii.tp2 7031

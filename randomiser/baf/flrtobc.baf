@@ -1,35 +1,37 @@
-
 IF
   G("flSqueaked",0)
   Global("flToBC","LOCALS",0)
-THEN RESPONSE #100
-  SetGlobal("flToBC","LOCALS",1)
-  CreateCreatureImpassable("fltier10",[-1.-1],0)
-  CreateCreatureImpassable("fltier10",[-1.-1],0)
-  CreateCreatureImpassable("fltier10",[-1.-1],0)
-  CreateCreatureImpassable("fltier11",[-1.-1],0)
-  CreateCreatureImpassable("fltier11",[-1.-1],0)
-  CreateCreatureImpassable("fltier12",[-1.-1],0)
-  CreateCreatureImpassable("fltier12",[-1.-1],0)
-  CreateCreatureImpassable("fltier12",[-1.-1],0)
-  CreateCreatureImpassable("fltier13",[-1.-1],0)
-  CreateCreatureImpassable("fltier13",[-1.-1],0)
+THEN
+  RESPONSE #100
+    SetGlobal("flToBC","LOCALS",1)
+    CreateCreatureImpassable("fltier10",[-1.-1],0)
+    CreateCreatureImpassable("fltier10",[-1.-1],0)
+    CreateCreatureImpassable("fltier10",[-1.-1],0)
+    CreateCreatureImpassable("fltier11",[-1.-1],0)
+    CreateCreatureImpassable("fltier11",[-1.-1],0)
+    CreateCreatureImpassable("fltier12",[-1.-1],0)
+    CreateCreatureImpassable("fltier12",[-1.-1],0)
+    CreateCreatureImpassable("fltier12",[-1.-1],0)
+    CreateCreatureImpassable("fltier13",[-1.-1],0)
+    CreateCreatureImpassable("fltier13",[-1.-1],0)
 END
 
-IF 
+IF
   G("fl10tDone",1)
   G("fl11tDone",1)
   G("fl12tDone",1)
   G("fl13tDone",1)
   G("flSqueaked",0)
-THEN RESPONSE #100
-  SetGlobal("flSqueaked","GLOBAL",1)
-  DisplayString(Myself,~Squeak!~)
-  DestroySelf()
+THEN
+  RESPONSE #100
+    SetGlobal("flSqueaked","GLOBAL",1)
+    DisplayString(Myself,~Squeak!~)
+    DestroySelf()
 END
 
-IF 
+IF
   G("flSqueaked",1)
-THEN RESPONSE #100
-  DestroySelf()
+THEN
+  RESPONSE #100
+    DestroySelf()
 END

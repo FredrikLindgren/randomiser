@@ -1,13 +1,12 @@
-
 IF
-	Clicked([ANYONE])
-	Range(LastTrigger,10)
-	Global("Pool","AR0801",1)
-	Global("%Variable%","GLOBAL",%Value%)
+  Clicked([ANYONE])
+  Range(LastTrigger,10)
+  Global("Pool","AR0801",1)
+  Global("%Variable%","GLOBAL",%Value%)
 THEN
-	RESPONSE #100
-		DisplayString(Myself,@%TRA%)
-		GiveItemCreate("%Item%",LastTrigger,%Charge1%,%Charge2%,%Charge3%)
-		ReallyForceSpell(LastTrigger,TRAP_UNDERWATER_BITE)
-		SetGlobal("Pool","AR0801",2)
+  RESPONSE #100
+    DisplayString(Myself,@%TRA%)
+    GiveItemCreate("%Item%",LastTrigger,%Charge1%,%Charge2%,%Charge3%)
+    ReallyForceSpell(LastTrigger,TRAP_UNDERWATER_BITE)
+    SetGlobal("Pool","AR0801",2)
 END

@@ -6,28 +6,28 @@ APPEND obssol01
     ++ @1 + help
     ++ @2 + go
   END
-  
+
   IF ~~ go
     SAY @3
     IF ~~ THEN DO ~ActionOverride("obssol02",EscapeArea()) ActionOverride("obssol03",EscapeArea()) EscapeArea()~ EXIT
   END
-  
+
   IF ~~ help
     SAY @4
     ++ @5 + help2
     ++ @6 + go2
   END
-  
+
   IF ~~ go2
     SAY @7
     IF ~~ THEN DO ~ActionOverride("obssol02",EscapeArea()) ActionOverride("obssol03",EscapeArea()) EscapeArea()~ EXIT
   END
-  
+
   IF ~~ help2
     SAY @8
     ++ @9 DO ~SetGlobal("flrsolamnic","GLOBAL",1) SetGlobal("TalkedPCSphere","LOCALS",1)~ + help3
   END
-  
+
   IF ~~ help3
     SAY @11
     IF ~~ THEN UNSOLVED_JOURNAL @10 EXIT

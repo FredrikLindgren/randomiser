@@ -3,6 +3,7 @@ IF
     !Contains("shld21","container10")
     !Contains("sw1h32","container10")
   Global("flSamiaTreasure","ar1202",0)
-THEN RESPONSE #100
-  SetGlobal("flSamiaTreasure","ar1202",1)
+THEN
+  RESPONSE #100
+    SetGlobal("flSamiaTreasure","ar1202",1)
 END

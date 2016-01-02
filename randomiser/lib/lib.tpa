@@ -1120,7 +1120,7 @@ DEFINE_ACTION_FUNCTION select_group_cre RET f_Selected BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME "%f_Item%.itm" BEGIN
     COPY_EXISTING "%f_Item%.itm" override
       PATCH_IF SOURCE_SIZE > 0x71 BEGIN
-        LPM read_itm_unusabilities 
+        LPM read_itm_unusabilities
       END
     BUT_ONLY
     OUTER_SET NumUsable = 0

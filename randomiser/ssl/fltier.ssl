@@ -12,7 +12,7 @@ BEGIN LOOP(Token1||TokenList)
       BEGIN LOOP(Token2||TokenList)
         !Global("flTierNumbertToken2","GLOBAL",Value)
       END LOOP
-  THEN 
+  THEN
     RESPONSE #100
       SetGlobal("flTierNumbertToken1","GLOBAL",Value)
   END
@@ -25,7 +25,7 @@ BEGIN LOOP(Token1||TokenList)
       BEGIN LOOP(Token2||TokenList)
         !Global("flTierNumbertToken2","GLOBAL",Value)
       END LOOP
-  THEN 
+  THEN
     RESPONSE #ChanceNotLost
       SetGlobal("flTierNumbertToken1","GLOBAL",Value)
     RESPONSE #LostChance

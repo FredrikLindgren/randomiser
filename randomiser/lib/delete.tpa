@@ -45,7 +45,7 @@ ACTION_PHP_EACH item_array AS entry => int BEGIN
         END
       END
     END
-  
+
     ACTION_IF ("%entry_2%" STRING_MATCHES_REGEXP ".*\.are$" = 0) AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
       ACTION_IF FILE_EXISTS_IN_GAME "%sourcefile%" BEGIN
         COPY_EXISTING "%sourcefile%" override
@@ -64,7 +64,7 @@ ACTION_PHP_EACH item_array AS entry => int BEGIN
         LAUNCH_PATCH_MACRO del_sto_itm_stuff
       BUT_ONLY
     END
-  
+
     ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.bcs$" = 0 AND weidu_action = 0 AND FILE_EXISTS_IN_GAME "%entry_2%" AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
         LAUNCH_ACTION_MACRO stuff_cre
         COPY_EXISTING "%itm_to_del%.itm" override
@@ -72,14 +72,14 @@ ACTION_PHP_EACH item_array AS entry => int BEGIN
         BUT_ONLY
         OUTER_SPRINT $bcs_source_array("%entry_2%") ""
     END
-    
+
     ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.\(bcs\|dlg\|spl\)$" = 0 AND weidu_action = 1 AND FILE_EXISTS_IN_GAME "%entry_2%" AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
       OUTER_SPRINT $removed_item_array("%removed_tier%" "%removed_token%" "%removed_ident%") ""
       COPY_EXISTING "%itm_to_del%.itm" override
         LAUNCH_PATCH_MACRO read_charge_array_on_itm
       BUT_ONLY
     END
-  
+
     ACTION_IF "%entry_2%" STRING_EQUAL_CASE unshey.fl AND FILE_EXISTS_IN_GAME "%TUTU_VAR%unshey.dlg" AND BG1 = 1 BEGIN
       COPY "randomiser/copy/flrbelt1.itm" override
         SAY 0x8 @114
@@ -104,14 +104,14 @@ ACTION_PHP_EACH item_array AS entry => int BEGIN
           REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH "%TUTU_VAR%belt04" "flrbelt1"
         COMPILE_D_TO_DLG
       BUT_ONLY
-  
+
     END ELSE ACTION_IF "%entry_2%" STRING_MATCHES_REGEXP ".*\.fl$" = 0 AND weidu_action = 1 AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
       OUTER_SPRINT $removed_item_array("%removed_tier%" "%removed_token%" "%removed_ident%") ""
       COPY_EXISTING "%itm_to_del%.itm" override
         LAUNCH_PATCH_MACRO read_charge_array_on_itm
       BUT_ONLY
     END
-  
+
     ACTION_IF "%entry_2%" STRING_EQUAL_CASE blank AND weidu_action = 0 AND FILE_EXISTS_IN_GAME "%itm_to_del%.itm" BEGIN
       LAUNCH_ACTION_MACRO stuff_cre
       COPY_EXISTING "%itm_to_del%.itm" override

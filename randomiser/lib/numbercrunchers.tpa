@@ -82,11 +82,11 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN //Provide for starting a ToB game with Mode 1
     WRITE_LONG  0x8 12796 //Squirrel
     WRITE_LONG  0xc 12790 //Squirrel
     WRITE_ASCII 0x248 flrtobc #8
-  
+
   COPY_EXISTING ar3000.are override
                 ar4000.are override
     LPF insert_actor STR_VAR actor = flrtobc END
   BUT_ONLY
-  
+
   COMPILE "randomiser/baf/flrtobc.baf"
 END

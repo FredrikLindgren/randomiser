@@ -1,8 +1,9 @@
 IF
   Global("flTierNumberStarted","GLOBAL",0)
-THEN RESPONSE #100
-  SetGlobal("flTierNumberStarted","Global",1)
-  DisplayString(Myself,~Randomising tier TierNumber.~)
+THEN
+  RESPONSE #100
+    SetGlobal("flTierNumberStarted","Global",1)
+    DisplayString(Myself,~Randomising tier TierNumber.~)
 END
 
 IF
@@ -10,7 +11,8 @@ IF
     !Global("flTierNumbertNumber2","GLOBAL",0)
   END LOOP
   Global("flTierNumberDone","Global",0)
-THEN RESPONSE #100
-  SetGlobal("flTierNumberDone","Global",1)
-  DisplayString(Myself,~Tier TierNumber is done.~)
+THEN
+  RESPONSE #100
+    SetGlobal("flTierNumberDone","Global",1)
+    DisplayString(Myself,~Tier TierNumber is done.~)
 END

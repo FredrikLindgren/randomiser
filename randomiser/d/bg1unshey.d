@@ -1,4 +1,3 @@
-
 APPEND %TUTU_VAR%unshey
 
   IF WEIGHT #0 ~ReactionGT(LastTalkedToBy,HOSTILE_UPPER) NumberOfTimesTalkedTo(0)~ THEN BEGIN altopening
@@ -8,7 +7,6 @@ APPEND %TUTU_VAR%unshey
 
 END
 
-                                                                
 ALTER_TRANS %TUTU_VAR%unshey BEGIN 4 END BEGIN 0 END BEGIN ACTION
 ~AddexperienceParty(400)
 GivePartyGold(70)
@@ -23,6 +21,5 @@ TakePartyItem("flrbelt1")
 GiveItem("%TUTU_VAR%BOOK32",LastTalkedToBy)
 ~
 END
-
 
 ADD_STATE_TRIGGER %TUTU_VAR%unshey 1 "False()"
