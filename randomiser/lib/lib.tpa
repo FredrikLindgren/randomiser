@@ -547,6 +547,12 @@ BEGIN
   PATCH_IF !skip AND chance < 100 AND
            RANDOM(1 100) > chance
   BEGIN skip = 1 END
+
+  /* Skip Manual of CON on BG1, because of technical reasons
+   */
+  PATCH_IF ENGINE_IS ~bg1 totsc~ AND "%ident%" STRING_EQUAL_CASE "vf" BEGIN
+    skip = 1
+  END
 END
 
 DEFINE_ACTION_MACRO create_item_array#side_effects#totsc_tome BEGIN
