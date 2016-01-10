@@ -245,10 +245,6 @@ ACTION_IF BG1 = 0 OR BGT = 1 BEGIN
         SPRINT $special_array("%i%" "%group%") "%cre%"
       END
     END
-
-  COPY - "randomiser/lists/duplicates/bg2.2da"
-         ".../randomiser/fl-inlined/lists/duplicates/bg2.2da"
-    LAUNCH_PATCH_MACRO create_duplicate_array
 END
 
 
@@ -299,10 +295,6 @@ ACTION_IF BG1 = 1 BEGIN
   COPY - "randomiser/lists/groups/bg1.2da"
          ".../randomiser/fl-inlined/lists/groups/bg1.2da"
     LAUNCH_PATCH_MACRO create_group_array
-
-  COPY - "randomiser/lists/duplicates/bg1.2da"
-         ".../randomiser/fl-inlined/lists/duplicates/bg1.2da"
-    LAUNCH_PATCH_MACRO create_duplicate_array
 
   COPY - "randomiser/lists/tra/aldeth.2da"
          ".../randomiser/fl-inlined/lists/tra/aldeth.2da"
@@ -355,6 +347,17 @@ END
 
 LAM create_item_array#finalise
 LAM create_loc_array#finalise
+
+ACTION_IF !BG1 OR BGT BEGIN
+  COPY - "randomiser/lists/duplicates/bg2.2da"
+         ".../randomiser/fl-inlined/lists/duplicates/bg2.2da"
+    LAUNCH_PATCH_MACRO create_duplicate_array
+END
+ACTION_IF BG1 BEGIN
+  COPY - "randomiser/lists/duplicates/bg1.2da"
+         ".../randomiser/fl-inlined/lists/duplicates/bg1.2da"
+    LAUNCH_PATCH_MACRO create_duplicate_array
+END
 
 COPY_EXISTING itemexcl.2da override
   READ_2DA_ENTRIES_NOW r2en_itemexcl.2da 2

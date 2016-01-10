@@ -903,7 +903,7 @@ DEFINE_PATCH_MACRO create_duplicate_array BEGIN
     TO_LOWER source
     TO_LOWER replace
     TO_LOWER ident
-    PATCH_IF VARIABLE_IS_SET $ident("%ident%") OR "%ident%" STRING_EQUAL_CASE x BEGIN
+    PATCH_IF !VARIABLE_IS_SET $ident_filter("%ident%") BEGIN
       PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
         LPF fl#bg1pal STR_VAR resource = EVAL "%item%" type = ITM RET item = resource END
         LPF fl#bg1pal STR_VAR file = EVAL "%source%" RET source = file END
