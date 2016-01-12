@@ -89,3 +89,32 @@ ACTION_IF GAME_IS ~bgee~ BEGIN
     LPF change_store_stock STR_VAR item = "scrl5[pmgijk]" END
   BUT_ONLY
 END
+
+/*
+ * Jamis has the good weapon equipped in the off-hand; swap
+ */
+ACTION_IF FILE_EXISTS_IN_GAME amtgen01.cre AND (BG1 = 0 OR BGT = 1) BEGIN
+  COPY_EXISTING amtgen01.cre override
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      READ_LONG 0x2b8 itm_slt
+      READ_LONG 0x2bc itm_off
+      READ_SSHORT itm_slt + 0x2 * 2 offhand ELSE "-1"
+      PATCH_IF offhand >= 0 BEGIN
+        READ_ASCII itm_off + 0x14 * offhand offweapon ELSE blank
+      END
+      PATCH_IF "%offweapon%" STRING_EQUAL_CASE "sw1h77" BEGIN // The Answerer +4
+        FOR (i = 0; i < 5; ++i) BEGIN
+          READ_SSHORT itm_slt + 0x2 * 9 + 0x2 * i mainhand ELSE "-1"
+          PATCH_IF mainhand >= 0 BEGIN
+            READ_ASCII itm_off + 0x14 * mainhand mainweapon ELSE blank
+            PATCH_IF "%mainweapon%" STRING_EQUAL_CASE "sw1h73" BEGIN // Long Sword +3
+              WRITE_SHORT itm_slt + 0x2 * 2 mainhand
+              WRITE_SHORT itm_slt + 0x2 * 9 + 0x2 * i offhand
+              i = 5
+            END
+          END
+        END
+      END
+    END
+  BUT_ONLY
+END
