@@ -662,12 +662,6 @@ DEFINE_ACTION_MACRO create_item_array#finalise BEGIN
   LOCAL_SPRINT ident ""
   LOCAL_SET skip = 0
   LOCAL_SPRINT entry ""
-  LOCAL_SPRINT entry_0 ""
-  LOCAL_SPRINT entry_1 ""
-  LOCAL_SPRINT entry_2 ""
-  LOCAL_SPRINT entry_3 ""
-  LOCAL_SPRINT entry_4 ""
-  LOCAL_SPRINT entry_5 ""
   LOCAL_SPRINT macro ""
 
   ACTION_DEFINE_ASSOCIATIVE_ARRAY create_item_array#side_effects BEGIN
@@ -850,11 +844,6 @@ DEFINE_ACTION_MACRO create_loc_array#finalise BEGIN
   LOCAL_SPRINT ident ""
   LOCAL_SET skip = 0
   LOCAL_SPRINT entry ""
-  LOCAL_SPRINT entry_0 ""
-  LOCAL_SPRINT entry_1 ""
-  LOCAL_SPRINT entry_2 ""
-  LOCAL_SPRINT entry_3 ""
-  LOCAL_SPRINT entry_4 ""
 
   ACTION_PHP_EACH "%create_loc_array#finalise#array%" AS entry => _ BEGIN
     OUTER_SPRINT location "%entry_0%"
