@@ -873,27 +873,57 @@ ACTION_PHP_EACH itm_loc_assoc_array AS ilaa_entry => blank BEGIN
       BUT_ONLY
 
     END
-    ACTION_IF "%Target%" STRING_EQUAL_CASE aldeth.fl AND FILE_EXISTS_IN_GAME "%TUTU_VAR%aldeth.cre" AND BG1 = 1 BEGIN
-      OUTER_SET TRA = 1699
+    ACTION_IF "%Target%" STRING_EQUAL_CASE aldeth.fl AND BG1 = 1 BEGIN
+      OUTER_SET TRA = 1649
       ACTION_IF VARIABLE_IS_SET $aldeth_item_tra("%Item%") BEGIN
         OUTER_SET TRA = $aldeth_item_tra("%Item%")
       END
-      <<<<<<<< randomiser/fl-inlined/aldeth_I_dont_have_Tutu_or_BGT_installed_right_now.d
-REPLACE_SAY %TUTU_VAR%aldeth 27 @%TRA%
+      OUTER_SPRINT aldethjournal (AT "1650")
+      ACTION_IF GAME_IS ~tutu tutu_totsc~ BEGIN
+        OUTER_SPRINT aldethtitle (AT "1652")
+        OUTER_SPRINT aldethjournal "%aldethtitle%%LNL%%LNL%%aldethjournal%"
+      END ELSE ACTION_IF ENGINE_IS ~bgee bg2ee~ BEGIN
+        OUTER_SPRINT aldethtitle (AT "1653")
+        OUTER_SPRINT aldethjournal "%aldethtitle%%LNL%%aldethjournal%"
+      END ELSE BEGIN
+        OUTER_SPRINT aldethtitle (AT "1651")
+        OUTER_SPRINT aldethjournal "%aldethtitle%%LNL%%LNL%%aldethjournal%"
+      END
+      LAF fl#bg1pal STR_VAR file = ~aldeth.dlg~ RET aldethdlg = file aldeth = resource END
+      <<<<<<<< .../randomiser/fl-inlined/aldethsay.d
+REPLACE_SAY %aldeth% 27 @%TRA%
       >>>>>>>>
-      COMPILE "randomiser/fl-inlined/aldeth_I_dont_have_Tutu_or_BGT_installed_right_now.d" EVAL
+      <<<<<<<< .../randomiser/fl-inlined/aldethjournal.d
+ALTER_TRANS %aldeth% BEGIN 27 END BEGIN 0 END BEGIN "SOLVED_JOURNAL" ~%aldethjournal%~ END
+      >>>>>>>>
+      COMPILE ".../randomiser/fl-inlined/aldethsay.d" EVAL
+      ACTION_IF ENGINE_IS ~bg2 tob bgee bg2ee~ BEGIN
+        COMPILE ".../randomiser/fl-inlined/aldethjournal.d" EVAL
+      END
+      ACTION_IF ENGINE_IS ~bgee bg2ee~ BEGIN
+        <<<<<<<< .../randomiser/fl-inlined/aldethjournal.tra
+        @1650 = ~%aldethjournal%~
+        @1651 = ~%aldethtitle%~
+        >>>>>>>>
+        COPY - ".../randomiser/fl-inlined/aldethjournal.tra" ".../randomiser/fl-inlined/aldethjournal.tra"
+          EVAL
+        ADD_JOURNAL EXISTING TITLE (@1651) @1650 USING ".../randomiser/fl-inlined/aldethjournal.tra"
+      END
 
-      OUTER_SPRINT FLITEM "%TUTU_VAR%sw1h03"
-      COPY_EXISTING "%TUTU_VAR%aldeth.cre" override
-        SPRINT itm_to_del "%FLITEM%"
+      LAF fl#bg1pal STR_VAR file = ~sw1h03.itm~ RET aldethsword = resource END
+      LAF fl#bg1pal STR_VAR file = ~aldeth.cre~ RET aldethcre = file END
+      COPY_EXISTING "%aldethcre%" override
+        SPRINT itm_to_del "%aldethsword%"
         SPRINT replace_itm blank
         LAUNCH_PATCH_MACRO del_cre_itm
         SPRINT itm_to_give "%Item%"
         LAUNCH_PATCH_FUNCTION give_itm_to_cre END
       BUT_ONLY
-      COPY_EXISTING "%TUTU_VAR%aldeth.dlg" override
-        REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%FLITEM%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
-        REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~"%FLITEM%"~ ~"%Item%"~
+      COPY_EXISTING "%aldethdlg%" override
+        DECOMPILE_AND_PATCH BEGIN
+          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~\"%aldethsword%\",\(.*\),[0-9]+,[0-9]+,[0-9]+~ ~"%Item%",\1,%Charge1%,%Charge2%,%Charge3%~
+          REPLACE_TEXTUALLY CASE_INSENSITIVE EVALUATE_REGEXP ~"%aldethsword%"~ ~"%Item%"~
+        END
       BUT_ONLY
 
     END
