@@ -15,7 +15,26 @@ ALWAYS
 <<<<<<<< ...blank
 >>>>>>>>
 
-  LAM bgee_language
+  OUTER_SPRINT tra_path "%MOD_FOLDER%/languages"
+
+  ACTION_DEFINE_ARRAY fl#noconvert BEGIN setup END
+
+  ACTION_DEFINE_ARRAY fl#reload BEGIN in-game END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charsets = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%/languages~
+      noconvert_array = fl#noconvert
+      reload_array = fl#reload
+      default_language = english
+  END
+
+  ACTION_IF ENGINE_IS ~bgee bg2ee~ BEGIN // Some strings have differences other than encoding
+    LOAD_TRA "%tra_path%/bgee/english/in-game.tra"
+    LOAD_TRA "%tra_path%/bgee/%LANGUAGE%/in-game.tra"
+  END
 END
 
 AUTO_TRA ~randomiser/languages/%s~
