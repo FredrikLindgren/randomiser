@@ -463,7 +463,7 @@ DEFINE_PATCH_MACRO create_item_array#convert_resrefs BEGIN
    * convert BGII resources).
    * Non-Trilogy games can be passed through unconditionally.
    */
-  PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+  PATCH_IF (BGT AND BGT_Convert) OR NOT BGT BEGIN
     LPF fl#bg1pal
       STR_VAR
         resource = EVAL "%item%"
@@ -714,7 +714,7 @@ DEFINE_PATCH_MACRO create_loc_array#convert_resrefs BEGIN
    * convert BGII resources).
    * Non-Trilogy games can be passed through unconditionally.
    */
-  PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+  PATCH_IF (BGT AND BGT_Convert) OR NOT BGT BEGIN
     /* Only convert targets with a file extension (not area containers)
      *   except .fl and .flg targets
      */
@@ -872,7 +872,7 @@ DEFINE_PATCH_MACRO create_group_array BEGIN
       READ_2DA_ENTRY i 1 2 cre
       TO_LOWER group
       TO_LOWER cre
-      PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+      PATCH_IF (BGT AND BGT_Convert) OR NOT BGT BEGIN
         LPF fl#bg1pal STR_VAR resource = EVAL "%cre%" type = CRE RET cre = resource END
       END
       PATCH_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -893,7 +893,7 @@ DEFINE_PATCH_MACRO create_duplicate_array BEGIN
     TO_LOWER replace
     TO_LOWER ident
     PATCH_IF !VARIABLE_IS_SET $ident_filter("%ident%") BEGIN
-      PATCH_IF ((BGT /*OR EET*/) AND BGT_Convert) OR (NOT BGT /*AND NOT EET*/) BEGIN
+      PATCH_IF (BGT AND BGT_Convert) OR NOT BGT BEGIN
         LPF fl#bg1pal STR_VAR resource = EVAL "%item%" type = ITM RET item = resource END
         LPF fl#bg1pal STR_VAR file = EVAL "%source%" RET source = file END
         PATCH_IF "%replace%" STR_CMP "blank" BEGIN // Don't attempt to convert empty entries
