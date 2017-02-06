@@ -47,7 +47,7 @@ LANGUAGE Polish polish "randomiser/languages/english/setup.tra"
 
 
 BEGIN @100500 GROUP @100499 DESIGNATED 500                                                                             //Randomise identity of the TotSC tome
-REQUIRE_PREDICATE GAME_IS ~totsc tutu_totsc bgt bgee~ @100020
+REQUIRE_PREDICATE GAME_IS ~totsc tutu_totsc bgt bgee eet~ @100020
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
 
   COPY_EXISTING sw1h01.itm "override/flrc500.mrk"
@@ -70,7 +70,7 @@ REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAM
 
 BEGIN @100520 GROUP @100499 DESIGNATED 520
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023            //Kangaxx further sealed away
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   COPY_EXISTING sw1h01.itm "override/flrc520.mrk"
 
@@ -83,7 +83,7 @@ REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAM
 
 BEGIN @100540 GROUP @100499 DESIGNATED 540                                                                             //Randomise the heads of the Flail of Ages
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   COPY_EXISTING sw1h01.itm "override/flrc540.mrk"
 
@@ -97,7 +97,7 @@ REQUIRE_PREDICATE GAME_IS "soa tob bgt" @105002
 
 BEGIN @100560 GROUP @100499 DESIGNATED 560                                                                             //More Spell Shield scrolls
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME flrandomiser1.mrk AND !FILE_EXISTS_IN_GAME flrandomiser2.mrk @100023
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   COPY_EXISTING udduer01.sto override
     READ_LONG 0x34 sale_off
@@ -216,7 +216,7 @@ BEGIN @101400 SUBCOMPONENT @101000 DESIGNATED 1400                              
 
 BEGIN @105005 GROUP @105000 DESIGNATED 5005                                                                            //Beholders have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN udelder BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -229,7 +229,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 BEGIN @105015 GROUP @105000 DESIGNATED 5015                                                                            //Demi-liches have no items rquipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN demilich BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -242,7 +242,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 BEGIN @105025 GROUP @105000 DESIGNATED 5025                                                                            //Dragons have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN udsilver shadra01 firkra02 dragblac gorsal fsdragon dragblue bazdra03 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -255,7 +255,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 BEGIN @105035 GROUP @105000 DESIGNATED 5035                                                                            //Elementals have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN elemimix BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -268,7 +268,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 BEGIN @105045 GROUP @105000 DESIGNATED 5045                                                                            //Fiends have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN pmaster obsdem01 gorchr BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -281,7 +281,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 BEGIN @105055 GROUP @105000 DESIGNATED 5055                                                                            //Golems have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN gorgoli BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -294,7 +294,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 BEGIN @105065 GROUP @105000 DESIGNATED 5065                                                                            //Master Brains have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN udmaster BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -307,7 +307,7 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
 
 BEGIN @105075 GROUP @105000 DESIGNATED 5075                                                                            //Slimes have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~bg1 totsc tutu tutu_totsc bgt bgee~ @105003
+REQUIRE_PREDICATE GAME_IS ~bg1 totsc tutu tutu_totsc bgt eet bgee~ @105003
 
   ACTION_FOR_EACH cre IN schlum BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%TUTU_VAR%%cre%.cre" BEGIN
@@ -320,7 +320,7 @@ REQUIRE_PREDICATE GAME_IS ~bg1 totsc tutu tutu_totsc bgt bgee~ @105003
 
 BEGIN @105085 GROUP @105000 DESIGNATED 5085                                                                            //Trolls have no items equipped
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME flrandomiser2.mrk @105001
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   ACTION_FOR_EACH cre IN pptroll1 pptroll2 BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%cre%.cre" BEGIN
@@ -331,14 +331,14 @@ REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
   END
 
 BEGIN @109000 DESIGNATED 9000                                                                                          //Cespenar can forge SoA items
-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @109001
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @109001
 
   COMPILE "randomiser/d/botsmith.d"
   EXTEND_BOTTOM botsmith.bcs "randomiser/baf/botsmith.baf"
 
 
 BEGIN @109050 DESIGNATED 9050                                                                                          //Make Gromnir a proper Barbarian
-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @109001
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @109001
 REQUIRE_PREDICATE !FILE_EXISTS_IN_GAME gromnir.itm @109002
 
   INCLUDE "randomiser/lib/gromnir.tpa"
@@ -361,7 +361,7 @@ BEGIN @110200 SUBCOMPONENT @110000 DESIGNATED 10200                             
 
 
 BEGIN @110210 DESIGNATED 10210                                                                                         //Duergar merchants
-REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee~ @105002
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ @105002
 
   COMPILE "randomiser/d/udduer01.d"
 
@@ -373,7 +373,7 @@ REQUIRE_PREDICATE !MOD_IS_INSTALLED scsii.tp2 7030
               AND !MOD_IS_INSTALLED scsii.tp2 7033
               AND !MOD_IS_INSTALLED tactics.tp2 16
               AND !FILE_EXISTS_IN_GAME dw#spawns.mrk @110301
-REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee~ @109001
+REQUIRE_PREDICATE GAME_IS ~tob bgt bg2ee eet~ @109001
 
   COPY_EXISTING ar3001.bcs override
     DECOMPILE_BCS_TO_BAF

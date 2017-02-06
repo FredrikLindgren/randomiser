@@ -83,7 +83,7 @@ ACTION_IF BG1 BEGIN
   END
 END
 
-ACTION_IF GAME_IS ~bgee~ BEGIN
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
   COPY_EXISTING sto0703.sto override
     LPF change_store_stock STR_VAR item = "wand[0-9]+" END
     LPF change_store_stock STR_VAR item = "scrl5[pmgijk]" END
