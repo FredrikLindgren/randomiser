@@ -1180,13 +1180,6 @@ END
 //  END
 //END
 
-DEFINE_ACTION_MACRO bgee_language BEGIN
-  ACTION_IF GAME_IS ~bgee bg2ee~ BEGIN
-    LOAD_TRA ~%MOD_FOLDER%/languages/bgee/english/in-game.tra~
-    LOAD_TRA ~%MOD_FOLDER%/languages/bgee/%LANGUAGE%/in-game.tra~
-  END
-END
-
 DEFINE_PATCH_FUNCTION change_store_stock
   INT_VAR
     stock = 1
