@@ -333,6 +333,7 @@ DEFINE_PATCH_MACRO define_itm_slot_range BEGIN
   upper_bound = riu_category = 1 ? 7 : riu_category = 2 ? 2 : riu_category = 3 ? 8 : riu_category = 4 ? 9 : riu_category = 6 ? 4 : riu_category = 7 ? 1 : riu_category = 10 ? 6 : riu_category = 12 ? 3 : riu_category = 15 OR riu_category = 27 OR riu_category = 25 OR riu_category = 17 OR riu_category = 23 OR riu_category = 22 OR riu_category = 16 OR riu_category = 30 OR riu_category = 26 OR riu_category = 19 OR riu_category = 20 OR riu_category = 21 OR riu_category = 18 OR riu_category = 29 ? 13 : riu_category = 32 ? 18 : riu_category = 35 ? 21 : 37
 END
 
+// Needs to be updated to account for IWD-style weap profs (2163, 2164)
 DEFINE_PATCH_MACRO read_cre_profs BEGIN
   READ_BYTE 0x6e rcp_large ELSE 0
   READ_BYTE 0x6f rcp_small ELSE 0
@@ -362,7 +363,11 @@ DEFINE_PATCH_MACRO read_cre_profs BEGIN
       SET $rcp_prof("%rcp_prof%") = rcp_spear
     END
     SET $rcp_prof(20) = rcp_large
-  END ELSE PATCH_IF MOD_IS_INSTALLED bg2_tweaks.tp2 2161 OR MOD_IS_INSTALLED bg2_tweaks.tp2 2162 BEGIN //BG1-style proficiency
+  END ELSE PATCH_IF MOD_IS_INSTALLED bg2_tweaks.tp2 2161 OR
+                    MOD_IS_INSTALLED bg2_tweaks.tp2 2162 OR
+                    MOD_IS_INSTALLED cdtweaks.tp2 2161 OR
+                    MOD_IS_INSTALLED cdtweaks.tp2 2162
+  BEGIN //BG1-style proficiency
     SET BG1_STYLE_PROFS = 1
     SET $rcp_prof(89) = rcp_bow
     SET $rcp_prof(90) = rcp_spike

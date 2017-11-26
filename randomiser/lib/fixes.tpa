@@ -182,7 +182,9 @@ ACTION_PHP_EACH item_array AS entry => blank BEGIN
   END
 END
 
-ACTION_IF !MOD_IS_INSTALLED bg2_tweaks.tp2 3020 BEGIN //only do this if "identify all items" is not installed
+ACTION_IF !MOD_IS_INSTALLED bg2_tweaks.tp2 3020 AND
+          !MOD_IS_INSTALLED cdtweaks.tp2 3020
+BEGIN //only do this if "identify all items" is not installed
   ACTION_PHP_EACH item_array AS entry => int BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME "%entry_0%.itm" BEGIN
       COPY_EXISTING "%entry_0%.itm" override
