@@ -13,7 +13,7 @@
   <p><strong><a href="http://www.gibberlings3.net/">A Gibberlings Three Mod</a></strong><br />
   <strong>Author:</strong> Fredrik Lindgren <acronym title="also known as">aka</acronym> <a href="http://forums.gibberlings3.net/index.php?showuser=2376">Wisp</a>   <acronym title="also known as">aka</acronym> Irrbloss.<br />
   <strong>On the web: <a href="http://www.gibberlings3.net/item_rand/index.php">Home page</a></strong> and <strong><a href="http://forums.gibberlings3.net/index.php?showforum=170">Forum</a></strong>.</p>
-  <p><strong>Version proto-7 171126 &ndash; <a href="http://gibberlings3.net/forums/index.php?showtopic=25430">Check for the most recent version</a></strong>.<br />
+  <p><strong>Version 7 &ndash; <a href="http://gibberlings3.net/forums/index.php?showtopic=25430">Check for the most recent version</a></strong>.<br />
   <strong>Languages:</strong> English, Polish.<br />
   <strong>Platforms:</strong> Windows, Mac OS X, Linux.</p>
 </div>
@@ -37,6 +37,9 @@
     <li>EasyTutu with or without <acronym title="Tales of the Sword Coast">TotSC</acronym></li>
     <li>Baldur's Gate Trilogy</li>
     <li>Baldur's Gate II with or without  or <acronym title="Throne of Bhaal">ToB</acronym></li>
+    <li>Baldur's Gate: Enhanced Edition</li>
+    <li>Baldur's Gate II: Enhanced Edition</li>
+    <li>Enhanced Edition Trilogy</li>
   </ul>
   <p>Additionally, Item Randomiser is available in Mode 2 for regular Baldur's Gate, provided <acronym title="Tales of the Sword Coast">TotSC</acronym> is installed. Mode 1 is unavailable due to what appears to be technical limitations and TotSC is required for basic engine functionality.</p>
 
@@ -46,8 +49,8 @@
 
   <p>Detailed below are the currently known compatibility issues between Item Randomiser and other mods.</p>
 
-  <!--<p><strong>Ascension: Tougher Gromnir</strong><br />
-  Item Randomiser's "Make Gromnir a proper barbarian" component is redundant if Ascension's Tougher Gromnir is installed and will automatically be skipped.</p>-->
+  <p><strong>Ascension: Tougher Gromnir</strong><br />
+  Item Randomiser's "Make Gromnir a proper barbarian" component is redundant if Ascension's Tougher Gromnir is installed and will automatically be skipped.</p>
 
   <p><strong>Cursed Item Revisions</strong><br />
   If Cursed Item Revisions is installed the spear Backbiter (renamed Revenger by Cursed Item Revisions) will be randomised as a tier 26 item in BG1 and as a tier 2 item in BG2.<br />
@@ -106,11 +109,26 @@
 <h2>Installation</h2>
 <div class="section">
   <strong>Windows</strong>
+
+  <p>The Item Randomiser mod is packaged as an ordinary ZIP archive,
+    containing the mod files itself, as well as a copy of WeiDU, the
+    program used to install mods. Unpack the archive to your game
+    directory.</p>
+
+  <p>If performed correctly, you should have the folder randomiser and
+    the file setup-randomiser.exe in the same directory as the game
+    file chitin.key.</p>
+
+  <p>Install by running the file setup-randomiser.exe or as you would
+    otherwise install mods. The mod can be uninstalled in the same
+    manner.</p>
+
+<!--
   <p>The Item Randomiser mod is packaged and installed with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym> and is distributed as a self-extracting archive. To install, simply double-click the archive and follow the instructions on screen.</p>
 
   <p>Alternatively the files can be extracted from the archive using <a href="http://www.rarlab.com/">WinRAR</a>. If properly extracted, you should have a randomiser folder and setup-randomiser.exe in your game folder. To install, simply double-click setup-randomiser.exe and follow the instructions on screen.</p>
 
-  <p>Please run setup-randomiser.exe in your game folder to reinstall, uninstall or otherwise change components.</p>
+  <p>Please run setup-randomiser.exe in your game folder to reinstall, uninstall or otherwise change components.</p> -->
 
   <strong>Mac OS X</strong>
   <p><em>If the mod was previously installed, uninstall it before extracting the new version.</em> The Item Randomiser mod is packaged and installed with <acronym title="Weimer Dialogue Utilities">WeiDU</acronym>. To install, simply extract the contents of the mod into your game folder. If properly extracted, you should have a randomiser folder, setup-randomiser, and setup-randomiser.command in your game folder. To install, simply double-click setup-randomiser.command and follow the instructions on screen.</p>
@@ -120,7 +138,7 @@
 
   <p>You can avoid running the second option (linux.ini) if you've already run it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either if you've extracted only this mod since the last time you lowercased filenames. If you're unsure, running tolower and choosing both options is the safe bet.</p>
 
-  <p>Run <strong>WeInstall randomiser</strong> in your game folder to install the mod. Then run <strong>wine bgmain.exe</strong> and start playing.</p>
+  <p>Run <strong>WeInstall randomiser</strong> in your game folder to install the mod.</p>
 
 </div>
 
@@ -319,6 +337,12 @@
 
 <h2>Version History</h2>
 <div class="section">
+  <p><b>2018-09-21&mdash;version 7:</b></p>
+  <ul>
+    <li>No changes. This is a maintenance release concerning packaging
+      and download location.</li>
+  </ul>
+
   <p><b>2017-11-26&mdash;version proto-7 171126:</b></p>
   <ul>
     <li>Update checks for BG2 Tweak Pack to include Tweaks

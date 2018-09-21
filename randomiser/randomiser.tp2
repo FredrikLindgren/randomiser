@@ -1,6 +1,6 @@
 BACKUP "randomiser/backup"
-AUTHOR "Wisp, www.forums.gibberlings3.net"
-VERSION "proto-7 171126"
+AUTHOR "Wisp, gibberlings3.net/forums"
+VERSION "7"
 README "randomiser/readme-randomiser.html"
 
 ALWAYS
