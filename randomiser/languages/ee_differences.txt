@@ -2,6 +2,7 @@ Many strings differ between regular BG/BGII and BG:EE/BGII:EE. In
 Item Randomiser, the following strings differ between the regular
 text and the EE text:
 
+@115
 @200
 @201
 @202
